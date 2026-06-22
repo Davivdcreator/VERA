@@ -41,7 +41,8 @@ def setup_sqlite():
             capacity TEXT,
             year_built TEXT,
             status TEXT,
-            metadata TEXT NOT NULL DEFAULT '{}'
+            metadata TEXT NOT NULL DEFAULT '{}',
+            real INTEGER NOT NULL DEFAULT 1
         );
     """)
 
@@ -71,10 +72,11 @@ def setup_sqlite():
         reader = csv.DictReader(f)
         rows = 0
         for row in reader:
+            real_val = 1 if row.get("real", "true").lower() in ("true", "1", "yes") else 0
             cur.execute("""
                 INSERT INTO infrastructure
-                (id, name, type, subtype, location, latitude, longitude, capacity, year_built, status, metadata)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                (id, name, type, subtype, location, latitude, longitude, capacity, year_built, status, metadata, real)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
                 row["id"],
                 row["name"],
@@ -87,6 +89,7 @@ def setup_sqlite():
                 row.get("year_built", ""),
                 row.get("status", ""),
                 row.get("metadata", "{}"),
+                real_val,
             ))
             rows += 1
     conn.commit()

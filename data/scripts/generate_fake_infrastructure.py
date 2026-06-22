@@ -55,6 +55,7 @@ def generate_fake_records():
                 "year_built": year_built,
                 "status": status,
                 "metadata": metadata,
+                "real": "false",
             })
             counter_by_subtype[subtype] = counter_by_subtype.get(subtype, 0) + 1
 
@@ -63,7 +64,7 @@ def generate_fake_records():
 
 def write_csv(records, path: Path):
     fieldnames = ["id", "name", "type", "subtype", "location", "latitude", "longitude",
-                  "capacity", "year_built", "status", "metadata"]
+                  "capacity", "year_built", "status", "metadata", "real"]
     with open(path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()

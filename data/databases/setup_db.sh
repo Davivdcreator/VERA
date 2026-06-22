@@ -46,12 +46,12 @@ psql -h localhost -U postgres -d ${DB_NAME} -f "${MIGRATION_PATH}/0002_dependenc
 
 echo ""
 echo "=== Loading CSV data ==="
-psql -h localhost -U postgres -d ${DB_NAME} -c "COPY infrastructure(id, name, type, subtype, location, latitude, longitude, capacity, year_built, status, metadata) FROM '${CSV_PATH}' WITH (FORMAT csv, HEADER true);"
+psql -h localhost -U postgres -d ${DB_NAME} -c "COPY infrastructure(id, name, type, subtype, location, latitude, longitude, capacity, year_built, status, metadata, real) FROM '${CSV_PATH}' WITH (FORMAT csv, HEADER true);"
 
 echo ""
 echo "=== Loading fake CSV data ==="
 FAKE_CSV_PATH="${PG_DIR}/data/fake_kyiv_infrastructure.csv"
-psql -h localhost -U postgres -d ${DB_NAME} -c "COPY infrastructure(id, name, type, subtype, location, latitude, longitude, capacity, year_built, status, metadata) FROM '${FAKE_CSV_PATH}' WITH (FORMAT csv, HEADER true);"
+psql -h localhost -U postgres -d ${DB_NAME} -c "COPY infrastructure(id, name, type, subtype, location, latitude, longitude, capacity, year_built, status, metadata, real) FROM '${FAKE_CSV_PATH}' WITH (FORMAT csv, HEADER true);"
 
 echo ""
 echo "=== Seeding dependencies ==="

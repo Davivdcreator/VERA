@@ -97,10 +97,10 @@ sqlite3 data/databases/lite/infra.db ".tables"
 ## pg/data/ — Source Data Files
 
 ### kyiv_infrastructure.csv
-Real infrastructure assets for Kyiv from OpenStreetMap (~16,200 records). Loaded by both PostgreSQL and SQLite setups.
+Real infrastructure assets for Kyiv from OpenStreetMap (~16,200 records, `real=true`). Loaded by both PostgreSQL and SQLite setups.
 
 ### fake_kyiv_infrastructure.csv
-Generated test data for resilience testing (46 records across power_plant, heating_plant, water_pump_station, water_treatment_plant, wastewater_plant, and industrial_facility). Created by `../scripts/generate_fake_infrastructure.py`.
+Generated test data for resilience testing (46 records across power_plant, heating_plant, water_pump_station, water_treatment_plant, wastewater_plant, and industrial_facility, `real=false`). Created by `../scripts/generate_fake_infrastructure.py`.
 
 ## scripts/ — Data Generation
 

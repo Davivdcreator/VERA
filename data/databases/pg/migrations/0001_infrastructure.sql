@@ -1,5 +1,5 @@
 -- VERA — infrastructure-intelligence schema matching kyiv_infrastructure.csv
--- Schema matches CSV columns: id, name, type, subtype, location, latitude, longitude, capacity, year_built, status, metadata
+-- Schema matches CSV columns: id, name, type, subtype, location, latitude, longitude, capacity, year_built, status, metadata, real
 -- Dependencies stored in separate table
 
 -- ── enums ──────────────────────────────────────────────────────────────────
@@ -18,7 +18,8 @@ create table infrastructure (
   capacity    text,
   year_built  text,
   status      text,
-  metadata    jsonb not null default '{}'::jsonb
+  metadata    jsonb not null default '{}'::jsonb,
+  real        boolean not null default true
 );
 
 create index infra_type_idx on infrastructure (type);
