@@ -17,9 +17,10 @@
  * presentational for now — wiring them would require lifting the OSMB instance
  * out of the existing component, which is out of scope for this task.
  */
-import { Box, Building2, Compass, Map as MapIcon, Maximize2, MoreHorizontal, Minus, Plus } from "lucide-react";
+import { Box, Building2, Compass, Map as MapIcon, Maximize2, MoreHorizontal, Minus, Plus, TriangleAlert } from "lucide-react";
 import { OsmBuildingsMap } from "@/lib/osmb/OsmBuildingsMap";
 import type { MapMarker } from "@/lib/osmb/OsmBuildingsMap";
+import type { DamageZone } from "@/lib/data/damage";
 import { cn } from "@/lib/cn";
 import { IconButton } from "@/components/ui/IconButton";
 import { LiveIndicator } from "@/components/ui/LiveIndicator";
@@ -42,6 +43,12 @@ export interface MapPanelProps {
   showBuildings?: boolean;
   /** Toggle the OSM 3D buildings layer. */
   onToggleBuildings?: () => void;
+  /** Damage zones to render as translucent red circles on the map. */
+  zones?: DamageZone[];
+  /** Whether the damage zone layer is visible. */
+  showDamage?: boolean;
+  /** Toggle the damage zone overlay. */
+  onToggleDamage?: () => void;
   /** Feed state for the live indicator. */
   feed?: "live" | "stale";
   /** Highlight this panel as the active/selected one (accent border). */
@@ -60,6 +67,9 @@ export function MapPanel({
   onMarkerClick,
   showBuildings = true,
   onToggleBuildings,
+  zones,
+  showDamage = true,
+  onToggleDamage,
   feed = "live",
   active = false,
   onActivate,
@@ -81,6 +91,7 @@ export function MapPanel({
           markers={markers}
           onMarkerClick={onMarkerClick}
           showBuildings={showBuildings}
+          zones={showDamage ? zones : undefined}
         />
       </div>
 
@@ -116,6 +127,24 @@ export function MapPanel({
             >
               <Building2 size={14} aria-hidden="true" />
               Buildings
+            </button>
+          )}
+          {onToggleDamage && (
+            <button
+              type="button"
+              onClick={onToggleDamage}
+              aria-pressed={showDamage}
+              aria-label="Toggle damage zones"
+              title={showDamage ? "Hide damage zones" : "Show damage zones"}
+              className={cn(
+                "inline-flex h-8 items-center gap-1.5 rounded-md px-2.5 text-[12px] font-semibold ring-1 transition-colors",
+                showDamage
+                  ? "bg-[rgba(210,59,64,0.10)] text-status-offline ring-[rgba(210,59,64,0.40)]"
+                  : "bg-surface-2 text-text-muted ring-border-default hover:text-text-secondary",
+              )}
+            >
+              <TriangleAlert size={14} aria-hidden="true" />
+              Damage
             </button>
           )}
           <IconButton size="sm" aria-label={`${title} options`}>

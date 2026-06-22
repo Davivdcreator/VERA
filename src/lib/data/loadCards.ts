@@ -11,6 +11,7 @@
 import { supabase, isSupabaseConfigured } from "@/lib/supabase";
 import type { AssetCard, InfraStatus } from "@/lib/data/types";
 import type { MapMarker } from "@/lib/osmb/OsmBuildingsMap";
+import type { DamageEvent } from "@/lib/data/damage";
 
 /** Infrastructure-state → marker / UI color (hex). Single source of truth. */
 export const STATE_COLOR: Record<InfraStatus, string> = {
@@ -39,6 +40,30 @@ export async function loadAssetCards(): Promise<AssetCard[]> {
   // Offline / no-backend fallback.
   const mod = await import("@/data/generated/cards.json");
   return (mod.default ?? mod) as unknown as AssetCard[];
+}
+
+/**
+ * Load all damage events.
+ * - With Supabase: selects all columns from `damage_events`, ordered newest-first.
+ * - Without Supabase: lazy-imports `src/data/generated/damage.json`.
+ */
+export async function loadDamageEvents(): Promise<DamageEvent[]> {
+  if (isSupabaseConfigured && supabase) {
+    const { data, error } = await supabase
+      .from("damage_events")
+      .select("*")
+      .order("detected_at", { ascending: false });
+    if (error) {
+      console.error("[VERA] Supabase damage_events fetch error:", error.message);
+      // Fall through to the offline bundle.
+    } else if (data) {
+      return data as DamageEvent[];
+    }
+  }
+
+  // Offline / no-backend fallback.
+  const mod = await import("@/data/generated/damage.json");
+  return (mod.default ?? mod) as unknown as DamageEvent[];
 }
 
 /**

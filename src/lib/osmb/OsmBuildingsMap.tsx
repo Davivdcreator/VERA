@@ -17,6 +17,7 @@
 import { useEffect, useRef, useState } from "react";
 import { loadOsmBuildings } from "./loader";
 import type { LatLng, OSMBuildingsMap } from "./osmbuildings";
+import type { DamageZone } from "@/lib/data/damage";
 import {
   BASE_TILE_URL,
   BUILDING_COLOR,
@@ -46,6 +47,13 @@ export interface MapMarker {
 
 type ProjectedMarker = MapMarker & { x: number; y: number };
 
+interface ProjectedZone extends DamageZone {
+  x: number;
+  y: number;
+  /** Damage circle radius in CSS pixels. */
+  radiusPx: number;
+}
+
 export interface OsmBuildingsMapProps {
   mode: "2d" | "3d";
   center?: LatLng;
@@ -57,6 +65,8 @@ export interface OsmBuildingsMapProps {
   onMarkerClick?: (id: string) => void;
   /** Show the extruded OSM 3D buildings layer (satellite stays either way). */
   showBuildings?: boolean;
+  /** Damage zones to draw as translucent red circles over the map. */
+  zones?: DamageZone[];
   className?: string;
 }
 
@@ -71,10 +81,12 @@ export function OsmBuildingsMap({
   markers,
   onMarkerClick,
   showBuildings = true,
+  zones,
   className = "",
 }: OsmBuildingsMapProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [projected, setProjected] = useState<ProjectedMarker[]>([]);
+  const [projectedZones, setProjectedZones] = useState<ProjectedZone[]>([]);
 
   // Live refs so marker changes re-project WITHOUT re-initialising the map
   // (which would recreate the WebGL context + a fresh Google tile session).
@@ -82,6 +94,9 @@ export function OsmBuildingsMap({
   const projectRef = useRef<(() => void) | null>(null);
   const markersRef = useRef<MapMarker[] | undefined>(markers);
   markersRef.current = markers;
+  const zonesRef = useRef<DamageZone[] | undefined>(zones);
+  zonesRef.current = zones;
+  const projectZonesRef = useRef<(() => void) | null>(null);
   // Handle for the OSM buildings layer, so we can add/remove it on toggle.
   const buildingsLayerRef = useRef<unknown>(null);
   const showBuildingsRef = useRef(showBuildings);
@@ -210,7 +225,57 @@ export function OsmBuildingsMap({
         projectRef.current = project;
         map.on("change", project);
         map.on("resize", project);
-        rafId = requestAnimationFrame(() => project?.());
+
+        // ── Zone projection (damage circles) ─────────────────────────────
+        const projectZones = () => {
+          if (!map) return;
+          const zs = zonesRef.current;
+          if (!zs || zs.length === 0) {
+            setProjectedZones([]);
+            return;
+          }
+          let south: number, west: number, north: number, east: number;
+          let size: { width: number; height: number };
+          try {
+            const b = map.getBounds() as number[];
+            [south, west, north, east] = b;
+            size = map.getSize();
+          } catch {
+            return;
+          }
+          if (
+            ![south, west, north, east].every(Number.isFinite) ||
+            !size ||
+            east === west ||
+            north === south
+          ) {
+            return;
+          }
+          const { width: w, height: h } = size;
+          // metres-per-pixel derived from the lat span of the projected bbox.
+          // 1 degree latitude ≈ 111_320 m (close enough for approximate circles).
+          const metersPerPx = ((north - south) * 111_320) / h;
+          const next: ProjectedZone[] = [];
+          for (const z of zs) {
+            const x = ((z.lng - west) / (east - west)) * w;
+            const y = ((north - z.lat) / (north - south)) * h;
+            const radiusPx = z.radius_m / metersPerPx;
+            // Cull zones entirely off-screen (with generous margin = radiusPx).
+            if (
+              x + radiusPx < 0 ||
+              x - radiusPx > w ||
+              y + radiusPx < 0 ||
+              y - radiusPx > h
+            ) continue;
+            next.push({ ...z, x, y, radiusPx });
+          }
+          setProjectedZones(next);
+        };
+        projectZonesRef.current = projectZones;
+        map.on("change", projectZones);
+        map.on("resize", projectZones);
+
+        rafId = requestAnimationFrame(() => { project?.(); projectZones(); });
       })
       .catch((err) => {
         // eslint-disable-next-line no-console
@@ -222,6 +287,7 @@ export function OsmBuildingsMap({
       if (rafId) cancelAnimationFrame(rafId);
       if (throttleTimer) clearTimeout(throttleTimer);
       projectRef.current = null;
+      projectZonesRef.current = null;
       mapRef.current = null;
       buildingsLayerRef.current = null;
       if (map) {
@@ -230,17 +296,28 @@ export function OsmBuildingsMap({
           map.off("change", project);
           map.off("resize", project);
         }
+        // projectZones was declared inside the closure; we use the ref to clean up.
+        const pz = projectZonesRef.current;
+        if (pz) {
+          map.off("change", pz);
+          map.off("resize", pz);
+        }
         map.destroy();
         map = null;
       }
     };
-    // NOT re-initialising on `markers` — a separate effect re-projects instead.
+    // NOT re-initialising on `markers` or `zones` — separate effects re-project instead.
   }, [mode, center, zoom, tilt, rotation]);
 
   // Re-project when the marker set changes (no map rebuild).
   useEffect(() => {
     projectRef.current?.();
   }, [markers]);
+
+  // Re-project zones when the zone set changes (no map rebuild).
+  useEffect(() => {
+    projectZonesRef.current?.();
+  }, [zones]);
 
   // Toggle the OSM buildings layer live — add/remove without rebuilding the map.
   useEffect(() => {
@@ -267,6 +344,49 @@ export function OsmBuildingsMap({
     >
       {/* OSM Buildings owns this element exclusively (it appends its canvas). */}
       <div ref={containerRef} className="absolute inset-0" />
+
+      {/* Damage zone circles projected over the canvas (pointer-events-none). */}
+      {projectedZones.length > 0 && (
+        <div className="pointer-events-none absolute inset-0 z-[4] overflow-hidden">
+          {projectedZones.map((z) => (
+            <div
+              key={z.id}
+              className="absolute -translate-x-1/2 -translate-y-1/2"
+              style={{ left: `${z.x}px`, top: `${z.y}px` }}
+            >
+              {/* Translucent damage ring */}
+              <div
+                style={{
+                  width:  `${z.radiusPx * 2}px`,
+                  height: `${z.radiusPx * 2}px`,
+                  border: `2px solid rgba(220,38,38,${0.4 + z.severity * 0.4})`,
+                  backgroundColor: `rgba(220,38,38,${0.06 + z.severity * 0.10})`,
+                  borderRadius: "50%",
+                  position: "absolute",
+                  left: "50%",
+                  top: "50%",
+                  transform: "translate(-50%,-50%)",
+                }}
+              />
+              {/* Pulsing centre dot */}
+              <div
+                style={{
+                  width: "10px",
+                  height: "10px",
+                  borderRadius: "50%",
+                  backgroundColor: "rgba(220,38,38,0.9)",
+                  boxShadow: "0 0 0 0 rgba(220,38,38,0.6)",
+                  position: "absolute",
+                  left: "50%",
+                  top: "50%",
+                  transform: "translate(-50%,-50%)",
+                  animation: "vera-damage-pulse 1.8s ease-out infinite",
+                }}
+              />
+            </div>
+          ))}
+        </div>
+      )}
 
       {/* Clickable, state-colored asset pins projected over the canvas. */}
       {markers && markers.length > 0 && (

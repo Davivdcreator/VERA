@@ -19,8 +19,10 @@ import type { MapMode } from "@/components/dashboard/MapPanel";
 import { RepairPrioritiesTable } from "@/components/dashboard/RepairPrioritiesTable";
 import { LiveAlertsFeed } from "@/components/dashboard/LiveAlertsFeed";
 import { AssetCardPanel } from "@/components/dashboard/AssetCardPanel";
-import { loadAssetCards, cardsToMarkers } from "@/lib/data/loadCards";
+import { DamageDetectionsPanel } from "@/components/dashboard/DamageDetectionsPanel";
+import { loadAssetCards, cardsToMarkers, loadDamageEvents } from "@/lib/data/loadCards";
 import type { AssetCard } from "@/lib/data/types";
+import type { DamageEvent, DamageZone } from "@/lib/data/damage";
 import { REGION } from "@/config/region";
 import type { MapLegendProps } from "@/components/ui/MapLegend";
 import type { RepairPriority, AlertEvent } from "@/data/dashboardData";
@@ -86,9 +88,12 @@ function cardsToAlerts(cards: AssetCard[]): AlertEvent[] {
 export function Dashboard() {
   const [mapMode, setMapMode]           = useState<MapMode>("3d");
   const [showBuildings, setShowBuildings] = useState(true);
+  const [showDamage, setShowDamage]     = useState(true);
   const [cards, setCards]               = useState<AssetCard[]>([]);
   const [loading, setLoading]           = useState(true);
   const [selectedId, setSelectedId]     = useState<string | null>(null);
+  const [damageEvents, setDamageEvents] = useState<DamageEvent[]>([]);
+  const [damageLoading, setDamageLoading] = useState(true);
 
   // Load cards once on mount.
   useEffect(() => {
@@ -108,8 +113,40 @@ export function Dashboard() {
     return () => { cancelled = true; };
   }, []);
 
+  // Load damage events once on mount.
+  useEffect(() => {
+    let cancelled = false;
+    setDamageLoading(true);
+    loadDamageEvents()
+      .then((data) => {
+        if (!cancelled) {
+          setDamageEvents(data);
+          setDamageLoading(false);
+        }
+      })
+      .catch((err) => {
+        console.error("[VERA] loadDamageEvents failed:", err);
+        if (!cancelled) setDamageLoading(false);
+      });
+    return () => { cancelled = true; };
+  }, []);
+
   // Stable marker array derived from cards.
   const markers = useMemo(() => cardsToMarkers(cards), [cards]);
+
+  // Derive damage zones from events (projection-only fields).
+  const damageZones = useMemo<DamageZone[]>(
+    () =>
+      damageEvents.map((ev) => ({
+        id:       ev.id,
+        lat:      ev.lat,
+        lng:      ev.lng,
+        radius_m: ev.radius_m,
+        severity: ev.severity,
+        source:   ev.source,
+      })),
+    [damageEvents],
+  );
 
   // O(1) lookup map for the card panel dependency work-tree.
   const cardMap = useMemo<Map<string, AssetCard>>(
@@ -215,6 +252,9 @@ export function Dashboard() {
           onMarkerClick={setSelectedId}
           showBuildings={showBuildings}
           onToggleBuildings={() => setShowBuildings((v) => !v)}
+          zones={damageZones}
+          showDamage={showDamage}
+          onToggleDamage={() => setShowDamage((v) => !v)}
           active
         />
 
@@ -231,7 +271,7 @@ export function Dashboard() {
       {/* 3 — Support row */}
       <section
         aria-label="Operations detail"
-        className="grid grid-cols-1 gap-4 lg:grid-cols-[1.4fr_1fr] lg:gap-6"
+        className="grid grid-cols-1 gap-4 lg:grid-cols-[1.4fr_1fr_1fr] lg:gap-6"
       >
         <Panel
           title="Repair Priorities"
@@ -272,6 +312,11 @@ export function Dashboard() {
               </p>
             )}
         </Panel>
+
+        <DamageDetectionsPanel
+          events={damageEvents}
+          loading={damageLoading}
+        />
       </section>
     </div>
   );
