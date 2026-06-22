@@ -475,15 +475,14 @@ export function OsmBuildingsMap({
       className={`relative h-full w-full ${className}`}
       style={{ minHeight: 240 }}
     >
-      {/* Opaque dark backdrop BEHIND the WebGL canvas. OSMB's main scene clears
-          transparent (alpha 0), and the loader maps OSMB's red placeholder clear
-          to transparent too — so any un-painted frame (init, HMR reload, tile
-          gaps while panning/zooming) would otherwise show the white page through
-          the canvas as a flash. A dark map-loading tone keeps those frames
-          neutral instead of flashing white. */}
+      {/* Neutral mid-gray backdrop BEHIND the WebGL canvas — a fallback only.
+          loader.ts forces the canvas to be opaque (alpha:false) so it no longer
+          reveals anything behind it, but should a browser ignore that, this
+          matches the in-canvas gap colour (#5C6367 ≈ satellite tone) so nothing
+          flashes. */}
       <div
         className="absolute inset-0 z-0"
-        style={{ backgroundColor: "#0b1220" }}
+        style={{ backgroundColor: "#5C6367" }}
         aria-hidden="true"
       />
 
@@ -566,15 +565,15 @@ export function OsmBuildingsMap({
         </div>
       )}
 
-      {/* Dark cover shown until OSMB paints its first tiles. Matches the backdrop
-          tone (#0b1220) so initial load reads as a dark "map loading" state —
-          never a white (or red) flash. */}
+      {/* Neutral cover shown until OSMB paints its first tiles. Matches the gap
+          tone (#5C6367) so initial load reads as a quiet "map loading" state —
+          never a white, red, or dark flash. */}
       <div
         aria-hidden={tilesReady}
         className={`pointer-events-none absolute inset-0 z-[6] flex items-center justify-center transition-opacity duration-500 ${
           tilesReady ? "opacity-0" : "opacity-100"
         }`}
-        style={{ backgroundColor: "#0b1220" }}
+        style={{ backgroundColor: "#5C6367" }}
       >
         <span className="text-xs font-medium text-slate-300">Loading map…</span>
       </div>

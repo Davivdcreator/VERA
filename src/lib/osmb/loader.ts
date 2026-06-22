@@ -22,32 +22,67 @@ const JS_ID = "osmb-js";
 let cached: Promise<OSMBuildingsConstructor> | null = null;
 
 /**
- * Neutralise OSM Buildings' red "flash".
- *
- * OSMBuildings.js (4.1.1) clears one of its offscreen effect framebuffers to
- * opaque red — `gl.clearColor(1, 0, 0, 1)` — as a placeholder. On real GPUs that
- * red texture composites onto the canvas as a full-map RED WASH during every
- * un-painted moment: initial (re)init, HMR reload, and while map tiles stream in
- * on pan/zoom. (The main scene clears transparent, so the red comes solely from
- * that effect buffer, not the page background.)
- *
- * We monkey-patch `clearColor` on both GL prototypes to remap that EXACT pure-red
- * clear to transparent, so the un-painted buffer contributes nothing instead of a
- * red wash. Scoped to (1,0,0,1) only — every other clear (incl. OSMB's own gray /
- * fog-color clears) passes through untouched. Installed once, before OSMB builds
- * its context, so it also covers the very first frame.
+ * Neutral mid-tone for un-painted map regions (≈ satellite-imagery average).
+ * Tile-loading gaps clear to this instead of flashing. KEEP IN SYNC with the
+ * CSS backdrop/cover colour in OsmBuildingsMap.tsx (#5C6367).
  */
-function neutraliseRedClearFlash(): void {
-  const flag = "__veraRedClearPatched";
+const MAP_GAP_RGB = { r: 92, g: 99, b: 103 };
+
+/**
+ * Harden OSM Buildings' canvas against the flicker/flash family of bugs.
+ *
+ * Two independent root causes, both patched here BEFORE OSMB creates its GL
+ * context (so even the first frame is covered):
+ *
+ * 1. TRANSPARENT CANVAS. OSMB requests its context without `alpha:false`, so it
+ *    defaults to transparent and clears with alpha 0 every frame. Any un-painted
+ *    region — initial (re)init, HMR reload, and tile streaming + zoom-level swaps
+ *    while interacting — therefore shows THROUGH the canvas to whatever sits
+ *    behind it. That is why the artefact kept changing colour as we changed the
+ *    backdrop (red effect-buffer → white page → dark backdrop) and flickered on
+ *    pan/zoom. We force `alpha:false` so the canvas is OPAQUE and never reveals
+ *    anything behind it again. Safe app-wide: OSMB is the only WebGL user here
+ *    (deck.gl / cesium are unused deps).
+ *
+ * 2. FLASHING CLEAR COLOURS. With an opaque canvas the un-painted colour becomes
+ *    OSMB's own clear colour. Its offscreen effect buffer clears to opaque RED
+ *    (1,0,0,1); the main scene clears to fog (#e8e0d8, near-white) with alpha 0.
+ *    Both would flash. We remap the red placeholder to transparent, and the main
+ *    alpha-0 clear to an opaque neutral mid-gray (~satellite tone) so tile gaps
+ *    BLEND into the imagery instead of flickering.
+ */
+function hardenOsmbGl(): void {
+  const flag = "__veraGlHardened";
   const w = window as unknown as Record<string, boolean>;
   if (w[flag]) return;
   w[flag] = true;
 
+  // (1) Force opaque WebGL contexts so the canvas never shows what's behind it.
+  type GetContext = typeof HTMLCanvasElement.prototype.getContext;
+  const origGetContext = HTMLCanvasElement.prototype.getContext as (
+    this: HTMLCanvasElement,
+    id: string,
+    options?: unknown,
+  ) => RenderingContext | null;
+  HTMLCanvasElement.prototype.getContext = function (
+    this: HTMLCanvasElement,
+    id: string,
+    options?: unknown,
+  ): RenderingContext | null {
+    if (id === "webgl" || id === "webgl2" || id === "experimental-webgl") {
+      return origGetContext.call(this, id, { ...(options as object), alpha: false });
+    }
+    return origGetContext.call(this, id, options);
+  } as GetContext;
+
+  // (2) Remap OSMB's flash-causing clear colours.
+  const r0 = MAP_GAP_RGB.r / 255;
+  const g0 = MAP_GAP_RGB.g / 255;
+  const b0 = MAP_GAP_RGB.b / 255;
   const protos = [
     typeof WebGLRenderingContext !== "undefined" ? WebGLRenderingContext.prototype : null,
     typeof WebGL2RenderingContext !== "undefined" ? WebGL2RenderingContext.prototype : null,
   ];
-
   for (const proto of protos) {
     if (!proto) continue;
     const original = proto.clearColor;
@@ -58,9 +93,15 @@ function neutraliseRedClearFlash(): void {
       blue: number,
       alpha: number,
     ): void {
+      // Red placeholder buffer → transparent (no red wash from the effect FBO).
       if (red === 1 && green === 0 && blue === 0 && alpha === 1) {
-        // Pure-red placeholder clear → fully transparent (kills the red wash).
         original.call(this, 0, 0, 0, 0);
+        return;
+      }
+      // Main scene's transparent clear → opaque neutral mid-gray, so un-painted
+      // tile gaps blend with the satellite imagery instead of flashing.
+      if (alpha === 0) {
+        original.call(this, r0, g0, b0, 1);
         return;
       }
       original.call(this, red, green, blue, alpha);
@@ -116,8 +157,9 @@ function injectScript(): Promise<void> {
  * @throws if the CDN script fails to load or never exposes window.OSMBuildings.
  */
 export function loadOsmBuildings(): Promise<OSMBuildingsConstructor> {
-  // Kill the red clear-color flash before any OSMB GL context is created.
-  neutraliseRedClearFlash();
+  // Make the canvas opaque + neutralise OSMB's flash clears, before any GL
+  // context is created (covers the very first frame).
+  hardenOsmbGl();
 
   // Fast path: already on window (loaded earlier, or by another bundle).
   if (window.OSMBuildings) {
