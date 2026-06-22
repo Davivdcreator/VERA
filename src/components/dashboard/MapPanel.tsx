@@ -49,6 +49,10 @@ export interface MapPanelProps {
   showDamage?: boolean;
   /** Toggle the damage zone overlay. */
   onToggleDamage?: () => void;
+  /** Imperative fly-to target for the map camera. */
+  focus?: { lat: number; lng: number; zoom?: number } | null;
+  /** Damage zone id to emphasize on the map. */
+  highlightZoneId?: string | null;
   /** Feed state for the live indicator. */
   feed?: "live" | "stale";
   /** Highlight this panel as the active/selected one (accent border). */
@@ -70,6 +74,8 @@ export function MapPanel({
   zones,
   showDamage = true,
   onToggleDamage,
+  focus,
+  highlightZoneId,
   feed = "live",
   active = false,
   onActivate,
@@ -92,6 +98,8 @@ export function MapPanel({
           onMarkerClick={onMarkerClick}
           showBuildings={showBuildings}
           zones={showDamage ? zones : undefined}
+          focus={focus}
+          highlightZoneId={highlightZoneId}
         />
       </div>
 

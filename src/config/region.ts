@@ -45,7 +45,7 @@ export const REGION_BBOX = {
  * city-level (anything below ~10 would show well outside the region) and the
  * ceiling modest so the 3D building tiles stay performant.
  */
-export const REGION_MIN_ZOOM = 10;
+export const REGION_MIN_ZOOM = 8;
 export const REGION_MAX_ZOOM = 18;
 
 /** Default zoom on first load (city overview over central Kyiv). */

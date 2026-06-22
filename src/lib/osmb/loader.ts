@@ -21,6 +21,53 @@ const JS_ID = "osmb-js";
 
 let cached: Promise<OSMBuildingsConstructor> | null = null;
 
+/**
+ * Neutralise OSM Buildings' red "flash".
+ *
+ * OSMBuildings.js (4.1.1) clears one of its offscreen effect framebuffers to
+ * opaque red — `gl.clearColor(1, 0, 0, 1)` — as a placeholder. On real GPUs that
+ * red texture composites onto the canvas as a full-map RED WASH during every
+ * un-painted moment: initial (re)init, HMR reload, and while map tiles stream in
+ * on pan/zoom. (The main scene clears transparent, so the red comes solely from
+ * that effect buffer, not the page background.)
+ *
+ * We monkey-patch `clearColor` on both GL prototypes to remap that EXACT pure-red
+ * clear to transparent, so the un-painted buffer contributes nothing instead of a
+ * red wash. Scoped to (1,0,0,1) only — every other clear (incl. OSMB's own gray /
+ * fog-color clears) passes through untouched. Installed once, before OSMB builds
+ * its context, so it also covers the very first frame.
+ */
+function neutraliseRedClearFlash(): void {
+  const flag = "__veraRedClearPatched";
+  const w = window as unknown as Record<string, boolean>;
+  if (w[flag]) return;
+  w[flag] = true;
+
+  const protos = [
+    typeof WebGLRenderingContext !== "undefined" ? WebGLRenderingContext.prototype : null,
+    typeof WebGL2RenderingContext !== "undefined" ? WebGL2RenderingContext.prototype : null,
+  ];
+
+  for (const proto of protos) {
+    if (!proto) continue;
+    const original = proto.clearColor;
+    proto.clearColor = function patchedClearColor(
+      this: WebGLRenderingContext,
+      red: number,
+      green: number,
+      blue: number,
+      alpha: number,
+    ): void {
+      if (red === 1 && green === 0 && blue === 0 && alpha === 1) {
+        // Pure-red placeholder clear → fully transparent (kills the red wash).
+        original.call(this, 0, 0, 0, 0);
+        return;
+      }
+      original.call(this, red, green, blue, alpha);
+    };
+  }
+}
+
 function injectCss(): void {
   if (document.getElementById(CSS_ID)) return;
   const link = document.createElement("link");
@@ -69,6 +116,9 @@ function injectScript(): Promise<void> {
  * @throws if the CDN script fails to load or never exposes window.OSMBuildings.
  */
 export function loadOsmBuildings(): Promise<OSMBuildingsConstructor> {
+  // Kill the red clear-color flash before any OSMB GL context is created.
+  neutraliseRedClearFlash();
+
   // Fast path: already on window (loaded earlier, or by another bundle).
   if (window.OSMBuildings) {
     cached ??= Promise.resolve(window.OSMBuildings);

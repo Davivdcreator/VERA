@@ -67,10 +67,53 @@ export interface OsmBuildingsMapProps {
   showBuildings?: boolean;
   /** Damage zones to draw as translucent red circles over the map. */
   zones?: DamageZone[];
+  /** Imperative fly-to: when this object changes, recentre/zoom the camera here. */
+  focus?: { lat: number; lng: number; zoom?: number } | null;
+  /** Id of the damage zone to emphasize (e.g. the one a user just clicked). */
+  highlightZoneId?: string | null;
   className?: string;
 }
 
 const CLAMP_THROTTLE_MS = 80;
+
+/** Axis-aligned geographic box derived from the map's view bounds. */
+type BBox = { south: number; west: number; north: number; east: number };
+
+/**
+ * Normalise OSM Buildings' getBounds() into an axis-aligned {south,west,north,east}.
+ *
+ * OSMB 4.1.1 returns the *view polygon* as four corner points
+ * (`{ longitude, latitude }[]`), NOT the flat `[south, west, north, east]` tuple
+ * the older docs (and our .d.ts) describe. Treating the corners as numbers makes
+ * every `Number.isFinite` check fail, so marker/zone projection silently bailed
+ * and nothing drew. We accept BOTH shapes and, for the polygon, take its bounding
+ * box — exact top-down (2D), a close approximation under 3D tilt. Returns null if
+ * the bounds aren't readable yet (camera not ready).
+ */
+function boundsToBox(raw: unknown): BBox | null {
+  if (!Array.isArray(raw) || raw.length < 4) return null;
+  // Flat numeric tuple form: [south, west, north, east].
+  if (typeof raw[0] === "number") {
+    const [south, west, north, east] = raw as number[];
+    return [south, west, north, east].every(Number.isFinite)
+      ? { south, west, north, east }
+      : null;
+  }
+  // Corner-point form: { longitude, latitude }[].
+  const lats: number[] = [];
+  const lngs: number[] = [];
+  for (const p of raw as Array<{ latitude?: number; longitude?: number }>) {
+    if (!p || !Number.isFinite(p.latitude) || !Number.isFinite(p.longitude)) return null;
+    lats.push(p.latitude as number);
+    lngs.push(p.longitude as number);
+  }
+  return {
+    south: Math.min(...lats),
+    north: Math.max(...lats),
+    west: Math.min(...lngs),
+    east: Math.max(...lngs),
+  };
+}
 
 export function OsmBuildingsMap({
   mode,
@@ -82,11 +125,17 @@ export function OsmBuildingsMap({
   onMarkerClick,
   showBuildings = true,
   zones,
+  focus,
+  highlightZoneId,
   className = "",
 }: OsmBuildingsMapProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [projected, setProjected] = useState<ProjectedMarker[]>([]);
   const [projectedZones, setProjectedZones] = useState<ProjectedZone[]>([]);
+  // Hides the WebGL canvas behind a neutral cover until OSMB fires its first
+  // "load" (tiles painted). OSM Buildings' un-painted canvas reads as a solid
+  // RED wash during every (re)init; the cover is what stops the "flashing red".
+  const [tilesReady, setTilesReady] = useState(false);
 
   // Live refs so marker changes re-project WITHOUT re-initialising the map
   // (which would recreate the WebGL context + a fresh Google tile session).
@@ -102,22 +151,43 @@ export function OsmBuildingsMap({
   const showBuildingsRef = useRef(showBuildings);
   showBuildingsRef.current = showBuildings;
 
+  // Latest camera props, read by the (mount-once) init effect via refs so that
+  // changing them — above all `mode` (2D/3D) — NO LONGER rebuilds the whole map.
+  // A rebuild recreates the WebGL context (red flash) and spins up a fresh
+  // Google tile session; `mode` now drives tilt imperatively (separate effect).
+  const modeRef = useRef(mode);
+  modeRef.current = mode;
+  const tiltRef = useRef(tilt);
+  tiltRef.current = tilt;
+  const centerRef = useRef(center);
+  centerRef.current = center;
+  const zoomRef = useRef(zoom);
+  zoomRef.current = zoom;
+  const rotationRef = useRef(rotation);
+  rotationRef.current = rotation;
+
   useEffect(() => {
     let map: OSMBuildingsMap | null = null;
     let cancelled = false;
     let throttleTimer: ReturnType<typeof setTimeout> | null = null;
     let onChange: (() => void) | null = null;
+    let onLoad: (() => void) | null = null;
     let project: (() => void) | null = null;
+    let projectZones: (() => void) | null = null;
     let rafId = 0;
+    let revealTimer: ReturnType<typeof setTimeout> | null = null;
 
-    const effectiveTilt = tilt ?? (mode === "3d" ? TILT_3D : TILT_2D);
+    // Fresh map instance → cover it until the first paint (no red flash).
+    setTilesReady(false);
 
     // Load the OSMB engine and create a Google satellite session in parallel.
     Promise.all([loadOsmBuildings(), googleSatelliteTileUrl()])
       .then(([OSMBuildings, satUrl]) => {
         if (cancelled || !containerRef.current) return;
 
-        const start = clampToRegion(center, zoom);
+        const start = clampToRegion(centerRef.current, zoomRef.current);
+        const effectiveTilt =
+          tiltRef.current ?? (modeRef.current === "3d" ? TILT_3D : TILT_2D);
 
         map = new OSMBuildings({
           container: containerRef.current,
@@ -126,10 +196,34 @@ export function OsmBuildingsMap({
           minZoom: REGION_MIN_ZOOM,
           maxZoom: REGION_MAX_ZOOM,
           tilt: effectiveTilt,
-          rotation,
+          rotation: rotationRef.current,
           attribution: satUrl ? GOOGLE_ATTRIBUTION : MAP_ATTRIBUTION,
         });
         mapRef.current = map;
+
+        // Reveal the canvas only once OSMB has painted its first tiles. The
+        // fallback timer guarantees we never strand the cover if "load" is
+        // missed (e.g. fully-cached tiles, or a layer that never fires it).
+        onLoad = () => {
+          if (revealTimer) {
+            clearTimeout(revealTimer);
+            revealTimer = null;
+          }
+          setTilesReady(true);
+          // First paint done → getBounds()/getSize() are valid now. Re-project
+          // overlays in case marker/zone data arrived BEFORE the map was ready:
+          // at that point the projection bailed on non-finite bounds and, on an
+          // idle map, nothing else would have re-triggered it (zones never drew).
+          project?.();
+          projectZones?.();
+        };
+        map.on("load", onLoad);
+        // Fallback if "load" is missed (cached tiles, etc.): reveal AND project.
+        revealTimer = setTimeout(() => {
+          setTilesReady(true);
+          project?.();
+          projectZones?.();
+        }, 2500);
 
         // Ground: Google satellite (CORS-enabled) → falls back to CARTO if no key.
         map.addMapTiles(satUrl ?? BASE_TILE_URL);
@@ -195,23 +289,18 @@ export function OsmBuildingsMap({
             setProjected([]);
             return;
           }
-          let south: number, west: number, north: number, east: number;
+          let box: BBox | null;
           let size: { width: number; height: number };
           try {
-            const b = map.getBounds() as number[]; // [south, west, north, east]
-            [south, west, north, east] = b;
+            box = boundsToBox(map.getBounds());
             size = map.getSize();
           } catch {
             return;
           }
-          if (
-            ![south, west, north, east].every(Number.isFinite) ||
-            !size ||
-            east === west ||
-            north === south
-          ) {
+          if (!box || !size || box.east === box.west || box.north === box.south) {
             return;
           }
+          const { south, west, north, east } = box;
           const { width: w, height: h } = size;
           const next: ProjectedMarker[] = [];
           for (const m of ms) {
@@ -227,30 +316,25 @@ export function OsmBuildingsMap({
         map.on("resize", project);
 
         // ── Zone projection (damage circles) ─────────────────────────────
-        const projectZones = () => {
+        projectZones = () => {
           if (!map) return;
           const zs = zonesRef.current;
           if (!zs || zs.length === 0) {
             setProjectedZones([]);
             return;
           }
-          let south: number, west: number, north: number, east: number;
+          let box: BBox | null;
           let size: { width: number; height: number };
           try {
-            const b = map.getBounds() as number[];
-            [south, west, north, east] = b;
+            box = boundsToBox(map.getBounds());
             size = map.getSize();
           } catch {
             return;
           }
-          if (
-            ![south, west, north, east].every(Number.isFinite) ||
-            !size ||
-            east === west ||
-            north === south
-          ) {
+          if (!box || !size || box.east === box.west || box.north === box.south) {
             return;
           }
+          const { south, west, north, east } = box;
           const { width: w, height: h } = size;
           // metres-per-pixel derived from the lat span of the projected bbox.
           // 1 degree latitude ≈ 111_320 m (close enough for approximate circles).
@@ -259,14 +343,17 @@ export function OsmBuildingsMap({
           for (const z of zs) {
             const x = ((z.lng - west) / (east - west)) * w;
             const y = ((north - z.lat) / (north - south)) * h;
-            const radiusPx = z.radius_m / metersPerPx;
-            // Cull zones entirely off-screen (with generous margin = radiusPx).
-            if (
-              x + radiusPx < 0 ||
-              x - radiusPx > w ||
-              y + radiusPx < 0 ||
-              y - radiusPx > h
-            ) continue;
+            // Guard a degenerate bbox (tiny span → metersPerPx≈0 → a runaway
+            // ring). Hard-cap the pixel radius so one zone can't blanket the
+            // panel. (The solid-red full-screen wash was the OSMB canvas itself
+            // before tiles paint — handled by the load cover, not here.)
+            const rawRadiusPx =
+              Number.isFinite(metersPerPx) && metersPerPx > 0.001
+                ? z.radius_m / metersPerPx
+                : 0;
+            const radiusPx = Math.min(rawRadiusPx, 200);
+            // Cull by centre position only (fixed margin) — never by the radius.
+            if (x < -120 || x > w + 120 || y < -120 || y > h + 120) continue;
             next.push({ ...z, x, y, radiusPx });
           }
           setProjectedZones(next);
@@ -275,7 +362,7 @@ export function OsmBuildingsMap({
         map.on("change", projectZones);
         map.on("resize", projectZones);
 
-        rafId = requestAnimationFrame(() => { project?.(); projectZones(); });
+        rafId = requestAnimationFrame(() => { project?.(); projectZones?.(); });
       })
       .catch((err) => {
         // eslint-disable-next-line no-console
@@ -286,28 +373,31 @@ export function OsmBuildingsMap({
       cancelled = true;
       if (rafId) cancelAnimationFrame(rafId);
       if (throttleTimer) clearTimeout(throttleTimer);
+      if (revealTimer) clearTimeout(revealTimer);
       projectRef.current = null;
       projectZonesRef.current = null;
       mapRef.current = null;
       buildingsLayerRef.current = null;
       if (map) {
         if (onChange) map.off("change", onChange);
+        if (onLoad) map.off("load", onLoad);
         if (project) {
           map.off("change", project);
           map.off("resize", project);
         }
-        // projectZones was declared inside the closure; we use the ref to clean up.
-        const pz = projectZonesRef.current;
-        if (pz) {
-          map.off("change", pz);
-          map.off("resize", pz);
+        if (projectZones) {
+          map.off("change", projectZones);
+          map.off("resize", projectZones);
         }
         map.destroy();
         map = null;
       }
     };
-    // NOT re-initialising on `markers` or `zones` — separate effects re-project instead.
-  }, [mode, center, zoom, tilt, rotation]);
+    // Mount ONCE. Camera props (mode/center/zoom/tilt/rotation) are read via
+    // refs and applied imperatively in the effects below, so toggling 2D/3D
+    // never tears down and rebuilds the WebGL context (which would flash red).
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Re-project when the marker set changes (no map rebuild).
   useEffect(() => {
@@ -318,6 +408,49 @@ export function OsmBuildingsMap({
   useEffect(() => {
     projectZonesRef.current?.();
   }, [zones]);
+
+  // Imperative fly-to: recentre/zoom the camera when `focus` changes (clamped).
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !focus) return;
+    const result = clampToRegion(
+      { latitude: focus.lat, longitude: focus.lng },
+      focus.zoom ?? 14,
+    );
+    try {
+      map.setPosition(result.position);
+      map.setZoom(result.zoom);
+    } catch {
+      /* ignore transient setter failure */
+    }
+    // Re-project overlays immediately rather than waiting for the change event.
+    projectZonesRef.current?.();
+    projectRef.current?.();
+  }, [focus]);
+
+  // Switch 2D/3D by changing tilt IN PLACE — no map rebuild, so no red re-init
+  // flash and no redundant Google tile session per toggle.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return; // map still initialising → constructor seeds the tilt
+    const effectiveTilt = tilt ?? (mode === "3d" ? TILT_3D : TILT_2D);
+    try {
+      map.setTilt(effectiveTilt);
+    } catch {
+      /* ignore transient setter failure */
+    }
+  }, [mode, tilt]);
+
+  // Apply rotation/bearing changes in place.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    try {
+      map.setRotation(rotation);
+    } catch {
+      /* ignore transient setter failure */
+    }
+  }, [rotation]);
 
   // Toggle the OSM buildings layer live — add/remove without rebuilding the map.
   useEffect(() => {
@@ -345,46 +478,53 @@ export function OsmBuildingsMap({
       {/* OSM Buildings owns this element exclusively (it appends its canvas). */}
       <div ref={containerRef} className="absolute inset-0" />
 
-      {/* Damage zone circles projected over the canvas (pointer-events-none). */}
+      {/* Damage zone overlays projected over the canvas (pointer-events-none).
+          The radius ring is best-effort (approximate under 3D tilt); the centre
+          danger marker is fixed-size so a zone always reads clearly. */}
       {projectedZones.length > 0 && (
         <div className="pointer-events-none absolute inset-0 z-[4] overflow-hidden">
-          {projectedZones.map((z) => (
-            <div
-              key={z.id}
-              className="absolute -translate-x-1/2 -translate-y-1/2"
-              style={{ left: `${z.x}px`, top: `${z.y}px` }}
-            >
-              {/* Translucent damage ring */}
+          {projectedZones.map((z) => {
+            const hot = !!highlightZoneId && z.id === highlightZoneId;
+            const dotSize = hot ? 18 : 12;
+            return (
               <div
-                style={{
-                  width:  `${z.radiusPx * 2}px`,
-                  height: `${z.radiusPx * 2}px`,
-                  border: `2px solid rgba(220,38,38,${0.4 + z.severity * 0.4})`,
-                  backgroundColor: `rgba(220,38,38,${0.06 + z.severity * 0.10})`,
-                  borderRadius: "50%",
-                  position: "absolute",
-                  left: "50%",
-                  top: "50%",
-                  transform: "translate(-50%,-50%)",
-                }}
-              />
-              {/* Pulsing centre dot */}
-              <div
-                style={{
-                  width: "10px",
-                  height: "10px",
-                  borderRadius: "50%",
-                  backgroundColor: "rgba(220,38,38,0.9)",
-                  boxShadow: "0 0 0 0 rgba(220,38,38,0.6)",
-                  position: "absolute",
-                  left: "50%",
-                  top: "50%",
-                  transform: "translate(-50%,-50%)",
-                  animation: "vera-damage-pulse 1.8s ease-out infinite",
-                }}
-              />
-            </div>
-          ))}
+                key={z.id}
+                className="absolute -translate-x-1/2 -translate-y-1/2"
+                style={{ left: `${z.x}px`, top: `${z.y}px` }}
+              >
+                {/* Translucent damage ring (radius-scaled) */}
+                <div
+                  style={{
+                    width: `${Math.max(z.radiusPx, dotSize + 4) * 2}px`,
+                    height: `${Math.max(z.radiusPx, dotSize + 4) * 2}px`,
+                    border: `2px solid rgba(220,38,38,${hot ? 0.9 : 0.55})`,
+                    backgroundColor: `rgba(220,38,38,${hot ? 0.1 : 0.05})`,
+                    borderRadius: "50%",
+                    position: "absolute",
+                    left: "50%",
+                    top: "50%",
+                    transform: "translate(-50%,-50%)",
+                  }}
+                />
+                {/* Prominent centre danger marker (always visible, any tilt) */}
+                <div
+                  style={{
+                    width: `${dotSize}px`,
+                    height: `${dotSize}px`,
+                    borderRadius: "50%",
+                    backgroundColor: "#dc2626",
+                    border: "2px solid #fff",
+                    boxShadow: "0 1px 6px rgba(0,0,0,0.55)",
+                    position: "absolute",
+                    left: "50%",
+                    top: "50%",
+                    transform: "translate(-50%,-50%)",
+                    animation: `vera-damage-pulse ${hot ? "1.1s" : "2.2s"} ease-out infinite`,
+                  }}
+                />
+              </div>
+            );
+          })}
         </div>
       )}
 
@@ -413,6 +553,18 @@ export function OsmBuildingsMap({
           ))}
         </div>
       )}
+
+      {/* Neutral cover shown until OSMB paints its first tiles. Without it the
+          OSM Buildings WebGL canvas flashes solid RED during (re)initialisation
+          (its un-painted framebuffer), which is the "map flashing red" bug. */}
+      <div
+        aria-hidden={tilesReady}
+        className={`pointer-events-none absolute inset-0 z-[6] flex items-center justify-center bg-surface-2 transition-opacity duration-500 ${
+          tilesReady ? "opacity-0" : "opacity-100"
+        }`}
+      >
+        <span className="text-xs font-medium text-text-muted">Loading map…</span>
+      </div>
     </div>
   );
 }

@@ -100,9 +100,28 @@ function SourceChip({ source }: { source: DamageSource }) {
 
 /* ─── main card entry ──────────────────────────────────────────────────────── */
 
-function DamageEventCard({ event }: { event: DamageEvent }) {
+function DamageEventCard({ event, onClick }: { event: DamageEvent; onClick?: () => void }) {
   return (
-    <article className="border-b border-border-subtle px-4 py-3 last:border-b-0">
+    <article
+      onClick={onClick}
+      role={onClick ? "button" : undefined}
+      tabIndex={onClick ? 0 : undefined}
+      onKeyDown={
+        onClick
+          ? (e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                onClick();
+              }
+            }
+          : undefined
+      }
+      title={onClick ? "Fly to this zone" : undefined}
+      className={cn(
+        "border-b border-border-subtle px-4 py-3 last:border-b-0",
+        onClick && "cursor-pointer transition-colors hover:bg-surface-2",
+      )}
+    >
       {/* Header row */}
       <div className="mb-1.5 flex items-start justify-between gap-2">
         <h4 className="truncate text-sm font-semibold text-text-primary leading-snug" title={event.title}>
@@ -194,6 +213,7 @@ function DamageEventCard({ event }: { event: DamageEvent }) {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Open source"
+                      onClick={(e) => e.stopPropagation()}
                       className="shrink-0 text-accent hover:text-accent-hover"
                     >
                       <ExternalLink size={11} aria-hidden="true" />
@@ -215,9 +235,11 @@ function DamageEventCard({ event }: { event: DamageEvent }) {
 export interface DamageDetectionsPanelProps {
   events: DamageEvent[];
   loading?: boolean;
+  /** Clicking an event flies the map to its zone. */
+  onEventClick?: (event: DamageEvent) => void;
 }
 
-export function DamageDetectionsPanel({ events, loading = false }: DamageDetectionsPanelProps) {
+export function DamageDetectionsPanel({ events, loading = false, onEventClick }: DamageDetectionsPanelProps) {
   return (
     <Panel
       title="Damage Detections"
@@ -239,7 +261,10 @@ export function DamageDetectionsPanel({ events, loading = false }: DamageDetecti
         <ul aria-label="Damage detections list">
           {events.map((ev) => (
             <li key={ev.id}>
-              <DamageEventCard event={ev} />
+              <DamageEventCard
+                event={ev}
+                onClick={onEventClick ? () => onEventClick(ev) : undefined}
+              />
             </li>
           ))}
         </ul>

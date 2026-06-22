@@ -62,9 +62,9 @@ function cardsToAlerts(cards: AssetCard[]): AlertEvent[] {
   const events: AlertEvent[] = [];
 
   for (const card of nonOp) {
-    for (const ev of card.evidence) {
+    card.evidence.forEach((ev, i) => {
       events.push({
-        id:      `${card.id}-${ev.source}`,
+        id:      `${card.id}-${ev.source}-${i}`,
         time:    ev.ts
           ? new Date(ev.ts).toLocaleTimeString("uk-UA", { hour: "2-digit", minute: "2-digit", second: "2-digit" })
           : "--:--:--",
@@ -73,7 +73,7 @@ function cardsToAlerts(cards: AssetCard[]): AlertEvent[] {
         state:   card.status,
         live:    card.status === "offline",
       });
-    }
+    });
   }
 
   // Sort: offline first, then degraded, then unknown; within each by asset name.
@@ -94,6 +94,8 @@ export function Dashboard() {
   const [selectedId, setSelectedId]     = useState<string | null>(null);
   const [damageEvents, setDamageEvents] = useState<DamageEvent[]>([]);
   const [damageLoading, setDamageLoading] = useState(true);
+  const [mapFocus, setMapFocus]         = useState<{ lat: number; lng: number; zoom?: number } | null>(null);
+  const [focusedDamageId, setFocusedDamageId] = useState<string | null>(null);
 
   // Load cards once on mount.
   useEffect(() => {
@@ -255,6 +257,8 @@ export function Dashboard() {
           zones={damageZones}
           showDamage={showDamage}
           onToggleDamage={() => setShowDamage((v) => !v)}
+          focus={mapFocus}
+          highlightZoneId={focusedDamageId}
           active
         />
 
@@ -316,6 +320,11 @@ export function Dashboard() {
         <DamageDetectionsPanel
           events={damageEvents}
           loading={damageLoading}
+          onEventClick={(ev) => {
+            setShowDamage(true);
+            setFocusedDamageId(ev.id);
+            setMapFocus({ lat: ev.lat, lng: ev.lng, zoom: 14 });
+          }}
         />
       </section>
     </div>
