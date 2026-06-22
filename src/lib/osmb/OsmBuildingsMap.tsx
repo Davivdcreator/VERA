@@ -45,8 +45,6 @@ export interface MapMarker {
   label?: string;
 }
 
-type ProjectedMarker = MapMarker & { x: number; y: number };
-
 interface ProjectedZone extends DamageZone {
   x: number;
   y: number;
@@ -130,7 +128,10 @@ export function OsmBuildingsMap({
   className = "",
 }: OsmBuildingsMapProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const [projected, setProjected] = useState<ProjectedMarker[]>([]);
+  // Asset-pin DOM nodes, positioned imperatively (no React state in the hot
+  // path) so they track the map every frame and never lag behind it — see the
+  // rAF loop in the init effect.
+  const markerEls = useRef<Map<string, HTMLDivElement>>(new Map());
   const [projectedZones, setProjectedZones] = useState<ProjectedZone[]>([]);
   // Hides the WebGL canvas behind a neutral cover until OSMB fires its first
   // "load" (tiles painted). OSM Buildings' un-painted canvas reads as a solid
@@ -172,9 +173,10 @@ export function OsmBuildingsMap({
     let throttleTimer: ReturnType<typeof setTimeout> | null = null;
     let onChange: (() => void) | null = null;
     let onLoad: (() => void) | null = null;
-    let project: (() => void) | null = null;
+    let positionMarkers: (() => void) | null = null;
     let projectZones: (() => void) | null = null;
     let rafId = 0;
+    let markerRaf = 0;
     let revealTimer: ReturnType<typeof setTimeout> | null = null;
 
     // Fresh map instance → cover it until the first paint (no red flash).
@@ -214,14 +216,14 @@ export function OsmBuildingsMap({
           // overlays in case marker/zone data arrived BEFORE the map was ready:
           // at that point the projection bailed on non-finite bounds and, on an
           // idle map, nothing else would have re-triggered it (zones never drew).
-          project?.();
+          positionMarkers?.();
           projectZones?.();
         };
         map.on("load", onLoad);
         // Fallback if "load" is missed (cached tiles, etc.): reveal AND project.
         revealTimer = setTimeout(() => {
           setTilesReady(true);
-          project?.();
+          positionMarkers?.();
           projectZones?.();
         }, 2500);
 
@@ -281,14 +283,14 @@ export function OsmBuildingsMap({
         };
         map.on("change", onChange);
 
-        // ── Marker projection (reads the latest markers via ref) ──────────
-        project = () => {
+        // ── Marker positioning (direct DOM writes — no React state) ───────
+        // Each pin's position is written straight to its node's `transform`, so
+        // pins never lag a frame behind the map (the old React-state path made
+        // them "swim"). transform writes don't trigger layout, so this is cheap.
+        positionMarkers = () => {
           if (!map) return;
           const ms = markersRef.current;
-          if (!ms || ms.length === 0) {
-            setProjected([]);
-            return;
-          }
+          if (!ms || ms.length === 0) return;
           let box: BBox | null;
           let size: { width: number; height: number };
           try {
@@ -302,18 +304,30 @@ export function OsmBuildingsMap({
           }
           const { south, west, north, east } = box;
           const { width: w, height: h } = size;
-          const next: ProjectedMarker[] = [];
           for (const m of ms) {
+            const el = markerEls.current.get(m.id);
+            if (!el) continue;
             const x = ((m.lng - west) / (east - west)) * w;
             const y = ((north - m.lat) / (north - south)) * h;
-            if (x < -40 || x > w + 40 || y < -40 || y > h + 40) continue;
-            next.push({ ...m, x, y });
+            if (x < -40 || x > w + 40 || y < -40 || y > h + 40) {
+              el.style.visibility = "hidden";
+            } else {
+              el.style.visibility = "visible";
+              el.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+            }
           }
-          setProjected(next);
         };
-        projectRef.current = project;
-        map.on("change", project);
-        map.on("resize", project);
+        projectRef.current = positionMarkers;
+
+        // Re-position pins every frame so they stay locked to the map during
+        // pan/zoom/rotate (OSMB's `change` event can fire less often than it
+        // renders, which is what let pins lag). Runs until unmount.
+        const markerTick = () => {
+          if (cancelled) return;
+          positionMarkers?.();
+          markerRaf = requestAnimationFrame(markerTick);
+        };
+        markerRaf = requestAnimationFrame(markerTick);
 
         // ── Zone projection (damage circles) ─────────────────────────────
         projectZones = () => {
@@ -362,7 +376,7 @@ export function OsmBuildingsMap({
         map.on("change", projectZones);
         map.on("resize", projectZones);
 
-        rafId = requestAnimationFrame(() => { project?.(); projectZones?.(); });
+        rafId = requestAnimationFrame(() => { positionMarkers?.(); projectZones?.(); });
       })
       .catch((err) => {
         // eslint-disable-next-line no-console
@@ -372,6 +386,7 @@ export function OsmBuildingsMap({
     return () => {
       cancelled = true;
       if (rafId) cancelAnimationFrame(rafId);
+      if (markerRaf) cancelAnimationFrame(markerRaf);
       if (throttleTimer) clearTimeout(throttleTimer);
       if (revealTimer) clearTimeout(revealTimer);
       projectRef.current = null;
@@ -381,10 +396,6 @@ export function OsmBuildingsMap({
       if (map) {
         if (onChange) map.off("change", onChange);
         if (onLoad) map.off("load", onLoad);
-        if (project) {
-          map.off("change", project);
-          map.off("resize", project);
-        }
         if (projectZones) {
           map.off("change", projectZones);
           map.off("resize", projectZones);
@@ -539,25 +550,31 @@ export function OsmBuildingsMap({
         </div>
       )}
 
-      {/* Clickable, state-colored asset pins projected over the canvas. */}
+      {/* Clickable, state-colored asset pins. Each node is positioned by the rAF
+          loop via `transform` (left/top fixed at 0,0) so it tracks the map with
+          no React-state lag. Hidden until first positioned. */}
       {markers && markers.length > 0 && (
         <div className="pointer-events-none absolute inset-0 z-[5] overflow-hidden">
-          {projected.map((p) => (
+          {markers.map((m) => (
             <div
-              key={p.id}
-              className="absolute flex -translate-x-1/2 -translate-y-1/2 flex-col items-center"
-              style={{ left: `${p.x}px`, top: `${p.y}px` }}
+              key={m.id}
+              ref={(el) => {
+                if (el) markerEls.current.set(m.id, el);
+                else markerEls.current.delete(m.id);
+              }}
+              className="absolute left-0 top-0 flex flex-col items-center"
+              style={{ visibility: "hidden", willChange: "transform" }}
             >
               <button
                 type="button"
-                onClick={() => onMarkerClick?.(p.id)}
-                aria-label={p.label ?? "asset"}
+                onClick={() => onMarkerClick?.(m.id)}
+                aria-label={m.label ?? "asset"}
                 className="pointer-events-auto block h-3.5 w-3.5 cursor-pointer rounded-full ring-2 ring-white transition-transform hover:scale-125"
-                style={{ backgroundColor: p.color, boxShadow: "0 1px 4px rgba(15,23,42,0.55)" }}
+                style={{ backgroundColor: m.color, boxShadow: "0 1px 4px rgba(15,23,42,0.55)" }}
               />
-              {p.label && (
+              {m.label && (
                 <span className="pointer-events-none mt-1 max-w-[128px] truncate rounded-sm bg-surface-overlay px-1.5 py-0.5 text-[10px] font-medium text-text-primary shadow-[var(--shadow-overlay)] backdrop-blur-sm">
-                  {p.label}
+                  {m.label}
                 </span>
               )}
             </div>
