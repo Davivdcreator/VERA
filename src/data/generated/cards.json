@@ -1,0 +1,1494 @@
+[
+  {
+    "id": "2eaf166a-6626-4982-b411-48db631b6bb0",
+    "osm_type": "way",
+    "osm_id": 374336200,
+    "name": "Medical Rehabilitation Center",
+    "name_native": "Центр медичної реабілітації та санаторного лікування",
+    "type": "hospital",
+    "lat": 50.549219,
+    "lng": 30.344429,
+    "criticality": 0.349,
+    "criticality_breakdown": {
+      "population_component": 0.029,
+      "service_class": 0.3,
+      "dependency_fanout": 0.02,
+      "capacity_component": 0,
+      "total": 0.349
+    },
+    "metrics": {
+      "beds": "unknown",
+      "emergency": "unknown",
+      "speciality": "general",
+      "operator_type": "government"
+    },
+    "tags": {
+      "access": "customers",
+      "addr:housenumber": "60",
+      "addr:postcode": "04075",
+      "addr:street": "вулиця Квітки Цісик",
+      "amenity": "hospital",
+      "healthcare": "hospital",
+      "name": "Центр медичної реабілітації та санаторного лікування",
+      "name:en": "Medical Rehabilitation Center",
+      "name:uk": "Центр медичної реабілітації та санаторного лікування",
+      "operator": "Міністерство оборони України",
+      "operator:type": "government",
+      "phone": "+380 44 401 9122",
+      "website": "https://puschavodica.com.ua/"
+    },
+    "status": "operational",
+    "state_confidence": 0.939,
+    "evidence": [
+      {
+        "source": "sample",
+        "detail": "No damage signals detected for Medical Rehabilitation Center",
+        "ts": "2026-06-22T15:42:28.351Z"
+      }
+    ],
+    "radius_m": 2000,
+    "population_affected": 41469,
+    "zones": [
+      "Obolon"
+    ],
+    "downstream": [],
+    "upstream": [
+      {
+        "assetId": "530dd218-cc85-404b-9d28-c13ee1712a3f",
+        "kind": "supplies_water",
+        "weight": 0.679
+      }
+    ],
+    "source": "osm",
+    "harvested_at": "2026-06-22T15:42:28.352Z"
+  },
+  {
+    "id": "aff1b80b-1aa6-4ccb-a479-42500d768d56",
+    "osm_type": "way",
+    "osm_id": 617663761,
+    "name": "Centralna District Power Plant",
+    "name_native": "Районна котельня «Центральна»",
+    "type": "power_plant",
+    "lat": 50.469199,
+    "lng": 30.363731,
+    "criticality": 0.66,
+    "criticality_breakdown": {
+      "population_component": 0.35,
+      "service_class": 0.27,
+      "dependency_fanout": 0.04,
+      "capacity_component": 0,
+      "total": 0.66
+    },
+    "metrics": {
+      "capacity_mw": "unknown",
+      "avg_output_mw": "unknown",
+      "source": "gas",
+      "method": "combustion"
+    },
+    "tags": {
+      "addr:housenumber": "36б",
+      "addr:street": "бульвар Академіка Вернадського",
+      "barrier": "wall",
+      "landuse": "industrial",
+      "name": "Районна котельня «Центральна»",
+      "name:en": "Centralna District Power Plant",
+      "name:ru": "Районная котельная «Центральная»",
+      "name:uk": "Районна котельня «Центральна»",
+      "operator": "КП «Київтеплоенерго»",
+      "plant:method": "combustion",
+      "plant:output:electricity": "yes",
+      "plant:output:hot_water": "yes",
+      "plant:source": "gas",
+      "power": "plant",
+      "start_date": "1969",
+      "wall:material": "concrete",
+      "wall:type": "plate"
+    },
+    "status": "degraded",
+    "state_confidence": 0.65,
+    "evidence": [
+      {
+        "source": "sample",
+        "detail": "Reduced capacity signal near Centralna District Power Plant",
+        "ref": "FIRMS-VIIRS-sample",
+        "ts": "2026-06-22T15:42:28.352Z"
+      }
+    ],
+    "radius_m": 8000,
+    "population_affected": 663504,
+    "zones": [
+      "Sviatoshyn"
+    ],
+    "downstream": [
+      {
+        "assetId": "0b5ace3f-c375-4966-9dad-7c7cb12326fa",
+        "kind": "powers",
+        "weight": 0.615
+      },
+      {
+        "assetId": "ce409563-71de-4648-88d6-e9e39438070e",
+        "kind": "powers",
+        "weight": 0.48
+      }
+    ],
+    "upstream": [],
+    "source": "osm",
+    "harvested_at": "2026-06-22T15:42:28.352Z"
+  },
+  {
+    "id": "d9879b14-50ed-4bf0-bd0e-f41e6214e679",
+    "osm_type": "way",
+    "osm_id": 27183638,
+    "name": "ТП-3413",
+    "name_native": null,
+    "type": "substation",
+    "lat": 50.440716,
+    "lng": 30.6098,
+    "criticality": 0.5633,
+    "criticality_breakdown": {
+      "population_component": 0.2613,
+      "service_class": 0.24,
+      "dependency_fanout": 0.06,
+      "capacity_component": 0.002,
+      "total": 0.5633
+    },
+    "metrics": {
+      "voltage_kv": 10,
+      "role": "minor_distribution",
+      "rating": "4220 kVA",
+      "operator": "Київенерго"
+    },
+    "tags": {
+      "addr:housenumber": "58",
+      "addr:street": "вулиця Євгена Сверстюка",
+      "building": "yes",
+      "building:levels": "2",
+      "name": "ТП-3413",
+      "name:uk": "ТП-3413",
+      "operator": "Київенерго",
+      "power": "substation",
+      "rating": "4220 kVA",
+      "ref": "3413",
+      "substation": "minor_distribution",
+      "voltage": "10000;400"
+    },
+    "status": "operational",
+    "state_confidence": 0.789,
+    "evidence": [
+      {
+        "source": "sample",
+        "detail": "No damage signals detected for ТП-3413",
+        "ts": "2026-06-22T15:42:28.352Z"
+      }
+    ],
+    "radius_m": 6000,
+    "population_affected": 373221,
+    "zones": [
+      "Kyiv"
+    ],
+    "downstream": [],
+    "upstream": [
+      {
+        "assetId": "b1ebcfe9-a4d6-46bb-948b-9474e1de7feb",
+        "kind": "powers",
+        "weight": 0.642
+      },
+      {
+        "assetId": "73e94449-a255-44d5-923b-87763605f793",
+        "kind": "powers",
+        "weight": 0.48
+      },
+      {
+        "assetId": "d861a609-9bdc-4267-bc7c-3e1cdbc4520e",
+        "kind": "powers",
+        "weight": 0.778
+      }
+    ],
+    "source": "osm",
+    "harvested_at": "2026-06-22T15:42:28.352Z"
+  },
+  {
+    "id": "530dd218-cc85-404b-9d28-c13ee1712a3f",
+    "osm_type": "way",
+    "osm_id": 368433751,
+    "name": "Водопровідна насосна станція «Біличанська»",
+    "name_native": null,
+    "type": "water_works",
+    "lat": 50.477214,
+    "lng": 30.339344,
+    "criticality": 0.6213,
+    "criticality_breakdown": {
+      "population_component": 0.2613,
+      "service_class": 0.3,
+      "dependency_fanout": 0.06,
+      "capacity_component": 0,
+      "total": 0.6213
+    },
+    "metrics": {
+      "capacity_m3_day": "unknown",
+      "population_served": "unknown",
+      "operator": "unknown"
+    },
+    "tags": {
+      "addr:housenumber": "1",
+      "addr:postcode": "03164",
+      "addr:street": "вулиця Гаршина",
+      "man_made": "water_works",
+      "name": "Водопровідна насосна станція «Біличанська»",
+      "name:ru": "Водопроводная насосная станция «Беличанская»",
+      "name:uk": "Водопровідна насосна станція «Біличанська»"
+    },
+    "status": "degraded",
+    "state_confidence": 0.65,
+    "evidence": [
+      {
+        "source": "sample",
+        "detail": "Reduced capacity signal near Водопровідна насосна станція «Біличанська»",
+        "ref": "FIRMS-VIIRS-sample",
+        "ts": "2026-06-22T15:42:28.352Z"
+      }
+    ],
+    "radius_m": 6000,
+    "population_affected": 373221,
+    "zones": [
+      "Sviatoshyn"
+    ],
+    "downstream": [
+      {
+        "assetId": "2eaf166a-6626-4982-b411-48db631b6bb0",
+        "kind": "supplies_water",
+        "weight": 0.679
+      },
+      {
+        "assetId": "228dc285-c3e2-4015-a5bf-44800ff4c5a1",
+        "kind": "supplies_water",
+        "weight": 0.64
+      },
+      {
+        "assetId": "4e80dcd0-9d16-4a4a-aa6d-dbe7b0c1888f",
+        "kind": "supplies_water",
+        "weight": 0.833
+      }
+    ],
+    "upstream": [],
+    "source": "osm",
+    "harvested_at": "2026-06-22T15:42:28.352Z"
+  },
+  {
+    "id": "4e80dcd0-9d16-4a4a-aa6d-dbe7b0c1888f",
+    "osm_type": "way",
+    "osm_id": 60779264,
+    "name": "Очисні споруди дощових вод \"Біличі\"",
+    "name_native": null,
+    "type": "wastewater",
+    "lat": 50.463238,
+    "lng": 30.323582,
+    "criticality": 0.3911,
+    "criticality_breakdown": {
+      "population_component": 0.1161,
+      "service_class": 0.255,
+      "dependency_fanout": 0.02,
+      "capacity_component": 0,
+      "total": 0.3911
+    },
+    "metrics": {
+      "capacity_m3_day": "unknown",
+      "population_served": "unknown",
+      "operator": "unknown"
+    },
+    "tags": {
+      "man_made": "wastewater_plant",
+      "name": "Очисні споруди дощових вод \"Біличі\"",
+      "name:ru": "Очистные сооружения дождевых вод \"Беличи\"",
+      "name:uk": "Очисні споруди дощових вод \"Біличі\""
+    },
+    "status": "operational",
+    "state_confidence": 0.856,
+    "evidence": [
+      {
+        "source": "sample",
+        "detail": "No damage signals detected for Очисні споруди дощових вод \"Біличі\"",
+        "ts": "2026-06-22T15:42:28.352Z"
+      }
+    ],
+    "radius_m": 4000,
+    "population_affected": 165876,
+    "zones": [
+      "Sviatoshyn"
+    ],
+    "downstream": [],
+    "upstream": [
+      {
+        "assetId": "530dd218-cc85-404b-9d28-c13ee1712a3f",
+        "kind": "supplies_water",
+        "weight": 0.833
+      }
+    ],
+    "source": "osm",
+    "harvested_at": "2026-06-22T15:42:28.352Z"
+  },
+  {
+    "id": "59277c6a-bfd5-4a06-a343-480da1d25542",
+    "osm_type": "way",
+    "osm_id": 244211418,
+    "name": "Rybalskyi Railway Bridge",
+    "name_native": "Рибальський залізничний міст",
+    "type": "bridge",
+    "lat": 50.483703,
+    "lng": 30.547485,
+    "criticality": 0.2663,
+    "criticality_breakdown": {
+      "population_component": 0.0163,
+      "service_class": 0.21,
+      "dependency_fanout": 0.04,
+      "capacity_component": 0,
+      "total": 0.2663
+    },
+    "metrics": {
+      "lanes": "unknown",
+      "structure": "yes",
+      "highway": "rail",
+      "electrified": "contact_line",
+      "max_speed": "unknown"
+    },
+    "tags": {
+      "alt_name:en": "Rybalsky Railway Bridge",
+      "bridge": "yes",
+      "electrified": "contact_line",
+      "frequency": "50",
+      "gauge": "1520",
+      "layer": "1",
+      "name": "Рибальський залізничний міст",
+      "name:de": "Rybalskyj-Eisenbahnbrücke",
+      "name:en": "Rybalskyi Railway Bridge",
+      "name:es": "Rybalsky Puente de Ferroviario",
+      "name:fr": "Pont de chemin de fer Rybalskyï",
+      "name:it": "Ponte ferroviario Rybal's'kyj",
+      "name:uk": "Рибальський залізничний міст",
+      "old_name": "Петрівський міст",
+      "old_name:de": "Petriwskyj-Eisenbahnbrücke",
+      "old_name:uk": "Петрівський міст",
+      "oneway": "no",
+      "passenger_lines": "1",
+      "railway": "rail",
+      "usage": "main",
+      "voltage": "25000",
+      "wikidata": "Q3398559",
+      "wikipedia": "uk:Петрівський міст"
+    },
+    "status": "operational",
+    "state_confidence": 0.839,
+    "evidence": [
+      {
+        "source": "sample",
+        "detail": "No damage signals detected for Rybalskyi Railway Bridge",
+        "ts": "2026-06-22T15:42:28.352Z"
+      }
+    ],
+    "radius_m": 1500,
+    "population_affected": 23326,
+    "zones": [
+      "Shevchenko"
+    ],
+    "downstream": [
+      {
+        "assetId": "ae89e3f7-0ab4-4127-bff7-929a06ed29e7",
+        "kind": "provides_access",
+        "weight": 0.706
+      },
+      {
+        "assetId": "8aaaf343-e8f5-4af7-b3ec-00f4f7f71dd9",
+        "kind": "provides_access",
+        "weight": 0.772
+      }
+    ],
+    "upstream": [],
+    "source": "osm",
+    "harvested_at": "2026-06-22T15:42:28.352Z"
+  },
+  {
+    "id": "b1ebcfe9-a4d6-46bb-948b-9474e1de7feb",
+    "osm_type": "relation",
+    "osm_id": 6674937,
+    "name": "Kyiv CHP-5 Power Plant",
+    "name_native": "Київська ТЕЦ-5",
+    "type": "power_plant",
+    "lat": 50.394218,
+    "lng": 30.568362,
+    "criticality": 0.85,
+    "criticality_breakdown": {
+      "population_component": 0.35,
+      "service_class": 0.27,
+      "dependency_fanout": 0.08,
+      "capacity_component": 0.15,
+      "total": 0.85
+    },
+    "metrics": {
+      "capacity_mw": 700,
+      "avg_output_mw": 385,
+      "source": "gas",
+      "method": "combustion"
+    },
+    "tags": {
+      "landuse": "industrial",
+      "name": "Київська ТЕЦ-5",
+      "name:en": "Kyiv CHP-5 Power Plant",
+      "name:ru": "Киевская ТЭЦ-5",
+      "name:uk": "Київська ТЕЦ-5",
+      "operator": "ВАТ Київенерго",
+      "plant:method": "combustion",
+      "plant:output:electricity": "700 MW",
+      "plant:output:hot_water": "yes",
+      "plant:source": "gas",
+      "power": "plant",
+      "type": "multipolygon",
+      "wikidata": "Q12110202",
+      "wikipedia": "uk:Київська теплоелектроцентраль № 5"
+    },
+    "status": "offline",
+    "state_confidence": 0.82,
+    "evidence": [
+      {
+        "source": "sample",
+        "detail": "Thermal anomaly detected near Kyiv CHP-5 Power Plant — FRP elevated",
+        "ref": "FIRMS-VIIRS-sample",
+        "ts": "2026-06-22T15:42:28.352Z"
+      },
+      {
+        "source": "sample",
+        "detail": "Telegram channel reports facility not responding",
+        "ref": "tg-sample",
+        "ts": "2026-06-22T15:42:28.352Z"
+      }
+    ],
+    "radius_m": 12000,
+    "population_affected": 1492885,
+    "zones": [
+      "Darnytsia"
+    ],
+    "downstream": [
+      {
+        "assetId": "ce409563-71de-4648-88d6-e9e39438070e",
+        "kind": "powers",
+        "weight": 0.647
+      },
+      {
+        "assetId": "d9879b14-50ed-4bf0-bd0e-f41e6214e679",
+        "kind": "powers",
+        "weight": 0.642
+      },
+      {
+        "assetId": "0b5ace3f-c375-4966-9dad-7c7cb12326fa",
+        "kind": "powers",
+        "weight": 0.48
+      }
+    ],
+    "upstream": [
+      {
+        "assetId": "e95164e4-d2d6-4741-9e1b-1e6df90fe692",
+        "kind": "provides_access",
+        "weight": 0.922
+      }
+    ],
+    "source": "osm",
+    "harvested_at": "2026-06-22T15:42:28.352Z"
+  },
+  {
+    "id": "73e94449-a255-44d5-923b-87763605f793",
+    "osm_type": "way",
+    "osm_id": 106296381,
+    "name": "Kyiv CHP-6 Power Plant",
+    "name_native": "Київська ТЕЦ-6",
+    "type": "power_plant",
+    "lat": 50.531233,
+    "lng": 30.666985,
+    "criticality": 0.7871,
+    "criticality_breakdown": {
+      "population_component": 0.35,
+      "service_class": 0.27,
+      "dependency_fanout": 0.06,
+      "capacity_component": 0.1071,
+      "total": 0.7871
+    },
+    "metrics": {
+      "capacity_mw": 500,
+      "avg_output_mw": 275,
+      "source": "gas",
+      "method": "combustion"
+    },
+    "tags": {
+      "landuse": "industrial",
+      "name": "Київська ТЕЦ-6",
+      "name:en": "Kyiv CHP-6 Power Plant",
+      "plant:method": "combustion",
+      "plant:output:electricity": "500 MW",
+      "plant:output:hot_water": "yes",
+      "plant:source": "gas",
+      "power": "plant",
+      "wikidata": "Q12110203",
+      "wikipedia": "uk:Київська ТЕЦ-6"
+    },
+    "status": "offline",
+    "state_confidence": 0.82,
+    "evidence": [
+      {
+        "source": "sample",
+        "detail": "Thermal anomaly detected near Kyiv CHP-6 Power Plant — FRP elevated",
+        "ref": "FIRMS-VIIRS-sample",
+        "ts": "2026-06-22T15:42:28.352Z"
+      },
+      {
+        "source": "sample",
+        "detail": "Telegram channel reports facility not responding",
+        "ref": "tg-sample",
+        "ts": "2026-06-22T15:42:28.352Z"
+      }
+    ],
+    "radius_m": 12000,
+    "population_affected": 1492885,
+    "zones": [
+      "Dnipro"
+    ],
+    "downstream": [
+      {
+        "assetId": "ae89e3f7-0ab4-4127-bff7-929a06ed29e7",
+        "kind": "powers",
+        "weight": 0.655
+      },
+      {
+        "assetId": "d9879b14-50ed-4bf0-bd0e-f41e6214e679",
+        "kind": "powers",
+        "weight": 0.48
+      },
+      {
+        "assetId": "ce409563-71de-4648-88d6-e9e39438070e",
+        "kind": "powers",
+        "weight": 0.48
+      }
+    ],
+    "upstream": [],
+    "source": "osm",
+    "harvested_at": "2026-06-22T15:42:28.352Z"
+  },
+  {
+    "id": "d861a609-9bdc-4267-bc7c-3e1cdbc4520e",
+    "osm_type": "way",
+    "osm_id": 218722215,
+    "name": "Kyiv-4 (Darnytska) Power Plant",
+    "name_native": "ТЕЦ-4 (Дарницька ТЕЦ)",
+    "type": "power_plant",
+    "lat": 50.447978,
+    "lng": 30.64408,
+    "criticality": 0.4764,
+    "criticality_breakdown": {
+      "population_component": 0.1321,
+      "service_class": 0.27,
+      "dependency_fanout": 0.04,
+      "capacity_component": 0.0343,
+      "total": 0.4764
+    },
+    "metrics": {
+      "capacity_mw": 160,
+      "avg_output_mw": 88,
+      "source": "coal",
+      "method": "combustion"
+    },
+    "tags": {
+      "landuse": "industrial",
+      "name": "ТЕЦ-4 (Дарницька ТЕЦ)",
+      "name:en": "Kyiv-4 (Darnytska) Power Plant",
+      "name:ru": "ТЭЦ-4 (Дарницкая ТЭЦ)",
+      "name:uk": "ТЕЦ-4 (Дарницька ТЕЦ)",
+      "plant:method": "combustion",
+      "plant:output:electricity": "160 MW",
+      "plant:output:hot_water": "yes",
+      "plant:source": "coal",
+      "power": "plant",
+      "source": "https://www.industryabout.com/country-territories-3/1343-ukraine/fossil-fuels-energy/19483-kyiv-4-coal-power-plant",
+      "wikidata": "Q12099561",
+      "wikipedia": "uk:Дарницька ТЕЦ"
+    },
+    "status": "operational",
+    "state_confidence": 0.832,
+    "evidence": [
+      {
+        "source": "sample",
+        "detail": "No damage signals detected for Kyiv-4 (Darnytska) Power Plant",
+        "ts": "2026-06-22T15:42:28.352Z"
+      }
+    ],
+    "radius_m": 4267,
+    "population_affected": 188760,
+    "zones": [
+      "Kyiv"
+    ],
+    "downstream": [
+      {
+        "assetId": "d9879b14-50ed-4bf0-bd0e-f41e6214e679",
+        "kind": "powers",
+        "weight": 0.778
+      },
+      {
+        "assetId": "ae89e3f7-0ab4-4127-bff7-929a06ed29e7",
+        "kind": "powers",
+        "weight": 0.612
+      }
+    ],
+    "upstream": [],
+    "source": "osm",
+    "harvested_at": "2026-06-22T15:42:28.352Z"
+  },
+  {
+    "id": "ae89e3f7-0ab4-4127-bff7-929a06ed29e7",
+    "osm_type": "way",
+    "osm_id": 34870385,
+    "name": "Тягова пiдстанцiя",
+    "name_native": null,
+    "type": "substation",
+    "lat": 50.502044,
+    "lng": 30.601913,
+    "criticality": 0.5614,
+    "criticality_breakdown": {
+      "population_component": 0.2613,
+      "service_class": 0.24,
+      "dependency_fanout": 0.06,
+      "capacity_component": 0.0001,
+      "total": 0.5614
+    },
+    "metrics": {
+      "voltage_kv": 0.6,
+      "role": "traction",
+      "rating": "unknown",
+      "operator": "КП «Київпастранс»"
+    },
+    "tags": {
+      "addr:housenumber": "9А",
+      "addr:street": "вулиця Рональда Рейгана",
+      "building": "service",
+      "frequency": "50;0",
+      "location": "indoor",
+      "name": "Тягова пiдстанцiя",
+      "name:ru": "Тяговая подстанция",
+      "operator": "КП «Київпастранс»",
+      "power": "substation",
+      "ref": "ТП-4788",
+      "substation": "traction",
+      "voltage": "600"
+    },
+    "status": "operational",
+    "state_confidence": 0.803,
+    "evidence": [
+      {
+        "source": "sample",
+        "detail": "No damage signals detected for Тягова пiдстанцiя",
+        "ts": "2026-06-22T15:42:28.352Z"
+      }
+    ],
+    "radius_m": 6000,
+    "population_affected": 373221,
+    "zones": [
+      "Dnipro"
+    ],
+    "downstream": [],
+    "upstream": [
+      {
+        "assetId": "73e94449-a255-44d5-923b-87763605f793",
+        "kind": "powers",
+        "weight": 0.655
+      },
+      {
+        "assetId": "d861a609-9bdc-4267-bc7c-3e1cdbc4520e",
+        "kind": "powers",
+        "weight": 0.612
+      },
+      {
+        "assetId": "59277c6a-bfd5-4a06-a343-480da1d25542",
+        "kind": "provides_access",
+        "weight": 0.706
+      }
+    ],
+    "source": "osm",
+    "harvested_at": "2026-06-22T15:42:28.352Z"
+  },
+  {
+    "id": "ce409563-71de-4648-88d6-e9e39438070e",
+    "osm_type": "way",
+    "osm_id": 60300975,
+    "name": "Центр",
+    "name_native": null,
+    "type": "substation",
+    "lat": 50.437982,
+    "lng": 30.523286,
+    "criticality": 0.6433,
+    "criticality_breakdown": {
+      "population_component": 0.2613,
+      "service_class": 0.24,
+      "dependency_fanout": 0.12,
+      "capacity_component": 0.022,
+      "total": 0.6433
+    },
+    "metrics": {
+      "voltage_kv": 110,
+      "role": "distribution",
+      "rating": "126 MVA",
+      "operator": "Київські електромережі"
+    },
+    "tags": {
+      "addr:housenumber": "1",
+      "addr:street": "Еспланадна вулиця",
+      "building": "service",
+      "location": "indoor",
+      "name": "Центр",
+      "name:uk": "Центр",
+      "operator": "Київські електромережі",
+      "power": "substation",
+      "rating": "126 MVA",
+      "start_date": "2000",
+      "substation": "distribution",
+      "voltage": "110000;10000"
+    },
+    "status": "degraded",
+    "state_confidence": 0.65,
+    "evidence": [
+      {
+        "source": "sample",
+        "detail": "Reduced capacity signal near Центр",
+        "ref": "FIRMS-VIIRS-sample",
+        "ts": "2026-06-22T15:42:28.352Z"
+      }
+    ],
+    "radius_m": 6000,
+    "population_affected": 373221,
+    "zones": [
+      "Kyiv"
+    ],
+    "downstream": [
+      {
+        "assetId": "d6270d89-5997-41c1-92ce-ddeab6f8a900",
+        "kind": "powers",
+        "weight": 0.891
+      }
+    ],
+    "upstream": [
+      {
+        "assetId": "aff1b80b-1aa6-4ccb-a479-42500d768d56",
+        "kind": "powers",
+        "weight": 0.48
+      },
+      {
+        "assetId": "b1ebcfe9-a4d6-46bb-948b-9474e1de7feb",
+        "kind": "powers",
+        "weight": 0.647
+      },
+      {
+        "assetId": "73e94449-a255-44d5-923b-87763605f793",
+        "kind": "powers",
+        "weight": 0.48
+      },
+      {
+        "assetId": "3ab381ab-e499-44c2-8fc3-43a0d5e83636",
+        "kind": "provides_access",
+        "weight": 0.795
+      },
+      {
+        "assetId": "00e51f00-a815-4571-8459-b2cac8ada6e5",
+        "kind": "provides_access",
+        "weight": 0.809
+      }
+    ],
+    "source": "osm",
+    "harvested_at": "2026-06-22T15:42:28.352Z"
+  },
+  {
+    "id": "0b5ace3f-c375-4966-9dad-7c7cb12326fa",
+    "osm_type": "way",
+    "osm_id": 93799807,
+    "name": "Відрадненська тягова підстанція",
+    "name_native": null,
+    "type": "substation",
+    "lat": 50.425103,
+    "lng": 30.426669,
+    "criticality": 0.5433,
+    "criticality_breakdown": {
+      "population_component": 0.2613,
+      "service_class": 0.24,
+      "dependency_fanout": 0.04,
+      "capacity_component": 0.002,
+      "total": 0.5433
+    },
+    "metrics": {
+      "voltage_kv": 10,
+      "role": "traction",
+      "rating": "4235 kVA",
+      "operator": "КП «Київпастранс»"
+    },
+    "tags": {
+      "addr:housenumber": "24Б",
+      "addr:street": "Відрадний проспект",
+      "building": "service",
+      "building:levels": "2",
+      "building:material": "brick",
+      "frequency": "50;0",
+      "location": "indoor",
+      "name": "Відрадненська тягова підстанція",
+      "name:ru": "Отрадненская тяговая подстанция",
+      "operator": "КП «Київпастранс»",
+      "power": "substation",
+      "rating": "4235 kVA",
+      "ref": "ТП-4149",
+      "substation": "traction",
+      "voltage": "10000;600"
+    },
+    "status": "operational",
+    "state_confidence": 0.759,
+    "evidence": [
+      {
+        "source": "sample",
+        "detail": "No damage signals detected for Відрадненська тягова підстанція",
+        "ts": "2026-06-22T15:42:28.352Z"
+      }
+    ],
+    "radius_m": 6000,
+    "population_affected": 373221,
+    "zones": [
+      "Holosiiv"
+    ],
+    "downstream": [],
+    "upstream": [
+      {
+        "assetId": "aff1b80b-1aa6-4ccb-a479-42500d768d56",
+        "kind": "powers",
+        "weight": 0.615
+      },
+      {
+        "assetId": "b1ebcfe9-a4d6-46bb-948b-9474e1de7feb",
+        "kind": "powers",
+        "weight": 0.48
+      }
+    ],
+    "source": "osm",
+    "harvested_at": "2026-06-22T15:42:28.352Z"
+  },
+  {
+    "id": "d6270d89-5997-41c1-92ce-ddeab6f8a900",
+    "osm_type": "way",
+    "osm_id": 725966127,
+    "name": "National Institute of Cardiovascular Surgery",
+    "name_native": "Національний Інститут серцево-судинної хірургії ім. М. М. Амосова",
+    "type": "hospital",
+    "lat": 50.419561,
+    "lng": 30.497744,
+    "criticality": 0.389,
+    "criticality_breakdown": {
+      "population_component": 0.029,
+      "service_class": 0.3,
+      "dependency_fanout": 0.06,
+      "capacity_component": 0,
+      "total": 0.389
+    },
+    "metrics": {
+      "beds": "unknown",
+      "emergency": "unknown",
+      "speciality": "cardiology",
+      "operator_type": "public"
+    },
+    "tags": {
+      "addr:housenumber": "6",
+      "addr:postcode": "03038",
+      "addr:street": "вулиця Миколи Амосова",
+      "amenity": "hospital",
+      "healthcare": "hospital",
+      "healthcare:speciality": "cardiology",
+      "name": "Національний Інститут серцево-судинної хірургії ім. М. М. Амосова",
+      "name:en": "National Institute of Cardiovascular Surgery",
+      "name:ru": "Национальный институт сердечно-сосудистой хирургии им. Н.М.Амосова",
+      "name:uk": "Національний Інститут серцево-судинної хірургії ім. М. М. Амосова",
+      "operator": "НАМН України",
+      "operator:type": "public",
+      "phone": "+380 44 333 8408",
+      "website": "https://amosovinstitute.org.ua/",
+      "wikidata": "Q4315004",
+      "wikipedia": "uk:Національний інститут серцево-судинної хірургії імені Миколи Амосова НАМН України"
+    },
+    "status": "operational",
+    "state_confidence": 0.858,
+    "evidence": [
+      {
+        "source": "sample",
+        "detail": "No damage signals detected for National Institute of Cardiovascular Surgery",
+        "ts": "2026-06-22T15:42:28.352Z"
+      }
+    ],
+    "radius_m": 2000,
+    "population_affected": 41469,
+    "zones": [
+      "Holosiiv"
+    ],
+    "downstream": [],
+    "upstream": [
+      {
+        "assetId": "ce409563-71de-4648-88d6-e9e39438070e",
+        "kind": "powers",
+        "weight": 0.891
+      },
+      {
+        "assetId": "3ab381ab-e499-44c2-8fc3-43a0d5e83636",
+        "kind": "provides_access",
+        "weight": 0.818
+      },
+      {
+        "assetId": "00e51f00-a815-4571-8459-b2cac8ada6e5",
+        "kind": "provides_access",
+        "weight": 0.821
+      }
+    ],
+    "source": "osm",
+    "harvested_at": "2026-06-22T15:42:28.352Z"
+  },
+  {
+    "id": "228dc285-c3e2-4015-a5bf-44800ff4c5a1",
+    "osm_type": "way",
+    "osm_id": 741868666,
+    "name": "V.P. Komisarenko Endocrinology and Metabolism Institute",
+    "name_native": "Інститут ендокринології та обміну речовин ім. В.П. Комісаренка",
+    "type": "hospital",
+    "lat": 50.520444,
+    "lng": 30.446942,
+    "criticality": 0.389,
+    "criticality_breakdown": {
+      "population_component": 0.029,
+      "service_class": 0.3,
+      "dependency_fanout": 0.06,
+      "capacity_component": 0,
+      "total": 0.389
+    },
+    "metrics": {
+      "beds": "unknown",
+      "emergency": "unknown",
+      "speciality": "endocrinology",
+      "operator_type": "public"
+    },
+    "tags": {
+      "addr:housenumber": "69",
+      "addr:postcode": "04114",
+      "addr:street": "Вишгородська вулиця",
+      "amenity": "hospital",
+      "fax": "+380 44 428 1996",
+      "healthcare": "hospital",
+      "healthcare:speciality": "endocrinology",
+      "name": "Інститут ендокринології та обміну речовин ім. В.П. Комісаренка",
+      "name:en": "V.P. Komisarenko Endocrinology and Metabolism Institute",
+      "name:uk": "Інститут ендокринології та обміну речовин ім. В.П. Комісаренка",
+      "operator": "НАМН України",
+      "operator:type": "public",
+      "phone": "+380 44 430 3694",
+      "website": "http://iem.net.ua/"
+    },
+    "status": "operational",
+    "state_confidence": 0.793,
+    "evidence": [
+      {
+        "source": "sample",
+        "detail": "No damage signals detected for V.P. Komisarenko Endocrinology and Metabolism Institute",
+        "ts": "2026-06-22T15:42:28.352Z"
+      }
+    ],
+    "radius_m": 2000,
+    "population_affected": 41469,
+    "zones": [
+      "Obolon"
+    ],
+    "downstream": [],
+    "upstream": [
+      {
+        "assetId": "8aaaf343-e8f5-4af7-b3ec-00f4f7f71dd9",
+        "kind": "supplies_water",
+        "weight": 0.788
+      },
+      {
+        "assetId": "49e22ed9-8683-46a4-a198-f8a359a3101b",
+        "kind": "supplies_water",
+        "weight": 0.778
+      },
+      {
+        "assetId": "530dd218-cc85-404b-9d28-c13ee1712a3f",
+        "kind": "supplies_water",
+        "weight": 0.64
+      }
+    ],
+    "source": "osm",
+    "harvested_at": "2026-06-22T15:42:28.352Z"
+  },
+  {
+    "id": "e58d4061-c5ae-4c4a-a32f-6f88ca2044af",
+    "osm_type": "relation",
+    "osm_id": 4001948,
+    "name": "Kyiv Clinical Hospital of Railroad Transport 2",
+    "name_native": "Київська клінічна лікарня на залізничному транспорті №2",
+    "type": "hospital",
+    "lat": 50.439876,
+    "lng": 30.480272,
+    "criticality": 0.409,
+    "criticality_breakdown": {
+      "population_component": 0.029,
+      "service_class": 0.3,
+      "dependency_fanout": 0.08,
+      "capacity_component": 0,
+      "total": 0.409
+    },
+    "metrics": {
+      "beds": "unknown",
+      "emergency": "unknown",
+      "speciality": "general",
+      "operator_type": "public/government"
+    },
+    "tags": {
+      "addr:housenumber": "9",
+      "addr:postcode": "01049",
+      "addr:street": "проспект Повітряних Сил",
+      "amenity": "hospital",
+      "healthcare": "hospital",
+      "name": "Київська клінічна лікарня на залізничному транспорті №2",
+      "name:en": "Kyiv Clinical Hospital of Railroad Transport 2",
+      "name:ru": "Киевская клиническая больница на железнодорожном транспорте №2",
+      "name:uk": "Київська клінічна лікарня на залізничному транспорті №2",
+      "old_name": "Дорожня клінічна лікарня №2 станції Київ",
+      "old_name:uk": "Дорожня клінічна лікарня №2 станції Київ",
+      "operator": "Центр охорони здоров’я” АТ “Укрзалізниця”",
+      "operator:type": "public/government",
+      "phone": "+380 44 465 1843",
+      "ref": "2",
+      "type": "multipolygon",
+      "website": "https://uz.gov.ua/about/general_information/entertainments/f_coz/kklzt2/"
+    },
+    "status": "operational",
+    "state_confidence": 0.782,
+    "evidence": [
+      {
+        "source": "sample",
+        "detail": "No damage signals detected for Kyiv Clinical Hospital of Railroad Transport 2",
+        "ts": "2026-06-22T15:42:28.352Z"
+      }
+    ],
+    "radius_m": 2000,
+    "population_affected": 41469,
+    "zones": [
+      "Holosiiv"
+    ],
+    "downstream": [],
+    "upstream": [
+      {
+        "assetId": "8aaaf343-e8f5-4af7-b3ec-00f4f7f71dd9",
+        "kind": "supplies_water",
+        "weight": 0.788
+      },
+      {
+        "assetId": "49e22ed9-8683-46a4-a198-f8a359a3101b",
+        "kind": "supplies_water",
+        "weight": 0.848
+      },
+      {
+        "assetId": "3ab381ab-e499-44c2-8fc3-43a0d5e83636",
+        "kind": "provides_access",
+        "weight": 0.856
+      },
+      {
+        "assetId": "00e51f00-a815-4571-8459-b2cac8ada6e5",
+        "kind": "provides_access",
+        "weight": 0.837
+      }
+    ],
+    "source": "osm",
+    "harvested_at": "2026-06-22T15:42:28.352Z"
+  },
+  {
+    "id": "3ab381ab-e499-44c2-8fc3-43a0d5e83636",
+    "osm_type": "way",
+    "osm_id": 271173743,
+    "name": "Kyiv Funicular",
+    "name_native": "Київський фунікулер",
+    "type": "bridge",
+    "lat": 50.457179,
+    "lng": 30.523094,
+    "criticality": 0.3263,
+    "criticality_breakdown": {
+      "population_component": 0.0163,
+      "service_class": 0.21,
+      "dependency_fanout": 0.1,
+      "capacity_component": 0,
+      "total": 0.3263
+    },
+    "metrics": {
+      "lanes": "unknown",
+      "structure": "yes",
+      "highway": "funicular",
+      "electrified": "contact_line",
+      "max_speed": 9
+    },
+    "tags": {
+      "bridge": "yes",
+      "electrified": "contact_line",
+      "frequency": "0",
+      "gauge": "1200",
+      "layer": "1",
+      "maxspeed": "9",
+      "name": "Київський фунікулер",
+      "name:de": "Standseilbahn Kiew",
+      "name:en": "Kyiv Funicular",
+      "name:uk": "Київський фунікулер",
+      "network": "Київський фунікулер",
+      "railway": "funicular",
+      "voltage": "600"
+    },
+    "status": "operational",
+    "state_confidence": 0.901,
+    "evidence": [
+      {
+        "source": "sample",
+        "detail": "No damage signals detected for Kyiv Funicular",
+        "ts": "2026-06-22T15:42:28.352Z"
+      }
+    ],
+    "radius_m": 1500,
+    "population_affected": 23326,
+    "zones": [
+      "Kyiv"
+    ],
+    "downstream": [
+      {
+        "assetId": "ce409563-71de-4648-88d6-e9e39438070e",
+        "kind": "provides_access",
+        "weight": 0.795
+      },
+      {
+        "assetId": "d6270d89-5997-41c1-92ce-ddeab6f8a900",
+        "kind": "provides_access",
+        "weight": 0.818
+      },
+      {
+        "assetId": "e58d4061-c5ae-4c4a-a32f-6f88ca2044af",
+        "kind": "provides_access",
+        "weight": 0.856
+      },
+      {
+        "assetId": "8aaaf343-e8f5-4af7-b3ec-00f4f7f71dd9",
+        "kind": "provides_access",
+        "weight": 0.764
+      },
+      {
+        "assetId": "49e22ed9-8683-46a4-a198-f8a359a3101b",
+        "kind": "provides_access",
+        "weight": 0.754
+      }
+    ],
+    "upstream": [],
+    "source": "osm",
+    "harvested_at": "2026-06-22T15:42:28.352Z"
+  },
+  {
+    "id": "00e51f00-a815-4571-8459-b2cac8ada6e5",
+    "osm_type": "way",
+    "osm_id": 130279873,
+    "name": "Park Bridge",
+    "name_native": "Парковий міст",
+    "type": "bridge",
+    "lat": 50.452296,
+    "lng": 30.534348,
+    "criticality": 0.3263,
+    "criticality_breakdown": {
+      "population_component": 0.0163,
+      "service_class": 0.21,
+      "dependency_fanout": 0.1,
+      "capacity_component": 0,
+      "total": 0.3263
+    },
+    "metrics": {
+      "lanes": "unknown",
+      "structure": "yes",
+      "highway": "footway",
+      "electrified": "no",
+      "max_speed": "unknown"
+    },
+    "tags": {
+      "alt_name": "Закоханих міст",
+      "bicycle": "yes",
+      "bridge": "yes",
+      "highway": "footway",
+      "layer": "1",
+      "name": "Парковий міст",
+      "name:en": "Park Bridge",
+      "name:ru": "Парковый мост",
+      "name:uk": "Парковий міст",
+      "start_date": "1912",
+      "surface": "wood",
+      "website": "https://gyrno.net/info/en/putiv/bridge-park-devils-bridge",
+      "wikidata": "Q12138950",
+      "wikipedia": "uk:Парковий міст"
+    },
+    "status": "operational",
+    "state_confidence": 0.88,
+    "evidence": [
+      {
+        "source": "sample",
+        "detail": "No damage signals detected for Park Bridge",
+        "ts": "2026-06-22T15:42:28.352Z"
+      }
+    ],
+    "radius_m": 1500,
+    "population_affected": 23326,
+    "zones": [
+      "Kyiv"
+    ],
+    "downstream": [
+      {
+        "assetId": "ce409563-71de-4648-88d6-e9e39438070e",
+        "kind": "provides_access",
+        "weight": 0.809
+      },
+      {
+        "assetId": "d6270d89-5997-41c1-92ce-ddeab6f8a900",
+        "kind": "provides_access",
+        "weight": 0.821
+      },
+      {
+        "assetId": "e58d4061-c5ae-4c4a-a32f-6f88ca2044af",
+        "kind": "provides_access",
+        "weight": 0.837
+      },
+      {
+        "assetId": "8aaaf343-e8f5-4af7-b3ec-00f4f7f71dd9",
+        "kind": "provides_access",
+        "weight": 0.729
+      },
+      {
+        "assetId": "49e22ed9-8683-46a4-a198-f8a359a3101b",
+        "kind": "provides_access",
+        "weight": 0.715
+      }
+    ],
+    "upstream": [],
+    "source": "osm",
+    "harvested_at": "2026-06-22T15:42:28.352Z"
+  },
+  {
+    "id": "8aaaf343-e8f5-4af7-b3ec-00f4f7f71dd9",
+    "osm_type": "way",
+    "osm_id": 561528035,
+    "name": "КНС «Оболонська»",
+    "name_native": null,
+    "type": "pumping_station",
+    "lat": 50.486079,
+    "lng": 30.498887,
+    "criticality": 0.4711,
+    "criticality_breakdown": {
+      "population_component": 0.1161,
+      "service_class": 0.255,
+      "dependency_fanout": 0.1,
+      "capacity_component": 0,
+      "total": 0.4711
+    },
+    "metrics": {
+      "substance": "wastewater",
+      "operator": "Київводоканал"
+    },
+    "tags": {
+      "addr:housenumber": "14-А",
+      "addr:street": "проспект Степана Бандери",
+      "landuse": "industrial",
+      "man_made": "pumping_station",
+      "name": "КНС «Оболонська»",
+      "name:uk": "КНС «Оболонська»",
+      "operator": "Київводоканал",
+      "pumping_station": "wastewater"
+    },
+    "status": "operational",
+    "state_confidence": 0.804,
+    "evidence": [
+      {
+        "source": "sample",
+        "detail": "No damage signals detected for КНС «Оболонська»",
+        "ts": "2026-06-22T15:42:28.352Z"
+      }
+    ],
+    "radius_m": 4000,
+    "population_affected": 165876,
+    "zones": [
+      "Shevchenko"
+    ],
+    "downstream": [
+      {
+        "assetId": "228dc285-c3e2-4015-a5bf-44800ff4c5a1",
+        "kind": "supplies_water",
+        "weight": 0.788
+      },
+      {
+        "assetId": "e58d4061-c5ae-4c4a-a32f-6f88ca2044af",
+        "kind": "supplies_water",
+        "weight": 0.788
+      }
+    ],
+    "upstream": [
+      {
+        "assetId": "59277c6a-bfd5-4a06-a343-480da1d25542",
+        "kind": "provides_access",
+        "weight": 0.772
+      },
+      {
+        "assetId": "3ab381ab-e499-44c2-8fc3-43a0d5e83636",
+        "kind": "provides_access",
+        "weight": 0.764
+      },
+      {
+        "assetId": "00e51f00-a815-4571-8459-b2cac8ada6e5",
+        "kind": "provides_access",
+        "weight": 0.729
+      }
+    ],
+    "source": "osm",
+    "harvested_at": "2026-06-22T15:42:28.352Z"
+  },
+  {
+    "id": "49e22ed9-8683-46a4-a198-f8a359a3101b",
+    "osm_type": "way",
+    "osm_id": 747018654,
+    "name": "Smorodyncka Water Pumping Station",
+    "name_native": "Водопровідна насосна станція «Смородинська»",
+    "type": "pumping_station",
+    "lat": 50.473806,
+    "lng": 30.474483,
+    "criticality": 0.4511,
+    "criticality_breakdown": {
+      "population_component": 0.1161,
+      "service_class": 0.255,
+      "dependency_fanout": 0.08,
+      "capacity_component": 0,
+      "total": 0.4511
+    },
+    "metrics": {
+      "substance": "water",
+      "operator": "Київводоконал"
+    },
+    "tags": {
+      "landuse": "industrial",
+      "man_made": "pumping_station",
+      "name": "Водопровідна насосна станція «Смородинська»",
+      "name:en": "Smorodyncka Water Pumping Station",
+      "name:uk": "Водопровідна насосна станція «Смородинська»",
+      "operator": "Київводоконал",
+      "substance": "water"
+    },
+    "status": "operational",
+    "state_confidence": 0.946,
+    "evidence": [
+      {
+        "source": "sample",
+        "detail": "No damage signals detected for Smorodyncka Water Pumping Station",
+        "ts": "2026-06-22T15:42:28.352Z"
+      }
+    ],
+    "radius_m": 4000,
+    "population_affected": 165876,
+    "zones": [
+      "Shevchenko"
+    ],
+    "downstream": [
+      {
+        "assetId": "228dc285-c3e2-4015-a5bf-44800ff4c5a1",
+        "kind": "supplies_water",
+        "weight": 0.778
+      },
+      {
+        "assetId": "e58d4061-c5ae-4c4a-a32f-6f88ca2044af",
+        "kind": "supplies_water",
+        "weight": 0.848
+      }
+    ],
+    "upstream": [
+      {
+        "assetId": "3ab381ab-e499-44c2-8fc3-43a0d5e83636",
+        "kind": "provides_access",
+        "weight": 0.754
+      },
+      {
+        "assetId": "00e51f00-a815-4571-8459-b2cac8ada6e5",
+        "kind": "provides_access",
+        "weight": 0.715
+      }
+    ],
+    "source": "osm",
+    "harvested_at": "2026-06-22T15:42:28.352Z"
+  },
+  {
+    "id": "e95164e4-d2d6-4741-9e1b-1e6df90fe692",
+    "osm_type": "way",
+    "osm_id": 4335942,
+    "name": "Pivdennyi Bridge",
+    "name_native": "Південний міст",
+    "type": "bridge",
+    "lat": 50.39734,
+    "lng": 30.572299,
+    "criticality": 0.3213,
+    "criticality_breakdown": {
+      "population_component": 0.0163,
+      "service_class": 0.21,
+      "dependency_fanout": 0.02,
+      "capacity_component": 0.075,
+      "total": 0.3213
+    },
+    "metrics": {
+      "lanes": 3,
+      "structure": "beam",
+      "highway": "trunk",
+      "electrified": "no",
+      "max_speed": 50
+    },
+    "tags": {
+      "bicycle": "yes",
+      "bridge": "yes",
+      "bridge:structure": "beam",
+      "bus": "yes",
+      "foot": "no",
+      "highway": "trunk",
+      "int_ref": "E 40",
+      "lanes": "3",
+      "layer": "1",
+      "maxspeed": "50",
+      "maxspeed:conditional": "80 @ (Apr- Oct)",
+      "motor_vehicle": "permit",
+      "name": "Південний міст",
+      "name:de": "Südbrücke",
+      "name:en": "Pivdennyi Bridge",
+      "name:es": "Puente Sur",
+      "name:ru": "Южный мост",
+      "name:uk": "Південний міст",
+      "oneway": "yes",
+      "sidewalk": "right",
+      "smoothness": "intermediate",
+      "surface": "asphalt"
+    },
+    "status": "operational",
+    "state_confidence": 0.938,
+    "evidence": [
+      {
+        "source": "sample",
+        "detail": "No damage signals detected for Pivdennyi Bridge",
+        "ts": "2026-06-22T15:42:28.352Z"
+      }
+    ],
+    "radius_m": 1500,
+    "population_affected": 23326,
+    "zones": [
+      "Darnytsia"
+    ],
+    "downstream": [
+      {
+        "assetId": "b1ebcfe9-a4d6-46bb-948b-9474e1de7feb",
+        "kind": "provides_access",
+        "weight": 0.922
+      }
+    ],
+    "upstream": [],
+    "source": "osm",
+    "harvested_at": "2026-06-22T15:42:28.352Z"
+  }
+]

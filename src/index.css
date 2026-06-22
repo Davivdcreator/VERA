@@ -1,70 +1,148 @@
 @import "tailwindcss";
 
+/* ──────────────────────────────────────────────────────────────────────────
+   VERA design tokens — LIGHT theme (the only theme; dark mode was removed).
+   Civic command-center on a bright surface: clean white panels, legible slate
+   text, one cyan accent, and semantic infrastructure-status colors deepened to
+   keep AA contrast on white.
+   ────────────────────────────────────────────────────────────────────────── */
 @theme {
-  --color-canvas: #0a0f1a;
-  --color-panel: #0f1626;
-  --color-panel-2: #131c30;
-  --color-edge: #1f2c46;
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
-    sans-serif;
+  /* ---- Fonts ---- */
+  --font-sans: "Avenir Next", "Avenir", "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", "Roboto Mono", ui-monospace, "Cascadia Code", Menlo, monospace;
+
+  /* ---- Surfaces (0 = page, 1 = raised panels) ---- */
+  --color-surface-0: #EEF2F8;
+  --color-surface-1: #FFFFFF;
+  --color-surface-2: #F4F7FB;
+  --color-surface-3: #E7EDF6;
+  --color-surface-overlay: rgba(255, 255, 255, 0.92);
+
+  /* ---- Borders ---- */
+  --color-border-subtle: #E6EBF3;
+  --color-border-default: #D2DAE8;
+  --color-border-strong: #B4C0D6;
+  --color-border-accent: #128C9C;
+
+  /* ---- Text ---- */
+  --color-text-primary: #0E1626;
+  --color-text-secondary: #44536E;
+  --color-text-muted: #6B7A93;
+  --color-text-inverse: #FFFFFF;
+  --color-text-disabled: #A2AEC2;
+
+  /* ---- Brand + accent ---- */
+  --color-brand: #2E7DF6;
+  --color-brand-hover: #1E6AE0;
+  --color-accent: #0FA3B6;
+  --color-accent-hover: #0B8FA0;
+  --color-accent-pressed: #097B8A;
+  --color-accent-soft: rgba(15, 163, 182, 0.12);
+
+  /* ---- Status: infrastructure state ---- */
+  --color-status-operational: #1F9D58;
+  --color-status-operational-soft: rgba(31, 157, 88, 0.14);
+  --color-status-degraded: #B9791C;
+  --color-status-degraded-soft: rgba(185, 121, 28, 0.14);
+  --color-status-offline: #D23B40;
+  --color-status-offline-soft: rgba(210, 59, 64, 0.12);
+  --color-status-unknown: #64728C;
+  --color-status-unknown-soft: rgba(100, 114, 140, 0.14);
+
+  /* ---- Feedback ---- */
+  --color-info: #2E7DF6;
+  --color-info-soft: rgba(46, 125, 246, 0.12);
+  --color-success: #1F9D58;
+  --color-success-soft: rgba(31, 157, 88, 0.14);
+  --color-warning: #B9791C;
+  --color-warning-soft: rgba(185, 121, 28, 0.14);
+  --color-danger: #D23B40;
+  --color-danger-soft: rgba(210, 59, 64, 0.12);
+
+  /* ---- Data-viz categorical ---- */
+  --color-viz-1: #109BAE;
+  --color-viz-2: #4F6CF0;
+  --color-viz-3: #B9791C;
+  --color-viz-4: #9D4EDD;
+  --color-viz-5: #1F9D58;
+  --color-viz-6: #E2622F;
+
+  /* ---- Priority heat ramp (low → critical) ---- */
+  --color-heat-1: #CBD9E8;
+  --color-heat-2: #7FB0C9;
+  --color-heat-3: #E0A33E;
+  --color-heat-4: #E2742F;
+  --color-heat-5: #D23B40;
+
+  /* ---- Radii ---- */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;    /* default control radius (buttons, inputs, badges) */
+  --radius-lg: 12px;   /* cards / panels */
+  --radius-xl: 16px;   /* large feature panels, map chrome container */
+  --radius-pill: 9999px;
+
+  /* ---- Shadows / elevation (soft, slate-tinted) ---- */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.10);
+  --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.14);
+  --shadow-overlay: 0 8px 24px rgba(15, 23, 42, 0.16);
+  --shadow-focus: 0 0 0 3px rgba(15, 163, 182, 0.30);
+  --shadow-glow-accent: 0 0 16px rgba(15, 163, 182, 0.22);
+  --shadow-glow-critical: 0 0 16px rgba(210, 59, 64, 0.28);
+
+  /* ---- Motion ---- */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
 }
 
-html,
-body,
-#root {
-  height: 100%;
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    background: var(--color-surface-0);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  /* tabular numerics everywhere a mono class is used */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
 }
 
-body {
-  margin: 0;
-  background: radial-gradient(
-      1200px 600px at 70% -10%,
-      rgba(56, 189, 248, 0.08),
-      transparent 60%
-    ),
-    var(--color-canvas);
-  color: #e2e8f0;
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Thin scrollbars for the dense ops panels. */
-*::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-*::-webkit-scrollbar-thumb {
-  background: #24324f;
-  border-radius: 8px;
-}
-*::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-@keyframes vera-ping {
+/* Slow 2s pulse — used by the live indicator and critical alarm dots only.
+   Gated behind prefers-reduced-motion per the design system (§7). */
+@keyframes vera-pulse {
   0% {
-    transform: scale(1);
-    opacity: 0.7;
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
   }
   100% {
-    transform: scale(2.4);
-    opacity: 0;
+    opacity: 1;
   }
-}
-.vera-ping {
-  animation: vera-ping 1.6s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
-@keyframes vera-fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(-4px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.animate-pulse-live {
+  animation: vera-pulse 2s ease-in-out infinite;
 }
-.vera-fade-in {
-  animation: vera-fade-in 0.25s ease-out;
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse-live {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -3,23 +3,26 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "VERA — real-time infrastructure triage intelligence: fuse scattered, uncertain data into defensible repair-priority decisions.",
+  "description": "VERA",
   "scripts": {
     "dev": "vite",
     "build": "tsc -p tsconfig.json --noEmit && vite build",
     "preview": "vite preview",
-    "test": "vitest run",
-    "test:watch": "vitest",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@loaders.gl/3d-tiles": "^4.4.3",
+    "@loaders.gl/core": "^4.4.3",
     "@supabase/supabase-js": "^2.45.4",
+    "cesium": "^1.142.0",
     "date-fns": "^4.1.0",
+    "deck.gl": "^9.3.4",
     "lucide-react": "^0.460.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.1.1",
     "recharts": "^2.13.3",
+    "vite-plugin-cesium": "^1.2.23",
     "zustand": "^5.0.2"
   },
   "devDependencies": {
