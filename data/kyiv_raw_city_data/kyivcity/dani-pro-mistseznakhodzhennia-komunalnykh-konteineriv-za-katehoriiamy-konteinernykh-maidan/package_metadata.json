@@ -1,0 +1,244 @@
+{
+  "added_to_favorites_number": 1,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "improvements",
+  "collection_basis": "Закон України «Про житлово-комунальні послуги», Закон України «Про управління відходами», Кабінету Міністрів України від 08.06.2023 № 835 «Про затвердження Правил надання послуги з управління побутовими відходами та типових договорів про надання послуги з управління побутовими відходами», розпорядження начальника КМВА від 31.01.2023 № 59 «Про затвердження норм надання послуг з вивезення побутових відходів у місті Києві на 2023-2027 роки»",
+  "creator_user_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+  "id": "7c3f3f34-8edd-484f-84c8-cfe16fc9f754",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-17T08:27:35.058972",
+  "metadata_modified": "2026-06-16T12:41:13.131978",
+  "name": "dani-pro-mistseznakhodzhennia-komunalnykh-konteineriv-za-katehoriiamy-konteinernykh-maidanc-dep-zhki",
+  "notes": "Набір даних містить інформацію про місцезнаходження контейнерних майданчиків, обслуговуючі компанії, балансоутримувачів, графіки очищення у розрізі кожного майданчика та дня тижня, місця прийому небезпечних відходів, місця роздільного збору твердих побутових відходів.  \r\nНабір оновлюється до 15-го числа місяця наступного за звітнім.",
+  "num_resources": 1,
+  "num_tags": 9,
+  "number_of_all_downloads": 19,
+  "number_of_views": 389,
+  "organization": {
+    "id": "cc7f5e28-63a6-4077-81cf-8f7a1256ffbe",
+    "name": "dep-zhki",
+    "title": "Департамент житлово-комунальної інфраструктури",
+    "type": "organization",
+    "description": "Забезпечує функціонування та розвиток систем тепло-, водопостачання та водовідведення. Координує роботу комунальних служб у сфері ЖКГ, поводження з відходами та інженерного захисту територій.",
+    "image_url": "2026-05-15-121810.680531ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.385952",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "33695540",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Велика Житомирська, 15-А",
+    "email": "infrastructure@kyivcity.gov.ua",
+    "phone": "+380442792921",
+    "number_of_linked_packages": 19,
+    "date_of_refresh": "2026-06-16T15:16:19.275654",
+    "number_of_views": 222,
+    "number_of_categories": 8,
+    "number_of_all_downloads": 376,
+    "average_rating": "4.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "cc7f5e28-63a6-4077-81cf-8f7a1256ffbe",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "moderation_date": "2026-05-05T14:52:10.102891",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Оксана Єгорова",
+  "responsible_person_id": "cce09501-8503-4975-be16-8f5f1ceee10c",
+  "state": "active",
+  "title": "Дані про місцезнаходження комунальних контейнерів (за категоріями), контейнерних майданчиків, місць прийому небезпечних відходів, вторинної сировини",
+  "type": "dataset",
+  "update_frequency": "monthly",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "cc7f5e28-63a6-4077-81cf-8f7a1256ffbe",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-17T08:32:27.137173",
+      "data_owner": "18fb3777-327a-43d8-9721-195600929f82",
+      "data_period_end": "2026-06-01",
+      "data_period_start": "2026-05-01",
+      "datastore_active": true,
+      "description": "Ресурс містить інформацію про контейнерні майданчики, зокрема адреси, координати, склад, тип, об’єми облаштованих контейнерів, можливість роздільного збору вторинної сировини.",
+      "format": "CSV",
+      "hash": "",
+      "id": "7db5d553-5db2-4bd8-aba0-7bf489495055",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-16T12:41:13.098059",
+      "metadata_modified": "2026-06-16T12:41:13.150763",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "containers.csv",
+      "number_of_all_downloads": 18,
+      "number_of_views": 123,
+      "package_id": "7c3f3f34-8edd-484f-84c8-cfe16fc9f754",
+      "position": 0,
+      "resource_code": "containers_",
+      "resource_type": null,
+      "size": 2333666,
+      "source": "",
+      "state": "active",
+      "tracking_summary": {
+        "total": 123,
+        "recent": 123
+      },
+      "ua-select-search-field-administrator-org": "Департамент житлово-комунальної інфраструктури",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Контейнерні майданчики (containers_)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-17T08:32:27.750475",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-17T08:32:51.700614",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-04-29T08:57:04.974290",
+            "status": "pending",
+            "moderator_id": "cce09501-8503-4975-be16-8f5f1ceee10c"
+          },
+          {
+            "date": "2026-04-29T09:19:30.167021",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-04-29T09:19:31.236679",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-13T12:07:28.402413",
+            "status": "pending",
+            "moderator_id": "cce09501-8503-4975-be16-8f5f1ceee10c"
+          },
+          {
+            "date": "2026-05-13T13:39:19.292890",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-06-16T12:16:19.332701",
+            "status": "pending",
+            "moderator_id": "cce09501-8503-4975-be16-8f5f1ceee10c"
+          }
+        ],
+        "created_by": "mariia-novokhatska",
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-06-16T12:41:00.019477",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/7c3f3f34-8edd-484f-84c8-cfe16fc9f754/resource/7db5d553-5db2-4bd8-aba0-7bf489495055/download/containers.csv",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "відходи",
+      "id": "396b2e93-f6b5-4716-ae73-10be86825469",
+      "name": "відходи",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "графік",
+      "id": "5f6a7a4c-bde6-4fd9-a399-6ddc2088a34b",
+      "name": "графік",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "майданчик",
+      "id": "c1a57bc2-7ae1-447b-92a2-95e7a4947701",
+      "name": "майданчик",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "майданчики",
+      "id": "5fb3deff-d141-42ac-9289-27756ee926b6",
+      "name": "майданчики",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "послуга",
+      "id": "814bbe05-3ba7-4ac5-bec3-25da50eeae84",
+      "name": "послуга",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "послуги",
+      "id": "989dc007-bd32-4267-b300-9a46fd407f29",
+      "name": "послуги",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "сировина",
+      "id": "f86c5680-a92b-4587-a837-ee1e2bd943a4",
+      "name": "сировина",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "сміття",
+      "id": "0dfa8516-fc01-485b-9d12-3d7fa5ece67e",
+      "name": "сміття",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "тпв",
+      "id": "8b500423-6a4f-4cda-ab18-27ac0def663c",
+      "name": "тпв",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Департамент житлово-комунальної інфраструктури",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-121810.680531ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 389,
+    "recent": 389
+  }
+}

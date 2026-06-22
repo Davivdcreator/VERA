@@ -1,0 +1,258 @@
+{
+  "added_to_favorites_number": 0,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "acts",
+  "collection_basis": "Закон України «Про місцеві державні адміністрації», Закон України «Про столицю України — місто-герой Київ»",
+  "creator_user_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+  "id": "af0d73b3-2a50-477d-abb1-eb8245a897b7",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-30T13:32:26.119171",
+  "metadata_modified": "2026-06-17T09:42:40.775637",
+  "name": "pereliky-normatyvno-pravovykh-aktiv-aktiv-indyvidualnoi-dii-krim-vnutrishnoorhanizatsii-podilska-rda",
+  "notes": "Набір містить два ресурси:   \r\n**legalActs** – інформацію про нормативно-правові акти, акти індивідуальної дії (крім внутрішньоорганізаційних), прийняті Подільською районною в місті Києві державною адміністрацією;   \r\n**projects** – проєкти розпоряджень, що підлягають обговоренню (за наявності).\r\n   \r\nДокумент розпорядника інформації про визначення відповідальної особи (осіб) розпорядника інформації оприлюднено в наборі даних «Інформація про відповідальних осіб за оприлюднення інформації у формі відкритих даних у структурних підрозділах виконавчого органу Київської міської ради (Київської міської державної адміністрації) та районних у місті Києві державних адміністраціях»:  \r\nhttps://data.kyivcity.gov.ua/dataset/informatsiia-pro-vidpovidalnykh-osib-za-opryliudnennia-informatsii-u-formi-vidkrytykh-danykh--aparat",
+  "num_resources": 1,
+  "num_tags": 4,
+  "number_of_all_downloads": 4,
+  "number_of_views": 336,
+  "organization": {
+    "id": "d6ddba6e-4bd4-47eb-9c46-ff35e237628c",
+    "name": "podilska-rda",
+    "title": "Подільська районна в місті Києві державна адміністрація",
+    "type": "organization",
+    "description": "Забезпечує реалізацію державної та міської політики на території Подільського району. Здійснює виконавчі повноваження у сферах соціально-економічного розвитку, бюджетування, ЖКГ та благоустрою. Координує діяльність районних закладів освіти, охорони здоров’я та культури, забезпечуючи соціальний захист та надання адміністративних послуг мешканцям району.",
+    "image_url": "2026-05-15-123352.958397ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.460603",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "37333608",
+    "administrative_unit_id": "UA80000000000719633",
+    "address": "Контрактова площа, 2",
+    "email": "rda_podilsk@od.gov.ua",
+    "phone": "+380486223800",
+    "number_of_linked_packages": 12,
+    "date_of_refresh": "2026-06-17T12:42:40.775776",
+    "number_of_views": 70,
+    "number_of_categories": 8,
+    "number_of_all_downloads": 246,
+    "average_rating": "4.0",
+    "subscription_should_be_checked": false,
+    "favorites_should_be_checked": false,
+    "in_progress": false,
+    "is_changed": false,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "d6ddba6e-4bd4-47eb-9c46-ff35e237628c",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "moderation_date": "2026-04-01T17:29:36.926101",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Олексій Юхно",
+  "responsible_person_id": "8a06b1dc-9ee5-49b8-882c-611664413237",
+  "state": "active",
+  "title": "Переліки нормативно-правових актів, актів індивідуальної дії (крім внутрішньоорганізаційних), прийнятих розпорядником інформації Подільською районною в місті Києві державною адміністрацією, проекти рішень, що підлягають обговоренню, а також документ розпорядника інформації про визначення особи (осіб) відповідальних за оприлюднення відкритих даних",
+  "type": "dataset",
+  "update_frequency": "weekly",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "d6ddba6e-4bd4-47eb-9c46-ff35e237628c",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-30T13:54:38.795492",
+      "data_period_end": "2026-06-14",
+      "data_period_start": "2024-01-01",
+      "datastore_active": true,
+      "description": "Ресурс містить інформацію про нормативно-правові акти, акти індивідуальної дії (крім внутрішньоорганізаційних) Подільською районної в місті Києві державної адміністрації. Зокрема, номери, назви, дати ухвалення, набрання чинності, назви та ідентифікатори видавників, посилання в мережі Інтернет. Кожним записом до таблиці є окремий нормативно-правовий акт або акт індивідуальної дії.",
+      "format": "CSV",
+      "hash": "",
+      "id": "1752f84b-222a-442f-8882-dc4910cc1e2e",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-17T09:42:40.775776",
+      "metadata_modified": "2026-06-17T09:42:40.775776",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "106_legalActs.csv",
+      "number_of_all_downloads": 4,
+      "number_of_views": 122,
+      "package_id": "af0d73b3-2a50-477d-abb1-eb8245a897b7",
+      "position": 0,
+      "resource_code": "legalActs",
+      "resource_type": null,
+      "size": 1193166,
+      "source": "ІКС «Єдиний інформаційний простір територіальної громади міста Києва»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 122,
+        "recent": 122
+      },
+      "ua-select-search-field-administrator-org": "Подільська районна в місті Києві державна адміністрація",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Перелік нормативно-правових актів (legalActs)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-30T13:54:39.770678",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-30T13:58:47.827908",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-04-29T10:45:55.934556",
+            "status": "pending",
+            "moderator_id": "8a06b1dc-9ee5-49b8-882c-611664413237"
+          },
+          {
+            "date": "2026-04-29T12:03:17.872428",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-05-06T08:43:13.825357",
+            "status": "pending",
+            "moderator_id": "8a06b1dc-9ee5-49b8-882c-611664413237"
+          },
+          {
+            "date": "2026-05-06T10:23:58.746415",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-13T11:22:38.967477",
+            "status": "pending",
+            "moderator_id": "8a06b1dc-9ee5-49b8-882c-611664413237"
+          },
+          {
+            "date": "2026-05-13T13:25:28.281579",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-13T13:25:31.453972",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-20T09:00:34.935031",
+            "status": "pending",
+            "moderator_id": "8a06b1dc-9ee5-49b8-882c-611664413237"
+          },
+          {
+            "date": "2026-05-20T11:18:58.665968",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-05-27T06:59:26.267177",
+            "status": "pending",
+            "moderator_id": "8a06b1dc-9ee5-49b8-882c-611664413237"
+          },
+          {
+            "date": "2026-05-27T07:22:17.030490",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-03T13:56:02.918806",
+            "status": "pending",
+            "moderator_id": "8a06b1dc-9ee5-49b8-882c-611664413237"
+          },
+          {
+            "date": "2026-06-03T14:08:31.708186",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-10T11:50:57.757640",
+            "status": "pending",
+            "moderator_id": "8a06b1dc-9ee5-49b8-882c-611664413237"
+          },
+          {
+            "date": "2026-06-10T12:46:08.225722",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-17T09:42:40.834447",
+            "status": "pending",
+            "moderator_id": "8a06b1dc-9ee5-49b8-882c-611664413237"
+          }
+        ],
+        "created_by": "olena-pastushenko",
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-06-17T10:53:54.800548",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/uploads/versions/version_52f17fc9_v1.8.csv",
+      "url_type": "version_upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "акти",
+      "id": "6fd1e36f-ac48-42dc-aa28-a1b27ae75cfd",
+      "name": "акти",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "проекти",
+      "id": "bb66df57-afc4-4da4-a288-15d2fd85eebf",
+      "name": "проекти",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "рда",
+      "id": "d38c98e5-42bf-4b59-8376-5ad1fe097eb5",
+      "name": "рда",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "розпорядження",
+      "id": "35b60e02-54d8-4438-b99b-9c900ccaa0fa",
+      "name": "розпорядження",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Подільська районна в місті Києві державна адміністрація",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-123352.958397ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 336,
+    "recent": 336
+  }
+}

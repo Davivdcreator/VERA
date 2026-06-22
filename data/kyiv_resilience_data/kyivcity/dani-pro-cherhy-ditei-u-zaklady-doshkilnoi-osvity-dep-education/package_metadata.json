@@ -1,0 +1,186 @@
+{
+  "added_to_favorites_number": 0,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "education",
+  "collection_basis": "Закон України «Про місцеве самоврядування в Україні», Закон України «Про дошкільну освіту», Розпорядження виконавчого органу Київської міської ради (Київської міської державної адміністрації) від 26.03.2019 № 517 «Про функціонування системи електронного запису дітей до комунальних закладів дошкільної освіти територіальної громади міста Києва – «СЕЗ ЗДО»»",
+  "creator_user_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+  "id": "bb1d4e80-db0e-4033-b41c-d5b4c7b18ec0",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-02-24T13:12:26.613622",
+  "metadata_modified": "2026-04-01T06:50:00.120565",
+  "name": "dani-pro-cherhy-ditei-u-zaklady-doshkilnoi-osvity-dep-education",
+  "notes": "Набір містить кінцеву точку API (посилання) для отримання даних про перебіг електронної чергу дітей до закладів дошкільної освіти міста Києва.\r\n\r\n",
+  "num_resources": 1,
+  "num_tags": 6,
+  "number_of_all_downloads": 3,
+  "number_of_views": 137,
+  "organization": {
+    "id": "be37f4cd-d75b-4ca7-a4a9-deb62afd3249",
+    "name": "dep-education",
+    "title": "Департамент освіти і науки",
+    "type": "organization",
+    "description": "Основним завданням департаменту є забезпечення реалізації державної політики у сфері освіти і науки та забезпечення розвитку системи освіти у місті Києві з метою формування гармонійно-розвиненої, соціально-активної творчої особистості",
+    "image_url": "",
+    "created": "2026-02-02T14:38:28.417215",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "02147629",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "бульвар Тараса Шевченка, 3",
+    "email": "education@kyivcity.gov.ua",
+    "phone": "+380442791446",
+    "number_of_linked_packages": 15,
+    "date_of_refresh": "2026-04-06T17:28:12.434461",
+    "number_of_views": 11,
+    "number_of_categories": 7,
+    "number_of_all_downloads": 61,
+    "average_rating": "0.0",
+    "subscription_should_be_checked": false,
+    "favorites_should_be_checked": false,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "be37f4cd-d75b-4ca7-a4a9-deb62afd3249",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "moderation_date": "2026-03-30T10:44:59.238468",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Віталія Яковина",
+  "responsible_person_id": "559ef43f-5060-476c-823b-ae7c4bc0eeaa",
+  "state": "active",
+  "title": "Дані про черги дітей у заклади дошкільної освіти",
+  "type": "dataset",
+  "update_frequency": "more_than_daily",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "be37f4cd-d75b-4ca7-a4a9-deb62afd3249",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-02-24T13:27:11.251143",
+      "data_period_end": "",
+      "data_period_start": "",
+      "datastore_active": false,
+      "description": "Кінцева точка API (посилання) для отримання даних про перебіг електронної чергу дітей до закладів дошкільної освіти міста Києва: номер та дата заявки, наявність пільг, статус розгляду, назва й ідентифікатор закладу.  \r\nДані оприлюднені з Системи електронного запису дітей до комунальних закладів дошкільної освіти «СЕЗ ЗДО». Дані надаються в форматі JSON.  \r\nДокументація до API за посиланням: https://kyivcity-my.sharepoint.com/:w:/g/personal/data_kyivcity_gov_ua/IQBpcN0ZvleoS7_g9s3ibQXiAZzWQ7_FYJH0bku7Tm0AN18?e=jEswO7",
+      "format": "JSON",
+      "hash": "",
+      "id": "00b178cf-a83a-4e00-b69d-ed7191778edf",
+      "in_progress": false,
+      "is_api": "true",
+      "is_changed": false,
+      "last_modified": "2026-04-01T06:50:00.086246",
+      "metadata_modified": "2026-04-01T06:50:00.137014",
+      "mimetype": null,
+      "mimetype_inner": null,
+      "name": "line",
+      "number_of_all_downloads": 3,
+      "number_of_views": 75,
+      "package_id": "bb1d4e80-db0e-4033-b41c-d5b4c7b18ec0",
+      "position": 0,
+      "resource_code": "OTHER",
+      "resource_type": null,
+      "size": null,
+      "source": "Система електронного запису дітей до комунальних закладів дошкільної освіти «СЕЗ ЗДО»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 75,
+        "recent": 75
+      },
+      "ua-select-search-field-administrator-org": "Департамент освіти і науки",
+      "ua-select-search-field-is-api": "Так",
+      "ua-select-search-field-resource-code": "Позасистемний формат (OTHER)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-02-24T13:27:11.730318",
+            "status": "pending",
+            "moderator_id": null
+          }
+        ],
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-02-24T13:29:43.838769",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://osvita.kyivcity.gov.ua/v1/kindergartens/line?kindergartenid=58b6bfaa108cf4a56744f3af&period=2025&age=3",
+      "url_type": "",
+      "validation_result": "",
+      "validation_status": "skipped"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "діти",
+      "id": "49807575-a015-4dd6-8c00-e78955eed38a",
+      "name": "діти",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "заявка",
+      "id": "fbacab37-0cb5-4338-ae77-a665b3b3814c",
+      "name": "заявка",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "звернення",
+      "id": "461f05b7-b6e4-44c4-a953-c7a350fb7c57",
+      "name": "звернення",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "здо",
+      "id": "69198137-03a4-42ae-9174-9b6520a91ae9",
+      "name": "здо",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "освіта",
+      "id": "25fff23f-5581-4ee9-b06d-d902b7cd7152",
+      "name": "освіта",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "черга",
+      "id": "25955905-82d5-43a5-b624-f5012580cc91",
+      "name": "черга",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Департамент освіти і науки",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-122400.236185ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": true,
+  "tracking_summary": {
+    "total": 137,
+    "recent": 137
+  }
+}

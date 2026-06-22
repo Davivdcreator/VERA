@@ -1,0 +1,319 @@
+{
+  "added_to_favorites_number": 1,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "acts",
+  "collection_basis": "Закон України «Про місцеві державні адміністрації», Закон України «Про столицю України – місто-герой Київ»",
+  "creator_user_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+  "id": "0e29da39-ffa1-4574-be9e-9287f51fed1f",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-27T13:43:51.187566",
+  "metadata_modified": "2026-06-17T10:56:04.740222",
+  "name": "pereliky-normatyvno-pravovykh-aktiv-aktiv-indyvidualnoi-dii-krim-vnutrishnoorhanizat-holosiivska-rda",
+  "notes": "Набір містить два ресурси:    \r\n**legalActs** – інформацію про нормативно-правові акти, акти індивідуальної дії (крім внутрішньоорганізаційних), прийнятих Голосіївською районною в місті Києві державною адміністрацією;   \r\n**projects** – проєкти розпоряджень, що підлягають обговоренню (за наявності).   \r\n    \r\nДокумент розпорядника інформації про визначення відповідальної особи (осіб) розпорядника інформації оприлюднено в наборі даних «Інформація про відповідальних осіб за оприлюднення інформації у формі відкритих даних у структурних підрозділах виконавчого органу Київської міської ради (Київської міської державної адміністрації) та районних у місті Києві державних адміністраціях»: \r\nhttps://data.kyivcity.gov.ua/dataset/informatsiia-pro-vidpovidalnykh-osib-za-opryliudnennia-informatsii-u-formi-vidkrytykh-danykh--aparat",
+  "num_resources": 2,
+  "num_tags": 4,
+  "number_of_all_downloads": 20,
+  "number_of_views": 367,
+  "organization": {
+    "id": "9b7b481d-930b-4dab-8ac1-a4175cc8d4ad",
+    "name": "holosiivska-rda",
+    "title": "Голосіївська районна в місті Києві державна адміністрація",
+    "type": "organization",
+    "description": "Забезпечує реалізацію державної та міської політики на території Голосіївського району. Здійснює виконавчі повноваження у сферах соціально-економічного розвитку, бюджетування, ЖКГ та благоустрою. Координує діяльність районних закладів освіти, охорони здоров’я та культури, забезпечуючи соціальний захист та надання адміністративних послуг мешканцям району.",
+    "image_url": "2026-05-15-121546.909596ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.448366",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "37308812",
+    "administrative_unit_id": "UA80000000000126643",
+    "address": "проспект Голосіївський, 42",
+    "email": "rda.golosiivska@kyivcity.gov.ua",
+    "phone": "+380442816646",
+    "number_of_linked_packages": 12,
+    "date_of_refresh": "2026-06-17T13:56:04.740453",
+    "number_of_views": 136,
+    "number_of_categories": 8,
+    "number_of_all_downloads": 267,
+    "average_rating": "4.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "9b7b481d-930b-4dab-8ac1-a4175cc8d4ad",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "moderation_date": "2026-04-01T20:38:20.045570",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Олександр Вікторович Макаров",
+  "responsible_person_id": "dfd6d9e5-f29f-419b-9246-86a847e87d07",
+  "state": "active",
+  "title": "Переліки нормативно-правових актів, актів індивідуальної дії (крім внутрішньоорганізаційних), прийнятих розпорядником інформації Голосіївською районною в місті Києві державною адміністрацією, проекти рішень, що підлягають обговоренню, а також документ розпорядника інформації про визначення особи (осіб) відповідальних за оприлюднення відкритих даних",
+  "type": "dataset",
+  "update_frequency": "weekly",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "9b7b481d-930b-4dab-8ac1-a4175cc8d4ad",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-27T14:41:46.828920",
+      "data_period_end": "2026-06-17",
+      "data_period_start": "2024-01-01",
+      "datastore_active": true,
+      "description": "Ресурс містить інформацію про нормативно-правові акти, акти індивідуальної дії (крім внутрішньоорганізаційних) Голосіївської районної в місті Києві державної адміністрації. Зокрема, номери, назви, дати ухвалення, набрання чинності, назви та ідентифікатори видавників, посилання в мережі Інтернет. Кожним записом до таблиці є окремий нормативно-правовий акт або акт індивідуальної дії.",
+      "format": "CSV",
+      "hash": "",
+      "id": "461e479f-e2cc-47aa-a502-9247dea9329b",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-17T10:56:04.740453",
+      "metadata_modified": "2026-06-17T10:56:04.740453",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "100_legalActs.csv",
+      "number_of_all_downloads": 13,
+      "number_of_views": 124,
+      "package_id": "0e29da39-ffa1-4574-be9e-9287f51fed1f",
+      "position": 0,
+      "resource_code": "legalActs",
+      "resource_type": null,
+      "size": 1905165,
+      "source": "ІКС «Єдиний інформаційний простір територіальної громади міста Києва»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 124,
+        "recent": 124
+      },
+      "ua-select-search-field-administrator-org": "Голосіївська районна в місті Києві державна адміністрація",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Перелік нормативно-правових актів (legalActs)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-27T14:41:48.151151",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-27T14:42:11.676113",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-04-29T10:16:26.725429",
+            "status": "pending",
+            "moderator_id": "d32a2096-9e71-4630-8cd6-8bed88b32910"
+          },
+          {
+            "date": "2026-04-29T12:15:15.685658",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-05-06T12:33:11.009093",
+            "status": "pending",
+            "moderator_id": "d32a2096-9e71-4630-8cd6-8bed88b32910"
+          },
+          {
+            "date": "2026-05-06T13:44:54.388065",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-13T12:11:49.377466",
+            "status": "pending",
+            "moderator_id": "d32a2096-9e71-4630-8cd6-8bed88b32910"
+          },
+          {
+            "date": "2026-05-13T12:26:36.223673",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-20T12:00:03.975479",
+            "status": "pending",
+            "moderator_id": "d32a2096-9e71-4630-8cd6-8bed88b32910"
+          },
+          {
+            "date": "2026-05-20T14:12:56.052686",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-05-27T10:27:23.855601",
+            "status": "pending",
+            "moderator_id": "d32a2096-9e71-4630-8cd6-8bed88b32910"
+          },
+          {
+            "date": "2026-05-27T10:39:39.877101",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-03T10:37:33.258006",
+            "status": "pending",
+            "moderator_id": "d32a2096-9e71-4630-8cd6-8bed88b32910"
+          },
+          {
+            "date": "2026-06-03T13:46:35.442884",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-10T10:59:36.880184",
+            "status": "pending",
+            "moderator_id": "d32a2096-9e71-4630-8cd6-8bed88b32910"
+          },
+          {
+            "date": "2026-06-10T11:11:49.808260",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-17T10:56:04.795602",
+            "status": "pending",
+            "moderator_id": "d32a2096-9e71-4630-8cd6-8bed88b32910"
+          }
+        ],
+        "created_by": "olena-pastushenko",
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-06-17T11:41:40.788550",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/uploads/versions/version_81f2dd63_v1.8.csv",
+      "url_type": "version_upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    },
+    {
+      "administrator_org": "9b7b481d-930b-4dab-8ac1-a4175cc8d4ad",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-04-01T20:51:35.000318",
+      "data_period_end": "2026-05-06",
+      "data_period_start": "2024-01-01",
+      "datastore_active": true,
+      "description": "Ресурс містить інформацію про проєкти нормативно-правових актів, проєкти рішень, що підлягають обговоренню. Зокрема, назви, види нормативно-правових актів, дати оприлюднення, назви та ідентифікатори видавників, посилання в мережі Інтернет. Кожним записом до таблиці є окремий проєкт рішення, що підлягає оприлюдненню.",
+      "format": "CSV",
+      "hash": "",
+      "id": "668b2335-8cbf-4a2d-86b5-f2920ae367a3",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-05-06T12:33:44.282527",
+      "metadata_modified": "2026-05-06T12:33:44.282527",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "100_projects.csv",
+      "number_of_all_downloads": 5,
+      "number_of_views": 20,
+      "package_id": "0e29da39-ffa1-4574-be9e-9287f51fed1f",
+      "position": 1,
+      "resource_code": "projects",
+      "resource_type": null,
+      "size": 25383,
+      "source": "ІКС «Єдиний інформаційний простір територіальної громади міста Києва»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 20,
+        "recent": 20
+      },
+      "ua-select-search-field-administrator-org": "Голосіївська районна в місті Києві державна адміністрація",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Перелік проєктів нормативно-правових актів (projects)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-04-01T20:51:35.852590",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-04-01T20:51:47.617292",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-06T12:33:44.341293",
+            "status": "pending",
+            "moderator_id": "d32a2096-9e71-4630-8cd6-8bed88b32910"
+          }
+        ],
+        "created_by": "olena-pastushenko",
+        "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+        "moderation_date": "2026-05-06T13:44:43.033447",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/uploads/versions/version_4fd8d77b_v1.1.csv",
+      "url_type": "version_upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "акти",
+      "id": "6fd1e36f-ac48-42dc-aa28-a1b27ae75cfd",
+      "name": "акти",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "проекти",
+      "id": "bb66df57-afc4-4da4-a288-15d2fd85eebf",
+      "name": "проекти",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "рда",
+      "id": "d38c98e5-42bf-4b59-8376-5ad1fe097eb5",
+      "name": "рда",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "розпорядження",
+      "id": "35b60e02-54d8-4438-b99b-9c900ccaa0fa",
+      "name": "розпорядження",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Голосіївська районна в місті Києві державна адміністрація",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-121546.909596ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 367,
+    "recent": 367
+  }
+}

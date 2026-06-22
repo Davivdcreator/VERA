@@ -1,0 +1,225 @@
+{
+  "added_to_favorites_number": 0,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "21",
+  "collection_basis": "Закон України «Про державну службу», Постанова Кабінету Міністрів України від 20.04.2016 № 304 «Про умови оплати праці посадових осіб, керівників та керівних працівників окремих державних органів, на яких не поширюється дія Закону України «Про державну службу»»",
+  "creator_user_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+  "id": "e97a90cc-669f-4030-b65c-be4bddc27e4e",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-17T10:51:28.109210",
+  "metadata_modified": "2026-05-29T13:14:27.558978",
+  "name": "informatsiia-pro-strukturu-rozmir-oplaty-pratsi-kyivskoho-miskoho-holovy-ta-zastupnykiv-holov-aparat",
+  "notes": "Набір містить інформацію про заробітну плату по видам нарахувань Київського міського голови та заступників голови Київської міської державної адміністрації.",
+  "num_resources": 1,
+  "num_tags": 10,
+  "number_of_all_downloads": 4,
+  "number_of_views": 141,
+  "organization": {
+    "id": "72d44dfa-b47d-453d-afea-d10d886d4e90",
+    "name": "aparat",
+    "title": "Апарат виконавчого органу Київської міської ради (Київської міської державної адміністрації)",
+    "type": "organization",
+    "description": "Забезпечує правове, організаційне, документальне, інформаційне, кадрове, фінансово-господарське та інше забезпечення діяльності виконавчого органу Київської міської ради (Київської міської державної адміністрації).",
+    "image_url": "2026-05-15-121523.667984ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.371499",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "37853361",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Хрещатик, 36",
+    "email": "data@kyivcity.gov.ua",
+    "phone": "+380442027454",
+    "number_of_linked_packages": 19,
+    "date_of_refresh": "2026-05-28T10:50:19.680986",
+    "number_of_views": 440,
+    "number_of_categories": 10,
+    "number_of_all_downloads": 395,
+    "average_rating": "5.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "72d44dfa-b47d-453d-afea-d10d886d4e90",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "moderation_date": "2026-05-05T15:03:18.242123",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Відділ оприлюднення інформації",
+  "responsible_person_id": "54f86e0e-9736-4280-a453-ac428a2c43a1",
+  "state": "active",
+  "title": "Інформація про структуру, розмір оплати праці Київського міського голови та заступників голови Київської міської державної адміністрації",
+  "type": "dataset",
+  "update_frequency": "monthly",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "72d44dfa-b47d-453d-afea-d10d886d4e90",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-17T11:21:02.430269",
+      "data_period_end": "2026-05-31",
+      "data_period_start": "2023-01-01",
+      "datastore_active": true,
+      "description": "Ресурс містить інформацію про нараховану заробітну плату по видам нарахувань Київського міського голови та заступників голови Київської міської державної адміністрації за 2023-2026 роки. У тому числі інформація про оплату за відрядження, надбавку за вислугу років, надбавку за інтенсивність праці, премію, окремі види матеріальної допомоги та інше.",
+      "format": "CSV",
+      "hash": "",
+      "id": "674ed537-76df-490b-82cd-6f203992a883",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-05-29T13:14:27.535436",
+      "metadata_modified": "2026-05-29T13:14:27.572849",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "salaries.csv",
+      "number_of_all_downloads": 4,
+      "number_of_views": 43,
+      "package_id": "e97a90cc-669f-4030-b65c-be4bddc27e4e",
+      "position": 0,
+      "resource_code": "salaries",
+      "resource_type": null,
+      "size": 101539,
+      "source": "",
+      "state": "active",
+      "tracking_summary": {
+        "total": 43,
+        "recent": 43
+      },
+      "ua-select-search-field-administrator-org": "Апарат виконавчого органу Київської міської ради (Київської міської державної адміністрації)",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Зарплата мера та заступників (salaries)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-17T11:21:03.641495",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-17T11:21:36.674476",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-04-01T14:17:42.186928",
+            "status": "pending",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          }
+        ],
+        "created_by": "mariia-novokhatska",
+        "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12",
+        "moderation_date": "2026-04-07T09:04:15.367192",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/e97a90cc-669f-4030-b65c-be4bddc27e4e/resource/674ed537-76df-490b-82cd-6f203992a883/download/salaries.csv",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "гроші",
+      "id": "7ea961dc-d1c2-4d0c-a1f9-28be7e6f4836",
+      "name": "гроші",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "зарплата",
+      "id": "d0021608-f0df-4d06-8564-70bc1652c314",
+      "name": "зарплата",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "керівники",
+      "id": "d7bb7256-702b-4a50-adb3-32754646445f",
+      "name": "керівники",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "керівництво",
+      "id": "4c4f70fc-b67c-43d7-9586-5849e07fb099",
+      "name": "керівництво",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "оплата",
+      "id": "968c011a-f8b7-4f5c-8b27-5737deb571f3",
+      "name": "оплата",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "праця",
+      "id": "ddd35ca4-97eb-45f4-976c-523fe773344e",
+      "name": "праця",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "преміювання",
+      "id": "c2a9129c-388c-457e-ba08-05248fba0858",
+      "name": "преміювання",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "премія",
+      "id": "c741ae7b-52dd-49bf-ab1e-0fdb0b4e0d83",
+      "name": "премія",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "служба",
+      "id": "8f27d060-e1eb-4f1e-907b-17673c7dbebb",
+      "name": "служба",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "фінанси",
+      "id": "10390983-f25b-4f5f-9f76-427e0de85d8d",
+      "name": "фінанси",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Апарат виконавчого органу Київської міської ради (Київської міської державної адміністрації)",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-121523.667984ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 141,
+    "recent": 141
+  }
+}

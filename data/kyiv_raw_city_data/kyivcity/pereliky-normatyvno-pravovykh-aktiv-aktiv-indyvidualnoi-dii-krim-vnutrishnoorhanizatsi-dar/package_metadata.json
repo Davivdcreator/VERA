@@ -1,0 +1,261 @@
+{
+  "added_to_favorites_number": 0,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "acts",
+  "collection_basis": "Закон України «Про місцеві державні адміністрації», Закон України «Про столицю України – місто-герой Київ»",
+  "creator_user_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+  "id": "782ddece-4e85-469e-8e3e-92018b152f18",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-30T14:15:00.950044",
+  "metadata_modified": "2026-06-17T07:54:32.226850",
+  "name": "pereliky-normatyvno-pravovykh-aktiv-aktiv-indyvidualnoi-dii-krim-vnutrishnoorhanizatsi-darnytska-rda",
+  "notes": "Набір містить два ресурси:   \r\n**legalActs** – інформацію про нормативно-правові акти, акти індивідуальної дії (крім внутрішньоорганізаційних), прийнятих Дарницькою районною в місті Києві державною адміністрацією;    \r\n**projects** – проєкти розпоряджень, що підлягають обговоренню (за наявності).    \r\n   \r\nДокумент розпорядника інформації про визначення відповідальної особи (осіб) розпорядника інформації оприлюднено в наборі даних «Інформація про відповідальних осіб за оприлюднення інформації у формі відкритих даних у структурних підрозділах виконавчого органу Київської міської ради (Київської міської державної адміністрації) та районних у місті Києві державних адміністраціях»:  \r\nhttps://data.kyivcity.gov.ua/dataset/informatsiia-pro-vidpovidalnykh-osib-za-opryliudnennia-informatsii-u-formi-vidkrytykh-danykh--aparat",
+  "num_resources": 1,
+  "num_tags": 4,
+  "number_of_all_downloads": 18,
+  "number_of_views": 371,
+  "organization": {
+    "id": "a0cc8da5-c51f-4153-a5d9-327e81f54e04",
+    "name": "darnytska-rda",
+    "title": "Дарницька районна в місті Києві державна адміністрація",
+    "type": "organization",
+    "description": "Забезпечує реалізацію державної та міської політики на території Дарницького району. Здійснює виконавчі повноваження у сферах соціально-економічного розвитку, бюджетування, ЖКГ та благоустрою. Координує діяльність районних закладів освіти, охорони здоров’я та культури, забезпечуючи соціальний захист та надання адміністративних послуг мешканцям району.",
+    "image_url": "2026-05-15-121641.447352ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.450511",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "37388222",
+    "administrative_unit_id": "UA80000000000210193",
+    "address": "вул. Олександра Кошиця, 11",
+    "email": "rda.darnytska@kyivcity.gov.ua",
+    "phone": "+380445638691",
+    "number_of_linked_packages": 11,
+    "date_of_refresh": "2026-04-13T11:32:59.011700",
+    "number_of_views": 23,
+    "number_of_categories": 7,
+    "number_of_all_downloads": 107,
+    "average_rating": "0.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": true,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "a0cc8da5-c51f-4153-a5d9-327e81f54e04",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "history": [
+        {
+          "date": "2026-04-29T11:18:09.921247",
+          "status": "pending",
+          "moderator_id": null
+        },
+        {
+          "date": "2026-04-30T12:29:10.719110",
+          "status": "approved",
+          "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+        }
+      ],
+      "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+      "moderation_date": "2026-05-06T07:34:56.878484",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Віталій Діденко",
+  "responsible_person_id": "2bda37ea-a11b-449e-93cb-209197ca34be",
+  "state": "active",
+  "title": "Переліки нормативно-правових актів, актів індивідуальної дії (крім внутрішньоорганізаційних), прийнятих розпорядником інформації Дарницькою районною в місті Києві державною адміністрацією, проекти рішень, що підлягають обговоренню, а також документ розпорядника інформації про визначення особи (осіб) відповідальних за оприлюднення відкритих даних",
+  "type": "dataset",
+  "update_frequency": "weekly",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "a0cc8da5-c51f-4153-a5d9-327e81f54e04",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-30T14:16:50.312518",
+      "data_period_end": "2026-06-16",
+      "data_period_start": "2024-01-01",
+      "datastore_active": true,
+      "description": "Ресурс містить інформацію про нормативно-правові акти, акти індивідуальної дії (крім внутрішньоорганізаційних) Дарницької районної в місті Києві державної адміністрації. Зокрема, номери, назви, дати ухвалення, набрання чинності, назви та ідентифікатори видавників, посилання в мережі Інтернет. Кожним записом до таблиці є окремий нормативно-правовий акт або акт індивідуальної дії.",
+      "format": "CSV",
+      "hash": "",
+      "id": "ad3d7b75-4c3b-4ea2-bc70-947db7e01846",
+      "in_progress": true,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-17T07:54:32.226999",
+      "metadata_modified": "2026-06-17T07:54:32.226999",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "101_legalActs",
+      "number_of_all_downloads": 18,
+      "number_of_views": 118,
+      "package_id": "782ddece-4e85-469e-8e3e-92018b152f18",
+      "position": 0,
+      "resource_code": "legalActs",
+      "resource_type": null,
+      "size": 1112997,
+      "source": "ІКС «Єдиний інформаційний простір територіальної громади міста Києва»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 118,
+        "recent": 118
+      },
+      "ua-select-search-field-administrator-org": "Дарницька районна в місті Києві державна адміністрація",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Перелік нормативно-правових актів (legalActs)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-30T14:16:52.049475",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-30T14:17:07.625216",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-04-30T11:53:07.468843",
+            "status": "pending",
+            "moderator_id": "2bda37ea-a11b-449e-93cb-209197ca34be"
+          },
+          {
+            "date": "2026-04-30T12:27:28.419762",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-06T07:01:09.090873",
+            "status": "pending",
+            "moderator_id": "2bda37ea-a11b-449e-93cb-209197ca34be"
+          },
+          {
+            "date": "2026-05-06T07:38:00.492713",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-12T13:04:14.469273",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-20T10:44:49.085305",
+            "status": "pending",
+            "moderator_id": "2bda37ea-a11b-449e-93cb-209197ca34be"
+          },
+          {
+            "date": "2026-05-20T11:24:28.047538",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-05-27T12:57:58.652172",
+            "status": "pending",
+            "moderator_id": "2bda37ea-a11b-449e-93cb-209197ca34be"
+          },
+          {
+            "date": "2026-05-27T13:19:22.531931",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-03T08:18:15.119622",
+            "status": "pending",
+            "moderator_id": "2bda37ea-a11b-449e-93cb-209197ca34be"
+          },
+          {
+            "date": "2026-06-03T09:03:03.437236",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-10T10:43:13.493681",
+            "status": "pending",
+            "moderator_id": "2bda37ea-a11b-449e-93cb-209197ca34be"
+          },
+          {
+            "date": "2026-06-10T10:57:41.912605",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-17T07:54:32.283937",
+            "status": "pending",
+            "moderator_id": "2bda37ea-a11b-449e-93cb-209197ca34be"
+          }
+        ],
+        "created_by": "olena-pastushenko",
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-06-17T08:44:06.420828",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/uploads/versions/version_ae6aa689_v1.8.csv",
+      "url_type": "version_upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "акти",
+      "id": "6fd1e36f-ac48-42dc-aa28-a1b27ae75cfd",
+      "name": "акти",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "проекти",
+      "id": "bb66df57-afc4-4da4-a288-15d2fd85eebf",
+      "name": "проекти",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "рда",
+      "id": "d38c98e5-42bf-4b59-8376-5ad1fe097eb5",
+      "name": "рда",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "розпорядження",
+      "id": "35b60e02-54d8-4438-b99b-9c900ccaa0fa",
+      "name": "розпорядження",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Дарницька районна в місті Києві державна адміністрація",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-121641.447352ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 371,
+    "recent": 371
+  }
+}

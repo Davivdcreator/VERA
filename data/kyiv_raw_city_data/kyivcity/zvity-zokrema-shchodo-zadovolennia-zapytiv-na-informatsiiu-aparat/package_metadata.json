@@ -1,0 +1,348 @@
+{
+  "added_to_favorites_number": 1,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "reporting",
+  "collection_basis": "Закон України «Про доступ до публічної інформації», розпорядження ВО КМР (КМДА) від 12.03.2013 № 304 «Про інформаційно-телекомунікаційну систему «Єдиний веб-портал територіальної громади міста Києва»",
+  "creator_user_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+  "id": "60f5cbbb-dc8e-4b30-a681-40a0df187f6c",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-11T13:03:16.938763",
+  "metadata_modified": "2026-06-05T14:31:42.916942",
+  "name": "zvity-zokrema-shchodo-zadovolennia-zapytiv-na-informatsiiu-aparat",
+  "notes": "Набір містить перелік звітів структурних підрозділів виконавчого органу Київської міської ради (Київської міської державної адміністрації), включно з посиланнями на ресурси, що оприлюднені в мережі Інтернет. Набір складається з двох ресурсів:     \r\n**listOfReports** – таблиця містить ідентифікатори, назви, типи, дати оприлюднення, посилання на оприлюднені звіти в мережі Інтернет, інформацію про авторів та інше. Кожним записом в таблиці є окремий звіт;    \r\n**reports** – ресурс містить архівовані тексти звітів.",
+  "num_resources": 2,
+  "num_tags": 5,
+  "number_of_all_downloads": 27,
+  "number_of_views": 613,
+  "organization": {
+    "id": "72d44dfa-b47d-453d-afea-d10d886d4e90",
+    "name": "aparat",
+    "title": "Апарат виконавчого органу Київської міської ради (Київської міської державної адміністрації)",
+    "type": "organization",
+    "description": "Забезпечує правове, організаційне, документальне, інформаційне, кадрове, фінансово-господарське та інше забезпечення діяльності виконавчого органу Київської міської ради (Київської міської державної адміністрації).",
+    "image_url": "2026-05-15-121523.667984ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.371499",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "37853361",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Хрещатик, 36",
+    "email": "data@kyivcity.gov.ua",
+    "phone": "+380442027454",
+    "number_of_linked_packages": 19,
+    "date_of_refresh": "2026-06-05T17:28:25.270982",
+    "number_of_views": 462,
+    "number_of_categories": 10,
+    "number_of_all_downloads": 439,
+    "average_rating": "5.0",
+    "subscription_should_be_checked": false,
+    "favorites_should_be_checked": false,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "72d44dfa-b47d-453d-afea-d10d886d4e90",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "moderation_date": "2026-04-02T08:12:44.632153",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Відділ оприлюднення інформації",
+  "responsible_person_id": "54f86e0e-9736-4280-a453-ac428a2c43a1",
+  "state": "active",
+  "title": "Звіти, зокрема щодо задоволення запитів на інформацію",
+  "type": "dataset",
+  "update_frequency": "monthly",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "72d44dfa-b47d-453d-afea-d10d886d4e90",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-11T13:17:03.273248",
+      "data_owner": [
+        "c842db7e-fa6d-4385-8f92-09268f3b6470",
+        "6a0c2363-b08f-4b9c-90cf-9d7eed3922a7",
+        "a714d4dc-bebe-40b7-a1d7-7add98f78d8c",
+        "5b186e66-21ad-4e89-9106-040eda7098ff",
+        "cc7f5e28-63a6-4077-81cf-8f7a1256ffbe",
+        "44e248c7-d723-4f30-99c4-7b25bfe2bb81",
+        "2d4d1d3d-0c8b-440c-9072-46a225f50de1",
+        "b4b5fa78-5505-4192-9295-2d401a313b1a",
+        "5f1af640-4324-4c83-a4a4-8de23dec3f9a",
+        "463dad95-8038-4ce0-b4ce-4ebf16707f27",
+        "c4b5eae1-cda8-4815-a69b-e3a0efa98968",
+        "838439ef-c3ca-4709-a54f-2a605bd2d8c3",
+        "51d80b0e-fd98-4376-81e3-e2e5032ba3f7",
+        "566ecaa8-e749-4a88-b368-ae78d202c25b",
+        "afc97548-712f-446f-a6f4-0114658935ec",
+        "be37f4cd-d75b-4ca7-a4a9-deb62afd3249",
+        "975fe2aa-145d-45ad-966d-af18bb3f1091",
+        "6f1e14ef-2c25-4472-98d6-6d7837c03834",
+        "23df8833-15f7-4ff1-9914-806c26ed3685",
+        "c545c89d-4508-4575-8a8d-44199fc29a70",
+        "e61dd288-fb1f-419b-9af7-b218ffe0b1fe",
+        "a1bf0c1f-e1d3-4508-8d06-df50a3366d0c",
+        "3a783c26-a981-4000-b49f-87802af22713",
+        "68ce41df-69ac-410f-b2bb-8369e9a9f6e7",
+        "110bcf31-2801-4f5b-8eb8-20375eec1f62",
+        "5a46090d-c94b-4ed3-91ae-80cddc044c26",
+        "de1dc490-b93e-440b-8b00-d353c8817fbd",
+        "43af0c35-d43f-4467-a6ee-fa2d1eb4d295",
+        "06ecc9e6-8ca2-4ecf-b0f9-568f821211cb"
+      ],
+      "data_period_end": "2026-06-05",
+      "data_period_start": "2020-01-01",
+      "datastore_active": true,
+      "description": "Містить перелік звітів структурних підрозділів виконавчого органу Київської міської ради (КМДА), включно з посиланнями на ресурси, що оприлюднені в мережі Інтернет.",
+      "format": "CSV",
+      "hash": "",
+      "id": "1da6e925-fc24-49b1-b21e-0d77b7b0bcbc",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-05T13:43:59.983762",
+      "metadata_modified": "2026-06-05T13:44:00.076748",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "listOfReports.csv",
+      "number_of_all_downloads": 16,
+      "number_of_views": 108,
+      "package_id": "60f5cbbb-dc8e-4b30-a681-40a0df187f6c",
+      "position": 0,
+      "resource_code": "listOfReports",
+      "resource_type": null,
+      "size": 758878,
+      "source": "",
+      "state": "active",
+      "tracking_summary": {
+        "total": 108,
+        "recent": 108
+      },
+      "ua-select-search-field-administrator-org": "Апарат виконавчого органу Київської міської ради (Київської міської державної адміністрації)",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Звіти, у тому числі щодо задоволення запитів на інформацію (listOfReports)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-11T13:17:04.358621",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-11T13:21:05.165779",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-04-05T13:35:21.131066",
+            "status": "pending",
+            "moderator_id": "54f86e0e-9736-4280-a453-ac428a2c43a1"
+          },
+          {
+            "date": "2026-04-07T09:02:57.332394",
+            "status": "approved",
+            "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12"
+          },
+          {
+            "date": "2026-05-07T10:23:20.403266",
+            "status": "pending",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          }
+        ],
+        "created_by": "mariia-novokhatska",
+        "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+        "moderation_date": "2026-05-07T10:23:45.010032",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/60f5cbbb-dc8e-4b30-a681-40a0df187f6c/resource/1da6e925-fc24-49b1-b21e-0d77b7b0bcbc/download/listofreports.csv",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    },
+    {
+      "administrator_org": "72d44dfa-b47d-453d-afea-d10d886d4e90",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-16T10:01:02.944732",
+      "data_owner": [
+        "c842db7e-fa6d-4385-8f92-09268f3b6470",
+        "6a0c2363-b08f-4b9c-90cf-9d7eed3922a7",
+        "a714d4dc-bebe-40b7-a1d7-7add98f78d8c",
+        "5b186e66-21ad-4e89-9106-040eda7098ff",
+        "cc7f5e28-63a6-4077-81cf-8f7a1256ffbe",
+        "44e248c7-d723-4f30-99c4-7b25bfe2bb81",
+        "2d4d1d3d-0c8b-440c-9072-46a225f50de1",
+        "b4b5fa78-5505-4192-9295-2d401a313b1a",
+        "5f1af640-4324-4c83-a4a4-8de23dec3f9a",
+        "463dad95-8038-4ce0-b4ce-4ebf16707f27",
+        "c4b5eae1-cda8-4815-a69b-e3a0efa98968",
+        "838439ef-c3ca-4709-a54f-2a605bd2d8c3",
+        "51d80b0e-fd98-4376-81e3-e2e5032ba3f7",
+        "566ecaa8-e749-4a88-b368-ae78d202c25b",
+        "afc97548-712f-446f-a6f4-0114658935ec",
+        "be37f4cd-d75b-4ca7-a4a9-deb62afd3249",
+        "975fe2aa-145d-45ad-966d-af18bb3f1091",
+        "6f1e14ef-2c25-4472-98d6-6d7837c03834",
+        "23df8833-15f7-4ff1-9914-806c26ed3685",
+        "c545c89d-4508-4575-8a8d-44199fc29a70",
+        "e61dd288-fb1f-419b-9af7-b218ffe0b1fe",
+        "a1bf0c1f-e1d3-4508-8d06-df50a3366d0c",
+        "3a783c26-a981-4000-b49f-87802af22713",
+        "68ce41df-69ac-410f-b2bb-8369e9a9f6e7",
+        "110bcf31-2801-4f5b-8eb8-20375eec1f62",
+        "5a46090d-c94b-4ed3-91ae-80cddc044c26",
+        "de1dc490-b93e-440b-8b00-d353c8817fbd",
+        "43af0c35-d43f-4467-a6ee-fa2d1eb4d295",
+        "06ecc9e6-8ca2-4ecf-b0f9-568f821211cb"
+      ],
+      "data_period_end": "2026-06-05",
+      "data_period_start": "2020-01-01",
+      "datastore_active": false,
+      "description": "Архів звітів структурних підрозділів виконавчого органу Київської міської ради (Київської міської державної адміністрації), який містить тексти звітів у машиночитаному форматі.",
+      "format": "ZIP",
+      "hash": "",
+      "id": "7e12c4e8-0c77-430f-925d-b4be53a6d98e",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-05T14:31:42.917086",
+      "metadata_modified": "2026-06-05T14:31:42.917086",
+      "mimetype": "application/zip",
+      "mimetype_inner": null,
+      "name": "reports.zip",
+      "number_of_all_downloads": 11,
+      "number_of_views": 109,
+      "package_id": "60f5cbbb-dc8e-4b30-a681-40a0df187f6c",
+      "position": 1,
+      "resource_code": "OTHER",
+      "resource_type": null,
+      "size": 202946590,
+      "source": "",
+      "state": "active",
+      "tracking_summary": {
+        "total": 109,
+        "recent": 109
+      },
+      "ua-select-search-field-administrator-org": "Апарат виконавчого органу Київської міської ради (Київської міської державної адміністрації)",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Позасистемний формат (OTHER)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-16T10:01:03.709349",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-16T10:06:34.226873",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-05-07T10:24:57.972071",
+            "status": "pending",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-07T10:25:03.960372",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-06-05T14:27:22.100841",
+            "status": "pending",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-05T14:27:28.721570",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-05T14:31:42.974365",
+            "status": "pending",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          }
+        ],
+        "created_by": "mariia-novokhatska",
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-06-05T14:31:47.881260",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://kyivcity-my.sharepoint.com/:u:/g/personal/data_kyivcity_gov_ua/IQBc_jiAN2I-QKGb6A4luS7IAcxoRsPw-ewnFS1qk0fiJuI?e=Lj2gzt",
+      "url_type": "url",
+      "validation_result": "",
+      "validation_status": "skipped"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "діяльність",
+      "id": "8b3e0bad-79d6-4391-9fdc-8ec7132fd841",
+      "name": "діяльність",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "запити",
+      "id": "9a2a58e1-94cb-4061-b6c9-646d1bcb8bd0",
+      "name": "запити",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "звіт",
+      "id": "a865b8bf-5086-4aa5-ad14-29a270001795",
+      "name": "звіт",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "звітність",
+      "id": "078e67d5-14c3-47dd-b6f8-645c5c41380b",
+      "name": "звітність",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "інформація",
+      "id": "2717517c-29f3-4002-a992-ae54b33004fa",
+      "name": "інформація",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Апарат виконавчого органу Київської міської ради (Київської міської державної адміністрації)",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-121523.667984ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 613,
+    "recent": 613
+  }
+}

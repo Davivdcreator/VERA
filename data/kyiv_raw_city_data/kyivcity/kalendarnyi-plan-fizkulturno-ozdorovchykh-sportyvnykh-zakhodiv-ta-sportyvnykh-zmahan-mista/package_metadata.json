@@ -1,0 +1,194 @@
+{
+  "added_to_favorites_number": 0,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "other",
+  "collection_basis": "Закон України «Про фізичну культуру і спорт», Рішення Київської міської ради від 21.11.2024 №174/9982 «Про затвердження комплексної міської цільової програми «Молодь та спорт столиці» на 2025–2027 роки»",
+  "creator_user_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+  "id": "84de6b5b-442d-44bf-81f3-73374af6c815",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-11T15:44:55.752306",
+  "metadata_modified": "2026-06-08T14:48:28.178623",
+  "name": "kalendarnyi-plan-fizkulturno-ozdorovchykh-sportyvnykh-zakhodiv-ta-sportyvnykh-zmahan-mista-dep-sport",
+  "notes": "Набір містить календарний план фізкультурно-оздоровчих, спортивних заходів та спортивних змагань на території міста Києва. \r\nДані оприлюднюються з ІКС «Система автоматизації взаємозв'язків між учасниками спортивного освітнього процесу в місті Києві». Дані надаються у форматі JSON.",
+  "num_resources": 1,
+  "num_tags": 4,
+  "number_of_all_downloads": 8,
+  "number_of_views": 238,
+  "organization": {
+    "id": "51d80b0e-fd98-4376-81e3-e2e5032ba3f7",
+    "name": "dep-sport",
+    "title": "Департамент молоді та спорту",
+    "type": "organization",
+    "description": "Забезпечує реалізацію державної політики у сфері молоді та спорту та національно-патріотичного виховання, у сферах фізичної культури і спорту та оздоровлення та відпочинку дітей",
+    "image_url": "2026-05-15-122258.343385ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.412332",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "42269168",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Хрещатик, 12",
+    "email": "sports@kyivcity.gov.ua",
+    "phone": "+380442792702",
+    "number_of_linked_packages": 15,
+    "date_of_refresh": "2026-05-08T14:13:16.921648",
+    "number_of_views": 48,
+    "number_of_categories": 9,
+    "number_of_all_downloads": 180,
+    "average_rating": "0.0",
+    "subscription_should_be_checked": false,
+    "favorites_should_be_checked": false,
+    "in_progress": true,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "51d80b0e-fd98-4376-81e3-e2e5032ba3f7",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "moderation_date": "2026-06-08T14:46:08.204892",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Світлана Моторна",
+  "responsible_person_id": "346bfc78-1361-44d2-9e01-4bb5ed7bded6",
+  "state": "active",
+  "title": "Календарний план фізкультурно-оздоровчих, спортивних заходів та спортивних змагань міста Києва",
+  "type": "dataset",
+  "update_frequency": "monthly",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "51d80b0e-fd98-4376-81e3-e2e5032ba3f7",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-05-08T10:58:08.183199",
+      "data_period_end": "2026-05-31",
+      "data_period_start": "2021-10-09",
+      "datastore_active": true,
+      "description": "Ресурс містить дані про календарний план спортивних подій та заходів у місті Києві. Кожна подія має унікальний номер, дату, час початку та завершення, опис заходу, кількість днів, додаткову інформацію про розклад, дату створення та останнього оновлення запису тощо.",
+      "format": "JSON",
+      "hash": "",
+      "id": "7991e911-1abd-48f4-bb13-e025091b7979",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-08T14:48:28.127497",
+      "metadata_modified": "2026-06-08T14:48:28.189748",
+      "mimetype": "application/json",
+      "mimetype_inner": null,
+      "name": "sportEvents.json",
+      "number_of_all_downloads": 5,
+      "number_of_views": 29,
+      "package_id": "84de6b5b-442d-44bf-81f3-73374af6c815",
+      "position": 0,
+      "resource_code": "OTHER",
+      "resource_type": null,
+      "size": 1902769,
+      "source": "ІКС «Система автоматизації взаємозв'язків між учасниками спортивного освітнього процесу в місті Києві»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 29,
+        "recent": 29
+      },
+      "ua-select-search-field-administrator-org": "Департамент молоді та спорту",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Позасистемний формат (OTHER)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-05-08T10:58:10.333209",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-05-08T11:05:56.809860",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-06-05T07:46:52.285497",
+            "status": "pending",
+            "moderator_id": "346bfc78-1361-44d2-9e01-4bb5ed7bded6"
+          },
+          {
+            "date": "2026-06-05T08:19:39.062913",
+            "status": "needs_work",
+            "comment": "Auto-changed to pending on edit"
+          },
+          {
+            "date": "2026-06-08T11:12:19.707680",
+            "status": "pending",
+            "comment": "Добрий день! Файл оприлюднюємо лише у форматі JSON! Також, зверніть увагу – назва файлу має відповідати назві ресурсу – sportEvents (без дати чи інших слів)",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          }
+        ],
+        "created_by": "sports",
+        "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12",
+        "moderation_date": "2026-06-08T14:45:16.574859",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/84de6b5b-442d-44bf-81f3-73374af6c815/resource/7991e911-1abd-48f4-bb13-e025091b7979/download/sportevents.json",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": "skipped"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "заходи",
+      "id": "6efc3678-7047-48fc-9c3d-aa06ed885dca",
+      "name": "заходи",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "змагання",
+      "id": "69cd4d34-f231-40c7-a9b9-e8adca732b3d",
+      "name": "змагання",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "календар",
+      "id": "0f377112-12b4-45e5-aae2-d8c4772d006b",
+      "name": "календар",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "спорт",
+      "id": "e60be75f-1910-44cc-a9d6-db0993ecee78",
+      "name": "спорт",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Департамент молоді та спорту",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-122258.343385ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 238,
+    "recent": 238
+  }
+}

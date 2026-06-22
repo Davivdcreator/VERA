@@ -1,0 +1,172 @@
+{
+  "added_to_favorites_number": 1,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "improvements",
+  "collection_basis": "Водний кодекс України, Закон України «Про місцеве самоврядування в Україні», Закон України «Про питну воду та питне водопостачання», Закон України «Про благоустрій населених пунктів», Наказ Міністерства охорони здоров’я України «Про затвердження Державних санітарних норм та правил «Гігієнічні вимоги до води питної,  призначеної  для  споживання  людиною» від 12.05.2010 №400 ",
+  "creator_user_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+  "id": "5505eecc-a202-4f40-8807-26c8aa671079",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-09T12:27:25.434607",
+  "metadata_modified": "2026-04-09T06:35:05.481356",
+  "name": "biuvetni-kompleksy-dep-zhki",
+  "notes": "Набір містить дані про характеристики бюветів СВКП «Київводфонд», їхнє місцерозташування, утримувачів, наявність генератора та інше.",
+  "num_resources": 1,
+  "num_tags": 3,
+  "number_of_all_downloads": 3,
+  "number_of_views": 112,
+  "organization": {
+    "id": "cc7f5e28-63a6-4077-81cf-8f7a1256ffbe",
+    "name": "dep-zhki",
+    "title": "Департамент житлово-комунальної інфраструктури",
+    "type": "organization",
+    "description": "Забезпечує функціонування та розвиток систем тепло-, водопостачання та водовідведення. Координує роботу комунальних служб у сфері ЖКГ, поводження з відходами та інженерного захисту територій.",
+    "image_url": "",
+    "created": "2026-02-02T14:38:28.385952",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "33695540",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Велика Житомирська, 15-А",
+    "email": "infrastructure@kyivcity.gov.ua",
+    "phone": "+380442792921",
+    "number_of_linked_packages": 19,
+    "date_of_refresh": "2026-04-08T22:23:24.790294",
+    "number_of_views": 33,
+    "number_of_categories": 7,
+    "number_of_all_downloads": 87,
+    "average_rating": "0.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "cc7f5e28-63a6-4077-81cf-8f7a1256ffbe",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "moderation_date": "2026-04-09T06:35:05.983706",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Оксана Єгорова",
+  "responsible_person_id": "cce09501-8503-4975-be16-8f5f1ceee10c",
+  "state": "active",
+  "title": "Бюветні комплекси",
+  "type": "dataset",
+  "update_frequency": "annually",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "cc7f5e28-63a6-4077-81cf-8f7a1256ffbe",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-12T13:22:33.232381",
+      "data_owner": "726a4841-fe3f-487d-a22c-98e061de42ae",
+      "data_period_end": "2025-12-29",
+      "data_period_start": "2024-10-04",
+      "datastore_active": true,
+      "description": "Набір містить дані про характеристики бюветів СВКП «Київводфонд», їхнє місцерозташування, утримувачів, посилання на сертифікати аналізу води, наявність генераторів,стан, географічні координати.",
+      "format": "CSV",
+      "hash": "",
+      "id": "ff603658-be8d-49d5-951a-d3f034aed5a1",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-04-08T08:57:10.653634",
+      "metadata_modified": "2026-04-08T08:57:10.717164",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "buvets.csv",
+      "number_of_all_downloads": 3,
+      "number_of_views": 33,
+      "package_id": "5505eecc-a202-4f40-8807-26c8aa671079",
+      "position": 0,
+      "resource_code": "buvets",
+      "resource_type": null,
+      "size": 49133,
+      "source": "",
+      "state": "active",
+      "tracking_summary": {
+        "total": 33,
+        "recent": 33
+      },
+      "ua-select-search-field-administrator-org": "Департамент житлово-комунальної інфраструктури",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Бювети (buvets)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-12T13:22:34.243475",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-12T13:22:53.483505",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          }
+        ],
+        "created_by": "olena-pastushenko",
+        "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+        "moderation_date": "2026-03-12T13:23:00.632671",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/5505eecc-a202-4f40-8807-26c8aa671079/resource/ff603658-be8d-49d5-951a-d3f034aed5a1/download/buvets.csv",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "благоустрій",
+      "id": "dba08b5e-a3de-4eee-a6eb-2771340b06b4",
+      "name": "благоустрій",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "бювет",
+      "id": "1aad406e-d8da-4a9e-ae83-96e0827b73cb",
+      "name": "бювет",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "вода",
+      "id": "fa7889f6-f8e9-4fd9-8530-390a293dff99",
+      "name": "вода",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Департамент житлово-комунальної інфраструктури",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-121810.680531ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 112,
+    "recent": 112
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "added_to_favorites_number": 0,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "ecology",
+  "collection_basis": "Закон України «Про захист тварин від жорстокого поводження», Рішення Київської міської ради від 23.11.2023 №7395/7436 «Про затвердження Міської цільової програми поводження з тваринами в місті Києві на 2024-2025 роки»",
+  "creator_user_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+  "id": "222ca253-7129-41ff-a927-632116f9cfca",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-11T12:27:09.032941",
+  "metadata_modified": "2026-06-10T13:36:09.136732",
+  "name": "dani-pro-vylov-sterylizatsiiu-ta-identyfikatsiiu-bezprytulnykh-tvaryn-dep-ecology",
+  "notes": "Набір містить дані про відловлених безпритульних тварин, зокрема: інформація про місце відлову, ідентифікацію, щеплення, стерилізацію, дату та місце відпущення тварини.",
+  "num_resources": 1,
+  "num_tags": 8,
+  "number_of_all_downloads": 13,
+  "number_of_views": 346,
+  "organization": {
+    "id": "5f1af640-4324-4c83-a4a4-8de23dec3f9a",
+    "name": "dep-ecology",
+    "title": "Департамент захисту довкілля та адаптації до зміни клімату",
+    "type": "organization",
+    "description": "Здійснює регулювання у сферах охорони навколишнього природного середовища, забезпечення екологічної та в межах своєї компетенції радіаційної безпеки, у сфері поводження з відходами (крім поводження з радіоактивними відходами), пестицидами та агрохімікатами, організації, охорони і використання територій та об’єктів природно-заповідного фонду України, формування, збереження та використання екологічної мережі",
+    "image_url": "2026-05-15-121823.413017ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.398187",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "41819431",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Турівська, 28",
+    "email": "ecology@kyivcity.gov.ua",
+    "phone": "+380443666410",
+    "number_of_linked_packages": 14,
+    "date_of_refresh": "2026-06-09T11:23:03.580161",
+    "number_of_views": 154,
+    "number_of_categories": 8,
+    "number_of_all_downloads": 253,
+    "average_rating": "0.0",
+    "subscription_should_be_checked": false,
+    "favorites_should_be_checked": false,
+    "in_progress": false,
+    "is_changed": false,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "5f1af640-4324-4c83-a4a4-8de23dec3f9a",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "history": [
+        {
+          "date": "2026-06-10T13:14:37.396491",
+          "status": "pending",
+          "moderator_id": null
+        }
+      ],
+      "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+      "moderation_date": "2026-06-10T13:36:09.136540",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Тетяна Дворецька",
+  "responsible_person_id": "051ece39-82ae-42c8-8c1e-b9ed6930a04f",
+  "state": "active",
+  "title": "Дані про вилов, стерилізацію та ідентифікацію безпритульних тварин",
+  "type": "dataset",
+  "update_frequency": "monthly",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "5f1af640-4324-4c83-a4a4-8de23dec3f9a",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-11T12:55:41.827210",
+      "data_owner": "0a060013-5a4c-4f19-a1a9-ffcf022ae35b",
+      "data_period_end": "2026-05-31",
+      "data_period_start": "2025-01-02",
+      "datastore_active": true,
+      "description": "Ресурс містить дані про відловлених безпритульних тварин, зокрема: інформація про місце відлову, ідентифікацію, щеплення, стерилізацію, дату та місце відпущення тварини.",
+      "format": "CSV",
+      "hash": "",
+      "id": "c539d6a3-e8a5-4f4d-9968-2816c4c1ff07",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-10T13:26:32.771481",
+      "metadata_modified": "2026-06-10T13:26:32.803061",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "homelessAnimals.csv",
+      "number_of_all_downloads": 13,
+      "number_of_views": 117,
+      "package_id": "222ca253-7129-41ff-a927-632116f9cfca",
+      "position": 0,
+      "resource_code": "homelessAnimals",
+      "resource_type": null,
+      "size": 5332624,
+      "source": "ІС «Реєстр домашніх тварин»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 117,
+        "recent": 117
+      },
+      "ua-select-search-field-administrator-org": "Департамент захисту довкілля та адаптації до зміни клімату",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Дані про безпритульних тварин (homelessAnimals)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-11T12:55:43.075478",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-17T10:34:51.101969",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-05-13T06:50:07.455618",
+            "status": "pending",
+            "moderator_id": "051ece39-82ae-42c8-8c1e-b9ed6930a04f"
+          },
+          {
+            "date": "2026-05-13T06:53:12.339126",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-06-10T10:42:58.777617",
+            "status": "pending",
+            "moderator_id": "051ece39-82ae-42c8-8c1e-b9ed6930a04f"
+          },
+          {
+            "date": "2026-06-10T11:09:30.035573",
+            "status": "needs_work",
+            "comment": "Auto-changed to pending on edit"
+          },
+          {
+            "date": "2026-06-10T13:14:38.017783",
+            "status": "pending",
+            "comment": "Добрий день! 1. Необхідно виконати кластеризацію в стовпчику captureAddressLocatorDesignator. 2. Необхідно виконати кластеризацію в стовпчику animalSpecies. 3. Необхідно виконати кластеризацію в стовпчику releaseAddressThoroughfare. 4. Необхідно виконати кластеризацію в стовпчику  releaseAddressLocatorDesignator. 5. Поставити в Актуальність даних дату оприлюднення ресурсу (тобто, дані актуальні на 2026-06-10) та за наступних оновлень намагатись не забути про цей етап оприлюднення.",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          }
+        ],
+        "created_by": "mariia-novokhatska",
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-06-10T13:24:45.601844",
+        "rejection_reason": "",
+        "moderator_comment": "",
+        "has_pending_version": true
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/222ca253-7129-41ff-a927-632116f9cfca/resource/c539d6a3-e8a5-4f4d-9968-2816c4c1ff07/download/homelessanimals.csv",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "відлов",
+      "id": "dc42a1fb-922d-4fdc-827d-c1e555554046",
+      "name": "відлов",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "захист",
+      "id": "097c094d-59e2-41dc-917c-afb1924fba16",
+      "name": "захист",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "коти",
+      "id": "3fc14b83-8d8e-4398-9d3c-25be89f827ab",
+      "name": "коти",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "собаки",
+      "id": "9d46e5d7-2780-4b5a-b8e4-fdada27086c7",
+      "name": "собаки",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "стерилізаці",
+      "id": "e43e65a1-1db9-415c-ac14-6bdcd5fc3d19",
+      "name": "стерилізаці",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "стерилізація",
+      "id": "a59daaca-2127-42e8-a689-389eab84b4b9",
+      "name": "стерилізація",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "тварини",
+      "id": "979760a0-51c5-475e-aba5-79100275b8e0",
+      "name": "тварини",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "щеплення",
+      "id": "df51c3e6-69a6-4c0b-82bd-994495990e96",
+      "name": "щеплення",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Департамент захисту довкілля та адаптації до зміни клімату",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-121823.413017ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 346,
+    "recent": 346
+  }
+}

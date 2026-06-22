@@ -1,0 +1,212 @@
+{
+  "added_to_favorites_number": 0,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "property",
+  "collection_basis": "Земельний кодекс України, Закон України «Про місцеве самоврядування в Україні»",
+  "creator_user_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12",
+  "id": "8bca98e6-2083-4485-aebd-455fd1b07056",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-05-12T07:39:58.981942",
+  "metadata_modified": "2026-06-19T10:05:15.937386",
+  "name": "perelik-zaiav-shchodo-bezoplatnoi-pryvatyzatsii-zemelnykh-dilianok-hromadianamy-dep-zem-resources",
+  "notes": "Набір містить дані обліку звернень громадян щодо отримання земельних ділянок із земель комунальної власності територіальної громади міста Києва. Зокрема, інформацію про звернення, заявників, наявність підстав для першочергового отримання земельних ділянок, реквізити рішень щодо відведення земельних ділянок",
+  "num_resources": 1,
+  "num_tags": 7,
+  "number_of_all_downloads": 14,
+  "number_of_views": 122,
+  "organization": {
+    "id": "463dad95-8038-4ce0-b4ce-4ebf16707f27",
+    "name": "dep-zem-resources",
+    "title": "Департамент земельних ресурсів",
+    "type": "organization",
+    "description": "Забезпечує управління землями комунальної власності територіальної громади міста Києва та землями державної власності в межах міста Києва, проведення в місті земельної реформи, забезпечення раціонального використання та охорони земель на території міста, а також ведення міського земельного кадастру відповідно до законодавства, організовує виконання робіт з інвентаризації земель.",
+    "image_url": "2026-05-15-121840.022145ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.401960",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "26199097",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Хрещатик, 32-А",
+    "email": "kyivland@kyivcity.gov.ua",
+    "phone": "+380442027815",
+    "number_of_linked_packages": 11,
+    "date_of_refresh": "2026-06-15T11:54:04.760939",
+    "number_of_views": 105,
+    "number_of_categories": 6,
+    "number_of_all_downloads": 224,
+    "average_rating": "0.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "463dad95-8038-4ce0-b4ce-4ebf16707f27",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "history": [
+        {
+          "date": "2026-06-19T09:09:55.073110",
+          "status": "pending",
+          "moderator_id": null
+        }
+      ],
+      "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+      "moderation_date": "2026-06-19T10:05:15.937153",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Юлія Юріївна Романів",
+  "responsible_person_id": "c421894d-8dca-4f28-b48a-47bb3d42e3d3",
+  "state": "active",
+  "title": "Перелік заяв щодо безоплатної приватизації земельних ділянок громадянами",
+  "type": "dataset",
+  "update_frequency": "monthly",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "463dad95-8038-4ce0-b4ce-4ebf16707f27",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-05-12T07:46:04.718276",
+      "data_period_end": "2026-05-31",
+      "data_period_start": "2024-01-01",
+      "datastore_active": true,
+      "description": "Таблиця містить ідентифікатор, дату реєстрації, статус звернення, номер у черзі, прізвище, ім'я та по батькові заявника, наявність підстави для першочергового отримання земельної ділянки, реквізити НПА щодо відведення земельних ділянок (вид, назва, дата ухвалення, номер, посилання, видавник).",
+      "format": "CSV",
+      "hash": "",
+      "id": "b3fa2500-f8bd-4e92-b8f0-732f9409dfb3",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-19T09:09:54.407773",
+      "metadata_modified": "2026-06-19T09:09:54.632337",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "line.csv",
+      "number_of_all_downloads": 12,
+      "number_of_views": 35,
+      "package_id": "8bca98e6-2083-4485-aebd-455fd1b07056",
+      "position": 0,
+      "resource_code": "line_land",
+      "resource_type": null,
+      "size": 144800,
+      "source": "",
+      "state": "active",
+      "tracking_summary": {
+        "total": 35,
+        "recent": 35
+      },
+      "ua-select-search-field-administrator-org": "Департамент земельних ресурсів",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Заяви щодо безоплатної приватизації земельних ділянок (line_land)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-05-12T07:46:05.907846",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-06-15T12:30:00.007644",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-18T11:11:36.194554",
+            "status": "pending",
+            "moderator_id": "1c88d381-9616-41ea-acad-828c3333f608"
+          }
+        ],
+        "created_by": "kateryna-burkovets",
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-06-19T10:05:06.662820",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/uploads/versions/version_95945004_v1.1.csv",
+      "url_type": "version_upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "ділянка",
+      "id": "251d5908-99ff-4f66-8876-626b69f1abb6",
+      "name": "ділянка",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "ділянки",
+      "id": "9cf4b8d3-da7c-42ea-a1f0-5432f02f05b1",
+      "name": "ділянки",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "звернення",
+      "id": "461f05b7-b6e4-44c4-a953-c7a350fb7c57",
+      "name": "звернення",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "земля",
+      "id": "185aad6b-4aaa-4d3a-b4f6-eabf3c099bc4",
+      "name": "земля",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "реквізити",
+      "id": "2a76a0fe-412f-46cd-986e-84df51b9bc1d",
+      "name": "реквізити",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "рішення",
+      "id": "9c29118f-3f46-4d71-8b83-5f6985d8f005",
+      "name": "рішення",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "черга",
+      "id": "25955905-82d5-43a5-b624-f5012580cc91",
+      "name": "черга",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Департамент земельних ресурсів",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-121840.022145ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 122,
+    "recent": 122
+  }
+}

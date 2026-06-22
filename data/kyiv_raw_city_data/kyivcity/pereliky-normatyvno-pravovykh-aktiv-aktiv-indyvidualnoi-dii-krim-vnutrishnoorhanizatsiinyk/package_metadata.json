@@ -1,0 +1,472 @@
+{
+  "added_to_favorites_number": 0,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "acts",
+  "collection_basis": "Закон України «Про місцеві державні адміністрації», Закон України «Про столицю України – місто-герой Київ», розпорядження ВО КМР КМДА від 08.10.2018 № 1810 «Про затвердження Регламенту виконавчого органу Київської міської ради (Київської міської державної адміністрації)»",
+  "creator_user_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+  "id": "64b2cf08-5ea3-429a-912c-74634d46e64d",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-20T12:19:06.816432",
+  "metadata_modified": "2026-06-22T13:21:52.720326",
+  "name": "pereliky-normatyvno-pravovykh-aktiv-aktiv-indyvidualnoi-dii-krim-vnutrishnoorhanizatsiinykh-p-aparat",
+  "notes": "Набір містить три ресурси:   \r\n**legalActs_KMVA** – інформацію про нормативно-правові акти, акти індивідуальної дії (крім внутрішньоорганізаційних), прийняті Київською міською військовою адміністрацією;  \r\n**legalActs_KMG** – інформацію про нормативно-правові акти, акти індивідуальної дії (крім внутрішньоорганізаційних), прийняті  Київський міським головою;    \r\n**legalActs** – інформацію про нормативно-правові акти, акти індивідуальної дії (крім внутрішньоорганізаційних), прийняті виконавчим органом Київської міської ради (Київської міської державної адміністрації);    \r\n**projects** – проекти розпоряджень, що підлягають обговоренню (за наявності).  \r\n\r\nДокумент розпорядника інформації про визначення відповідальної особи (осіб) розпорядника інформації оприлюднено в наборі даних «Інформація про відповідальних осіб за оприлюднення інформації у формі відкритих даних у структурних підрозділах виконавчого органу Київської міської ради (Київської міської державної адміністрації) та районних у місті Києві державних адміністраціях» за посиланням: https://data.kyivcity.gov.ua/dataset/informatsiia-pro-vidpovidalnykh-osib-za-opryliudnennia-informatsii-u-formi-vidkrytykh-danykh--aparat.   \r\n   \r\nДжерело даних: ІКС «Єдиний інформаційний простір територіальної громади міста Києва». ",
+  "num_resources": 3,
+  "num_tags": 3,
+  "number_of_all_downloads": 53,
+  "number_of_views": 901,
+  "organization": {
+    "id": "72d44dfa-b47d-453d-afea-d10d886d4e90",
+    "name": "aparat",
+    "title": "Апарат виконавчого органу Київської міської ради (Київської міської державної адміністрації)",
+    "type": "organization",
+    "description": "Забезпечує правове, організаційне, документальне, інформаційне, кадрове, фінансово-господарське та інше забезпечення діяльності виконавчого органу Київської міської ради (Київської міської державної адміністрації).",
+    "image_url": "2026-05-15-121523.667984ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.371499",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "37853361",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Хрещатик, 36",
+    "email": "data@kyivcity.gov.ua",
+    "phone": "+380442027454",
+    "number_of_linked_packages": 20,
+    "date_of_refresh": "2026-06-22T16:21:52.720326",
+    "number_of_views": 502,
+    "number_of_categories": 10,
+    "number_of_all_downloads": 501,
+    "average_rating": "5.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "72d44dfa-b47d-453d-afea-d10d886d4e90",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "history": [
+        {
+          "date": "2026-05-19T10:18:38.427602",
+          "status": "pending",
+          "moderator_id": null
+        }
+      ],
+      "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+      "moderation_date": "2026-05-19T12:46:29.537059",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Відділ оприлюднення інформації",
+  "responsible_person_id": "54f86e0e-9736-4280-a453-ac428a2c43a1",
+  "state": "active",
+  "title": "Переліки нормативно-правових актів, актів індивідуальної дії (крім внутрішньоорганізаційних), прийнятих розпорядником інформації, проекти рішень, що підлягають обговоренню, а також документ розпорядника інформації про визначення особи (осіб) відповідальних за оприлюднення відкритих даних",
+  "type": "dataset",
+  "update_frequency": "weekly",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "72d44dfa-b47d-453d-afea-d10d886d4e90",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-20T12:48:54.368672",
+      "data_owner": [
+        "c842db7e-fa6d-4385-8f92-09268f3b6470",
+        "6a0c2363-b08f-4b9c-90cf-9d7eed3922a7",
+        "a714d4dc-bebe-40b7-a1d7-7add98f78d8c",
+        "5b186e66-21ad-4e89-9106-040eda7098ff",
+        "cc7f5e28-63a6-4077-81cf-8f7a1256ffbe",
+        "44e248c7-d723-4f30-99c4-7b25bfe2bb81",
+        "2d4d1d3d-0c8b-440c-9072-46a225f50de1",
+        "b4b5fa78-5505-4192-9295-2d401a313b1a",
+        "5f1af640-4324-4c83-a4a4-8de23dec3f9a",
+        "463dad95-8038-4ce0-b4ce-4ebf16707f27",
+        "c4b5eae1-cda8-4815-a69b-e3a0efa98968",
+        "838439ef-c3ca-4709-a54f-2a605bd2d8c3",
+        "51d80b0e-fd98-4376-81e3-e2e5032ba3f7",
+        "566ecaa8-e749-4a88-b368-ae78d202c25b",
+        "afc97548-712f-446f-a6f4-0114658935ec",
+        "be37f4cd-d75b-4ca7-a4a9-deb62afd3249",
+        "975fe2aa-145d-45ad-966d-af18bb3f1091",
+        "6f1e14ef-2c25-4472-98d6-6d7837c03834",
+        "23df8833-15f7-4ff1-9914-806c26ed3685",
+        "c545c89d-4508-4575-8a8d-44199fc29a70",
+        "e61dd288-fb1f-419b-9af7-b218ffe0b1fe",
+        "a1bf0c1f-e1d3-4508-8d06-df50a3366d0c",
+        "3a783c26-a981-4000-b49f-87802af22713",
+        "68ce41df-69ac-410f-b2bb-8369e9a9f6e7",
+        "110bcf31-2801-4f5b-8eb8-20375eec1f62",
+        "5a46090d-c94b-4ed3-91ae-80cddc044c26",
+        "de1dc490-b93e-440b-8b00-d353c8817fbd",
+        "43af0c35-d43f-4467-a6ee-fa2d1eb4d295",
+        "06ecc9e6-8ca2-4ecf-b0f9-568f821211cb"
+      ],
+      "data_period_end": "2026-06-19",
+      "data_period_start": "2024-01-01",
+      "datastore_active": false,
+      "description": "Ресурс містить інформацію про розпорядження виконавчого органу Київської міської ради (Київської міської державної адміністрації), які оприлюднено на Офіційному порталі Києва.",
+      "format": "CSV",
+      "hash": "",
+      "id": "872264f7-1600-4cc3-aff1-693c28afec45",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-22T13:21:52.699567",
+      "metadata_modified": "2026-06-22T13:21:52.728635",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "legalActs",
+      "number_of_all_downloads": 15,
+      "number_of_views": 130,
+      "package_id": "64b2cf08-5ea3-429a-912c-74634d46e64d",
+      "position": 0,
+      "resource_code": "legalActs",
+      "resource_type": null,
+      "size": 183910,
+      "source": "ІКС «Єдиний інформаційний простір територіальної громади міста Києва»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 130,
+        "recent": 130
+      },
+      "ua-select-search-field-administrator-org": "Апарат виконавчого органу Київської міської ради (Київської міської державної адміністрації)",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Перелік нормативно-правових актів (legalActs)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-20T12:48:55.383911",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-20T12:49:31.310892",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-12T07:15:41.277989",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-12T11:46:33.217223",
+            "status": "approved",
+            "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12"
+          },
+          {
+            "date": "2026-06-22T13:20:27.708153",
+            "status": "pending",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-22T13:21:26.503408",
+            "status": "needs_work",
+            "comment": "Auto-changed to pending on edit"
+          },
+          {
+            "date": "2026-06-22T13:21:54.150898",
+            "status": "pending",
+            "comment": "помилка",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          }
+        ],
+        "created_by": "olena-pastushenko",
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-06-22T13:22:28.359366",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/uploads/versions/version_1d1dbf8e_v1.3.csv",
+      "url_type": "version_upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    },
+    {
+      "administrator_org": "72d44dfa-b47d-453d-afea-d10d886d4e90",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-20T13:13:21.046866",
+      "data_owner": [
+        "c842db7e-fa6d-4385-8f92-09268f3b6470",
+        "6a0c2363-b08f-4b9c-90cf-9d7eed3922a7",
+        "a714d4dc-bebe-40b7-a1d7-7add98f78d8c",
+        "5b186e66-21ad-4e89-9106-040eda7098ff",
+        "cc7f5e28-63a6-4077-81cf-8f7a1256ffbe",
+        "44e248c7-d723-4f30-99c4-7b25bfe2bb81",
+        "2d4d1d3d-0c8b-440c-9072-46a225f50de1",
+        "b4b5fa78-5505-4192-9295-2d401a313b1a",
+        "5f1af640-4324-4c83-a4a4-8de23dec3f9a",
+        "463dad95-8038-4ce0-b4ce-4ebf16707f27",
+        "c4b5eae1-cda8-4815-a69b-e3a0efa98968",
+        "838439ef-c3ca-4709-a54f-2a605bd2d8c3",
+        "51d80b0e-fd98-4376-81e3-e2e5032ba3f7",
+        "566ecaa8-e749-4a88-b368-ae78d202c25b",
+        "afc97548-712f-446f-a6f4-0114658935ec",
+        "be37f4cd-d75b-4ca7-a4a9-deb62afd3249",
+        "975fe2aa-145d-45ad-966d-af18bb3f1091",
+        "6f1e14ef-2c25-4472-98d6-6d7837c03834",
+        "23df8833-15f7-4ff1-9914-806c26ed3685",
+        "c545c89d-4508-4575-8a8d-44199fc29a70",
+        "e61dd288-fb1f-419b-9af7-b218ffe0b1fe",
+        "a1bf0c1f-e1d3-4508-8d06-df50a3366d0c",
+        "3a783c26-a981-4000-b49f-87802af22713",
+        "68ce41df-69ac-410f-b2bb-8369e9a9f6e7",
+        "110bcf31-2801-4f5b-8eb8-20375eec1f62",
+        "5a46090d-c94b-4ed3-91ae-80cddc044c26",
+        "de1dc490-b93e-440b-8b00-d353c8817fbd",
+        "43af0c35-d43f-4467-a6ee-fa2d1eb4d295",
+        "06ecc9e6-8ca2-4ecf-b0f9-568f821211cb"
+      ],
+      "data_period_end": "2026-06-19",
+      "data_period_start": "2024-01-01",
+      "datastore_active": false,
+      "description": "Ресурс містить інформацію про розпорядження Київської міської військової адміністрації, які оприлюднено на Офіційному порталі Києва.",
+      "format": "CSV",
+      "hash": "",
+      "id": "9d12580d-7efe-4e4a-8224-5f7688e18482",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-22T13:18:02.857728",
+      "metadata_modified": "2026-06-22T13:18:02.939082",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "legalActs_KMVA",
+      "number_of_all_downloads": 17,
+      "number_of_views": 100,
+      "package_id": "64b2cf08-5ea3-429a-912c-74634d46e64d",
+      "position": 1,
+      "resource_code": "legalActs",
+      "resource_type": null,
+      "size": 1178975,
+      "source": "ІКС «Єдиний інформаційний простір територіальної громади міста Києва»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 100,
+        "recent": 100
+      },
+      "ua-select-search-field-administrator-org": "Апарат виконавчого органу Київської міської ради (Київської міської державної адміністрації)",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Перелік нормативно-правових актів (legalActs)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-20T13:13:23.947967",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-20T13:14:21.257469",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-04-14T10:02:34.304930",
+            "status": "pending",
+            "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12"
+          },
+          {
+            "date": "2026-04-14T10:02:43.953660",
+            "status": "approved",
+            "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12"
+          },
+          {
+            "date": "2026-05-12T08:54:09.541444",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-19T10:11:40.071711",
+            "status": "pending",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-05-19T10:12:20.920710",
+            "status": "needs_work",
+            "comment": "Auto-changed to pending on edit"
+          },
+          {
+            "date": "2026-05-19T12:42:50.866946",
+            "status": "pending",
+            "comment": "прибрати",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          }
+        ],
+        "created_by": "olena-pastushenko",
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-05-19T12:43:16.241792",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/64b2cf08-5ea3-429a-912c-74634d46e64d/resource/9d12580d-7efe-4e4a-8224-5f7688e18482/download/legalacts_kmva.csv",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    },
+    {
+      "administrator_org": "72d44dfa-b47d-453d-afea-d10d886d4e90",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-20T14:07:18.447362",
+      "data_owner": [
+        "c842db7e-fa6d-4385-8f92-09268f3b6470",
+        "6a0c2363-b08f-4b9c-90cf-9d7eed3922a7",
+        "a714d4dc-bebe-40b7-a1d7-7add98f78d8c",
+        "5b186e66-21ad-4e89-9106-040eda7098ff",
+        "cc7f5e28-63a6-4077-81cf-8f7a1256ffbe",
+        "44e248c7-d723-4f30-99c4-7b25bfe2bb81",
+        "2d4d1d3d-0c8b-440c-9072-46a225f50de1",
+        "b4b5fa78-5505-4192-9295-2d401a313b1a",
+        "5f1af640-4324-4c83-a4a4-8de23dec3f9a",
+        "463dad95-8038-4ce0-b4ce-4ebf16707f27",
+        "c4b5eae1-cda8-4815-a69b-e3a0efa98968",
+        "838439ef-c3ca-4709-a54f-2a605bd2d8c3",
+        "51d80b0e-fd98-4376-81e3-e2e5032ba3f7",
+        "566ecaa8-e749-4a88-b368-ae78d202c25b",
+        "afc97548-712f-446f-a6f4-0114658935ec",
+        "be37f4cd-d75b-4ca7-a4a9-deb62afd3249",
+        "975fe2aa-145d-45ad-966d-af18bb3f1091",
+        "6f1e14ef-2c25-4472-98d6-6d7837c03834",
+        "23df8833-15f7-4ff1-9914-806c26ed3685",
+        "c545c89d-4508-4575-8a8d-44199fc29a70",
+        "e61dd288-fb1f-419b-9af7-b218ffe0b1fe",
+        "a1bf0c1f-e1d3-4508-8d06-df50a3366d0c",
+        "3a783c26-a981-4000-b49f-87802af22713",
+        "68ce41df-69ac-410f-b2bb-8369e9a9f6e7",
+        "110bcf31-2801-4f5b-8eb8-20375eec1f62",
+        "5a46090d-c94b-4ed3-91ae-80cddc044c26",
+        "de1dc490-b93e-440b-8b00-d353c8817fbd",
+        "43af0c35-d43f-4467-a6ee-fa2d1eb4d295",
+        "06ecc9e6-8ca2-4ecf-b0f9-568f821211cb"
+      ],
+      "data_period_end": "2026-06-19",
+      "data_period_start": "2024-01-01",
+      "datastore_active": true,
+      "description": "Ресурс містить інформацію про розпорядження Київського міського голови, які оприлюднено на Офіційному порталі Києва.",
+      "format": "CSV",
+      "hash": "",
+      "id": "3ca2024c-f168-4564-9647-90cb859e17bd",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-22T09:54:11.036136",
+      "metadata_modified": "2026-06-22T09:54:11.202846",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "legalActs_KMG",
+      "number_of_all_downloads": 20,
+      "number_of_views": 100,
+      "package_id": "64b2cf08-5ea3-429a-912c-74634d46e64d",
+      "position": 2,
+      "resource_code": "legalActs",
+      "resource_type": null,
+      "size": 425630,
+      "source": "ІКС «Єдиний інформаційний простір територіальної громади міста Києва»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 100,
+        "recent": 100
+      },
+      "ua-select-search-field-administrator-org": "Апарат виконавчого органу Київської міської ради (Київської міської державної адміністрації)",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Перелік нормативно-правових актів (legalActs)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-20T14:07:19.682384",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-20T14:08:47.957706",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-12T08:03:59.337877",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-19T10:14:26.828769",
+            "status": "pending",
+            "moderator_id": "54f86e0e-9736-4280-a453-ac428a2c43a1"
+          },
+          {
+            "date": "2026-05-19T10:17:25.064125",
+            "status": "needs_work",
+            "comment": "Auto-changed to pending on edit"
+          },
+          {
+            "date": "2026-05-19T10:18:39.841764",
+            "status": "pending",
+            "comment": "прибрати",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          }
+        ],
+        "created_by": "olena-pastushenko",
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-05-19T10:19:35.060841",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/64b2cf08-5ea3-429a-912c-74634d46e64d/resource/3ca2024c-f168-4564-9647-90cb859e17bd/download/legalacts_kmg.csv",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "акти",
+      "id": "6fd1e36f-ac48-42dc-aa28-a1b27ae75cfd",
+      "name": "акти",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "проєкти",
+      "id": "bfdc9cc8-1a5c-404b-a12d-730c5d163576",
+      "name": "проєкти",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "розпорядження",
+      "id": "35b60e02-54d8-4438-b99b-9c900ccaa0fa",
+      "name": "розпорядження",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Апарат виконавчого органу Київської міської ради (Київської міської державної адміністрації)",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-121523.667984ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 901,
+    "recent": 901
+  }
+}

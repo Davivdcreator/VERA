@@ -1,0 +1,242 @@
+{
+  "added_to_favorites_number": 0,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "acts",
+  "collection_basis": "Закон України «Про місцеві державні адміністрації», Закон України «Про столицю України – місто-герой Київ»",
+  "creator_user_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+  "id": "942d38b3-1c97-4659-b183-92c2dcab31da",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-30T14:03:06.917680",
+  "metadata_modified": "2026-06-09T13:09:42.522250",
+  "name": "pereliky-normatyvno-pravovykh-aktiv-aktiv-indyvidualnoi-dii-krim-vnutrishnoorhanizats-shevchenka-rda",
+  "notes": "Набір містить два ресурси:    \r\n**legalActs** – інформацію про нормативно-правові акти, акти індивідуальної дії (крім внутрішньоорганізаційних), прийнятих Шевченківською районною в місті Києві державною адміністрацією;    \r\n**projects** – проєкти розпоряджень, що підлягають обговоренню (за наявності).     \r\n   \r\nДокумент розпорядника інформації про визначення відповідальної особи (осіб) розпорядника інформації оприлюднено в наборі даних «Інформація про відповідальних осіб за оприлюднення інформації у формі відкритих даних у структурних підрозділах виконавчого органу Київської міської ради (Київської міської державної адміністрації) та районних у місті Києві державних адміністраціях»:  \r\nhttps://data.kyivcity.gov.ua/dataset/informatsiia-pro-vidpovidalnykh-osib-za-opryliudnennia-informatsii-u-formi-vidkrytykh-danykh--aparat",
+  "num_resources": 1,
+  "num_tags": 4,
+  "number_of_all_downloads": 16,
+  "number_of_views": 247,
+  "organization": {
+    "id": "66577dc0-b654-412c-b56e-1e01cbac8825",
+    "name": "shevchenka-rda",
+    "title": "Шевченківська районна в місті Києві державна адміністрація",
+    "type": "organization",
+    "description": "Забезпечує реалізацію державної та міської політики на території Шевченківського району. Здійснює виконавчі повноваження у сферах соціально-економічного розвитку, бюджетування, ЖКГ та благоустрою. Координує діяльність районних закладів освіти, охорони здоров’я та культури, забезпечуючи соціальний захист та надання адміністративних послуг мешканцям району.",
+    "image_url": "2026-05-15-123839.844799ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.466455",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "37405111",
+    "administrative_unit_id": "UA80000000001078669",
+    "address": "вул. Богдана Хмельницького, 24",
+    "email": "rda.shevchenkivska@kyivcity.gov.ua",
+    "phone": "+380443665853",
+    "number_of_linked_packages": 11,
+    "date_of_refresh": "2026-06-09T11:23:03.580161",
+    "number_of_views": 68,
+    "number_of_categories": 8,
+    "number_of_all_downloads": 216,
+    "average_rating": "4.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": false,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "66577dc0-b654-412c-b56e-1e01cbac8825",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "history": [
+        {
+          "date": "2026-06-08T12:29:10.335471",
+          "status": "pending",
+          "moderator_id": null
+        }
+      ],
+      "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12",
+      "moderation_date": "2026-06-09T13:09:42.522073",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Олександр Карпенко",
+  "responsible_person_id": "79113d21-d52a-4311-ac0b-9810cff6fde5",
+  "state": "active",
+  "title": "Переліки нормативно-правових актів, актів індивідуальної дії (крім внутрішньоорганізаційних), прийнятих розпорядником інформації Шевченківською районною в місті Києві державною адміністрацією, проекти рішень, що підлягають обговоренню, а також документ розпорядника інформації про визначення особи (осіб) відповідальних за оприлюднення відкритих даних",
+  "type": "dataset",
+  "update_frequency": "weekly",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "66577dc0-b654-412c-b56e-1e01cbac8825",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-30T14:09:44.622352",
+      "data_period_end": "2026-06-05",
+      "data_period_start": "2026-05-24",
+      "datastore_active": true,
+      "description": "Ресурс містить інформацію про нормативно-правові акти, акти індивідуальної дії (крім внутрішньоорганізаційних) Шевченківської районної в місті Києві державної адміністрації. Зокрема, номери, назви, дати ухвалення, набрання чинності, назви та ідентифікатори видавників, посилання в мережі Інтернет. Кожним записом до таблиці є окремий нормативно-правовий акт або акт індивідуальної дії.",
+      "format": "CSV",
+      "hash": "",
+      "id": "f12f36fe-a208-4201-838e-fe6de45f3a35",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-08T12:29:09.818636",
+      "metadata_modified": "2026-06-08T12:29:09.895011",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "109_legalActs.csv",
+      "number_of_all_downloads": 9,
+      "number_of_views": 71,
+      "package_id": "942d38b3-1c97-4659-b183-92c2dcab31da",
+      "position": 0,
+      "resource_code": "legalActs",
+      "resource_type": null,
+      "size": 1131925,
+      "source": "ІКС «Єдиний інформаційний простір територіальної громади міста Києва»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 71,
+        "recent": 71
+      },
+      "ua-select-search-field-administrator-org": "Шевченківська районна в місті Києві державна адміністрація",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Перелік нормативно-правових актів (legalActs)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-30T14:09:45.527802",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-30T14:09:57.553387",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-06T14:35:58.233350",
+            "status": "pending",
+            "moderator_id": "79113d21-d52a-4311-ac0b-9810cff6fde5"
+          },
+          {
+            "date": "2026-05-07T05:40:50.871566",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-22T15:51:52.844636",
+            "status": "pending",
+            "moderator_id": "79113d21-d52a-4311-ac0b-9810cff6fde5"
+          },
+          {
+            "date": "2026-05-25T06:19:50.219955",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-01T08:48:56.729399",
+            "status": "pending",
+            "moderator_id": "62015db8-bf1b-4c96-80e2-e3e718a69277"
+          },
+          {
+            "date": "2026-06-01T08:55:21.436315",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-01T08:56:42.704826",
+            "status": "pending",
+            "moderator_id": "62015db8-bf1b-4c96-80e2-e3e718a69277"
+          },
+          {
+            "date": "2026-06-01T11:06:39.016585",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-05T11:59:47.727142",
+            "status": "pending",
+            "moderator_id": "62015db8-bf1b-4c96-80e2-e3e718a69277"
+          },
+          {
+            "date": "2026-06-05T12:52:14.184904",
+            "status": "needs_work",
+            "comment": "Auto-changed to pending on edit"
+          },
+          {
+            "date": "2026-06-08T12:29:11.629904",
+            "status": "pending",
+            "comment": "Ресурс оновлено некоректно, результатом відкриття є код HTML, а назва: 109-legalacts-csv.csv?csrf_token=rSCl7eu2eT2HcLn0NOV7eF0cKFbL6jJy",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          }
+        ],
+        "created_by": "olena-pastushenko",
+        "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12",
+        "moderation_date": "2026-06-09T13:07:54.897978",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "http://127.0.0.1:3333/command/core/export-rows/109-legalacts-csv.csv?csrf_token=rSCl7eu2eT2HcLn0NOV7eF0cKFbL6jJy",
+      "url_type": "url",
+      "validation_result": "",
+      "validation_status": "valid"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "акти",
+      "id": "6fd1e36f-ac48-42dc-aa28-a1b27ae75cfd",
+      "name": "акти",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "проекти",
+      "id": "bb66df57-afc4-4da4-a288-15d2fd85eebf",
+      "name": "проекти",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "рда",
+      "id": "d38c98e5-42bf-4b59-8376-5ad1fe097eb5",
+      "name": "рда",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "розпорядження",
+      "id": "35b60e02-54d8-4438-b99b-9c900ccaa0fa",
+      "name": "розпорядження",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Шевченківська районна в місті Києві державна адміністрація",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-123839.844799ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 247,
+    "recent": 247
+  }
+}

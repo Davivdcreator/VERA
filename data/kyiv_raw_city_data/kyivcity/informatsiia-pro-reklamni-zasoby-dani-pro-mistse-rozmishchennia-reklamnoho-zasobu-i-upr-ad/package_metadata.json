@@ -1,0 +1,350 @@
+{
+  "added_to_favorites_number": 1,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "ads",
+  "collection_basis": "Закон України «Про рекламу», постанова Кабінету Міністрів України від 29.12.2003 № 2067 «Про затвердження Типових правил розміщення зовнішньої реклами», розпорядження виконавчого органу Київської міської ради (КМДА) від 05.02.2019 № 207 «Про затвердження Порядку розміщення зовнішньої реклами в місті Києві та Порядку погодження розміщення реклами на транспорті комунальної власності територіальної громади міста Києва»",
+  "creator_user_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+  "id": "77b0519b-2327-4aa6-a134-60abdceb0943",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-18T16:14:35.003908",
+  "metadata_modified": "2026-06-08T07:51:03.346885",
+  "name": "informatsiia-pro-reklamni-zasoby-dani-pro-mistse-rozmishchennia-reklamnoho-zasobu-i-upr-adsvertising",
+  "notes": "Набір містить два ресурси:   \r\n**distributors** – довідник розповсюджувачів зовнішньої реклами у місті Києві, зокрема: назву, місцезнаходження, контактні дані розповсюджувача.  \r\n**permissionsLocality** – перелік засобів зовнішньої реклами, розміщених в межах міста Києва, зокрема: назву розповсюджувача, номер, дата видання дозволу на розміщення зовнішньої реклами, дата початку та завершення дії дозволу, вид, розміри, площа, місце розташування рекламного засобу.   \r\n\r\nПервинні дані формуються з комп'ютерної програми «Автоматизована система розрахунків «Град»». Набір даних оновлюється щомісяця, до 15-го числа місяця наступного за звітнім.",
+  "num_resources": 2,
+  "num_tags": 9,
+  "number_of_all_downloads": 68,
+  "number_of_views": 351,
+  "organization": {
+    "id": "43af0c35-d43f-4467-a6ee-fa2d1eb4d295",
+    "name": "upr-adsvertising",
+    "title": "Управління з питань реклами",
+    "type": "organization",
+    "description": "Основними завданнями є участь у регулюванні діяльності з розміщення зовнішньої реклами, реклами на транспорті комунальної власності територіальної громади міста Києва та вивісок, вирішення питань, пов’язаних з їх розміщенням, здійснення контролю за додержанням вимог щодо розміщення зовнішньої реклами, реклами на транспорті та вивісок, вирішення питань щодо розміщення соціальної реклами.",
+    "image_url": "2026-05-15-123731.335969ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.441683",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "41348526",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Хрещатик, 36",
+    "email": "reklama.kyiv@kyivcity.gov.ua",
+    "phone": "+380444814718",
+    "number_of_linked_packages": 11,
+    "date_of_refresh": "2026-06-08T10:51:03.347064",
+    "number_of_views": 74,
+    "number_of_categories": 7,
+    "number_of_all_downloads": 261,
+    "average_rating": "0.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "43af0c35-d43f-4467-a6ee-fa2d1eb4d295",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "history": [
+        {
+          "date": "2026-06-05T12:07:01.635668",
+          "status": "pending",
+          "moderator_id": null
+        }
+      ],
+      "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+      "moderation_date": "2026-06-05T12:49:58.175495",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Олена Сауляк",
+  "responsible_person_id": "d6d08ea7-343d-4035-a30c-f3f963cb3d8c",
+  "state": "active",
+  "title": "Інформація про рекламні засоби (дані про місце розміщення рекламного засобу, його вид і розміри, найменування розповсюджувача зовнішньої реклами, номер телефону розміщувача реклами, адреса електронної пошти, дата видачі дозволу та строк його дії, номер і дата укладення договору, якщо місце розміщення рекламного засобу належить до комунальної власності)",
+  "type": "dataset",
+  "update_frequency": "monthly",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "43af0c35-d43f-4467-a6ee-fa2d1eb4d295",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-19T09:35:25.288042",
+      "data_period_end": "2026-06-08",
+      "data_period_start": "",
+      "datastore_active": true,
+      "description": "Ресурс містить ідентифікаційні та контактні дані юридичних осіб та фізичних осіб-підприємців, що отримали дозвіл на розміщення зовнішньої реклами на території міста Києва. Кожним записом до таблиці є один розповсюджувач.   \r\n\r\nПервинні дані формуються з комп'ютерної програми «Автоматизована система розрахунків «Град»».",
+      "format": "CSV",
+      "hash": "",
+      "id": "31861924-185d-4e11-a797-30fbe32e6ff9",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-08T07:51:03.347064",
+      "metadata_modified": "2026-06-08T07:51:03.347064",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "distributors.csv",
+      "number_of_all_downloads": 23,
+      "number_of_views": 46,
+      "package_id": "77b0519b-2327-4aa6-a134-60abdceb0943",
+      "position": 0,
+      "resource_code": "distributors",
+      "resource_type": null,
+      "size": 1189289,
+      "source": "Автоматизована система розрахунків «Град»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 46,
+        "recent": 46
+      },
+      "ua-select-search-field-administrator-org": "Управління з питань реклами",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Розповсюджувачі реклами (distributors)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-19T09:35:26.584665",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-19T09:35:36.517096",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-07T08:23:43.349551",
+            "status": "pending",
+            "moderator_id": "d6d08ea7-343d-4035-a30c-f3f963cb3d8c"
+          },
+          {
+            "date": "2026-05-07T08:33:48.682325",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-07T08:33:50.543150",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-06-08T07:51:03.406989",
+            "status": "pending",
+            "moderator_id": "d6d08ea7-343d-4035-a30c-f3f963cb3d8c"
+          }
+        ],
+        "created_by": "olena-pastushenko",
+        "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12",
+        "moderation_date": "2026-06-08T14:54:28.884690",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/uploads/versions/version_f6b89dae_v1.2.csv",
+      "url_type": "version_upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    },
+    {
+      "administrator_org": "43af0c35-d43f-4467-a6ee-fa2d1eb4d295",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-19T10:01:34.149642",
+      "data_period_end": "2026-06-05",
+      "data_period_start": "",
+      "datastore_active": true,
+      "description": "Ресурс містить інформацію про видані дозволи на розміщення засобів зовнішньої реклами (номер, дата, статус, строк дії), розповсюджувачів, укладені договори (номер і дата), види, розміри, розміщення (адреса, географічні координати) засобів розміщених на території міста. Одним записом у таблиці є один рекламний засіб.  \r\n\r\nПервинні дані формуються з комп'ютерної програми «Автоматизована система розрахунків «Град»».",
+      "format": "CSV",
+      "hash": "",
+      "id": "7d80f582-19c0-402a-bdcd-27e41b62e6fe",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-05T12:06:59.626525",
+      "metadata_modified": "2026-06-05T12:06:59.715938",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "permissionsLocality.csv",
+      "number_of_all_downloads": 32,
+      "number_of_views": 68,
+      "package_id": "77b0519b-2327-4aa6-a134-60abdceb0943",
+      "position": 1,
+      "resource_code": "permissionsLocality",
+      "resource_type": null,
+      "size": 12657678,
+      "source": "Автоматизована система розрахунків «Град»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 68,
+        "recent": 68
+      },
+      "ua-select-search-field-administrator-org": "Управління з питань реклами",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Рекламні засоби (permissionsLocality)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-19T10:01:35.224393",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-19T10:02:11.450501",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-03-19T10:02:15.798004",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-06T07:35:39.370849",
+            "status": "pending",
+            "moderator_id": "d6d08ea7-343d-4035-a30c-f3f963cb3d8c"
+          },
+          {
+            "date": "2026-05-06T07:58:16.375792",
+            "status": "needs_work",
+            "comment": "Auto-changed to pending on edit"
+          },
+          {
+            "date": "2026-05-06T08:44:23.436434",
+            "status": "pending",
+            "comment": "Вітаємо!\nПросимо виправити такі помилки в ресурсі: \n1. В стовпці distributorId виправити ІПН в рядку 14 759. Реєстраційний номер облікової картки платника податків має бути знеособлено — до формату xxxxxxxxxx, 10 значень x.\n2. Виправити неправильний формат лапок в ресурсі. Лапки мають бути формату ялинки (« »).",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-06T09:59:48.397895",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-06-05T07:58:42.112095",
+            "status": "pending",
+            "moderator_id": "d6d08ea7-343d-4035-a30c-f3f963cb3d8c"
+          },
+          {
+            "date": "2026-06-05T08:41:07.158172",
+            "status": "needs_work",
+            "comment": "Добрий день! 1. Необхідно виконати кластеризацію для стовпчика addressLocatorDesignator (наприклад, 11 б та 11-Б привести до одного вигляду – 11-Б). 2. У стовпчику addressThoroughfare треба привести вул. Садову до одного вигляду – вул. Садова, а номер вулиці (наприклад, вул. 164-а Садова) перенести в стовпчик addressLocatorDesignator. Робіть це за алгоритмом: addressThoroughfare – Facet – Text facet. Далі у віконці зліва знайдіть значення з вулицею Садова та натисніть на цю назву, у вас в таблиці виділяться рядки лише з цією назвою. Перенесіть номер вулиці у стовпчик addressLocatorDesignator. Наприклад, натискаєте на назву вул. 164-а Садова, переносите у стовпчик addressLocatorDesignator значення: 164-А і так для кожного з цих рядків. Коли виправите це, прокластеризуйте в addressThoroughfare всі значення цієї вулиці до одного вигляду – вул. Садова",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-05T08:41:09.554758",
+            "status": "needs_work",
+            "comment": "Auto-changed to pending on edit"
+          },
+          {
+            "date": "2026-06-05T12:07:02.374906",
+            "status": "pending",
+            "comment": "Добрий день! 1. Необхідно виконати кластеризацію для стовпчика addressLocatorDesignator (наприклад, 11 б та 11-Б привести до одного вигляду – 11-Б). 2. У стовпчику addressThoroughfare треба привести вул. Садову до одного вигляду – вул. Садова, а номер вулиці (наприклад, вул. 164-а Садова) перенести в стовпчик addressLocatorDesignator. Робіть це за алгоритмом: addressThoroughfare – Facet – Text facet. Далі у віконці зліва знайдіть значення з вулицею Садова та натисніть на цю назву, у вас в таблиці виділяться рядки лише з цією назвою. Перенесіть номер вулиці у стовпчик addressLocatorDesignator. Наприклад, натискаєте на назву вул. 164-а Садова, переносите у стовпчик addressLocatorDesignator значення: 164-А і так для кожного з цих рядків. Коли виправите це, прокластеризуйте в addressThoroughfare всі значення цієї вулиці до одного вигляду – вул. Садова",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          }
+        ],
+        "created_by": "olena-pastushenko",
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-06-05T12:49:44.012895",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/uploads/versions/version_209791e6_v1.2.csv",
+      "url_type": "version_upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "банер",
+      "id": "4bcb4b01-fee7-455d-a0c1-7f9aa5b3b266",
+      "name": "банер",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "дозвіл",
+      "id": "dd24e99f-5f1e-48c6-b844-2eb64b52b27b",
+      "name": "дозвіл",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "екран",
+      "id": "fe510da4-e8c5-4d08-832c-714f9c038c63",
+      "name": "екран",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "реклама",
+      "id": "15781543-6dc5-4f5a-a43c-24004d3ab6e1",
+      "name": "реклама",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "розповсюджувачі",
+      "id": "a6f3608c-918c-4b63-a9db-618ce6f8315d",
+      "name": "розповсюджувачі",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "стенд",
+      "id": "5cc5ea32-11bb-458f-8783-21ccd853f6f1",
+      "name": "стенд",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "табло",
+      "id": "d9365961-29df-4673-83d2-faa9bb425220",
+      "name": "табло",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "транспорант",
+      "id": "a17ebf83-2e03-4a47-9d12-6644c540bb96",
+      "name": "транспорант",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "щит",
+      "id": "ef2c2a8a-03fa-4bc6-a4ff-2c24bbfdc5bb",
+      "name": "щит",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Управління з питань реклами",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-123731.335969ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 1,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 351,
+    "recent": 351
+  }
+}

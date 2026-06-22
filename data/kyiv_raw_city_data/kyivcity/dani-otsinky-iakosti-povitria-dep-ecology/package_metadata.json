@@ -1,0 +1,251 @@
+{
+  "added_to_favorites_number": 1,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "ecology",
+  "collection_basis": "Закон України «Про охорону атмосферного повітря»",
+  "creator_user_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12",
+  "id": "fae21e7d-bec1-456e-9cc5-5c870212c6f1",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-04-08T18:57:05.684367",
+  "metadata_modified": "2026-06-22T05:00:04.422307",
+  "name": "dani-otsinky-iakosti-povitria-dep-ecology",
+  "notes": "Набір даних містить актуальну (на момент запиту) та історичну інформацію про рівень забруднення атмосферного повітря, отриману з станцій моніторингу якості повітря.  \r\nВимірювання охоплюють основні забруднюючі речовини, зокрема: зважені частки (пилу) PM2.5 та PM10, оксид азоту (NO2), діоксид сірки (SO2), оксид вуглецю (CO), озон (O3), та рівень радіації.  \r\nРесурс **airMonitoringStations** формується з даних, які передаються до ІКС «Платформа цифрових мобільних сервісів «Київ Цифровий».  \r\nМетодологія збору даних: Фіксація показників здійснюється кожні 3 години (о 00:00, 03:00, 06:00, 09:00, 12:00, 15:00, 18:00, 21:00), де кожне значення є середньою величиною за попередню годину, розрахованою на основі первинних замірів, що передавались до ІКС «Платформа цифрових мобільних сервісів «Київ Цифровий» кожні 3 хвилини.",
+  "num_resources": 2,
+  "num_tags": 7,
+  "number_of_all_downloads": 28,
+  "number_of_views": 533,
+  "organization": {
+    "id": "5f1af640-4324-4c83-a4a4-8de23dec3f9a",
+    "name": "dep-ecology",
+    "title": "Департамент захисту довкілля та адаптації до зміни клімату",
+    "type": "organization",
+    "description": "Здійснює регулювання у сферах охорони навколишнього природного середовища, забезпечення екологічної та в межах своєї компетенції радіаційної безпеки, у сфері поводження з відходами (крім поводження з радіоактивними відходами), пестицидами та агрохімікатами, організації, охорони і використання територій та об’єктів природно-заповідного фонду України, формування, збереження та використання екологічної мережі",
+    "image_url": "2026-05-15-121823.413017ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.398187",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "41819431",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Турівська, 28",
+    "email": "ecology@kyivcity.gov.ua",
+    "phone": "+380443666410",
+    "number_of_linked_packages": 16,
+    "date_of_refresh": "2026-06-15T11:54:04.760939",
+    "number_of_views": 170,
+    "number_of_categories": 8,
+    "number_of_all_downloads": 332,
+    "average_rating": "0.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "5f1af640-4324-4c83-a4a4-8de23dec3f9a",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "moderation_date": "2026-04-08T19:09:45.043285",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Тетяна Дворецька",
+  "responsible_person_id": "051ece39-82ae-42c8-8c1e-b9ed6930a04f",
+  "state": "active",
+  "title": "Дані оцінки якості повітря",
+  "type": "dataset",
+  "update_frequency": "more_than_daily",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "5f1af640-4324-4c83-a4a4-8de23dec3f9a",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-04-08T19:05:45.609282",
+      "data_period_end": "2026-06-22",
+      "data_period_start": "2026-03-26",
+      "datastore_active": false,
+      "description": "Ресурс містить актуальну інформацію про стан атмосферного повітря та радіаційний фон у місті Києві у форматі JSON. Кожен об'єкт у масиві — це запис про конкретний пункт моніторингу, який включає його технічні характеристики, точне географічне розташування, статус підключення та результати останніх вимірювань концентрації забруднюючих речовин і рівня радіації.  \r\n  \r\nМетодологія збору даних: Фіксація показників здійснюється кожні 3 години (о 00:00, 03:00, 06:00, 09:00, 12:00, 15:00, 18:00, 21:00), де кожне значення є середньою величиною за попередню годину, розрахованою на основі первинних замірів, що передавались до ІКС «Платформа цифрових мобільних сервісів «Київ Цифровий» кожні 3 хвилини.",
+      "format": "JSON",
+      "hash": "",
+      "id": "3c4bc347-225f-4feb-beb7-2da4e6398355",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-22T05:00:04.402910",
+      "metadata_modified": "2026-06-22T05:00:04.435606",
+      "mimetype": "application/json",
+      "mimetype_inner": null,
+      "name": "airMonitoringStations",
+      "number_of_all_downloads": 10,
+      "number_of_views": 90,
+      "package_id": "fae21e7d-bec1-456e-9cc5-5c870212c6f1",
+      "position": 0,
+      "resource_code": "OTHER",
+      "resource_last_modified": "2026-06-22 08:00",
+      "resource_type": null,
+      "size": 17190576,
+      "source": "ІКС ПЦМС «Київ цифровий»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 90,
+        "recent": 90
+      },
+      "ua-select-search-field-administrator-org": "Департамент захисту довкілля та адаптації до зміни клімату",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Позасистемний формат (OTHER)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-04-08T19:05:46.615925",
+            "status": "pending",
+            "moderator_id": null
+          }
+        ],
+        "created_by": "kateryna-burkovets",
+        "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12",
+        "moderation_date": "2026-04-08T19:06:10.702434",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/fae21e7d-bec1-456e-9cc5-5c870212c6f1/resource/3c4bc347-225f-4feb-beb7-2da4e6398355/download/airmonitoringstations.json",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": ""
+    },
+    {
+      "administrator_org": "5f1af640-4324-4c83-a4a4-8de23dec3f9a",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-04-09T06:45:32.095578",
+      "data_period_end": "",
+      "data_period_start": "",
+      "datastore_active": false,
+      "description": "Кінцева точка доступу (посилання) для отримання даних про стан атмосферного повітря та радіаційний фон у місті Києві.  \r\nДані збираються мережею референтних станцій, розташованих у різних районах Києва.  \r\nОпис АРІ в документації за посиланням: https://air-api.kyivcity.gov.ua/swagger-ui/index.html",
+      "format": "JSON",
+      "hash": "",
+      "id": "9f75a086-58b5-4a6e-9705-889b71ef4671",
+      "in_progress": false,
+      "is_api": "true",
+      "is_changed": false,
+      "last_modified": null,
+      "metadata_modified": "2026-05-11T05:00:45.643111",
+      "mimetype": null,
+      "mimetype_inner": null,
+      "name": "airMonitoringStations_API",
+      "number_of_all_downloads": 8,
+      "number_of_views": 67,
+      "package_id": "fae21e7d-bec1-456e-9cc5-5c870212c6f1",
+      "position": 1,
+      "resource_code": "OTHER",
+      "resource_type": null,
+      "size": null,
+      "source": "",
+      "state": "active",
+      "tracking_summary": {
+        "total": 67,
+        "recent": 67
+      },
+      "ua-select-search-field-administrator-org": "Департамент захисту довкілля та адаптації до зміни клімату",
+      "ua-select-search-field-is-api": "Так",
+      "ua-select-search-field-resource-code": "Позасистемний формат (OTHER)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-04-09T06:45:32.536517",
+            "status": "pending",
+            "moderator_id": null
+          }
+        ],
+        "created_by": "kateryna-burkovets",
+        "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12",
+        "moderation_date": "2026-04-09T06:45:48.608580",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://air-api.kyivcity.gov.ua/api/sensors",
+      "url_type": "",
+      "validation_result": "",
+      "validation_status": "skipped"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "азот",
+      "id": "384f99c8-8a28-4992-9459-c4cf30499672",
+      "name": "азот",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "викиди",
+      "id": "f21779ad-ba26-4331-a950-fb2c42b946a0",
+      "name": "викиди",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "екологія",
+      "id": "e6a8aca1-9ae2-435f-89c9-a45f9203469b",
+      "name": "екологія",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "пил",
+      "id": "eaf4e3d6-9c42-418c-8d1b-3c4eb1309138",
+      "name": "пил",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "повітря",
+      "id": "dd1add84-f805-4b1f-b7e9-c6be85b635f8",
+      "name": "повітря",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "радіація",
+      "id": "24f334e3-f1c5-472d-b5a1-e58fc2772a05",
+      "name": "радіація",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "якість",
+      "id": "1ef18b72-0c1c-493c-ba22-2057e21c9c33",
+      "name": "якість",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Департамент захисту довкілля та адаптації до зміни клімату",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-121823.413017ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": true,
+  "tracking_summary": {
+    "total": 533,
+    "recent": 533
+  }
+}

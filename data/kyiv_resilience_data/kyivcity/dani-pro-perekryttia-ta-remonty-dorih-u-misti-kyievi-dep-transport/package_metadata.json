@@ -1,0 +1,222 @@
+{
+  "added_to_favorites_number": 2,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "infrastructure",
+  "collection_basis": "Закон України «Про автомобільні дороги», Закон України «Про дорожній рух», Постанова Кабінету Міністрів України від 30.03.1994 р. № 198 «Про затвердження Єдиних правил ремонту і утримання автомобільних доріг, вулиць, залізничних переїздів, правил користування ними та охорони», Рішення Київської міської ради від 29.08.2024 р. № 1806/9772 «Про організаційно-правові заходи, пов'язані з ефективним використанням та збереженням автомобільних доріг міста Києва»",
+  "creator_user_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+  "id": "8d3a8da8-9753-4676-9c4c-451090a3a50a",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-04-22T10:15:45.677685",
+  "metadata_modified": "2026-05-05T15:20:01.557415",
+  "name": "dani-pro-perekryttia-ta-remonty-dorih-u-misti-kyievi-dep-transport",
+  "notes": "Набір даних містить інформацію про місце проведення та виконавця ремонтних робіт, запланований період перекриття визначених ділянок доріг.  \r\nДані можуть бути використані для моніторингу обмеження руху дорогами та подальшого планування поїздки містом.  \r\nНабір даних складається з ресурсу **roadClosures** – дані про перекриті ділянки для виконання ремонтних робіт, зокрема, місце розміщення, виконавця, стан та географічні координати.  \r\nДані оприлюднюються з ІАС «Майно» у форматі GeoJSON.",
+  "num_resources": 1,
+  "num_tags": 11,
+  "number_of_all_downloads": 9,
+  "number_of_views": 191,
+  "organization": {
+    "id": "3a783c26-a981-4000-b49f-87802af22713",
+    "name": "dep-transport",
+    "title": "Департамент транспортної інфраструктури",
+    "type": "organization",
+    "description": "Забезпечує реалізацію державної та міської політики у сферах автомобільного, міського електричного, залізничного, річкового та авіаційного транспорту. Координує розвиток дорожнього господарства, модернізацію транспортної мережі міста та створення умов для безпечного і якісного перевезення пасажирів і вантажів.",
+    "image_url": "",
+    "created": "2026-02-02T14:38:28.433290",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "37405284",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Леонтовича, 6",
+    "email": "transport@kyivcity.gov.ua",
+    "phone": "+380443666305",
+    "number_of_linked_packages": 17,
+    "date_of_refresh": "2026-05-05T09:47:17.294165",
+    "number_of_views": 83,
+    "number_of_categories": 8,
+    "number_of_all_downloads": 349,
+    "average_rating": "0.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "3a783c26-a981-4000-b49f-87802af22713",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "moderation_date": "2026-05-05T15:20:01.975313",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Олександра Кравчук",
+  "responsible_person_id": "72c0d680-8acb-4693-8996-8dac96abeb77",
+  "state": "active",
+  "title": "Дані про перекриття та ремонти доріг у місті Києві",
+  "type": "dataset",
+  "update_frequency": "more_than_daily",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "3a783c26-a981-4000-b49f-87802af22713",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-04-22T10:22:04.830075",
+      "data_period_end": "",
+      "data_period_start": "",
+      "datastore_active": false,
+      "description": "Ресурс містить дані про обмеження та перекриття дорожніх ділянок для виконання ремонтних робіт, зокрема місце їх проведення, виконавця, терміни виконання та географічні координати.",
+      "format": "GeoJSON",
+      "hash": "",
+      "id": "8a29f5a0-ca04-4058-b2af-4c75aef13550",
+      "in_progress": false,
+      "is_api": "true",
+      "is_changed": false,
+      "last_modified": "2026-04-23T06:04:19.908039",
+      "metadata_modified": "2026-04-23T06:04:19.944189",
+      "mimetype": null,
+      "mimetype_inner": null,
+      "name": "roadClosures",
+      "number_of_all_downloads": 9,
+      "number_of_views": 52,
+      "package_id": "8d3a8da8-9753-4676-9c4c-451090a3a50a",
+      "position": 0,
+      "resource_code": "OTHER",
+      "resource_type": null,
+      "size": null,
+      "source": "ІАС «Майно»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 52,
+        "recent": 52
+      },
+      "ua-select-search-field-administrator-org": "Департамент транспортної інфраструктури",
+      "ua-select-search-field-is-api": "Так",
+      "ua-select-search-field-resource-code": "Позасистемний формат (OTHER)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-04-22T10:22:05.350912",
+            "status": "pending",
+            "moderator_id": null
+          }
+        ],
+        "created_by": "mariia-novokhatska",
+        "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12",
+        "moderation_date": "2026-04-22T10:37:48.332585",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://gisserver.kyivcity.gov.ua/mayno/rest/services/KYIV_API/%D0%9F%D0%B5%D1%80%D0%B5%D0%BA%D1%80%D0%B8%D1%82%D1%82%D1%8F/MapServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
+      "url_type": "",
+      "validation_result": "",
+      "validation_status": "skipped"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "автомобіль",
+      "id": "16b62f6a-d7f9-49b4-9dba-739f32e0db19",
+      "name": "автомобіль",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "вулиці",
+      "id": "eba8d4e7-e8c0-481e-8ff4-3c98516af263",
+      "name": "вулиці",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "дорога",
+      "id": "1cf11094-fe18-442d-8d82-2f1fafdae45f",
+      "name": "дорога",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "дороги",
+      "id": "645b3f03-0055-4381-874a-fe4ddf768acc",
+      "name": "дороги",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "обмеження",
+      "id": "cd888c5c-3ba9-4c67-bac1-7807dfee86d9",
+      "name": "обмеження",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "перекриття",
+      "id": "f013a9ed-4f64-4112-ab13-a98f7445b957",
+      "name": "перекриття",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "проїзд",
+      "id": "c8f60aff-5c43-4e79-af23-b4b0f0e528bf",
+      "name": "проїзд",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "ремонт",
+      "id": "32417979-cd2c-4278-8912-d3a01aae5d8f",
+      "name": "ремонт",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "рух",
+      "id": "a61b6162-b7a7-4468-bb08-c594fdb389bb",
+      "name": "рух",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "транспорт",
+      "id": "b03efc03-b66e-499e-b15b-2436a8cea5ef",
+      "name": "транспорт",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "утримання",
+      "id": "5dd44153-45c8-414c-b3bd-d86487a15dd4",
+      "name": "утримання",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Департамент транспортної інфраструктури",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-122750.711889ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": true,
+  "tracking_summary": {
+    "total": 191,
+    "recent": 191
+  }
+}

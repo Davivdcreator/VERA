@@ -1,0 +1,347 @@
+{
+  "added_to_favorites_number": 0,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "acts",
+  "collection_basis": "Закон України «Про місцеві державні адміністрації», Закон України «Про столицю України – місто-герой Київ»",
+  "creator_user_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+  "id": "960f3439-1525-43be-8473-79ea502a3669",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-04-02T12:47:05.399392",
+  "metadata_modified": "2026-06-17T08:49:01.615266",
+  "name": "pereliky-normatyvno-pravovykh-aktiv-aktiv-indyvidualnoi-dii-krim-vnutrishnoorhanizats-dniprovska-rda",
+  "notes": "Набір складається з двох ресурсів:      \r\n**legalActs** – містить інформацію про нормативно-правові акти, акти індивідуальної дії (крім внутрішньоорганізаційних), прийнятих Дніпровською районною в місті Києві державною адміністрацією;  \r\n**projects** – містить проєкти розпоряджень, що підлягають обговоренню (за наявності).    \r\n\r\nДокумент розпорядника інформації про визначення відповідальної особи (осіб) розпорядника інформації оприлюднено в наборі даних «Інформація про відповідальних осіб за оприлюднення інформації у формі відкритих даних у структурних підрозділах виконавчого органу Київської міської ради (Київської міської державної адміністрації) та районних у місті Києві державних адміністраціях»:    \r\nhttps://data.kyivcity.gov.ua/dataset/informatsiia-pro-vidpovidalnykh-osib-za-opryliudnennia-informatsii-u-formi-vidkrytykh-danykh--aparat",
+  "num_resources": 1,
+  "num_tags": 4,
+  "number_of_all_downloads": 19,
+  "number_of_views": 647,
+  "organization": {
+    "id": "e35c6ac0-0551-4733-a6c1-72d466c56e14",
+    "name": "dniprovska-rda",
+    "title": "Дніпровська районна в місті Києві державна адміністрація",
+    "type": "organization",
+    "description": "Забезпечує реалізацію державної та міської політики на території Дніпровського району. Здійснює виконавчі повноваження у сферах соціально-економічного розвитку, бюджетування, ЖКГ та благоустрою. Координує діяльність районних закладів освіти, охорони здоров’я та культури, забезпечуючи соціальний захист та надання адміністративних послуг мешканцям району.",
+    "image_url": "2026-05-15-122947.402687ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.454317",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "37203257",
+    "administrative_unit_id": "UA80000000000479391",
+    "address": "бульвар Івана Котляревського, 1/1",
+    "email": "rda.dniprovska@kyivcity.gov.ua",
+    "phone": "+380445732750",
+    "number_of_linked_packages": 12,
+    "date_of_refresh": "2026-06-17T10:45:36.341702",
+    "number_of_views": 116,
+    "number_of_categories": 8,
+    "number_of_all_downloads": 261,
+    "average_rating": "4.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "e35c6ac0-0551-4733-a6c1-72d466c56e14",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "history": [
+        {
+          "date": "2026-06-10T08:41:02.582720",
+          "status": "pending",
+          "moderator_id": null
+        }
+      ],
+      "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+      "moderation_date": "2026-06-10T09:29:59.956535",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Наталія Черевко",
+  "responsible_person_id": "17055432-ae66-4643-bd20-1f969d25c4cb",
+  "state": "active",
+  "title": "Переліки нормативно-правових актів, актів індивідуальної дії (крім внутрішньоорганізаційних), прийнятих розпорядником інформації Дніпровською районною в місті Києві державною адміністрацією, проекти рішень, що підлягають обговоренню, а також документ розпорядника інформації про визначення особи (осіб) відповідальних за оприлюднення відкритих даних",
+  "type": "dataset",
+  "update_frequency": "weekly",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "e35c6ac0-0551-4733-a6c1-72d466c56e14",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-04-02T13:22:03.687761",
+      "data_period_end": "2026-06-16",
+      "data_period_start": "2024-01-01",
+      "datastore_active": true,
+      "description": "Ресурс містить інформацію про нормативно-правові акти, акти індивідуальної дії (крім внутрішньоорганізаційних) Дніпровської районної в місті Києві державної адміністрації. Зокрема, номери, назви, дати ухвалення, набрання чинності, назви та ідентифікатори видавників, посилання в мережі Інтернет. Кожним записом до таблиці є окремий нормативно-правовий акт або акт індивідуальної дії.",
+      "format": "CSV",
+      "hash": "",
+      "id": "3dcdd4ea-0574-4dbb-9db2-417340f6b2a4",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-17T08:49:01.597948",
+      "metadata_modified": "2026-06-17T08:49:01.626877",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "103_legalActs.csv",
+      "number_of_all_downloads": 18,
+      "number_of_views": 232,
+      "package_id": "960f3439-1525-43be-8473-79ea502a3669",
+      "position": 0,
+      "resource_code": "legalActs",
+      "resource_type": null,
+      "size": 1106135,
+      "source": "ІКС «Єдиний інформаційний простір територіальної громади міста Києва»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 232,
+        "recent": 232
+      },
+      "ua-select-search-field-administrator-org": "Дніпровська районна в місті Києві державна адміністрація",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Перелік нормативно-правових актів (legalActs)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-04-02T13:22:05.366101",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-04-02T13:26:20.181810",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-04-29T12:33:05.308818",
+            "status": "pending",
+            "moderator_id": "17055432-ae66-4643-bd20-1f969d25c4cb"
+          },
+          {
+            "date": "2026-04-29T12:55:13.644062",
+            "status": "needs_work",
+            "comment": "Виправити 9 пустих клітинок у стовпці validFrom.",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-04-29T12:55:15.749964",
+            "status": "needs_work",
+            "comment": "Виправити 9 пустих клітинок у стовпці validFrom.",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-04-29T12:55:17.569229",
+            "status": "needs_work",
+            "comment": "Auto-changed to pending on edit"
+          },
+          {
+            "date": "2026-04-29T13:03:41.676859",
+            "status": "pending",
+            "comment": "Виправити 9 пустих клітинок у стовпці validFrom.",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-04-29T13:04:32.403674",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-06T08:28:07.188926",
+            "status": "pending",
+            "moderator_id": "17055432-ae66-4643-bd20-1f969d25c4cb"
+          },
+          {
+            "date": "2026-05-06T09:55:46.489927",
+            "status": "needs_work",
+            "comment": "Auto-changed to pending on edit"
+          },
+          {
+            "date": "2026-05-06T13:07:05.415990",
+            "status": "pending",
+            "comment": "Вітаємо! Просимо виправити такі помилки: \n1. Подвійні пробіли. Використовуйте такий регулярний вираз: \\s{2,}. У полі Замінити на введіть: (один пробіл).\n2. Пробіли у кінці рядка. Використовуйте такий регулярний вираз: \\s+$. У полі Замінити на залиште порожнім.\n3. Неправильний формат апострофа: ’. Замінити на правильний апостроф: ' .",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-06T13:50:29.810962",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-12T13:26:43.735827",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-20T08:27:17.939780",
+            "status": "pending",
+            "moderator_id": "17055432-ae66-4643-bd20-1f969d25c4cb"
+          },
+          {
+            "date": "2026-05-20T10:36:11.526363",
+            "status": "needs_work",
+            "comment": "Auto-changed to pending on edit"
+          },
+          {
+            "date": "2026-05-21T06:16:10.729919",
+            "status": "pending",
+            "comment": "Добрий день! Маємо декілька зауважень до ресурсу:  \n1. Є пусті клітинки в стовпчику **validFrom** – необхідно заповнити 27 значень.  \n2. Є пробіли в кінці чи на початку рядка: виділяєте всю таблицю — Ctrl + H — ставимо галочку поруч з **Регулярні вирази** — У полі **Знайти** введіть: для пробілів на початку: ^\\s+ / для пробілів у кінці: \\s+$ — у полі **Замінити на** залиште порожнім — Замінити все.  \n**АЛЕ!** Дуже рекомендуємо виконувати всі дії в OpenRefine, бо це набагато швидше. Наприклад, для видалення зайвих пробілів, виконайте алгоритм: All → Edit all columns → Trim leading and trailing whitespace.  \n3. Під час додавання нової версії ресурсу на Порталі, не забувайте міняти дату актуальності даних. Тобто, якщо у файлі дані актуальні на 2026-05-15, саме цю дату треба вказати під час створення версії у відповідному віконці.",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-05-27T13:16:32.846556",
+            "status": "needs_work",
+            "comment": "Auto-changed to pending on edit"
+          },
+          {
+            "date": "2026-05-28T12:41:42.508303",
+            "status": "pending",
+            "comment": "Добрий день! Маємо декілька зауважень до ресурсу: 1. Є пробіли в кінці чи на початку рядка: виділяєте всю таблицю — Ctrl + H — ставимо галочку поруч з Регулярні вирази — У полі Знайти введіть: для пробілів на початку: ^\\s+ / для пробілів у кінці: \\s+$ — у полі Замінити на залиште порожнім — Замінити все. АЛЕ! Дуже рекомендуємо виконувати всі дії в OpenRefine, бо це набагато швидше. Наприклад, для видалення зайвих пробілів, виконайте алгоритм: All → Edit all columns → Trim leading and trailing whitespace. 2. Є декілька неправильних лапок: Edit cells → Transform → value.replace(/(\\s|^)\"(?=\\S)/, \"$1«\") \n     .replace(/(?<=\\S)\"(\\s|[.,!?;:]|$)/, \"»$1\") \n     .replace(/\"/, \"»\")",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-05-28T13:02:03.252962",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-03T10:33:32.541430",
+            "status": "pending",
+            "moderator_id": "17055432-ae66-4643-bd20-1f969d25c4cb"
+          },
+          {
+            "date": "2026-06-03T13:38:36.395545",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-03T13:44:41.124866",
+            "status": "needs_work",
+            "comment": "Auto-changed to pending on edit"
+          },
+          {
+            "date": "2026-06-04T10:23:43.171711",
+            "status": "pending",
+            "comment": "Добрий день! Маємо декілька зауважень до ресурсу: 1. Є пробіли в кінці чи на початку рядка: виділяєте всю таблицю — Ctrl + H — ставимо галочку поруч з Регулярні вирази — У полі Знайти введіть: для пробілів на початку: ^\\s+ / для пробілів у кінці: \\s+$ — у полі Замінити на залиште порожнім — Замінити все. АЛЕ! Дуже рекомендуємо виконувати всі дії в OpenRefine, бо це набагато швидше. Наприклад, для видалення зайвих пробілів, виконайте алгоритм: All → Edit all columns → Trim leading and trailing whitespace. 2. Є декілька неправильних лапок: Edit cells → Transform → value.replace(/(\\s|^)\"(?=\\S)/, \"$1«\") .replace(/(?<=\\S)\"(\\s|[.,!?;:]|$)/, \"»$1\") .replace(/\"/, \"»\"). 3. Не забувайте про дату актуальності даних в таблиці: якщо за попередній тиждень останнє розпорядження було 2026-05-28, то дата актуальності буде останній день робочого тижня – 2026-05-29.",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-04T13:27:44.402400",
+            "status": "needs_work",
+            "comment": "Добрий день! Маємо декілька зауважень до ресурсу: 1. Є пробіли в кінці чи на початку рядка: виділяєте всю таблицю — Ctrl + H — ставимо галочку поруч з Регулярні вирази — У полі Знайти введіть: для пробілів на початку: ^\\s+ / для пробілів у кінці: \\s+$ — у полі Замінити на залиште порожнім — Замінити все. АЛЕ! Дуже рекомендуємо виконувати всі дії в OpenRefine, бо це набагато швидше. Наприклад, для видалення зайвих пробілів, виконайте алгоритм: All → Edit all columns → Trim leading and trailing whitespace. 2. Є декілька неправильних лапок: Edit cells → Transform → value.replace(/(\\s|^)\"(?=\\S)/, \"$1«\") .replace(/(?<=\\S)\"(\\s|[.,!?;:]|$)/, \"»$1\") .replace(/\"/, \"»\"). 3. Не забувайте про дату актуальності даних в таблиці: якщо за попередній тиждень останнє розпорядження було 2026-05-28, то дата актуальності буде останній день робочого тижня – 2026-05-29.",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-05T11:00:19.034715",
+            "status": "needs_work",
+            "comment": "Auto-changed to pending on edit"
+          },
+          {
+            "date": "2026-06-05T11:25:38.316914",
+            "status": "pending",
+            "comment": "Добрий день! Маємо декілька зауважень до ресурсу: 1. Є пробіли в кінці чи на початку рядка: виділяєте всю таблицю — Ctrl + H — ставимо галочку поруч з Регулярні вирази — У полі Знайти введіть: для пробілів на початку: ^\\s+ / для пробілів у кінці: \\s+$ — у полі Замінити на залиште порожнім — Замінити все. АЛЕ! Дуже рекомендуємо виконувати всі дії в OpenRefine, бо це набагато швидше. Наприклад, для видалення зайвих пробілів, виконайте алгоритм: All → Edit all columns → Trim leading and trailing whitespace. 2. Є декілька неправильних лапок: Edit cells → Transform → value.replace(/(\\s|^)\"(?=\\S)/, \"$1«\") .replace(/(?<=\\S)\"(\\s|[.,!?;:]|$)/, \"»$1\") .replace(/\"/, \"»\"). 3. Не забувайте про дату актуальності даних в таблиці: якщо за попередній тиждень останнє розпорядження було 2026-05-28, то дата актуальності буде останній день робочого тижня – 2026-05-29.",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-05T12:58:31.934967",
+            "status": "needs_work",
+            "comment": "Auto-changed to pending on edit"
+          },
+          {
+            "date": "2026-06-09T07:17:21.623421",
+            "status": "pending",
+            "comment": "Залишається помилка з пробілами в кінці рядка в стовпчику title. Виконайте очистку згідно з Пгосібником: https://kyivcity-my.sharepoint.com/:w:/g/personal/data_kyivcity_gov_ua/IQAolPJGflw_R7hNKgBEwWSzAUw3umD3s8ugy3p8IGpXbfE?e=Fsv85d",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-09T13:23:11.357455",
+            "status": "needs_work",
+            "comment": "Auto-changed to pending on edit"
+          },
+          {
+            "date": "2026-06-10T08:41:03.763026",
+            "status": "pending",
+            "comment": "Необхідно уніфікувати значення у колонці status: (внесення змін 91\nВнесення змін 255\nЧинний 1499\nчинний 2). Це можна виправити через LibreOffice через автофільтр (п. 6.8 Розділу 2 Посібника) або через OpenRefine (п. 5.6. Розділу 3 Посібника).",
+            "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12"
+          },
+          {
+            "date": "2026-06-10T09:29:10.648092",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-17T07:45:36.419608",
+            "status": "pending",
+            "moderator_id": "17055432-ae66-4643-bd20-1f969d25c4cb"
+          }
+        ],
+        "created_by": "olena-pastushenko",
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-06-17T08:48:48.420953",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/960f3439-1525-43be-8473-79ea502a3669/resource/3dcdd4ea-0574-4dbb-9db2-417340f6b2a4/download/103_legalacts.csv",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "акти",
+      "id": "6fd1e36f-ac48-42dc-aa28-a1b27ae75cfd",
+      "name": "акти",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "проекти",
+      "id": "bb66df57-afc4-4da4-a288-15d2fd85eebf",
+      "name": "проекти",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "рда",
+      "id": "d38c98e5-42bf-4b59-8376-5ad1fe097eb5",
+      "name": "рда",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "розпорядження",
+      "id": "35b60e02-54d8-4438-b99b-9c900ccaa0fa",
+      "name": "розпорядження",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Дніпровська районна в місті Києві державна адміністрація",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-122947.402687ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 647,
+    "recent": 647
+  }
+}

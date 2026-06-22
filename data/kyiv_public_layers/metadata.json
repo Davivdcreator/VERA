@@ -1,0 +1,16 @@
+{
+  "created_utc": "2026-06-22T15:17:44Z",
+  "area": "Kyiv, Ukraine",
+  "bbox_south_west_north_east": [
+    50.213,
+    30.239,
+    50.59,
+    30.826
+  ],
+  "grid_degrees": 0.05,
+  "sources": [
+    "https://www.openstreetmap.org",
+    "https://overpass-api.de"
+  ],
+  "safety_note": "Public-service facility outputs are redacted to coarse grid cells. Power infrastructure output is aggregate-only and contains no exact names, coordinates, or dependency links."
+}

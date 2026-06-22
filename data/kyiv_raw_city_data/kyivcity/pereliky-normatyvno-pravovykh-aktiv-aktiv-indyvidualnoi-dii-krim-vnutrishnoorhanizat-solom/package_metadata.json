@@ -1,0 +1,258 @@
+{
+  "added_to_favorites_number": 1,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "acts",
+  "collection_basis": "Закон України «Про місцеві державні адміністрації», Закон України «Про столицю України – місто-герой Київ»",
+  "creator_user_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+  "id": "8396f9b8-9b79-4b5c-b3f4-bb416d987fc8",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-31T05:46:02.559096",
+  "metadata_modified": "2026-06-18T09:07:50.030847",
+  "name": "pereliky-normatyvno-pravovykh-aktiv-aktiv-indyvidualnoi-dii-krim-vnutrishnoorhanizat-solomianska-rda",
+  "notes": "Набір містить два ресурси:   \r\n**legalActs** – інформацію про нормативно-правові акти, акти індивідуальної дії (крім внутрішньоорганізаційних), прийняті Солом'янською районною в місті Києві державною адміністрацією;   \r\n**projects** – проєкти розпоряджень, що підлягають обговоренню (за наявності).   \r\n\r\nДокумент розпорядника інформації про визначення відповідальної особи (осіб) розпорядника інформації оприлюднено в наборі даних «Інформація про відповідальних осіб за оприлюднення інформації у формі відкритих даних у структурних підрозділах виконавчого органу Київської міської ради (Київської міської державної адміністрації) та районних у місті Києві державних адміністраціях»:   \r\nhttps://data.kyivcity.gov.ua/dataset/informatsiia-pro-vidpovidalnykh-osib-za-opryliudnennia-informatsii-u-formi-vidkrytykh-danykh--aparat",
+  "num_resources": 1,
+  "num_tags": 4,
+  "number_of_all_downloads": 5,
+  "number_of_views": 239,
+  "organization": {
+    "id": "36a7db77-054e-4148-a904-9088b102fbb5",
+    "name": "solomianska-rda",
+    "title": "Солом’янська районна в місті Києві державна адміністрація",
+    "type": "organization",
+    "description": "Забезпечує реалізацію державної та міської політики на території Солом’янського району. Здійснює виконавчі повноваження у сферах соціально-економічного розвитку, бюджетування, ЖКГ та благоустрою. Координує діяльність районних закладів освіти, охорони здоров’я та культури, забезпечуючи соціальний захист та надання адміністративних послуг мешканцям району.",
+    "image_url": "2026-05-15-123650.864785ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.464546",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "37378937",
+    "administrative_unit_id": "UA80000000000980793",
+    "address": "просп. Повітряних Сил, 41",
+    "email": "rda.solomianska@kyivcity.gov.ua",
+    "phone": "+380442262088",
+    "number_of_linked_packages": 12,
+    "date_of_refresh": "2026-06-18T12:07:50.031027",
+    "number_of_views": 75,
+    "number_of_categories": 8,
+    "number_of_all_downloads": 258,
+    "average_rating": "4.0",
+    "subscription_should_be_checked": false,
+    "favorites_should_be_checked": false,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "36a7db77-054e-4148-a904-9088b102fbb5",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "moderation_date": "2026-04-02T14:42:33.641857",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Ліна Руденко",
+  "responsible_person_id": "24be381e-b862-4166-93fa-ffd827426fcc",
+  "state": "active",
+  "title": "Переліки нормативно-правових актів, актів індивідуальної дії (крім внутрішньоорганізаційних), прийнятих розпорядником інформації Солом'янською районною в місті Києві державною адміністрацією, проекти рішень, що підлягають обговоренню, а також документ розпорядника інформації про визначення особи (осіб) відповідальних за оприлюднення відкритих даних",
+  "type": "dataset",
+  "update_frequency": "weekly",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "36a7db77-054e-4148-a904-9088b102fbb5",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-31T06:13:21.441843",
+      "data_period_end": "2026-06-05",
+      "data_period_start": "2024-01-01",
+      "datastore_active": true,
+      "description": "Ресурс містить інформацію про нормативно-правові акти, акти індивідуальної дії (крім внутрішньоорганізаційних) Солом'янської районної в місті Києві державної адміністрації. Зокрема, номери, назви, дати ухвалення, набрання чинності, назви та ідентифікатори видавників, посилання в мережі Інтернет. Кожним записом до таблиці є окремий нормативно-правовий акт або акт індивідуальної дії.",
+      "format": "CSV",
+      "hash": "",
+      "id": "54d72a20-f143-4e5f-98ef-51de99df6cd5",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-18T09:07:50.031027",
+      "metadata_modified": "2026-06-18T09:07:50.031027",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "108_legalActs.csv",
+      "number_of_all_downloads": 5,
+      "number_of_views": 90,
+      "package_id": "8396f9b8-9b79-4b5c-b3f4-bb416d987fc8",
+      "position": 0,
+      "resource_code": "legalActs",
+      "resource_type": null,
+      "size": 970332,
+      "source": "ІКС «Єдиний інформаційний простір територіальної громади міста Києва»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 90,
+        "recent": 90
+      },
+      "ua-select-search-field-administrator-org": "Солом’янська районна в місті Києві державна адміністрація",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Перелік нормативно-правових актів (legalActs)",
+      "ua_resource_moderation": {
+        "status": "needs_work",
+        "history": [
+          {
+            "date": "2026-03-31T06:13:22.695204",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-31T06:13:39.868599",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-03-31T06:13:40.818214",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-04-29T11:43:27.427930",
+            "status": "pending",
+            "moderator_id": "24be381e-b862-4166-93fa-ffd827426fcc"
+          },
+          {
+            "date": "2026-04-29T11:50:02.802881",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-05T06:34:17.294573",
+            "status": "pending",
+            "moderator_id": "24be381e-b862-4166-93fa-ffd827426fcc"
+          },
+          {
+            "date": "2026-05-05T09:26:02.826611",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-13T09:18:07.087946",
+            "status": "pending",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-13T09:18:24.810394",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-20T07:09:05.204878",
+            "status": "pending",
+            "moderator_id": "24be381e-b862-4166-93fa-ffd827426fcc"
+          },
+          {
+            "date": "2026-05-20T08:07:10.003674",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-05-27T11:12:01.230371",
+            "status": "pending",
+            "moderator_id": "24be381e-b862-4166-93fa-ffd827426fcc"
+          },
+          {
+            "date": "2026-05-27T11:36:56.760554",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-03T06:32:51.276602",
+            "status": "pending",
+            "moderator_id": "24be381e-b862-4166-93fa-ffd827426fcc"
+          },
+          {
+            "date": "2026-06-03T08:42:15.702026",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-11T06:32:51.531101",
+            "status": "pending",
+            "moderator_id": "24be381e-b862-4166-93fa-ffd827426fcc"
+          },
+          {
+            "date": "2026-06-11T06:45:59.308392",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-18T09:07:50.116936",
+            "status": "pending",
+            "moderator_id": "24be381e-b862-4166-93fa-ffd827426fcc"
+          }
+        ],
+        "created_by": "olena-pastushenko",
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-06-18T09:19:55.051179",
+        "rejection_reason": "",
+        "moderator_comment": "Добрий день! 1. є пусті клітинки в стовпчиках: registrationDate, registratorId, registratorName. 2. У стовпчику status є статуси Внесення та Внесення змін, необхідно привести до одного написання – Внесення змін. 3. Є невидимий пробіл, необхідно застосувати: All – Edit all columns – Trim leading and trailing whitespace або регулярний вираз в LibreOffice для пробілів на початку та в кінці рядка (за Посібником)."
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/8396f9b8-9b79-4b5c-b3f4-bb416d987fc8/resource/54d72a20-f143-4e5f-98ef-51de99df6cd5/download/108_legalacts.csv",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "акти",
+      "id": "6fd1e36f-ac48-42dc-aa28-a1b27ae75cfd",
+      "name": "акти",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "проекти",
+      "id": "bb66df57-afc4-4da4-a288-15d2fd85eebf",
+      "name": "проекти",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "рда",
+      "id": "d38c98e5-42bf-4b59-8376-5ad1fe097eb5",
+      "name": "рда",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "розпорядження",
+      "id": "35b60e02-54d8-4438-b99b-9c900ccaa0fa",
+      "name": "розпорядження",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Солом’янська районна в місті Києві державна адміністрація",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-123650.864785ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 239,
+    "recent": 239
+  }
+}

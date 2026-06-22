@@ -1,0 +1,11 @@
+metric,value,count,source
+osm_power_type,generator,129,OpenStreetMap Overpass API
+osm_power_type,plant,45,OpenStreetMap Overpass API
+osm_power_type,substation,2177,OpenStreetMap Overpass API
+osm_generator_source,biogas,1,OpenStreetMap Overpass API
+osm_generator_source,coal,2,OpenStreetMap Overpass API
+osm_generator_source,diesel,2,OpenStreetMap Overpass API
+osm_generator_source,gas,19,OpenStreetMap Overpass API
+osm_generator_source,hydro,5,OpenStreetMap Overpass API
+osm_generator_source,oil,1,OpenStreetMap Overpass API
+osm_generator_source,solar,80,OpenStreetMap Overpass API

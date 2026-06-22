@@ -1,0 +1,194 @@
+{
+  "added_to_favorites_number": 2,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "transport",
+  "collection_basis": "Закон України «Про місцеве самоврядування в Україні», Закон України «Про автомобільні дороги»",
+  "creator_user_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12",
+  "id": "c1b83b24-d5b7-4c11-be4b-bc9fd6608738",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-05-13T13:36:16.141541",
+  "metadata_modified": "2026-05-29T12:48:42.104805",
+  "name": "velosypedna-merezha-kyieva-dep-transport",
+  "notes": "Набір даних містить актуальну інформацію про велосипедну мережу міста Києва, зокрема відомості про розташування, тип та характеристики велосипедних доріжок, велосмуг та ділянок спільного руху.  \r\nНабір складається з одного ресурсу **bicycleNetwork** — кінцевої точки доступу API, що надає геопросторові дані про ділянки веломережі столиці.  \r\nДані оприлюднюються з ІАС «Майно» у форматі GeoJSON.",
+  "num_resources": 1,
+  "num_tags": 5,
+  "number_of_all_downloads": 42,
+  "number_of_views": 587,
+  "organization": {
+    "id": "3a783c26-a981-4000-b49f-87802af22713",
+    "name": "dep-transport",
+    "title": "Департамент транспортної інфраструктури",
+    "type": "organization",
+    "description": "Забезпечує реалізацію державної та міської політики у сферах автомобільного, міського електричного, залізничного, річкового та авіаційного транспорту. Координує розвиток дорожнього господарства, модернізацію транспортної мережі міста та створення умов для безпечного і якісного перевезення пасажирів і вантажів.",
+    "image_url": "2026-05-15-122750.711889ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.433290",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "37405284",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Леонтовича, 6",
+    "email": "transport@kyivcity.gov.ua",
+    "phone": "+380443666305",
+    "number_of_linked_packages": 18,
+    "date_of_refresh": "2026-05-29T13:17:24.604596",
+    "number_of_views": 167,
+    "number_of_categories": 8,
+    "number_of_all_downloads": 623,
+    "average_rating": "0.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "3a783c26-a981-4000-b49f-87802af22713",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "history": [
+        {
+          "date": "2026-05-13T13:41:54.587405",
+          "status": "pending",
+          "moderator_id": null
+        }
+      ],
+      "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12",
+      "moderation_date": "2026-05-21T11:12:15.818528",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Олександра Кравчук",
+  "responsible_person_id": "72c0d680-8acb-4693-8996-8dac96abeb77",
+  "state": "active",
+  "title": "Велосипедна мережа Києва",
+  "type": "dataset",
+  "update_frequency": "more_than_daily",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "3a783c26-a981-4000-b49f-87802af22713",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-05-13T13:41:30.303992",
+      "data_owner": "9f3efadd-6ff3-4649-a31b-fbd11e05e5f0",
+      "data_period_end": "",
+      "data_period_start": "",
+      "datastore_active": false,
+      "description": "Ресурс містить кінцеву точку доступу API (посилання) для отримання геопросторових даних про велосипедну мережу міста Києва.  \r\nКожен об'єкт у масиві даних – це окрема ділянка (сегмент) велосипедного маршруту, що містить географічні координати та характеристики: тип об'єкта, протяжність та інші.  Протяжність веломережі підраховується за кількістю напрямків руху. Наприклад, одностороння вулиця спільного руху рахується суто за протяжністю самої ділянки, а двостороння велодоріжка - за подвійною протяжністю. ",
+      "format": "GeoJSON",
+      "hash": "",
+      "id": "52189675-e9d2-402d-b537-cc0f2ca3c41a",
+      "in_progress": false,
+      "is_api": "true",
+      "is_changed": false,
+      "last_modified": "2026-05-29T12:48:42.072902",
+      "metadata_modified": "2026-05-29T12:48:42.116499",
+      "mimetype": null,
+      "mimetype_inner": null,
+      "name": "bicycleNetwork",
+      "number_of_all_downloads": 33,
+      "number_of_views": 103,
+      "package_id": "c1b83b24-d5b7-4c11-be4b-bc9fd6608738",
+      "position": 0,
+      "resource_code": "OTHER",
+      "resource_type": null,
+      "size": null,
+      "source": "ІАС «Майно»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 103,
+        "recent": 103
+      },
+      "ua-select-search-field-administrator-org": "Департамент транспортної інфраструктури",
+      "ua-select-search-field-is-api": "Так",
+      "ua-select-search-field-resource-code": "Позасистемний формат (OTHER)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-05-13T13:41:30.738429",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-05-21T11:12:05.627478",
+            "status": "approved",
+            "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12"
+          }
+        ],
+        "created_by": "kateryna-burkovets",
+        "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12",
+        "moderation_date": "2026-05-21T11:12:06.422655",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://gisserver.kyivcity.gov.ua/mayno/rest/services/KYIV_API/velomap/MapServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
+      "url_type": "",
+      "validation_result": "",
+      "validation_status": ""
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "велодоріжка",
+      "id": "16d2ee2e-fa3d-49ed-80f6-e3ea7868efcd",
+      "name": "велодоріжка",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "велодоріжки",
+      "id": "f492bcdc-cde5-4c4a-a1af-22a11cdd5c1f",
+      "name": "велодоріжки",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "веломапа",
+      "id": "e5bf0356-7642-473a-b2f6-e693b16900ab",
+      "name": "веломапа",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "велосмуга",
+      "id": "2eeb9732-9e47-44c3-8977-a9e6fdf6e729",
+      "name": "велосмуга",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "рух",
+      "id": "a61b6162-b7a7-4468-bb08-c594fdb389bb",
+      "name": "рух",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Департамент транспортної інфраструктури",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-122750.711889ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": true,
+  "tracking_summary": {
+    "total": 587,
+    "recent": 587
+  }
+}

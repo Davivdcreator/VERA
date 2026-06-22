@@ -1,0 +1,176 @@
+{
+  "added_to_favorites_number": 1,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "transport",
+  "collection_basis": "Закон України «Про місцеве самоврядування в Україні», постанова Кабінету Міністрів України від 03.12.2008 № 1081 «Про затвердження Порядку проведення конкурсу з перевезення пасажирів на автобусному маршруті загального користування», постанова Кабінету Міністрів України від 18.02.1997 № 176 «Про затвердження Правил надання послуг пасажирського автомобільного транспорту»",
+  "creator_user_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+  "id": "dc5b21ba-8d5c-4f49-a8a7-88a90020480d",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-16T12:37:02.599539",
+  "metadata_modified": "2026-04-13T09:13:56.377431",
+  "name": "perelik-pereviznykiv-shcho-nadaiut-transportni-posluhy-z-perevezennia-pasazhyriv-misky-dep-transport",
+  "notes": "Набір містить дані про суб’єктів господарювання, що надають послуги пасажирського автомобільного транспорту ресурс **agency**. Дані про маршрути громадського транспорту, у тому числі геопросторові, оприлюднено у наборі даних «Розклад руху міського електричного та автомобільного транспорту».",
+  "num_resources": 1,
+  "num_tags": 3,
+  "number_of_all_downloads": 3,
+  "number_of_views": 85,
+  "organization": {
+    "id": "3a783c26-a981-4000-b49f-87802af22713",
+    "name": "dep-transport",
+    "title": "Департамент транспортної інфраструктури",
+    "type": "organization",
+    "description": "Забезпечує реалізацію державної та міської політики у сферах автомобільного, міського електричного, залізничного, річкового та авіаційного транспорту. Координує розвиток дорожнього господарства, модернізацію транспортної мережі міста та створення умов для безпечного і якісного перевезення пасажирів і вантажів.",
+    "image_url": "",
+    "created": "2026-02-02T14:38:28.433290",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "37405284",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Леонтовича, 6",
+    "email": "transport@kyivcity.gov.ua",
+    "phone": "+380443666305",
+    "number_of_linked_packages": 16,
+    "date_of_refresh": "2026-04-14T13:02:34.236280",
+    "number_of_views": 44,
+    "number_of_categories": 8,
+    "number_of_all_downloads": 202,
+    "average_rating": "0.0",
+    "subscription_should_be_checked": false,
+    "favorites_should_be_checked": false,
+    "in_progress": false,
+    "is_changed": false,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "3a783c26-a981-4000-b49f-87802af22713",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "moderation_date": "2026-04-01T14:45:30.380768",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Олександра Кравчук",
+  "responsible_person_id": "72c0d680-8acb-4693-8996-8dac96abeb77",
+  "state": "active",
+  "title": "Перелік перевізників, що надають транспортні послуги з перевезення пасажирів міським електричним та автомобільним транспортом, зокрема маршрути перевезень",
+  "type": "dataset",
+  "update_frequency": "annually",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "3a783c26-a981-4000-b49f-87802af22713",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-16T12:46:26.099133",
+      "data_owner": [
+        "d513160c-3aaa-46a2-b5cd-e433e0aa8df6",
+        "468435cd-59ce-4a78-a64e-a1200435b5a4",
+        "8dfef5f8-f698-4c63-98e3-898e48f00292"
+      ],
+      "data_period_end": "",
+      "data_period_start": "",
+      "datastore_active": true,
+      "description": "Таблиця містить назви, ідентифікатори та контактні дані суб’єктів господарювання, що надають послуги пасажирського автомобільного транспорту. Кожним записом в таблиці є один перевізник.",
+      "format": "CSV",
+      "hash": "",
+      "id": "dac5b778-0bf9-454a-aa21-6a16dae97083",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-04-13T09:13:56.365571",
+      "metadata_modified": "2026-04-13T09:13:56.385789",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "agency.csv",
+      "number_of_all_downloads": 2,
+      "number_of_views": 26,
+      "package_id": "dc5b21ba-8d5c-4f49-a8a7-88a90020480d",
+      "position": 0,
+      "resource_code": "agency",
+      "resource_type": null,
+      "size": 2167,
+      "source": "",
+      "state": "active",
+      "tracking_summary": {
+        "total": 26,
+        "recent": 26
+      },
+      "ua-select-search-field-administrator-org": "Департамент транспортної інфраструктури",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Перелік перевізників (транспорт) (agency)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-16T12:46:27.123113",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-16T12:47:59.691141",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          }
+        ],
+        "created_by": "olena-pastushenko",
+        "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+        "moderation_date": "2026-03-16T12:48:02.019866",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/dc5b21ba-8d5c-4f49-a8a7-88a90020480d/resource/dac5b778-0bf9-454a-aa21-6a16dae97083/download/agency.csv",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "маршрути",
+      "id": "956f0671-baab-43e4-8f8e-6e270da95491",
+      "name": "маршрути",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "перевізники",
+      "id": "9790d126-db2a-47de-9e30-281223e9827d",
+      "name": "перевізники",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "транспорт",
+      "id": "b03efc03-b66e-499e-b15b-2436a8cea5ef",
+      "name": "транспорт",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Департамент транспортної інфраструктури",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-122750.711889ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 85,
+    "recent": 85
+  }
+}

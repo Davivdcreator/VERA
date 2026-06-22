@@ -1,0 +1,172 @@
+{
+  "added_to_favorites_number": 3,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "safety",
+  "collection_basis": "Кодекс Цивільного захисту України, постанова Кабінету Міністрів України від 10.03.2017 №138 «Деякі питання використання захисних споруд цивільного захисту», Наказ Міністерства внутрішніх справ України від 09.07.2018 № 579 «Про затвердження вимог з питань використання та обліку фонду захисних споруд цивільного захисту»",
+  "creator_user_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+  "id": "b777ec20-703d-452b-bac2-608d820b1e7a",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-02-24T15:42:26.453167",
+  "metadata_modified": "2026-05-28T12:03:46.110526",
+  "name": "dani-pro-roztashuvannia-zakhysnykh-sporud-tsyvilnoho-zakhystu-dep-municipal",
+  "notes": "Набір даних містить кінцеву точку API (посилання) для отримання даних про захисні споруди цивільного захисту, які перебувають в комунальній власності, їх місце розташування, інформацію про балансоутримувача, режим роботи та використання.",
+  "num_resources": 1,
+  "num_tags": 4,
+  "number_of_all_downloads": 33,
+  "number_of_views": 1119,
+  "organization": {
+    "id": "566ecaa8-e749-4a88-b368-ae78d202c25b",
+    "name": "dep-municipal",
+    "title": "Департамент муніципальної безпеки",
+    "type": "organization",
+    "description": "Забезпечує реалізацію державної політики у сфері цивільного захисту на території міста Києва, організацію заходів з мобілізаційної підготовки та мобілізації, забезпечення здійснення  завдань та заходів щодо підготовки та ведення національного спротиву, організація взаємодії з правоохоронними органами, органами юстиції, громадськими формуваннями з охорони громадського порядку та державного кордону, а також здійснення державного контролю на території міста Києва.",
+    "image_url": "2026-05-15-122316.516707ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.414463",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "42698051",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Вишгородська, 21",
+    "email": "security@kyivcity.gov.ua",
+    "phone": "+380444300332",
+    "number_of_linked_packages": 14,
+    "date_of_refresh": "2026-05-28T10:50:19.680986",
+    "number_of_views": 126,
+    "number_of_categories": 7,
+    "number_of_all_downloads": 322,
+    "average_rating": "0.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "566ecaa8-e749-4a88-b368-ae78d202c25b",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "moderation_date": "2026-03-30T13:28:32.044696",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Наталія Омельчук",
+  "responsible_person_id": "a39d0a0d-440d-434f-9652-1799864b3402",
+  "state": "active",
+  "title": "Дані про розташування захисних споруд цивільного захисту",
+  "type": "dataset",
+  "update_frequency": "more_than_daily",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "566ecaa8-e749-4a88-b368-ae78d202c25b",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-02-24T15:45:48.862156",
+      "data_period_end": "",
+      "data_period_start": "",
+      "datastore_active": true,
+      "description": "Кінцева точка API (посилання) для отримання даних про захисні споруди цивільного захисту, їхнє місце розташування, балансоутримувачів, режим роботи, наявність пристосування для доступу осіб з інвалідністю, інших маломобільних груп населення та інше.",
+      "format": "GeoJSON",
+      "hash": "",
+      "id": "379a7295-22ae-4031-8aaf-2a5e7c8df178",
+      "in_progress": false,
+      "is_api": "true",
+      "is_changed": false,
+      "last_modified": "2026-05-28T12:03:46.064800",
+      "metadata_modified": "2026-05-28T12:03:46.123349",
+      "mimetype": null,
+      "mimetype_inner": null,
+      "name": "shelters",
+      "number_of_all_downloads": 30,
+      "number_of_views": 185,
+      "package_id": "b777ec20-703d-452b-bac2-608d820b1e7a",
+      "position": 0,
+      "resource_code": "OTHER",
+      "resource_type": null,
+      "size": null,
+      "source": "ІАС «Майно»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 185,
+        "recent": 185
+      },
+      "ua-select-search-field-administrator-org": "Департамент муніципальної безпеки",
+      "ua-select-search-field-is-api": "Так",
+      "ua-select-search-field-resource-code": "Позасистемний формат (OTHER)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-02-24T15:45:49.273069",
+            "status": "pending",
+            "moderator_id": null
+          }
+        ],
+        "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+        "moderation_date": "2026-02-24T15:46:08.494774",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://gisserver-stage.kyivcity.gov.ua/mayno/rest/services/KYIV_API/Public_protection/MapServer/0/query?where=1%3D1&text=&objectIds=&time=&timeRelation=esriTimeRelationOverlaps&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&distance=&units=esriSRUnit_Foot&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&havingClause=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&historicMoment=&returnDistinctValues=false&resultOffset=&resultRecordCount=&returnExtentOnly=false&sqlFormat=none&datumTransformation=&parameterValues=&rangeValues=&quantizationParameters=&uniqueIds=&returnUniqueIdsOnly=false&featureEncoding=esriDefault&f=geojson",
+      "url_type": "",
+      "validation_result": "",
+      "validation_status": ""
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "безпека",
+      "id": "a68ddad0-e5aa-4746-b58b-efef1aff1160",
+      "name": "безпека",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "захист",
+      "id": "097c094d-59e2-41dc-917c-afb1924fba16",
+      "name": "захист",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "споруди",
+      "id": "71c9c315-be95-417c-a69a-edf821eb765b",
+      "name": "споруди",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "укриття",
+      "id": "72b34be9-c466-4a03-8948-ae51a58dc8bb",
+      "name": "укриття",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Департамент муніципальної безпеки",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-122316.516707ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": true,
+  "tracking_summary": {
+    "total": 1119,
+    "recent": 1119
+  }
+}

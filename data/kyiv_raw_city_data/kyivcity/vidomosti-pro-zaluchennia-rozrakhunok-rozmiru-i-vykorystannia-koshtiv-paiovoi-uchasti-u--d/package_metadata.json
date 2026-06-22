@@ -1,0 +1,207 @@
+{
+  "added_to_favorites_number": 1,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "economy",
+  "collection_basis": "Закон України «Про регулювання містобудівної діяльності», Закон України «Про місцеве самоврядування в Україні», Рішення Київської міської ради «Про затвердження Порядку залучення, розрахунку розміру і використання коштів пайової участі замовників у розвитку інфраструктури міста Києва» від 15.11.2016 №411/1415",
+  "creator_user_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+  "id": "6c48e0b0-c167-4255-888f-64e707484e3b",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-16T11:49:23.766684",
+  "metadata_modified": "2026-05-29T08:31:49.208495",
+  "name": "vidomosti-pro-zaluchennia-rozrakhunok-rozmiru-i-vykorystannia-koshtiv-paiovoi-uchasti-u--dep-economy",
+  "notes": "Набір складається з ресурсу, який містить відомості про залучення та розрахунок розміру пайової участі.",
+  "num_resources": 1,
+  "num_tags": 6,
+  "number_of_all_downloads": 10,
+  "number_of_views": 180,
+  "organization": {
+    "id": "5b186e66-21ad-4e89-9106-040eda7098ff",
+    "name": "dep-economy",
+    "title": "Департамент економіки та інвестицій",
+    "type": "organization",
+    "description": "Формує стратегію соціально-економічного розвитку міста та залучає інвестиції. Відповідає за міжнародне співробітництво, розвиток державно-приватного партнерства та підвищення економічної ефективності комунальних підприємств.",
+    "image_url": "2026-05-15-121754.109039ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.381853",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "04633423",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Хрещатик, 36",
+    "email": "economics@kyivcity.gov.ua",
+    "phone": "+380442027799",
+    "number_of_linked_packages": 15,
+    "date_of_refresh": "2026-05-29T12:09:36.864487",
+    "number_of_views": 68,
+    "number_of_categories": 6,
+    "number_of_all_downloads": 222,
+    "average_rating": "0.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "5b186e66-21ad-4e89-9106-040eda7098ff",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "moderation_date": "2026-05-05T14:53:56.505315",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Балушкіна Валентина Володимирівна",
+  "responsible_person_id": "b636c8b7-5fe5-460b-86d7-e763205c8d5a",
+  "state": "active",
+  "title": "Відомості про залучення, розрахунок розміру і використання коштів пайової участі у розвитку інфраструктури населеного пункту",
+  "type": "dataset",
+  "update_frequency": "monthly",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "5b186e66-21ad-4e89-9106-040eda7098ff",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-16T11:54:04.654222",
+      "data_period_end": "2026-05-31",
+      "data_period_start": "2022-01-27",
+      "datastore_active": true,
+      "description": "Ресурс містить інформацію про використання пайової участі, зокрема сторони договору, об'єкти будівництва, суму внеску.",
+      "format": "CSV",
+      "hash": "",
+      "id": "9281a60f-1048-41ff-92de-0fca85cb60b5",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-05-29T08:31:49.208678",
+      "metadata_modified": "2026-05-29T08:31:49.208678",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "contracts.csv",
+      "number_of_all_downloads": 7,
+      "number_of_views": 56,
+      "package_id": "6c48e0b0-c167-4255-888f-64e707484e3b",
+      "position": 0,
+      "resource_code": "contracts_PA",
+      "resource_type": null,
+      "size": 51278,
+      "source": "",
+      "state": "active",
+      "tracking_summary": {
+        "total": 56,
+        "recent": 56
+      },
+      "ua-select-search-field-administrator-org": "Департамент економіки та інвестицій",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Пайова участь (contracts_PA)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-16T11:54:05.632294",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-16T13:34:19.260198",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-04-28T12:27:50.036973",
+            "status": "pending",
+            "moderator_id": "b636c8b7-5fe5-460b-86d7-e763205c8d5a"
+          },
+          {
+            "date": "2026-04-29T06:52:00.746731",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-29T08:31:49.262601",
+            "status": "pending",
+            "moderator_id": "b636c8b7-5fe5-460b-86d7-e763205c8d5a"
+          }
+        ],
+        "created_by": "mariia-novokhatska",
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-05-29T09:18:03.973807",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/uploads/versions/version_3075543d_v1.2.csv",
+      "url_type": "version_upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "будівництво",
+      "id": "14d8d270-9c8f-4cce-97c1-38e2d2960bf7",
+      "name": "будівництво",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "договір",
+      "id": "80084a7d-b35b-4043-bd3d-240245775aa6",
+      "name": "договір",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "забудовник",
+      "id": "46a89245-c660-4400-9d59-0d22316f19d1",
+      "name": "забудовник",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "участь",
+      "id": "325db47d-7562-4ee5-bf65-700a36ee1d7d",
+      "name": "участь",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "фінансування",
+      "id": "d352f2bb-aa75-4815-9f8a-da1803bec72c",
+      "name": "фінансування",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "інфраструктура",
+      "id": "aca17bd0-3081-4209-9342-c62ac2b89d72",
+      "name": "інфраструктура",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Департамент економіки та інвестицій",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-121754.109039ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 180,
+    "recent": 180
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "added_to_favorites_number": 0,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "health",
+  "collection_basis": "Закон України «Про місцеве самоврядування в Україні», Закон України «Основи законодавства України про охорону здоров'я», Наказ Міністерства фінансів України від 02.09.2014 № 879 «Про затвердження Положення про інвентаризацію активів та зобов’язань»",
+  "creator_user_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+  "id": "c2dbed91-31ac-4b4a-9114-cdc0097ea36b",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-17T12:48:46.132135",
+  "metadata_modified": "2026-05-05T15:13:11.189559",
+  "name": "dani-pro-medychne-obladnannia-komunalnykh-zakladiv-okhorony-zdorovia-dep-health",
+  "notes": "Набір містить перелік медичного обладнання комунальних закладів охорони здоров’я відповідно до інвентаризаційних описів основних засобів та складається з одного ресурсу: **equipment** – містить інвентарний, серійний і номер паспорта медичного обладнання, найменування, модель, виробника, рік виробництва, кількість, первісну вартість, суму зносу, балансову вартість, строк корисного використання, назву й код підгрупи медичних послуг, назву та ЄДРПОУ закладу охорони здоров’я.",
+  "num_resources": 1,
+  "num_tags": 7,
+  "number_of_all_downloads": 3,
+  "number_of_views": 82,
+  "organization": {
+    "id": "975fe2aa-145d-45ad-966d-af18bb3f1091",
+    "name": "dep-health",
+    "title": "Департамент охорони здоров’я",
+    "type": "organization",
+    "description": "Забезпечує реалізацію державної політики у сфері охорони здоров’я на території міста Києва, управління підприємствами, установами та організаціями у сфері охорони здоров’я, що належать до комунальної власності територіальної громади міста Києва, організації їх матеріально-технічного та методичного забезпечення в межах повноважень, передбачених законодавством. Також забезпечує планування розвитку мережі закладів охорони здоров’я на території міста Києва, організовує в межах повноважень проведення профілактичних і протиепідемічних заходів у місті Києві, а також робіт з ліквідації епідемій та спалахів інфекційних хвороб в установленому порядку, заходів медичного захисту під час ліквідації наслідків надзвичайних ситуацій та ін.",
+    "image_url": "",
+    "created": "2026-02-02T14:38:28.419298",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "02012906",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Прорізна, 19",
+    "email": "health@kyivcity.gov.ua",
+    "phone": "+380442840875",
+    "number_of_linked_packages": 14,
+    "date_of_refresh": "2026-05-05T09:47:17.294165",
+    "number_of_views": 19,
+    "number_of_categories": 7,
+    "number_of_all_downloads": 163,
+    "average_rating": "0.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "975fe2aa-145d-45ad-966d-af18bb3f1091",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "moderation_date": "2026-05-05T15:13:11.615550",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Людмила Жур",
+  "responsible_person_id": "e0066954-7b9e-409b-ad38-89ac02a61c0e",
+  "state": "active",
+  "title": "Дані про медичне обладнання комунальних закладів охорони здоров’я",
+  "type": "dataset",
+  "update_frequency": "annually",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "975fe2aa-145d-45ad-966d-af18bb3f1091",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-18T11:06:22.966330",
+      "data_period_end": "",
+      "data_period_start": "",
+      "datastore_active": true,
+      "description": "Ресурс містить ідентифікатор, інвентарний, серійний і номер паспорта медичного обладнання, найменування, модель, виробника, рік виробництва, кількість, первісну вартість, суму зносу, балансову вартість, одиницю виміру, валюту, строк корисного використання, відсоток зносу, назву й код підгрупи медичних послуг, назву та ЄДРПОУ закладу охорони здоров’я. Кожним записом у таблиці є один об’єкт.",
+      "format": "CSV",
+      "hash": "",
+      "id": "6e465bfe-25a6-4911-b0b3-f9e5da6f1d1f",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-03-18T11:06:22.899598",
+      "metadata_modified": "2026-03-18T11:06:22.934252",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "equipment.csv",
+      "number_of_all_downloads": 0,
+      "number_of_views": 17,
+      "package_id": "c2dbed91-31ac-4b4a-9114-cdc0097ea36b",
+      "position": 0,
+      "resource_code": "equipment",
+      "resource_type": null,
+      "size": 74596,
+      "source": "",
+      "state": "active",
+      "tracking_summary": {
+        "total": 17,
+        "recent": 17
+      },
+      "ua-select-search-field-administrator-org": "Департамент охорони здоров’я",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Медичне обладнання (equipment)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-18T11:06:24.008408",
+            "status": "pending",
+            "moderator_id": null
+          }
+        ],
+        "created_by": "olena-pastushenko",
+        "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+        "moderation_date": "2026-03-18T11:06:37.145331",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/c2dbed91-31ac-4b4a-9114-cdc0097ea36b/resource/6e465bfe-25a6-4911-b0b3-f9e5da6f1d1f/download/equipment.csv",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "активи",
+      "id": "4bc0a4b6-93f1-4914-9a5f-74aebb236e61",
+      "name": "активи",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "здоров'я",
+      "id": "39493408-2b0f-47cc-8016-6c16a2edcdb6",
+      "name": "здоров'я",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "кнп",
+      "id": "52d24fce-5911-48d0-84d1-00ce7f60a59b",
+      "name": "кнп",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "лікарні",
+      "id": "20798789-c73f-451f-858c-6741f57e823f",
+      "name": "лікарні",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "медицина",
+      "id": "ef6862ea-3200-452c-89c5-a03160764828",
+      "name": "медицина",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "обладнання",
+      "id": "beec9957-554c-417a-8b17-49a5689d1c57",
+      "name": "обладнання",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "обстеження",
+      "id": "a5ad54d6-4f14-47f8-a8ee-5c29ded9682a",
+      "name": "обстеження",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Департамент охорони здоров’я",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-122426.307017ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 82,
+    "recent": 82
+  }
+}

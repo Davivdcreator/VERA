@@ -1,0 +1,215 @@
+{
+  "added_to_favorites_number": 1,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "improvements",
+  "collection_basis": "Закон України «Про житлово-комунальні послуги», Закон України «Про відходи», Розпорядження КМВА від 31.01.2023 №59 «Про затвердження норм надання послуг з вивезення побутових відходів у місті Києві на 2023-2027 роки», Розпорядження КМВА №638 від 31.08.2022 «Про внесення змін до тарифів на послуги з вивезення побутових відходів з урахуванням операцій поводження з побутовими відходами (збирання, перевезення, утилізація, захоронення) виконавцю послуг – «КИЇВКОМУНСЕРВІС»",
+  "creator_user_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+  "id": "03cda853-1bcf-48de-87f5-7f664a2299df",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-17T09:44:13.178477",
+  "metadata_modified": "2026-05-05T15:06:03.098005",
+  "name": "dani-pro-mistseznakhodzhennia-komunalnykh-obiektiv-upravlinnia-vidkhodamy-ikh-ploshchi-ta-o-dep-zhki",
+  "notes": "Набір містить ресурс інформацію про обʼєкти управління побутовими відходами у місті Києві, зокрема: назву полігону, рік введення полігону в експлуатацію, інформація про балансоутримувача, види відходів, що приймаються на полігон, тарифи на надання послуг із захоронення побутових відходів, місце розташування полігону.",
+  "num_resources": 1,
+  "num_tags": 10,
+  "number_of_all_downloads": 4,
+  "number_of_views": 98,
+  "organization": {
+    "id": "cc7f5e28-63a6-4077-81cf-8f7a1256ffbe",
+    "name": "dep-zhki",
+    "title": "Департамент житлово-комунальної інфраструктури",
+    "type": "organization",
+    "description": "Забезпечує функціонування та розвиток систем тепло-, водопостачання та водовідведення. Координує роботу комунальних служб у сфері ЖКГ, поводження з відходами та інженерного захисту територій.",
+    "image_url": "2026-05-15-121810.680531ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.385952",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "33695540",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Велика Житомирська, 15-А",
+    "email": "infrastructure@kyivcity.gov.ua",
+    "phone": "+380442792921",
+    "number_of_linked_packages": 19,
+    "date_of_refresh": "2026-05-25T12:46:42.405064",
+    "number_of_views": 187,
+    "number_of_categories": 8,
+    "number_of_all_downloads": 341,
+    "average_rating": "4.0",
+    "subscription_should_be_checked": false,
+    "favorites_should_be_checked": false,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "cc7f5e28-63a6-4077-81cf-8f7a1256ffbe",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "moderation_date": "2026-05-05T15:06:03.478649",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Оксана Єгорова",
+  "responsible_person_id": "cce09501-8503-4975-be16-8f5f1ceee10c",
+  "state": "active",
+  "title": "Дані про місцезнаходження комунальних об'єктів управління відходами, їх площі та обсяги надходжень",
+  "type": "dataset",
+  "update_frequency": "annually",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "cc7f5e28-63a6-4077-81cf-8f7a1256ffbe",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-17T09:47:10.357024",
+      "data_period_end": "2025-09-22",
+      "data_period_start": "",
+      "datastore_active": true,
+      "description": "Ресурс містить інформацію про полігони для захоронення твердих побутових відходів у місті Києві, зокрема: їхню площу, рік заснування, компанії, які перевозять відходи.",
+      "format": "CSV",
+      "hash": "",
+      "id": "4934e66a-d63e-416e-911b-e086a7dd9c00",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-04-06T12:44:05.403097",
+      "metadata_modified": "2026-04-06T12:44:05.434659",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "landfill.csv",
+      "number_of_all_downloads": 4,
+      "number_of_views": 39,
+      "package_id": "03cda853-1bcf-48de-87f5-7f664a2299df",
+      "position": 0,
+      "resource_code": "landFill",
+      "resource_type": null,
+      "size": 3077,
+      "source": "",
+      "state": "active",
+      "tracking_summary": {
+        "total": 39,
+        "recent": 39
+      },
+      "ua-select-search-field-administrator-org": "Департамент житлово-комунальної інфраструктури",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Обʼєкти управління побутовими відходами (landFill)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-17T09:47:11.251528",
+            "status": "pending",
+            "moderator_id": null
+          }
+        ],
+        "created_by": "mariia-novokhatska",
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-03-17T09:47:35.049756",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/03cda853-1bcf-48de-87f5-7f664a2299df/resource/4934e66a-d63e-416e-911b-e086a7dd9c00/download/landfill.csv",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "вивіз",
+      "id": "64c57273-5d71-423c-84de-517850ba0c5a",
+      "name": "вивіз",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "відходи",
+      "id": "396b2e93-f6b5-4716-ae73-10be86825469",
+      "name": "відходи",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "захоронення",
+      "id": "3432a585-9067-4f3e-98fd-f747088d784d",
+      "name": "захоронення",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "полігон",
+      "id": "ee021607-7c46-4e32-a0b0-563dc3728cee",
+      "name": "полігон",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "полігони",
+      "id": "3889800d-c010-4035-9c6e-1c26c648af61",
+      "name": "полігони",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "сировина",
+      "id": "f86c5680-a92b-4587-a837-ee1e2bd943a4",
+      "name": "сировина",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "сміття",
+      "id": "0dfa8516-fc01-485b-9d12-3d7fa5ece67e",
+      "name": "сміття",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "сміттєзвалища",
+      "id": "0497b49a-c40e-47d0-90dd-a27fafe110ed",
+      "name": "сміттєзвалища",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "тпв",
+      "id": "8b500423-6a4f-4cda-ab18-27ac0def663c",
+      "name": "тпв",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "утилізація",
+      "id": "c6b8db7c-3747-413d-8b08-8cd13d7294f3",
+      "name": "утилізація",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Департамент житлово-комунальної інфраструктури",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-121810.680531ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 98,
+    "recent": 98
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "added_to_favorites_number": 0,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "education",
+  "collection_basis": "Закон України «Про фізичну культуру і спорт», Рішення Київської міської ради від 21.11.2024 №174/9982 «Про затвердження комплексної міської цільової програми «Молодь та спорт столиці» на 2025–2027 роки»",
+  "creator_user_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+  "id": "0f67b9df-a67b-4c92-9e20-ae14e8937a65",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-17T10:27:50.449048",
+  "metadata_modified": "2026-06-09T08:11:37.846894",
+  "name": "perelik-sportyvnykh-shkil-dep-sport",
+  "notes": "Набір містить інформацію про перелік спортивних шкіл у місті Києві, зокрема: унікальні ідентифікатори, назви, адреси розташування, географічні координати, типи, керівництво, контакти, форми власності закладів. Дані надаються у форматі JSON.  \r\nДані оприлюднюються з ІКС «Система автоматизації взаємозв'язків між учасниками спортивного освітнього процесу в місті Києві».",
+  "num_resources": 1,
+  "num_tags": 4,
+  "number_of_all_downloads": 5,
+  "number_of_views": 161,
+  "organization": {
+    "id": "51d80b0e-fd98-4376-81e3-e2e5032ba3f7",
+    "name": "dep-sport",
+    "title": "Департамент молоді та спорту",
+    "type": "organization",
+    "description": "Забезпечує реалізацію державної політики у сфері молоді та спорту та національно-патріотичного виховання, у сферах фізичної культури і спорту та оздоровлення та відпочинку дітей",
+    "image_url": "2026-05-15-122258.343385ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.412332",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "42269168",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Хрещатик, 12",
+    "email": "sports@kyivcity.gov.ua",
+    "phone": "+380442792702",
+    "number_of_linked_packages": 15,
+    "date_of_refresh": "2026-05-08T14:13:16.921648",
+    "number_of_views": 48,
+    "number_of_categories": 9,
+    "number_of_all_downloads": 180,
+    "average_rating": "0.0",
+    "subscription_should_be_checked": false,
+    "favorites_should_be_checked": false,
+    "in_progress": true,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "51d80b0e-fd98-4376-81e3-e2e5032ba3f7",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "moderation_date": "2026-04-01T11:51:22.121363",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Світлана Моторна",
+  "responsible_person_id": "346bfc78-1361-44d2-9e01-4bb5ed7bded6",
+  "state": "active",
+  "title": "Перелік спортивних шкіл",
+  "type": "dataset",
+  "update_frequency": "semiannual",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "51d80b0e-fd98-4376-81e3-e2e5032ba3f7",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-17T10:32:04.830106",
+      "data_period_end": "",
+      "data_period_start": "",
+      "datastore_active": false,
+      "description": "Ресурс містить дані про перелік спортивних шкіл у місті Києві. Кожен об'єкт має унікальний номер, назву, юридичну адресу, географічну широту, географічну довготу, тип спортивної школи, ПІБ керівника, електронну пошту, контактний номер, додатковий контактний номер, код форми власності, дату створення та останнього оновлення запису.",
+      "format": "JSON",
+      "hash": "",
+      "id": "60475ad7-98da-4fa1-8bbd-b336ada8930e",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-09T08:11:37.847087",
+      "metadata_modified": "2026-06-09T08:11:37.847087",
+      "mimetype": null,
+      "mimetype_inner": null,
+      "name": "sportSchools.json",
+      "number_of_all_downloads": 2,
+      "number_of_views": 49,
+      "package_id": "0f67b9df-a67b-4c92-9e20-ae14e8937a65",
+      "position": 0,
+      "resource_code": "OTHER",
+      "resource_type": null,
+      "size": 67856,
+      "source": "ІКС «Система автоматизації взаємозв'язків між учасниками спортивного освітнього процесу в місті Києві»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 49,
+        "recent": 49
+      },
+      "ua-select-search-field-administrator-org": "Департамент молоді та спорту",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Позасистемний формат (OTHER)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-17T10:32:05.391169",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-17T10:32:23.546999",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-09T08:11:38.012445",
+            "status": "pending",
+            "moderator_id": "346bfc78-1361-44d2-9e01-4bb5ed7bded6"
+          }
+        ],
+        "created_by": "mariia-novokhatska",
+        "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12",
+        "moderation_date": "2026-06-09T12:56:37.217707",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/uploads/versions/version_57027f91_v1.1.json",
+      "url_type": "version_upload",
+      "validation_result": "",
+      "validation_status": ""
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "діти",
+      "id": "49807575-a015-4dd6-8c00-e78955eed38a",
+      "name": "діти",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "заклади",
+      "id": "0f4c5334-d1de-4d19-b437-5a1426c3d655",
+      "name": "заклади",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "спорт",
+      "id": "e60be75f-1910-44cc-a9d6-db0993ecee78",
+      "name": "спорт",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "школи",
+      "id": "4512ccd8-2044-469d-98d9-a13417acc0de",
+      "name": "школи",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Департамент молоді та спорту",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-122258.343385ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 161,
+    "recent": 161
+  }
+}

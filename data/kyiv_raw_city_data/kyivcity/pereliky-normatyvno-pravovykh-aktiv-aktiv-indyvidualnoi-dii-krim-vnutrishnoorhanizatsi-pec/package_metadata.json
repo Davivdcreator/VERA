@@ -1,0 +1,234 @@
+{
+  "added_to_favorites_number": 0,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "acts",
+  "collection_basis": "Закон України «Про місцеві державні адміністрації», Закон України «Про столицю України – місто-герой Київ»",
+  "creator_user_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+  "id": "be3ae048-fe73-4a78-b545-2bb16c4cfd8b",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-30T14:21:32.215451",
+  "metadata_modified": "2026-06-16T08:30:10.729391",
+  "name": "pereliky-normatyvno-pravovykh-aktiv-aktiv-indyvidualnoi-dii-krim-vnutrishnoorhanizatsi-pecherska-rda",
+  "notes": "Набір містить два ресурси:    \r\n**legalActs** – інформацію про нормативно-правові акти, акти індивідуальної дії (крім внутрішньоорганізаційних), прийнятих Печерською районною в місті Києві державною адміністрацією;   \r\n**projects** – проєкти розпоряджень, що підлягають обговоренню (за наявності). \r\n\r\nДокумент розпорядника інформації про визначення відповідальної особи (осіб) розпорядника інформації оприлюднено в наборі даних «Інформація про відповідальних осіб за оприлюднення інформації у формі відкритих даних у структурних підрозділах виконавчого органу Київської міської ради (Київської міської державної адміністрації) та районних у місті Києві державних адміністраціях»:   \r\nhttps://data.kyivcity.gov.ua/dataset/informatsiia-pro-vidpovidalnykh-osib-za-opryliudnennia-informatsii-u-formi-vidkrytykh-danykh--aparat ",
+  "num_resources": 1,
+  "num_tags": 4,
+  "number_of_all_downloads": 10,
+  "number_of_views": 175,
+  "organization": {
+    "id": "02106738-e39b-40f8-b5bf-01a2ffd5a597",
+    "name": "pecherska-rda",
+    "title": "Печерська районна в місті Києві державна адміністрація",
+    "type": "organization",
+    "description": "Забезпечує реалізацію державної та міської політики на території Печерського району. Здійснює виконавчі повноваження у сферах соціально-економічного розвитку, бюджетування, ЖКГ та благоустрою. Координує діяльність районних закладів освіти, охорони здоров’я та культури, забезпечуючи соціальний захист та надання адміністративних послуг мешканцям району.",
+    "image_url": "2026-05-15-123334.683772ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.458390",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "37401206",
+    "administrative_unit_id": "UA80000000000624772",
+    "address": "вул. Михайла Омеляновича-Павленка, 15",
+    "email": "rda.pecherska@kyivcity.gov.ua",
+    "phone": "+380442544055",
+    "number_of_linked_packages": 11,
+    "date_of_refresh": "2026-06-09T11:23:03.580161",
+    "number_of_views": 74,
+    "number_of_categories": 8,
+    "number_of_all_downloads": 242,
+    "average_rating": "4.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "02106738-e39b-40f8-b5bf-01a2ffd5a597",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "history": [
+        {
+          "date": "2026-06-16T07:29:54.372057",
+          "status": "pending",
+          "moderator_id": null
+        }
+      ],
+      "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+      "moderation_date": "2026-06-16T08:30:10.728952",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Олексій Нестеренко",
+  "responsible_person_id": "61339829-61cc-4159-81f0-220ad110f4b6",
+  "state": "active",
+  "title": "Переліки нормативно-правових актів, актів індивідуальної дії (крім внутрішньоорганізаційних), прийнятих розпорядником інформації Печерською районною в місті Києві державною адміністрацією, проекти рішень, що підлягають обговоренню, а також документ розпорядника інформації про визначення особи (осіб) відповідальних за оприлюднення відкритих даних",
+  "type": "dataset",
+  "update_frequency": "weekly",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "02106738-e39b-40f8-b5bf-01a2ffd5a597",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-30T14:24:12.198964",
+      "data_period_end": "2026-06-12",
+      "data_period_start": "2024-01-01",
+      "datastore_active": true,
+      "description": "Ресурс містить інформацію про нормативно-правові акти, акти індивідуальної дії (крім внутрішньоорганізаційних) Печерською районної в місті Києві державної адміністрації. Зокрема, номери, назви, дати ухвалення, набрання чинності, назви та ідентифікатори видавників, посилання в мережі Інтернет. Кожним записом до таблиці є окремий нормативно-правовий акт або акт індивідуальної дії.",
+      "format": "CSV",
+      "hash": "",
+      "id": "ef3e941b-ca32-41ff-be4d-83c773446827",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-16T08:27:56.917023",
+      "metadata_modified": "2026-06-16T08:27:56.998711",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "105_legalActs.csv",
+      "number_of_all_downloads": 9,
+      "number_of_views": 62,
+      "package_id": "be3ae048-fe73-4a78-b545-2bb16c4cfd8b",
+      "position": 0,
+      "resource_code": "legalActs",
+      "resource_type": null,
+      "size": 165,
+      "source": "ІКС «Єдиний інформаційний простір територіальної громади міста Києва»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 62,
+        "recent": 62
+      },
+      "ua-select-search-field-administrator-org": "Печерська районна в місті Києві державна адміністрація",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Перелік нормативно-правових актів (legalActs)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-30T14:24:13.316679",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-31T05:39:04.881393",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-04-29T10:17:51.683925",
+            "status": "pending",
+            "moderator_id": "61339829-61cc-4159-81f0-220ad110f4b6"
+          },
+          {
+            "date": "2026-04-29T11:00:37.242834",
+            "status": "needs_work",
+            "comment": "Вітаємо! \n\nДані в ресурсі вказані до 2026-04-10. Прошу переглянути чи правильний файл ви прикріпили та оновити знов файл ресурсу.",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-04-29T11:00:38.857289",
+            "status": "needs_work",
+            "comment": "Вітаємо! \n\nДані в ресурсі вказані до 2026-04-10. Прошу переглянути чи правильний файл ви прикріпили та оновити знов файл ресурсу.",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-04-29T11:50:34.500232",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-13T08:06:25.440032",
+            "status": "pending",
+            "moderator_id": "61339829-61cc-4159-81f0-220ad110f4b6"
+          },
+          {
+            "date": "2026-05-13T08:27:06.452079",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-28T11:37:44.915259",
+            "status": "pending",
+            "moderator_id": "61339829-61cc-4159-81f0-220ad110f4b6"
+          },
+          {
+            "date": "2026-05-28T12:03:15.338583",
+            "status": "needs_work",
+            "comment": "Auto-changed to pending on edit"
+          },
+          {
+            "date": "2026-06-16T07:29:55.515785",
+            "status": "pending",
+            "comment": "Добрий день! Просимо виправити помилки:   \n1. пуста клітинка в стовпчику url (рядок 619-2025-г).   \n2. апострофи: Edit cells – Transform – value.replace(\"’\",\"'\").replace(\"‘\",\"'\").replace(\"ʼ\",\"'\").replace(\"ʹ\",\"'\")  \n3. Під час Створити версію або Редагувати ресурс ОБОВ'ЯЗКОВО виставляйте дату актуальності даних (наприклад, останній запис в таблиці НПА за 2026-05-20 – цю ж дату ставимо в Дані за період ДО",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          }
+        ],
+        "created_by": "olena-pastushenko",
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-06-16T08:27:35.569072",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/be3ae048-fe73-4a78-b545-2bb16c4cfd8b/resource/ef3e941b-ca32-41ff-be4d-83c773446827/download/105_legalacts.csv",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "акти",
+      "id": "6fd1e36f-ac48-42dc-aa28-a1b27ae75cfd",
+      "name": "акти",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "проекти",
+      "id": "bb66df57-afc4-4da4-a288-15d2fd85eebf",
+      "name": "проекти",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "рда",
+      "id": "d38c98e5-42bf-4b59-8376-5ad1fe097eb5",
+      "name": "рда",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "розпорядження",
+      "id": "35b60e02-54d8-4438-b99b-9c900ccaa0fa",
+      "name": "розпорядження",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Печерська районна в місті Києві державна адміністрація",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-123334.683772ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 175,
+    "recent": 175
+  }
+}

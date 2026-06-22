@@ -1,0 +1,187 @@
+{
+  "added_to_favorites_number": 0,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "property",
+  "collection_basis": "Земельний кодекс України, Закон України «Про місцеве самоврядування в Україні», Закон України «Про оренду державного та комунального майна», Наказ Міністерства фінансів України від 02.09.2014 № 879 «Про затвердження Положення про інвентаризацію активів та зобов’язань»",
+  "creator_user_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+  "id": "05bdcb8e-2712-4f19-ac2d-2475c2fadcae",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-13T10:51:01.431381",
+  "metadata_modified": "2026-06-04T07:38:02.257447",
+  "name": "perelik-obiektiv-komunalnoi-vlasnosti-dep-communal",
+  "notes": "Набір даних містить ресурс **buildings** – перелік житлових будинків, будівель, споруд, а також їхніх окремих, квартир, житлових та нежитлових приміщень, що знаходяться у комунальній власності.  \r\nНабір даних оприлюднюється частково за результатами трискладового тесту: https://kyivcity.gov.ua/publichna_informatsiya_257928/opendata/tests/",
+  "num_resources": 1,
+  "num_tags": 6,
+  "number_of_all_downloads": 23,
+  "number_of_views": 257,
+  "organization": {
+    "id": "c4b5eae1-cda8-4815-a69b-e3a0efa98968",
+    "name": "dep-communal",
+    "title": "Департамент комунальної власності м. Києва",
+    "type": "organization",
+    "description": "Забезпечує управління об’єктами комунальної власності територіальної громади міста Києва, організацію та проведення приватизації майна комунальної власності, здійснення повноважень орендодавця об’єктів комунальної власності, захист майнових прав територіальної громади міста Києва,  здійснення повноважень щодо державної реєстрації речових прав на нерухоме майно та їх обтяжень",
+    "image_url": "2026-05-15-122103.061839ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.406199",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "19020407",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Хрещатик, 10",
+    "email": "property@kyivcity.gov.ua",
+    "phone": "+380442026151",
+    "number_of_linked_packages": 14,
+    "date_of_refresh": "2026-06-04T10:34:41.996863",
+    "number_of_views": 92,
+    "number_of_categories": 7,
+    "number_of_all_downloads": 247,
+    "average_rating": "0.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "c4b5eae1-cda8-4815-a69b-e3a0efa98968",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "moderation_date": "2026-04-01T15:08:34.366619",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Олена Олегівна Грінченко",
+  "responsible_person_id": "806528f3-52dd-425d-9f5f-0e7626f88f3c",
+  "state": "active",
+  "title": "Перелік об'єктів комунальної власності",
+  "type": "dataset",
+  "update_frequency": "annually",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "c4b5eae1-cda8-4815-a69b-e3a0efa98968",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-16T09:31:27.995403",
+      "data_period_end": "2026-06-02",
+      "data_period_start": "",
+      "datastore_active": false,
+      "description": "Ресурс містить посилання для отримання даних про перелік житлових будинків, будівель, споруд, а також їх окремих частин, квартир, житлових та нежитлових приміщень, що знаходяться у комунальній власності у форматі CSV.  \r\nЗокрема, інвентарний номер об'єкта, його назву, опис, адресу, клас відповідно до НК 018:2023 «Класифікатор будівель і споруд», відомості про реєстрацію речових прав на нерухоме майно (статус, номер, дата), рівень будівельної готовності, стан, підведення комунальних комунікацій, найменування та код ЄДРПОУ власника, балансоутримувача й користувача, актуальність даних. Кожним записом у таблиці є один об’єкт.  \r\nДані за посиланням оновлюються щомісяця до 05 числа.",
+      "format": "CSV",
+      "hash": "",
+      "id": "e716151e-09db-4170-97e3-f091b95f3846",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-04T07:38:02.233757",
+      "metadata_modified": "2026-06-04T07:38:02.268743",
+      "mimetype": null,
+      "mimetype_inner": null,
+      "name": "buildings.csv",
+      "number_of_all_downloads": 22,
+      "number_of_views": 84,
+      "package_id": "05bdcb8e-2712-4f19-ac2d-2475c2fadcae",
+      "position": 0,
+      "resource_code": "OTHER",
+      "resource_type": null,
+      "size": 13100531,
+      "source": "Модуль обліку та інформаційного відображення процесу управління об'єктами нерухомого майна територіальної громади м. Києва",
+      "state": "active",
+      "tracking_summary": {
+        "total": 84,
+        "recent": 84
+      },
+      "ua-select-search-field-administrator-org": "Департамент комунальної власності м. Києва",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Позасистемний формат (OTHER)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-16T09:31:29.319005",
+            "status": "pending",
+            "moderator_id": null
+          }
+        ],
+        "created_by": "olena-pastushenko",
+        "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+        "moderation_date": "2026-03-16T09:33:59.089806",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://dkv.kyivcity.gov.ua/DataReports/%D0%9E%D0%BF%D1%80%D0%B8%D0%BB%D1%8E%D0%B4%D0%BD%D0%B5%D0%BD%D0%BD%D1%8F/buildings.csv",
+      "url_type": "",
+      "validation_result": "",
+      "validation_status": ""
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "балансоутримувач",
+      "id": "4a71cd5b-5c8f-4e3f-9c63-fba515a8c29a",
+      "name": "балансоутримувач",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "будинок",
+      "id": "4b647a80-521c-4486-8c66-69400d979a84",
+      "name": "будинок",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "власність",
+      "id": "77af5220-d78e-4458-bcb9-0427b555cc70",
+      "name": "власність",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "майно",
+      "id": "7d091914-4555-4b00-94fb-fc0e25d91ee9",
+      "name": "майно",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "нерухомість",
+      "id": "f2b88cb1-8fb6-4a26-99a8-03cb98c1cdab",
+      "name": "нерухомість",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "приміщення",
+      "id": "bd5bb8fd-c767-4d77-8285-9187908a55bc",
+      "name": "приміщення",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Департамент комунальної власності м. Києва",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-122103.061839ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 257,
+    "recent": 257
+  }
+}

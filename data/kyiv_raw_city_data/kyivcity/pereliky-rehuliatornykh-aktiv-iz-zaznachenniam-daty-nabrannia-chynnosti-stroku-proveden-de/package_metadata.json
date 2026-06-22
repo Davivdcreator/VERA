@@ -1,0 +1,226 @@
+{
+  "added_to_favorites_number": 0,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "acts",
+  "collection_basis": "Закон України «Про засади державної регуляторної політики у сфері господарської діяльності»",
+  "creator_user_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+  "id": "7d5b8f60-c99a-407e-a2f3-9806b4dc5f37",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-16T11:14:21.971538",
+  "metadata_modified": "2026-06-05T12:10:28.914980",
+  "name": "pereliky-rehuliatornykh-aktiv-iz-zaznachenniam-daty-nabrannia-chynnosti-stroku-proveden-dep-industry",
+  "notes": "Набір містить перелік чинних регуляторних актів Київської міської державної адміністрації із зазначенням інформації про нормативно-правові акти, якими вони були введені в дію, базові, повторні та періодичні відстеження регуляторного впливу.",
+  "num_resources": 1,
+  "num_tags": 3,
+  "number_of_all_downloads": 4,
+  "number_of_views": 220,
+  "organization": {
+    "id": "23df8833-15f7-4ff1-9914-806c26ed3685",
+    "name": "dep-industry",
+    "title": "Департамент промисловості та розвитку підприємництва",
+    "type": "organization",
+    "description": "Реалізує державну та міську політику у сферах промислового розвитку, інвестиційної діяльності та підтримки підприємництва. Забезпечує стабільне функціонування споживчого ринку, продовольчу безпеку міста, розвиток торгівлі та сфери побутових послуг. Координує взаємодію з бізнес-середовищем, залучення інвестицій та впровадження регуляторної політики для стимулювання економічного зростання столиці.",
+    "image_url": "2026-05-15-122554.601175ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.425669",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "24250279",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Басейна, 1/2-А",
+    "email": "industry@kyivcity.gov.ua",
+    "phone": "+380442358693",
+    "number_of_linked_packages": 15,
+    "date_of_refresh": "2026-06-05T15:08:00.051237",
+    "number_of_views": 54,
+    "number_of_categories": 7,
+    "number_of_all_downloads": 237,
+    "average_rating": "0.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "23df8833-15f7-4ff1-9914-806c26ed3685",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "history": [
+        {
+          "date": "2026-06-05T11:59:19.803675",
+          "status": "pending",
+          "moderator_id": null
+        }
+      ],
+      "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+      "moderation_date": "2026-06-05T12:08:00.050986",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Вероніка Цуканова",
+  "responsible_person_id": "4dc8c066-c1d7-44a3-855c-f7b45754a90b",
+  "state": "active",
+  "title": "Переліки регуляторних актів із зазначенням дати набрання чинності, строку проведення базового, повторного та періодичного відстеження та результативності та інформації про джерело їх оприлюднення",
+  "type": "dataset",
+  "update_frequency": "monthly",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "23df8833-15f7-4ff1-9914-806c26ed3685",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-16T11:18:47.767243",
+      "data_period_end": "2026-06-05",
+      "data_period_start": "2004-07-26",
+      "datastore_active": true,
+      "description": "Містить перелік чинних регуляторних актів із зазначенням інформації про нормативно-правові акти, якими вони були введені в дію, базові, повторні та періодичні відстеження регуляторного впливу.",
+      "format": "CSV",
+      "hash": "",
+      "id": "5558eb41-0dd4-44ba-b5c4-2db65abb04d1",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-05T12:10:28.858186",
+      "metadata_modified": "2026-06-05T12:10:28.985690",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "regulatoryList.csv",
+      "number_of_all_downloads": 3,
+      "number_of_views": 67,
+      "package_id": "7d5b8f60-c99a-407e-a2f3-9806b4dc5f37",
+      "position": 0,
+      "resource_code": "regulatoryList",
+      "resource_type": null,
+      "size": 430853,
+      "source": "",
+      "state": "active",
+      "tracking_summary": {
+        "total": 67,
+        "recent": 67
+      },
+      "ua-select-search-field-administrator-org": "Департамент промисловості та розвитку підприємництва",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Переліки регуляторних актів (regulatoryList)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-16T11:18:48.980173",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-16T11:19:04.158742",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-05-01T11:52:49.249616",
+            "status": "pending",
+            "moderator_id": "4dc8c066-c1d7-44a3-855c-f7b45754a90b"
+          },
+          {
+            "date": "2026-05-01T12:36:00.660320",
+            "status": "needs_work",
+            "comment": "Auto-changed to pending on edit"
+          },
+          {
+            "date": "2026-05-04T11:49:55.992070",
+            "status": "pending",
+            "comment": "Добрий день! У стовпчику authorityId зникли нулі – ЄДРПОУ 5 значень, замість 8. Пропонуємо виправити в OpenRefine: обираємо клітинку з ЄДРПОУ та натискаємо edit. Вводимо 000 перед значенням та натискаємо Apply to all identical. Далі перевіряємо правильність за допомогою Facet – Custom text facet – вводимо вираз: value.length() . Якщо видає 8 – все ок, помилку виправлено.\nТакож у стовпчику repeatEvalText пропущена лапка, пропонуємо виправити також в OpenRefine за допомогою: Edit cells – Transforms та вводимо вираз: value.replace(/(\\s|^)\"(?=\\S)/, \"$1«\") \n     .replace(/(?<=\\S)\"(\\s|[.,!?;:]|$)/, \"»$1\") \n     .replace(/\"/, \"»\")",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-05-04T13:57:30.049523",
+            "status": "approved",
+            "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12"
+          },
+          {
+            "date": "2026-05-05T09:04:01.949444",
+            "status": "pending",
+            "moderator_id": "4dc8c066-c1d7-44a3-855c-f7b45754a90b"
+          },
+          {
+            "date": "2026-05-05T09:55:35.409173",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-06-03T11:47:03.363065",
+            "status": "pending",
+            "moderator_id": "4dc8c066-c1d7-44a3-855c-f7b45754a90b"
+          },
+          {
+            "date": "2026-06-03T14:05:52.660976",
+            "status": "needs_work",
+            "comment": "Auto-changed to pending on edit"
+          },
+          {
+            "date": "2026-06-05T11:59:20.765285",
+            "status": "pending",
+            "comment": "Добрий день! Необхідно виправити помилки у програмі OpenRefine: у всіх стовпчиках з текстом необхідно виправити апостроф: Edit cells – Transform – value.replace(\"’\",\"'\").replace(\"‘\",\"'\").replace(\"ʼ\",\"'\").replace(\"ʹ\",\"'\") та лапки: Edit cells – Transform – value.replace(/(\\s|^)\"(?=\\S)/, \"$1«\") \n     .replace(/(?<=\\S)\"(\\s|[.,!?;:]|$)/, \"»$1\") \n     .replace(/\"/, \"»\")\n2. У стовпчику authorityId зникли нулі в коді ЄДРПОУ, необхідно вказати правильні значення (відформатуйте цей стовпчик у Текст та вставте правильний код).",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          }
+        ],
+        "created_by": "mariia-novokhatska",
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-06-05T12:07:46.949025",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/7d5b8f60-c99a-407e-a2f3-9806b4dc5f37/resource/5558eb41-0dd4-44ba-b5c4-2db65abb04d1/download/regulatorylist.csv",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "акт",
+      "id": "ac8efe5a-b5eb-4e9e-a9de-a9592d417625",
+      "name": "акт",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "відстеження",
+      "id": "97bde9aa-da85-4634-8f70-c349556d5b06",
+      "name": "відстеження",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "звіт",
+      "id": "a865b8bf-5086-4aa5-ad14-29a270001795",
+      "name": "звіт",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Департамент промисловості та розвитку підприємництва",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-122554.601175ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 220,
+    "recent": 220
+  }
+}

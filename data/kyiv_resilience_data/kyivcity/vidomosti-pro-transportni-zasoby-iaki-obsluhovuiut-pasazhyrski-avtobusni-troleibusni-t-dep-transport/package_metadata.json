@@ -1,0 +1,279 @@
+{
+  "added_to_favorites_number": 1,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "transport",
+  "collection_basis": "Закон України «Про місцеве самоврядування в Україні», Закон України «Про автомобільний транспорт», постанова Кабінету Міністрів України від 03.12.2008 № 1081 «Про затвердження Порядку проведення конкурсу з перевезення пасажирів на автобусному маршруті загального користування», постанова Кабінету Міністрів України від 18.02.1997 № 176 «Про затвердження Правил надання послуг пасажирського автомобільного транспорту»",
+  "creator_user_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+  "id": "5bbec735-a634-442a-8e3d-03a75835139e",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-11T15:03:08.108163",
+  "metadata_modified": "2026-06-11T14:33:48.062739",
+  "name": "vidomosti-pro-transportni-zasoby-iaki-obsluhovuiut-pasazhyrski-avtobusni-troleibusni-t-dep-transport",
+  "notes": "Набір містить дані про перевізників та транспортні засоби, що обслуговують пасажирські автобусні, тролейбусні та трамвайні маршрути перевезення.   \r\nНабір даних складається з двох ресурсів:  \r\n**25383769_vehicles** – дані про перевізників та транспортні засоби, що обслуговують автобусні маршрути регулярних перевезень у режимі маршрутного таксі. Ресурс формується на основі даних, які збирає Комунальна служба перевезень;  \r\n**31725604_vehicles** – дані про перевізника (КП «Київпастранс») та номери транспортних засобів, що обслуговують пасажирські автобусні, тролейбусні та трамвайні маршрути.",
+  "num_resources": 2,
+  "num_tags": 8,
+  "number_of_all_downloads": 21,
+  "number_of_views": 349,
+  "organization": {
+    "id": "3a783c26-a981-4000-b49f-87802af22713",
+    "name": "dep-transport",
+    "title": "Департамент транспортної інфраструктури",
+    "type": "organization",
+    "description": "Забезпечує реалізацію державної та міської політики у сферах автомобільного, міського електричного, залізничного, річкового та авіаційного транспорту. Координує розвиток дорожнього господарства, модернізацію транспортної мережі міста та створення умов для безпечного і якісного перевезення пасажирів і вантажів.",
+    "image_url": "2026-05-15-122750.711889ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.433290",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "37405284",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Леонтовича, 6",
+    "email": "transport@kyivcity.gov.ua",
+    "phone": "+380443666305",
+    "number_of_linked_packages": 18,
+    "date_of_refresh": "2026-06-11T17:29:07.642766",
+    "number_of_views": 218,
+    "number_of_categories": 8,
+    "number_of_all_downloads": 686,
+    "average_rating": "0.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "3a783c26-a981-4000-b49f-87802af22713",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "moderation_date": "2026-04-06T11:23:58.366069",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Олександра Кравчук",
+  "responsible_person_id": "72c0d680-8acb-4693-8996-8dac96abeb77",
+  "state": "active",
+  "title": "Відомості про транспортні засоби, які обслуговують пасажирські автобусні, тролейбусні та трамвайні маршрути перевезення (кількість транспортних засобів на кожному маршруті, марка, модель, державний номер, пасажиромісткість)",
+  "type": "dataset",
+  "update_frequency": "monthly",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "3a783c26-a981-4000-b49f-87802af22713",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-11T15:09:25.305501",
+      "data_owner": "468435cd-59ce-4a78-a64e-a1200435b5a4",
+      "data_period_end": "2026-05-26",
+      "data_period_start": "",
+      "datastore_active": false,
+      "description": "Ресурс містить дані КП «Київпастранс» про номерний знак транспортного засобу, його марку, модель та рік випуску, найменування й ідентифікатор перевізника, номер маршруту, наявність елементів доступності.",
+      "format": "JSON",
+      "hash": "",
+      "id": "efad1f37-779d-4d8e-9d1e-3a6b345775d6",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-05-26T08:17:18.633847",
+      "metadata_modified": "2026-05-26T08:17:18.731422",
+      "mimetype": "application/json",
+      "mimetype_inner": null,
+      "name": "31725604_vehicles.json",
+      "number_of_all_downloads": 10,
+      "number_of_views": 71,
+      "package_id": "5bbec735-a634-442a-8e3d-03a75835139e",
+      "position": 0,
+      "resource_code": "OTHER",
+      "resource_type": null,
+      "size": 776537,
+      "source": "Автоматизована система диспетчерського управління",
+      "state": "active",
+      "tracking_summary": {
+        "total": 71,
+        "recent": 71
+      },
+      "ua-select-search-field-administrator-org": "Департамент транспортної інфраструктури",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Позасистемний формат (OTHER)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-11T15:09:25.842690",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-11T15:34:17.416343",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-06T11:49:45.631450",
+            "status": "pending",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          }
+        ],
+        "created_by": "olena-pastushenko",
+        "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+        "moderation_date": "2026-05-06T11:50:12.790128",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/5bbec735-a634-442a-8e3d-03a75835139e/resource/efad1f37-779d-4d8e-9d1e-3a6b345775d6/download/31725604_vehicles.json",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": "skipped"
+    },
+    {
+      "administrator_org": "3a783c26-a981-4000-b49f-87802af22713",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-11T15:31:53.604250",
+      "data_owner": "d513160c-3aaa-46a2-b5cd-e433e0aa8df6",
+      "data_period_end": "2026-06-11",
+      "data_period_start": "",
+      "datastore_active": true,
+      "description": "Таблиця містить дані Комунальної служби перевезень про номерний знак транспортного засобу, його марку, модель та рік випуску, найменування й ідентифікатор перевізника, номер маршруту, наявність елементів доступності, які обслуговують автобусні маршрути регулярних перевезень у режимі маршрутного таксі на підставі Договорів про організацію перевезень пасажирів на міському автобусному маршруті загального користування м. Києва. Кожним записом у таблиці є один транспортний засіб.",
+      "format": "CSV",
+      "hash": "",
+      "id": "a8a2b2c6-d709-45fa-ba5c-a42db698e20f",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-11T14:33:48.041627",
+      "metadata_modified": "2026-06-11T14:33:48.077854",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "25383769_vehicles.csv",
+      "number_of_all_downloads": 11,
+      "number_of_views": 57,
+      "package_id": "5bbec735-a634-442a-8e3d-03a75835139e",
+      "position": 1,
+      "resource_code": "vehicles",
+      "resource_type": null,
+      "size": 121339,
+      "source": "Автоматизована система обліку оплати проїзду",
+      "state": "active",
+      "tracking_summary": {
+        "total": 57,
+        "recent": 57
+      },
+      "ua-select-search-field-administrator-org": "Департамент транспортної інфраструктури",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Транспортні засоби (vehicles)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-11T15:31:54.620983",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-11T15:32:34.845237",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-06T11:47:29.065496",
+            "status": "pending",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          }
+        ],
+        "created_by": "olena-pastushenko",
+        "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+        "moderation_date": "2026-05-06T11:50:00.781836",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/5bbec735-a634-442a-8e3d-03a75835139e/resource/a8a2b2c6-d709-45fa-ba5c-a42db698e20f/download/25383769_vehicles.csv",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "автобус",
+      "id": "ff5ac518-5c5a-4eb4-8515-5e66f8904e15",
+      "name": "автобус",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "доступність",
+      "id": "92838969-6d92-4ede-9413-586542305064",
+      "name": "доступність",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "марка",
+      "id": "2291b130-d547-4997-bec8-73415c808563",
+      "name": "марка",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "модель",
+      "id": "5b622c29-b093-4ee3-a65c-1ad4aa574b29",
+      "name": "модель",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "перевезення",
+      "id": "10daac06-9bbf-4b1f-857e-282e9cf454df",
+      "name": "перевезення",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "таксі",
+      "id": "2c8337f3-beb9-44cd-a226-08dc0a91c8cd",
+      "name": "таксі",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "транспорт",
+      "id": "b03efc03-b66e-499e-b15b-2436a8cea5ef",
+      "name": "транспорт",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "тролейбус",
+      "id": "56d491e2-f9a6-401d-abf0-629938c48550",
+      "name": "тролейбус",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Департамент транспортної інфраструктури",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-122750.711889ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 349,
+    "recent": 349
+  }
+}

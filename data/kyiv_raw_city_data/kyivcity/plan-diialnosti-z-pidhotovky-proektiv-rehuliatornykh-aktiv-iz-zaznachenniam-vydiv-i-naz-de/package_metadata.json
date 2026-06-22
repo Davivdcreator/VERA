@@ -1,0 +1,222 @@
+{
+  "added_to_favorites_number": 0,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "acts",
+  "collection_basis": "Закон України «Про засади державної регуляторної політики у сфері господарської діяльності»",
+  "creator_user_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+  "id": "47357c9c-92c5-40b2-bb6e-1ca91706ee1b",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-12T13:31:32.892973",
+  "metadata_modified": "2026-06-05T12:48:02.210802",
+  "name": "plan-diialnosti-z-pidhotovky-proektiv-rehuliatornykh-aktiv-iz-zaznachenniam-vydiv-i-naz-dep-industry",
+  "notes": "Набір містить план підготовки регуляторних актів, зокрема назви проектів, види регуляторних актів, цілі прийняття, строки підготовки, найменування відповідальних за розробку органів та підрозділів тощо.",
+  "num_resources": 1,
+  "num_tags": 4,
+  "number_of_all_downloads": 12,
+  "number_of_views": 225,
+  "organization": {
+    "id": "23df8833-15f7-4ff1-9914-806c26ed3685",
+    "name": "dep-industry",
+    "title": "Департамент промисловості та розвитку підприємництва",
+    "type": "organization",
+    "description": "Реалізує державну та міську політику у сферах промислового розвитку, інвестиційної діяльності та підтримки підприємництва. Забезпечує стабільне функціонування споживчого ринку, продовольчу безпеку міста, розвиток торгівлі та сфери побутових послуг. Координує взаємодію з бізнес-середовищем, залучення інвестицій та впровадження регуляторної політики для стимулювання економічного зростання столиці.",
+    "image_url": "2026-05-15-122554.601175ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.425669",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "24250279",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Басейна, 1/2-А",
+    "email": "industry@kyivcity.gov.ua",
+    "phone": "+380442358693",
+    "number_of_linked_packages": 15,
+    "date_of_refresh": "2026-06-05T15:48:02.210802",
+    "number_of_views": 55,
+    "number_of_categories": 7,
+    "number_of_all_downloads": 242,
+    "average_rating": "0.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": false,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "23df8833-15f7-4ff1-9914-806c26ed3685",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "history": [
+        {
+          "date": "2026-06-05T12:20:27.890460",
+          "status": "pending",
+          "moderator_id": null
+        }
+      ],
+      "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+      "moderation_date": "2026-06-05T12:43:41.666068",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Вероніка Цуканова",
+  "responsible_person_id": "4dc8c066-c1d7-44a3-855c-f7b45754a90b",
+  "state": "active",
+  "title": "План діяльності з підготовки проектів регуляторних актів із зазначенням видів і назв проектів, цілей їх прийняття, строків підготовки проектів, найменування органів і підрозділів, відповідальних за розроблення проектів, дати їх внесення на розгляд регуляторного органу та посилання на джерело оприлюднення",
+  "type": "dataset",
+  "update_frequency": "monthly",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "23df8833-15f7-4ff1-9914-806c26ed3685",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-12T14:40:48.075549",
+      "data_period_end": "2026-06-05",
+      "data_period_start": "2024-12-31",
+      "datastore_active": true,
+      "description": "Ресурс містить план підготовки регуляторних актів за 2024, 2025, 2026 роки. Таблиця включає ідентифікатори, назви, види, цілі, кінцеві строки розробки, посилання на проєкти регуляторних актів у мережі Інтернет, ідентифікатори, назви розробників та регуляторних органів, тощо. Кожним записом до таблиці є проєкт регуляторного акта.",
+      "format": "CSV",
+      "hash": "",
+      "id": "c50be902-2440-4e01-9793-2bee65e3abb3",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-05T12:48:02.160185",
+      "metadata_modified": "2026-06-05T12:48:02.226723",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "projects.csv",
+      "number_of_all_downloads": 12,
+      "number_of_views": 75,
+      "package_id": "47357c9c-92c5-40b2-bb6e-1ca91706ee1b",
+      "position": 0,
+      "resource_code": "projects_Regulatory",
+      "resource_type": null,
+      "size": 83793,
+      "source": "",
+      "state": "active",
+      "tracking_summary": {
+        "total": 75,
+        "recent": 75
+      },
+      "ua-select-search-field-administrator-org": "Департамент промисловості та розвитку підприємництва",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "План з підготовки проєктів регуляторних актів (projects_Regulatory)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-12T14:40:49.219848",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-16T09:40:46.861371",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-04T11:51:04.258493",
+            "status": "pending",
+            "moderator_id": "4dc8c066-c1d7-44a3-855c-f7b45754a90b"
+          },
+          {
+            "date": "2026-05-04T13:55:49.889378",
+            "status": "approved",
+            "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12"
+          },
+          {
+            "date": "2026-05-05T09:05:33.499894",
+            "status": "pending",
+            "moderator_id": "4dc8c066-c1d7-44a3-855c-f7b45754a90b"
+          },
+          {
+            "date": "2026-05-05T09:39:02.678723",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-06-03T13:48:57.296415",
+            "status": "pending",
+            "moderator_id": "4dc8c066-c1d7-44a3-855c-f7b45754a90b"
+          },
+          {
+            "date": "2026-06-04T06:25:39.520049",
+            "status": "needs_work",
+            "comment": "Auto-changed to pending on edit"
+          },
+          {
+            "date": "2026-06-05T12:20:28.777237",
+            "status": "pending",
+            "comment": "Добрий день! Необхідно виконати в OpenRefine декілька дій: 1. Треба виконати кластеризацію у стовпчику creatorName для Департаменту економіки, бо різне написання і машина сприймає це як різні значення: Facet – Text Facet, а далі cluster та виправити до одного типу. 2. Виконайте для всієї таблиці: All – Edit all columns – Trim leading.../Collapse consecutive (дві діїї)",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          }
+        ],
+        "created_by": "olena-pastushenko",
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-06-05T12:43:20.109586",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/47357c9c-92c5-40b2-bb6e-1ca91706ee1b/resource/c50be902-2440-4e01-9793-2bee65e3abb3/download/projects.csv",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "акт",
+      "id": "ac8efe5a-b5eb-4e9e-a9de-a9592d417625",
+      "name": "акт",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "план",
+      "id": "92d0586b-7dcb-4695-a686-7919058d6001",
+      "name": "план",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "проект",
+      "id": "578c9008-4052-48ee-9995-e4d42abe1931",
+      "name": "проект",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "підготовка",
+      "id": "c7eb7f63-687b-4489-adbd-32137880beae",
+      "name": "підготовка",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Департамент промисловості та розвитку підприємництва",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-122554.601175ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 225,
+    "recent": 225
+  }
+}

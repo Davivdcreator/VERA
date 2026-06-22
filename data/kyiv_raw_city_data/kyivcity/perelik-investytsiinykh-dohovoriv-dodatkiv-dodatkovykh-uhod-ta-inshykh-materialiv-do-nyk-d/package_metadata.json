@@ -1,0 +1,269 @@
+{
+  "added_to_favorites_number": 0,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "economy",
+  "collection_basis": "Закон України «Про місцеве самоврядування в Україні», Закон України «Про інвестиційну діяльність»",
+  "creator_user_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+  "id": "d95c4115-6cc2-4238-82be-67ce90312a95",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-16T11:35:53.350975",
+  "metadata_modified": "2026-06-01T12:43:57.477844",
+  "name": "perelik-investytsiinykh-dohovoriv-dodatkiv-dodatkovykh-uhod-ta-inshykh-materialiv-do-nyk-dep-economy",
+  "notes": "Набір містить два ресурси:   \r\n**contracts** – перелік інвестиційних договорів;  \r\n**additionalDocuments** – перелік додаткових угод та інших документів.",
+  "num_resources": 2,
+  "num_tags": 4,
+  "number_of_all_downloads": 7,
+  "number_of_views": 217,
+  "organization": {
+    "id": "5b186e66-21ad-4e89-9106-040eda7098ff",
+    "name": "dep-economy",
+    "title": "Департамент економіки та інвестицій",
+    "type": "organization",
+    "description": "Формує стратегію соціально-економічного розвитку міста та залучає інвестиції. Відповідає за міжнародне співробітництво, розвиток державно-приватного партнерства та підвищення економічної ефективності комунальних підприємств.",
+    "image_url": "2026-05-15-121754.109039ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.381853",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "04633423",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Хрещатик, 36",
+    "email": "economics@kyivcity.gov.ua",
+    "phone": "+380442027799",
+    "number_of_linked_packages": 15,
+    "date_of_refresh": "2026-06-01T15:43:57.477987",
+    "number_of_views": 73,
+    "number_of_categories": 6,
+    "number_of_all_downloads": 227,
+    "average_rating": "0.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "5b186e66-21ad-4e89-9106-040eda7098ff",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "moderation_date": "2026-03-30T08:40:55.680776",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Департамент економіки та інвестицій",
+  "responsible_person_id": "b636c8b7-5fe5-460b-86d7-e763205c8d5a",
+  "state": "active",
+  "title": "Перелік інвестиційних договорів, додатків, додаткових угод та інших матеріалів до них, умов, зокрема посилань на оприлюднені ресурси в Інтернеті",
+  "type": "dataset",
+  "update_frequency": "monthly",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "5b186e66-21ad-4e89-9106-040eda7098ff",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-16T11:39:28.665609",
+      "data_period_end": "",
+      "data_period_start": "",
+      "datastore_active": true,
+      "description": "Ресурс містить дані про інвестиційні угоди. Зокрема, номер, дату підписання, найменування та ідентифікатори сторін, опис умов, строки реалізації, реквізити нормативно-правового акта, яким затверджені умови договору (тип, назва, дата видання, номер, видавник), посилання на копію, що оприлюднена в мережі Інтернет.",
+      "format": "CSV",
+      "hash": "",
+      "id": "f0c7e7c8-bc04-42c5-9690-d9cec3da0ddb",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-01T12:31:32.493331",
+      "metadata_modified": "2026-06-01T12:31:32.493331",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "contracts.csv",
+      "number_of_all_downloads": 3,
+      "number_of_views": 44,
+      "package_id": "d95c4115-6cc2-4238-82be-67ce90312a95",
+      "position": 0,
+      "resource_code": "contracts",
+      "resource_type": null,
+      "size": 383464,
+      "source": "",
+      "state": "active",
+      "tracking_summary": {
+        "total": 44,
+        "recent": 44
+      },
+      "ua-select-search-field-administrator-org": "Департамент економіки та інвестицій",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Інвестиційні договори (contracts)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-16T11:39:30.063180",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-16T11:41:50.565174",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-04-29T13:17:29.776123",
+            "status": "pending",
+            "moderator_id": "b636c8b7-5fe5-460b-86d7-e763205c8d5a"
+          },
+          {
+            "date": "2026-04-29T13:30:54.963212",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-06-01T12:31:32.562381",
+            "status": "pending",
+            "moderator_id": "b636c8b7-5fe5-460b-86d7-e763205c8d5a"
+          }
+        ],
+        "created_by": "mariia-novokhatska",
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-06-01T15:00:40.958498",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/uploads/versions/version_0fdd9bd6_v1.2.csv",
+      "url_type": "version_upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    },
+    {
+      "administrator_org": "5b186e66-21ad-4e89-9106-040eda7098ff",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-16T11:41:26.073829",
+      "data_period_end": "",
+      "data_period_start": "",
+      "datastore_active": true,
+      "description": "Ресурс містить перелік додаткових угод та інших документів.",
+      "format": "CSV",
+      "hash": "",
+      "id": "4e3b6e12-d32f-4ca0-aa8e-e425574b63d4",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-01T12:43:57.477987",
+      "metadata_modified": "2026-06-01T12:43:57.477987",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "additionalDocuments.csv",
+      "number_of_all_downloads": 2,
+      "number_of_views": 34,
+      "package_id": "d95c4115-6cc2-4238-82be-67ce90312a95",
+      "position": 1,
+      "resource_code": "additionalDocuments",
+      "resource_type": null,
+      "size": 314976,
+      "source": "",
+      "state": "active",
+      "tracking_summary": {
+        "total": 34,
+        "recent": 34
+      },
+      "ua-select-search-field-administrator-org": "Департамент економіки та інвестицій",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Додаткові угоди до інвестиційних договорів (additionalDocuments)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-16T11:41:27.284947",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-16T11:42:13.539849",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-04-29T13:23:58.280979",
+            "status": "pending",
+            "moderator_id": "b636c8b7-5fe5-460b-86d7-e763205c8d5a"
+          },
+          {
+            "date": "2026-04-29T13:34:04.882820",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-06-01T12:43:57.564490",
+            "status": "pending",
+            "moderator_id": "b636c8b7-5fe5-460b-86d7-e763205c8d5a"
+          }
+        ],
+        "created_by": "mariia-novokhatska",
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-06-01T15:02:35.032787",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/uploads/versions/version_0e4e9713_v1.2.csv",
+      "url_type": "version_upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "договір",
+      "id": "80084a7d-b35b-4043-bd3d-240245775aa6",
+      "name": "договір",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "діяльність",
+      "id": "8b3e0bad-79d6-4391-9fdc-8ec7132fd841",
+      "name": "діяльність",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "проекти",
+      "id": "bb66df57-afc4-4da4-a288-15d2fd85eebf",
+      "name": "проекти",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "інвестиції",
+      "id": "b5f1fe80-8682-4c28-8773-324f907f6b0d",
+      "name": "інвестиції",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Департамент економіки та інвестицій",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-121754.109039ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 217,
+    "recent": 217
+  }
+}

@@ -1,0 +1,454 @@
+{
+  "added_to_favorites_number": 0,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "trade",
+  "collection_basis": "Закон України «Про регулювання містобудівної діяльності», рішення Київської міської ради від 13.06.2024 № 915/8881 «Про затвердження Положення про тимчасове користування окремими елементами благоустрою комунальної власності для розміщення тимчасових споруд торговельного, побутового, соціально-культурного чи іншого призначення, та внесення змін до деяких рішень Київської міської ради»",
+  "creator_user_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+  "id": "36267d74-8f0a-48c5-9f85-5cf2a0be0718",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-02-24T10:54:34.418626",
+  "metadata_modified": "2026-06-18T08:07:52.691905",
+  "name": "dani-pro-rozmishchennia-tymchasovykh-sporud-dlia-provadzhennia-pidpryiemnytskoi-dii-dep-architecture",
+  "notes": "Набір містить дані про розміщення тимчасових споруд для пропровадження підприємницької діяльності за різними процедурними підставами: на підставі паспортів прив’язки, договорів пайової участі в утриманні об’єктів благоустрою, а також інформацію про об’єкти комунальної власності, що пропонуються для оренди чи розміщення тимчасових споруд в системі ProZorro.Продажі.\r\n\r\nСклад набору включає 5 ресурсів:  \r\n**temporaryConstruction_passportBased** – інформацію про тимчасові споруди у місті Києві для провадження підприємницької діяльності, зокрема: назва, тип, власник тимчасової споруди, паспорт прив’язки (номер, статус, дата видачі).  \r\n**temporaryConstruction_ participationAgreement** – інформацію про тимчасові споруди у місті Києві для провадження підприємницької діяльності, зокрема: назва, тип, власник тимчасової споруди за договорами пайової участі (внеску) в утриманні об'єкта благоустрою.  \r\n**KyivProzoro_temporaryConstruction_free** – кінцева точка API (посилання) для отримання даних про об’єкти комунальної власності, доступні для оренди чи розміщення тимчасових споруд. Вказується місце розташування, площа, цільове призначення та інші характеристики майна, яке наразі не перебуває в оренді чи на аукціоні, які організовуються КП «КИЇВ.ПРОЗОРО». Дані оприлюднені з ІАС «Майно». Дані надаються в форматі geoJSON.  \r\n**KyivProzoro_temporaryConstruction_auctioned** – кінцева точка API (посилання) для отримання даних про об’єкти, виставлені на електронні аукціони, організовані КП «КИЇВ.ПРОЗОРО». Для кожного об’єкта вказується місце розташування, площа, цільове призначення та інші характеристики, посилання на відповідне оголошення в системі ProZorro.Продажі. Дані оприлюднені з ІАС «Майно». Дані надаються в форматі geoJSON.  \r\n**KyivProzoro_temporaryConstruction_leased** – кінцева точка API (посилання) для про об’єкти, за якими укладено договір оренди. Включає відомості про місце розташування, строк дії договору, суму договору, орендаря, площу об’єкта та інші ключові параметри. Дані оприлюднені з ІАС «Майно». Дані надаються в форматі GeoJSON.  \r\n\r\nРесурси temporaryConstruction_passportBased та temporaryConstruction_ participationAgreement оновлюється щомісяця, до 15-го числа місяця наступного за звітнім.",
+  "num_resources": 5,
+  "num_tags": 6,
+  "number_of_all_downloads": 59,
+  "number_of_views": 745,
+  "organization": {
+    "id": "afc97548-712f-446f-a6f4-0114658935ec",
+    "name": "dep-architecture",
+    "title": "Департамент містобудування та архітектури",
+    "type": "organization",
+    "description": "Забезпечує реалізацію державної політики у сфері містобудування та архітектури на території міста Києва, аналіз стану містобудування, організація розроблення, проведення експертизи та подання на затвердження в установленому порядку Генерального плану міста Києва, іншої містобудівної документації, погодження архітектурно-планувальних частин проектів в межах повноважень, координацію діяльності суб’єктів містобудування щодо комплексного розвитку і забудови міста Києва, поліпшення їх архітектурного вигляду, а також сприяє організації в межах своїх повноважень охорони та реставрації пам’яток архітектури та містобудування, палацово-паркових, паркових та історико-культурних ландшафтів.",
+    "image_url": "2026-05-15-122202.094321ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.410373",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "26345558",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Хрещатик, 32",
+    "email": "architecture@kyivcity.gov.ua",
+    "phone": "+380442781985",
+    "number_of_linked_packages": 12,
+    "date_of_refresh": "2026-06-16T13:24:39.297636",
+    "number_of_views": 169,
+    "number_of_categories": 7,
+    "number_of_all_downloads": 282,
+    "average_rating": "0.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "afc97548-712f-446f-a6f4-0114658935ec",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "moderation_date": "2026-03-19T10:40:08.624408",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Людмила Прокопенко",
+  "responsible_person_id": "cd66341d-c01d-4446-ae41-8343bd77e2a9",
+  "state": "active",
+  "title": "Дані про розміщення тимчасових споруд для провадження підприємницької діяльності",
+  "type": "dataset",
+  "update_frequency": "monthly",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "23df8833-15f7-4ff1-9914-806c26ed3685",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-02-24T10:57:34.919612",
+      "data_owner": "7b517244-c934-4fea-877b-4590f86c7ca1",
+      "data_period_end": "",
+      "data_period_start": "",
+      "datastore_active": true,
+      "description": "Кінцева точка API (посилання) для про об’єкти, за якими укладено договір оренди. Включає відомості про місце розташування, строк дії договору, суму договору, орендаря, площу об’єкта та інші ключові параметри. \r\n\r\nДані оприлюднені з ІАС «Майно». \r\n\r\nДані надаються в форматі GeoJSON.",
+      "format": "GeoJSON",
+      "hash": "",
+      "id": "22368b91-c002-4a7c-83dd-38f52ec9a3a5",
+      "in_progress": false,
+      "is_api": "true",
+      "is_changed": false,
+      "last_modified": "2026-03-19T10:56:21.681201",
+      "metadata_modified": "2026-03-19T10:56:21.721867",
+      "mimetype": null,
+      "mimetype_inner": null,
+      "name": "KyivProzoro_temporaryConstruction_leased",
+      "number_of_all_downloads": 12,
+      "number_of_views": 56,
+      "package_id": "36267d74-8f0a-48c5-9f85-5cf2a0be0718",
+      "position": 0,
+      "resource_code": "OTHER",
+      "resource_type": null,
+      "size": null,
+      "source": "Інформаційно-аналітична система «Майно»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 56,
+        "recent": 56
+      },
+      "ua-select-search-field-administrator-org": "Департамент промисловості та розвитку підприємництва",
+      "ua-select-search-field-is-api": "Так",
+      "ua-select-search-field-resource-code": "Позасистемний формат (OTHER)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-02-24T10:57:35.360885",
+            "status": "pending",
+            "moderator_id": null
+          }
+        ],
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-02-24T10:59:30.035723",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://gisserver-stage.kyivcity.gov.ua/mayno/rest/services/%D0%A2%D0%BE%D1%80%D0%B3%D1%96%D0%B2%D0%BB%D1%8F/Prozorro_public/FeatureServer/2/query?where=type_object+%3D+%27%D0%A2%D0%A1+%28%D0%9C%D0%90%D0%A4%29%27+OR+type_object+%3D+%27%D0%9F%D0%BE%D1%88%D1%82%D0%BE%D0%BC%D0%B0%D1%82%27&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&defaultSR=&spatialRel=esriSpatialRelIntersects&distance=&units=esriSRUnit_Foot&relationParam=&outFields=*&returnGeometry=true&maxAllowableOffset=&geometryPrecision=&outSR=4326&havingClause=&gdbVersion=&historicMoment=&returnDistinctValues=false&returnIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&multipatchOption=xyFootprint&resultOffset=&resultRecordCount=&returnTrueCurves=false&returnExceededLimitFeatures=false&quantizationParameters=&returnCentroid=false&timeReferenceUnknownClient=false&maxRecordCountFactor=&sqlFormat=none&resultType=&featureEncoding=esriDefault&datumTransformation=&cacheHint=false&f=geojson",
+      "url_type": "",
+      "validation_result": "",
+      "validation_status": ""
+    },
+    {
+      "administrator_org": "afc97548-712f-446f-a6f4-0114658935ec",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-02-24T11:04:43.097505",
+      "data_owner": "7b517244-c934-4fea-877b-4590f86c7ca1",
+      "data_period_end": "",
+      "data_period_start": "",
+      "datastore_active": true,
+      "description": "Кінцева точка API (посилання) для отримання даних про тимчасові споруди та поштомати, виставлені на електронні аукціони, організовані КП «КИЇВ.ПРОЗОРО». Для кожного об’єкта вказується місце розташування, площа, цільове призначення та інші характеристики, посилання на відповідне оголошення в системі ProZorro.Продажі.\r\n\r\nДані оприлюднені з ІАС «Майно». \r\n\r\nДані надаються в форматі GeoJSON.",
+      "format": "GeoJSON",
+      "hash": "",
+      "id": "06bd029d-e059-430f-bd2c-631cd9140bb7",
+      "in_progress": false,
+      "is_api": "true",
+      "is_changed": false,
+      "last_modified": "2026-04-15T07:52:08.257067",
+      "metadata_modified": "2026-04-15T07:52:08.340770",
+      "mimetype": null,
+      "mimetype_inner": null,
+      "name": "KyivProzoro_temporaryConstruction_auctioned",
+      "number_of_all_downloads": 12,
+      "number_of_views": 37,
+      "package_id": "36267d74-8f0a-48c5-9f85-5cf2a0be0718",
+      "position": 1,
+      "resource_code": "OTHER",
+      "resource_type": null,
+      "size": null,
+      "source": "Інформаційно-аналітична система «Майно»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 37,
+        "recent": 37
+      },
+      "ua-select-search-field-administrator-org": "Департамент містобудування та архітектури",
+      "ua-select-search-field-is-api": "Так",
+      "ua-select-search-field-resource-code": "Позасистемний формат (OTHER)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-02-24T11:04:43.706660",
+            "status": "pending",
+            "moderator_id": null
+          }
+        ],
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-02-24T12:02:54.774224",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://gisserver-stage.kyivcity.gov.ua/mayno/rest/services/%D0%A2%D0%BE%D1%80%D0%B3%D1%96%D0%B2%D0%BB%D1%8F/Prozorro_public/FeatureServer/1/query?where=type_object+%3D+%27%D0%A2%D0%A1+%28%D0%9C%D0%90%D0%A4%29%27+OR+type_object+%3D+%27%D0%9F%D0%BE%D1%88%D1%82%D0%BE%D0%BC%D0%B0%D1%82%27&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&defaultSR=&spatialRel=esriSpatialRelIntersects&distance=&units=esriSRUnit_Foot&relationParam=&outFields=*&returnGeometry=true&maxAllowableOffset=&geometryPrecision=&outSR=4326&havingClause=&gdbVersion=&historicMoment=&returnDistinctValues=false&returnIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&multipatchOption=xyFootprint&resultOffset=&resultRecordCount=&returnTrueCurves=false&returnExceededLimitFeatures=false&quantizationParameters=&returnCentroid=false&timeReferenceUnknownClient=false&maxRecordCountFactor=&sqlFormat=none&resultType=&featureEncoding=esriDefault&datumTransformation=&cacheHint=false&f=geojson",
+      "url_type": "",
+      "validation_result": "",
+      "validation_status": ""
+    },
+    {
+      "administrator_org": "afc97548-712f-446f-a6f4-0114658935ec",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-02-24T11:08:20.988035",
+      "data_owner": "7b517244-c934-4fea-877b-4590f86c7ca1",
+      "data_period_end": "",
+      "data_period_start": "",
+      "datastore_active": true,
+      "description": "Кінцева точка API (посилання) для отримання даних про об’єкти комунальної власності, доступні для оренди чи розміщення тимчасових споруд та поштоматів. Вказується місце розташування, площа, цільове призначення та інші характеристики майна, яке наразі не перебуває в оренді чи на аукціоні, які організовуються КП «КИЇВ.ПРОЗОРО».\r\n\r\nДані оприлюднені з ІАС «Майно».\r\n\r\nДані надаються в форматі GeoJSON.",
+      "format": "GeoJSON",
+      "hash": "",
+      "id": "4bba116b-17ab-4eab-9793-ba5549b020cb",
+      "in_progress": false,
+      "is_api": "true",
+      "is_changed": false,
+      "last_modified": "2026-04-15T07:51:36.115916",
+      "metadata_modified": "2026-04-15T07:51:36.195379",
+      "mimetype": null,
+      "mimetype_inner": null,
+      "name": "KyivProzoro_temporaryConstruction_free",
+      "number_of_all_downloads": 5,
+      "number_of_views": 52,
+      "package_id": "36267d74-8f0a-48c5-9f85-5cf2a0be0718",
+      "position": 2,
+      "resource_code": "OTHER",
+      "resource_type": null,
+      "size": null,
+      "source": "Інформаційно-аналітична система «Майно»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 52,
+        "recent": 52
+      },
+      "ua-select-search-field-administrator-org": "Департамент містобудування та архітектури",
+      "ua-select-search-field-is-api": "Так",
+      "ua-select-search-field-resource-code": "Позасистемний формат (OTHER)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-02-24T11:08:21.500540",
+            "status": "pending",
+            "moderator_id": null
+          }
+        ],
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-02-24T11:08:35.470338",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://gisserver-stage.kyivcity.gov.ua/mayno/rest/services/%D0%A2%D0%BE%D1%80%D0%B3%D1%96%D0%B2%D0%BB%D1%8F/Prozorro_public/FeatureServer/0/query?where=type_object+%3D+%27%D0%A2%D0%A1+%28%D0%9C%D0%90%D0%A4%29%27+OR+type_object+%3D+%27%D0%9F%D0%BE%D1%88%D1%82%D0%BE%D0%BC%D0%B0%D1%82%27&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&defaultSR=&spatialRel=esriSpatialRelIntersects&distance=&units=esriSRUnit_Foot&relationParam=&outFields=*&returnGeometry=true&maxAllowableOffset=&geometryPrecision=&outSR=4326&havingClause=&gdbVersion=&historicMoment=&returnDistinctValues=false&returnIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&multipatchOption=xyFootprint&resultOffset=&resultRecordCount=&returnTrueCurves=false&returnExceededLimitFeatures=false&quantizationParameters=&returnCentroid=false&timeReferenceUnknownClient=false&maxRecordCountFactor=&sqlFormat=none&resultType=&featureEncoding=esriDefault&datumTransformation=&cacheHint=false&f=geojson",
+      "url_type": "",
+      "validation_result": "",
+      "validation_status": ""
+    },
+    {
+      "administrator_org": "afc97548-712f-446f-a6f4-0114658935ec",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-02-24T13:40:08.598559",
+      "data_period_end": "2026-06-15",
+      "data_period_start": "",
+      "datastore_active": false,
+      "description": "Ресурс містить дані про тимчасові споруди для провадження підприємницької діяльності за договорами пайової участі (внеску) в утриманні об'єкта благоустрою.",
+      "format": "CSV",
+      "hash": "",
+      "id": "17429bd2-1f15-46af-912a-898a559997bd",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-16T10:24:39.125027",
+      "metadata_modified": "2026-06-16T10:24:39.328132",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "temporaryConstruction_participationAgreement.csv",
+      "number_of_all_downloads": 9,
+      "number_of_views": 59,
+      "package_id": "36267d74-8f0a-48c5-9f85-5cf2a0be0718",
+      "position": 3,
+      "resource_code": "temporaryConstruction_participationAgreement",
+      "resource_type": null,
+      "size": 1275676,
+      "source": "",
+      "state": "active",
+      "tracking_summary": {
+        "total": 59,
+        "recent": 59
+      },
+      "ua-select-search-field-administrator-org": "Департамент містобудування та архітектури",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Тимчасові споруди (договір) (temporaryConstruction_participationAgreement)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-02-24T13:40:10.225323",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-02-24T13:44:55.184522",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-05-19T13:15:53.560479",
+            "status": "pending",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          }
+        ],
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-05-19T13:16:04.418644",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/36267d74-8f0a-48c5-9f85-5cf2a0be0718/resource/17429bd2-1f15-46af-912a-898a559997bd/download/temporaryconstruction_participationagreement.csv",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    },
+    {
+      "administrator_org": "afc97548-712f-446f-a6f4-0114658935ec",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-02-24T14:45:08.892147",
+      "data_period_end": "2026-06-15",
+      "data_period_start": "2016-11-07",
+      "datastore_active": true,
+      "description": "Ресурс містить дані про тимчасові споруди для провадження підприємницької діяльності, зокрема інформацію про тимчасову споруду, паспорти прив’язки тимчасової споруди.",
+      "format": "CSV",
+      "hash": "",
+      "id": "e6d85d9a-b6ee-411c-ae55-c2f91685a45c",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-18T08:07:52.661679",
+      "metadata_modified": "2026-06-18T08:07:52.710622",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "temporaryConstruction_passportBased.csv",
+      "number_of_all_downloads": 15,
+      "number_of_views": 126,
+      "package_id": "36267d74-8f0a-48c5-9f85-5cf2a0be0718",
+      "position": 4,
+      "resource_code": "temporaryConstruction_passportBased",
+      "resource_type": null,
+      "size": 1907389,
+      "source": "",
+      "state": "active",
+      "tracking_summary": {
+        "total": 126,
+        "recent": 126
+      },
+      "ua-select-search-field-administrator-org": "Департамент містобудування та архітектури",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Тимчасові споруди (паспорт) (temporaryConstruction_passportBased)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-02-24T14:45:09.820866",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-02-24T14:45:31.977888",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-03-27T13:24:26.604611",
+            "status": "pending",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-03-27T13:25:27.184259",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-03-27T13:57:23.268345",
+            "status": "approved",
+            "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12"
+          },
+          {
+            "date": "2026-03-27T13:58:59.110372",
+            "status": "pending",
+            "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12"
+          },
+          {
+            "date": "2026-03-27T13:59:16.612663",
+            "status": "approved",
+            "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12"
+          },
+          {
+            "date": "2026-05-19T13:18:40.921947",
+            "status": "pending",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          }
+        ],
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-05-19T13:18:57.541717",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/36267d74-8f0a-48c5-9f85-5cf2a0be0718/resource/e6d85d9a-b6ee-411c-ae55-c2f91685a45c/download/temporaryconstruction_passportbased.csv",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "аукціон",
+      "id": "2a1e050a-5176-4b70-a7f9-0262d5e330fd",
+      "name": "аукціон",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "паспорт",
+      "id": "c52d6612-085b-45b9-8aaf-e56eb26bfb32",
+      "name": "паспорт",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "прив'язка",
+      "id": "e3bda4b9-df48-48c5-8408-9fff424ca16e",
+      "name": "прив'язка",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "підприємництво",
+      "id": "9a09b54d-67e7-4abe-a661-eeed793f37a1",
+      "name": "підприємництво",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "споруда",
+      "id": "7bc8ab7d-8f85-43e7-83d8-9275710bb1be",
+      "name": "споруда",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "тс",
+      "id": "81a239dc-f69d-413a-b1eb-ff887cb25e73",
+      "name": "тс",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Департамент містобудування та архітектури",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-122202.094321ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": true,
+  "tracking_summary": {
+    "total": 745,
+    "recent": 745
+  }
+}

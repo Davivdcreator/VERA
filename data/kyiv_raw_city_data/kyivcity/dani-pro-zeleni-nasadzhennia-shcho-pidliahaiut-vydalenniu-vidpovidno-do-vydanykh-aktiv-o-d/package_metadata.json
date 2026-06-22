@@ -1,0 +1,224 @@
+{
+  "added_to_favorites_number": 0,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "ecology",
+  "collection_basis": "Закон України «Про благоустрій населених пунктів», постанова Кабінету Міністрів України від 01.08.2006 № 1045 «Про затвердження Порядку видалення дерев, кущів, газонів і квітників у населених пунктах», Рішення Київської міської ради від 27.10.2011 № 384/6600 «Про затвердження Порядку видалення зелених насаджень на території міста Києва»",
+  "creator_user_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+  "id": "815b7b86-594b-4a7f-af99-1576f40de31c",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-17T11:17:47.277983",
+  "metadata_modified": "2026-06-11T12:14:48.476352",
+  "name": "dani-pro-zeleni-nasadzhennia-shcho-pidliahaiut-vydalenniu-vidpovidno-do-vydanykh-aktiv-o-dep-ecology",
+  "notes": "Набір містить ресурс **acts** — перелік зелених насаджень, що підлягають видаленню, відповідно до виданих актів обстеження зелених насаджень.     \r\nРесурс **order** не було сформовано, оскільки ордери на видалення зелених насаджень з 01.01.2018 року не видавалися.",
+  "num_resources": 1,
+  "num_tags": 4,
+  "number_of_all_downloads": 28,
+  "number_of_views": 324,
+  "organization": {
+    "id": "5f1af640-4324-4c83-a4a4-8de23dec3f9a",
+    "name": "dep-ecology",
+    "title": "Департамент захисту довкілля та адаптації до зміни клімату",
+    "type": "organization",
+    "description": "Здійснює регулювання у сферах охорони навколишнього природного середовища, забезпечення екологічної та в межах своєї компетенції радіаційної безпеки, у сфері поводження з відходами (крім поводження з радіоактивними відходами), пестицидами та агрохімікатами, організації, охорони і використання територій та об’єктів природно-заповідного фонду України, формування, збереження та використання екологічної мережі",
+    "image_url": "2026-05-15-121823.413017ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.398187",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "41819431",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Турівська, 28",
+    "email": "ecology@kyivcity.gov.ua",
+    "phone": "+380443666410",
+    "number_of_linked_packages": 15,
+    "date_of_refresh": "2026-06-10T17:58:36.009136",
+    "number_of_views": 156,
+    "number_of_categories": 8,
+    "number_of_all_downloads": 271,
+    "average_rating": "0.0",
+    "subscription_should_be_checked": false,
+    "favorites_should_be_checked": false,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "5f1af640-4324-4c83-a4a4-8de23dec3f9a",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "history": [
+        {
+          "date": "2026-06-10T12:38:14.342408",
+          "status": "pending",
+          "moderator_id": null
+        }
+      ],
+      "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+      "moderation_date": "2026-06-11T12:14:48.476230",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Тетяна Дворецька",
+  "responsible_person_id": "051ece39-82ae-42c8-8c1e-b9ed6930a04f",
+  "state": "active",
+  "title": "Дані про зелені насадження, що підлягають видаленню, відповідно до виданих актів обстеження зелених насаджень",
+  "type": "dataset",
+  "update_frequency": "monthly",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "5f1af640-4324-4c83-a4a4-8de23dec3f9a",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-17T11:34:44.904036",
+      "data_period_end": "2026-05-31",
+      "data_period_start": "2025-01-01",
+      "datastore_active": true,
+      "description": "Таблиця містить адресу розташування, вид та стан дерева, діаметр стовбура, причини видалення, інформацію про балансоутримувача, номер і дату акта обстеження. Кожним записом в таблиці є одне зелене насадження. Набір оновлюється щомісяця, до 15-того числа місяця наступного за звітнім.",
+      "format": "CSV",
+      "hash": "",
+      "id": "b4281a1c-ca1a-40ae-885c-d93e9fb0f508",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-11T08:44:28.589526",
+      "metadata_modified": "2026-06-11T08:44:28.619296",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "acts.csv",
+      "number_of_all_downloads": 15,
+      "number_of_views": 87,
+      "package_id": "815b7b86-594b-4a7f-af99-1576f40de31c",
+      "position": 0,
+      "resource_code": "acts",
+      "resource_type": null,
+      "size": 22053722,
+      "source": "",
+      "state": "active",
+      "tracking_summary": {
+        "total": 87,
+        "recent": 87
+      },
+      "ua-select-search-field-administrator-org": "Департамент захисту довкілля та адаптації до зміни клімату",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Зелені насадження, що підлягають видаленню (acts)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-17T11:34:46.253507",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-17T11:34:58.385622",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-13T07:01:52.876121",
+            "status": "pending",
+            "moderator_id": "051ece39-82ae-42c8-8c1e-b9ed6930a04f"
+          },
+          {
+            "date": "2026-05-13T07:30:07.320265",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-06-10T08:56:56.389377",
+            "status": "pending",
+            "moderator_id": "051ece39-82ae-42c8-8c1e-b9ed6930a04f"
+          },
+          {
+            "date": "2026-06-10T10:01:21.139185",
+            "status": "needs_work",
+            "comment": "Auto-changed to pending on edit"
+          },
+          {
+            "date": "2026-06-10T12:38:14.917976",
+            "status": "pending",
+            "comment": "Добрий день! 1. Необхідно виконати кластеризацію в стовпчику applicantName. 2. У стовпчику applicantId виконати: Facet – Custom text facet: value.length() і там де заретушований рнокпп замінити 11 іксів на 10 (xxxxxxxxxx). 3. У стовпчику authorityName перевірити, чи не треба в рядку 833, де зазначено null, вписати Київське комунальне об'єднання зеленого будівництва та експлуатації зелених насаджень міста «Київзеленбуд» як в інших клітинках. 4. У тому самому рядку перевірити стовпчики authorityId, CATUTTC – якщо в стовпчику authorityName усвідомлено вказано null, тоді залишити без змін, якщо виправлятимете на Київське комунальне об'єднання зеленого будівництва та експлуатації зелених насаджень міста «Київзеленбуд», то внести відповідні дані. 5. Виконати кластеризацію в стовпчику addressThoroughfare для вулиць, де є помилки. 6. Виконати кластеризацію в стовпчику addressLocatorDesignator: маленькі літери замінити на великі, поставити дефіс між числом та літерою, або / – в залежності від необхідності. 7. Виконати кластеризацію в стовпчику addressDescription. 8. Виконати кластеризацію в стовпчику species 9. Виконати кластеризацію в стовпчику condition. 10. Виконати кластеризацію в стовпчику conditionDescription. 11. Перевірити в рядку 163 у стовпчику serviceType чи дійсно має бути вказаний null, чи як в усіх інших рядках – Підлягає зрізуванню.",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-10T13:19:21.284435",
+            "status": "needs_work",
+            "comment": "Auto-changed to pending on edit"
+          },
+          {
+            "date": "2026-06-11T08:14:20.381240",
+            "status": "pending",
+            "comment": "У стовпчику applicantId в коді ЄДРПОУ зникли нулі, краще перевірити саме в OpenRefine: Facet – Custom text facet – value.length()",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          }
+        ],
+        "created_by": "olena-pastushenko",
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-06-11T08:44:06.205065",
+        "rejection_reason": "",
+        "moderator_comment": "",
+        "has_pending_version": true
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/815b7b86-594b-4a7f-af99-1576f40de31c/resource/b4281a1c-ca1a-40ae-885c-d93e9fb0f508/download/acts.csv",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "акти",
+      "id": "6fd1e36f-ac48-42dc-aa28-a1b27ae75cfd",
+      "name": "акти",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "благоустрій",
+      "id": "dba08b5e-a3de-4eee-a6eb-2771340b06b4",
+      "name": "благоустрій",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "видалення",
+      "id": "ae067915-5334-4a31-baa1-50c23d314e0d",
+      "name": "видалення",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "насадження",
+      "id": "02bac293-1ed5-47a0-acfe-bb7cbb2a3a66",
+      "name": "насадження",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Департамент захисту довкілля та адаптації до зміни клімату",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-121823.413017ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 324,
+    "recent": 324
+  }
+}

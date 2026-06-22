@@ -1,0 +1,51 @@
+{
+  "created_utc": "2026-06-22T16:03:15Z",
+  "scope": "Kyiv resilience modeling: buildings, services, supply chains, demand, boundaries",
+  "max_resource_bytes": 157286400,
+  "summary": {
+    "direct:already_exists": 3,
+    "data_gov_ua:error": 1,
+    "data_gov_ua:already_exists": 3,
+    "kyivcity:already_exists": 30,
+    "kyivcity:error": 52
+  },
+  "kyiv_package_names": [
+    "adresnyi-reiestr-aparat",
+    "biuvetni-kompleksy-dep-zhki",
+    "dani-pro-cherhy-ditei-u-zaklady-doshkilnoi-osvity-dep-education",
+    "dani-pro-dostupnist-budivel-dlia-osib-z-invalidnistiu-ta-inshykh-malomobil-dep-social-veteran-policy",
+    "dani-pro-medychne-obladnannia-komunalnykh-zakladiv-okhorony-zdorovia-dep-health",
+    "dani-pro-mistse-rozmishchennia-zupynok-miskoho-elektrychnoho-ta-avtomobilnoho-transpor-dep-transport",
+    "dani-pro-mistseznakhodzhennia-komunalnykh-konteineriv-za-katehoriiamy-konteinernykh-maidanc-dep-zhki",
+    "dani-pro-mistseznakhodzhennia-komunalnykh-obiektiv-upravlinnia-vidkhodamy-ikh-ploshchi-ta-o-dep-zhki",
+    "dani-pro-obiekty-ta-zasoby-torhivli-peresuvnoi-sezonnoi-toshcho-dep-industry",
+    "dani-pro-parkuvannia-u-tomu-chysli-rozmishchennia-maidanchykiv-ikh-operatoriv-obladnan-dep-transport",
+    "dani-pro-perekryttia-ta-remonty-dorih-u-misti-kyievi-dep-transport",
+    "dani-pro-rozmishchennia-hromadskykh-vbyralen-komunalnoi-vlasnosti-dep-zhki",
+    "dani-pro-rozmishchennia-punktiv-nadannia-psykholohichnoi-dopomohy-ta-sotsialnoi-pidtrymky-aparat",
+    "dani-pro-rozmishchennia-tymchasovykh-sporud-dlia-provadzhennia-pidpryiemnytskoi-dii-dep-architecture",
+    "dani-pro-roztashuvannia-punktiv-obihrivu-punktiv-nezlamnosti-v-misti-kyievi-dep-municipal",
+    "dani-pro-roztashuvannia-zakhysnykh-sporud-tsyvilnoho-zakhystu-dep-municipal",
+    "dani-pro-taryfy-na-komunalni-posluhy-iaki-zatverdzhuiutsia-orhanom-mistsevoho-samovriadu-dep-economy",
+    "dani-pro-zaklady-doshkilnoi-osvity-dep-education",
+    "dani-pro-zaklady-profesiinoi-profesiino-tekhnichnoi-osvity-dep-education",
+    "dovidnyk-pidpryiemstv-ustanov-orhanizatsii-shcho-nalezhat-do-sfery-upravlinnia-rozporiadnyka--aparat",
+    "dovidnyk-pidpryiemstv-ustanov-orhanizatsii-ta-terytorialnykh-orhaniv-raionnykh-v-misti-kyievi-aparat",
+    "perelik-obiektiv-komunalnoi-vlasnosti-dep-communal",
+    "perelik-obiektiv-komunalnoi-vlasnosti-shcho-peredani-v-orendu-chy-inshe-pravo-korystuva-dep-communal",
+    "perelik-pereviznykiv-shcho-nadaiut-transportni-posluhy-z-perevezennia-pasazhyriv-misky-dep-transport",
+    "perelik-sportyvnykh-shkil-dep-sport",
+    "pereliky-obiektiv-komunalnoi-vlasnosti-iaki-mozhut-buty-peredani-v-orendu-do-daty-vyzna-dep-communal",
+    "pereliky-osbb-ta-zhbk-dep-zhki",
+    "reiestr-pidpryiemstv-ta-orhanizatsii-iaki-zdiisniuiut-obsluhovuvannia-zhytlovoho-fondu-na-t-dep-zhki",
+    "rozklad-rukhu-miskoho-elektrychnoho-ta-avtomobilnoho-transportu-dep-transport",
+    "velosypedna-merezha-kyieva-dep-transport",
+    "vidomosti-pro-iarmarky-strok-provedennia-mistse-kilkist-ta-vartist-mists-orhanizatoriv--dep-industry",
+    "vidomosti-pro-likarski-zasobypreparaty-prydbani-za-biudzhetni-koshty-vidomosti-pro-rozpod-dep-health",
+    "vidomosti-pro-transportni-zasoby-iaki-obsluhovuiut-pasazhyrski-avtobusni-troleibusni-t-dep-transport"
+  ],
+  "national_package_ids": [
+    "6da6e500-e3c0-4a6a-9cb1-764582b531ee",
+    "a1d554df-be4b-4d3f-8063-dd0db4d83ff5"
+  ]
+}

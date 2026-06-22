@@ -1,0 +1,288 @@
+{
+  "added_to_favorites_number": 0,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "acts",
+  "collection_basis": "Закон України «Про місцеві державні адміністрації», Закон України «Про столицю України – місто-герой Київ»",
+  "creator_user_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+  "id": "6da7ec5a-2792-4baf-b84b-2e38112f8fd7",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-30T14:41:08.891155",
+  "metadata_modified": "2026-06-16T13:13:49.406285",
+  "name": "pereliky-normatyvno-pravovykh-aktiv-aktiv-indyvidualnoi-dii-krim-vnutrishnoorhaniz-sviatoshynska-rda",
+  "notes": "Набір містить два ресурси:   \r\n**legalActs** – інформацію про нормативно-правові акти, акти індивідуальної дії (крім внутрішньоорганізаційних), прийнятих Святошинською районною в місті Києві державною адміністрацією;  \r\n**projects** – проєкти розпоряджень, що підлягають обговоренню (за наявності).   \r\n   \r\nДокумент розпорядника інформації про визначення відповідальної особи (осіб) розпорядника інформації оприлюднено в наборі даних «Інформація про відповідальних осіб за оприлюднення інформації у формі відкритих даних у структурних підрозділах виконавчого органу Київської міської ради (Київської міської державної адміністрації) та районних у місті Києві державних адміністраціях»:   \r\nhttps://data.kyivcity.gov.ua/dataset/informatsiia-pro-vidpovidalnykh-osib-za-opryliudnennia-informatsii-u-formi-vidkrytykh-danykh--aparat",
+  "num_resources": 1,
+  "num_tags": 4,
+  "number_of_all_downloads": 16,
+  "number_of_views": 342,
+  "organization": {
+    "id": "4ecceead-8e57-4060-a602-6cde2ae089f9",
+    "name": "sviatoshynska-rda",
+    "title": "Святошинська районна в місті Києві державна адміністрація",
+    "type": "organization",
+    "description": "Забезпечує реалізацію державної та міської політики на території Святошинського району. Здійснює виконавчі повноваження у сферах соціально-економічного розвитку, бюджетування, ЖКГ та благоустрою. Координує діяльність районних закладів освіти, охорони здоров’я та культури, забезпечуючи соціальний захист та надання адміністративних послуг мешканцям району.",
+    "image_url": "2026-05-15-123428.668629ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.462616",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "37395418",
+    "administrative_unit_id": "UA80000000000875983",
+    "address": "просп. Берестейський, 97",
+    "email": "doc.srda@kyivcity.gov.ua",
+    "phone": "+380444243006",
+    "number_of_linked_packages": 12,
+    "date_of_refresh": "2026-06-16T15:52:01.257146",
+    "number_of_views": 59,
+    "number_of_categories": 8,
+    "number_of_all_downloads": 252,
+    "average_rating": "4.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "4ecceead-8e57-4060-a602-6cde2ae089f9",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "history": [
+        {
+          "date": "2026-05-20T07:57:04.419135",
+          "status": "pending",
+          "moderator_id": null
+        }
+      ],
+      "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+      "moderation_date": "2026-05-20T08:12:08.295243",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Олеся Кривошея",
+  "responsible_person_id": "d3f78c50-4c41-4e67-91e6-13838782ea13",
+  "state": "active",
+  "title": "Переліки нормативно-правових актів, актів індивідуальної дії (крім внутрішньоорганізаційних), прийнятих розпорядником інформації Святошинською районною в місті Києві державною адміністрацією, проекти рішень, що підлягають обговоренню, а також документ розпорядника інформації про визначення особи (осіб) відповідальних за оприлюднення відкритих даних",
+  "type": "dataset",
+  "update_frequency": "weekly",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "4ecceead-8e57-4060-a602-6cde2ae089f9",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-30T15:01:08.772316",
+      "data_period_end": "2026-06-12",
+      "data_period_start": "2024-01-01",
+      "datastore_active": true,
+      "description": "Ресурс містить інформацію про нормативно-правові акти, акти індивідуальної дії (крім внутрішньоорганізаційних) Святошинської районної в місті Києві державної адміністрації. Зокрема, номери, назви, дати ухвалення, набрання чинності, назви та ідентифікатори видавників, посилання в мережі Інтернет. Кожним записом до таблиці є окремий нормативно-правовий акт або акт індивідуальної дії.",
+      "format": "CSV",
+      "hash": "",
+      "id": "bd435c4c-1dea-4f75-a19b-8ca8d3cfce21",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-16T13:13:49.384788",
+      "metadata_modified": "2026-06-16T13:13:49.418418",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "107_legalacts",
+      "number_of_all_downloads": 16,
+      "number_of_views": 115,
+      "package_id": "6da7ec5a-2792-4baf-b84b-2e38112f8fd7",
+      "position": 0,
+      "resource_code": "legalActs",
+      "resource_type": null,
+      "size": 1844616,
+      "source": "ІКС «Єдиний інформаційний простір територіальної громади міста Києва»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 115,
+        "recent": 115
+      },
+      "ua-select-search-field-administrator-org": "Святошинська районна в місті Києві державна адміністрація",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Перелік нормативно-правових актів (legalActs)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-30T15:01:10.288599",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-30T15:01:39.300152",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-04-30T12:55:43.035402",
+            "status": "pending",
+            "moderator_id": "d3f78c50-4c41-4e67-91e6-13838782ea13"
+          },
+          {
+            "date": "2026-04-30T13:29:10.459099",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-04-30T13:29:13.148943",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-04-30T13:29:15.200806",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-06T08:20:25.198786",
+            "status": "pending",
+            "moderator_id": "d3f78c50-4c41-4e67-91e6-13838782ea13"
+          },
+          {
+            "date": "2026-05-06T08:22:28.643036",
+            "status": "needs_work",
+            "comment": "Auto-changed to pending on edit"
+          },
+          {
+            "date": "2026-05-06T08:29:39.758873",
+            "status": "pending",
+            "comment": "Вітаємо! \nПоправте період, будь ласка.",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-06T08:59:48.840371",
+            "status": "needs_work",
+            "comment": "Auto-changed to pending on edit"
+          },
+          {
+            "date": "2026-05-06T13:59:47.383938",
+            "status": "pending",
+            "comment": "Добрий день! \nПросимо виправити неправильний формат апострофу ’ в рядках 3542, 3685 в стовпці title.  Замінити на правильний формат ' .",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-06T13:59:52.221404",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-12T11:53:27.208152",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-20T07:39:16.687441",
+            "status": "pending",
+            "moderator_id": "d3f78c50-4c41-4e67-91e6-13838782ea13"
+          },
+          {
+            "date": "2026-05-20T08:11:57.043439",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-05-27T07:11:13.560886",
+            "status": "pending",
+            "moderator_id": "d3f78c50-4c41-4e67-91e6-13838782ea13"
+          },
+          {
+            "date": "2026-05-27T07:19:19.524264",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-02T13:10:58.633403",
+            "status": "pending",
+            "moderator_id": "d3f78c50-4c41-4e67-91e6-13838782ea13"
+          },
+          {
+            "date": "2026-06-02T14:02:23.713554",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-09T13:28:00.668650",
+            "status": "pending",
+            "moderator_id": "d3f78c50-4c41-4e67-91e6-13838782ea13"
+          },
+          {
+            "date": "2026-06-10T09:32:00.156237",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-06-16T12:52:01.304545",
+            "status": "pending",
+            "moderator_id": "d3f78c50-4c41-4e67-91e6-13838782ea13"
+          }
+        ],
+        "created_by": "olena-pastushenko",
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-06-16T13:13:34.828872",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/6da7ec5a-2792-4baf-b84b-2e38112f8fd7/resource/bd435c4c-1dea-4f75-a19b-8ca8d3cfce21/download/107_legalacts.csv",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "акти",
+      "id": "6fd1e36f-ac48-42dc-aa28-a1b27ae75cfd",
+      "name": "акти",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "проекти",
+      "id": "bb66df57-afc4-4da4-a288-15d2fd85eebf",
+      "name": "проекти",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "рда",
+      "id": "d38c98e5-42bf-4b59-8376-5ad1fe097eb5",
+      "name": "рда",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "розпорядження",
+      "id": "35b60e02-54d8-4438-b99b-9c900ccaa0fa",
+      "name": "розпорядження",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Святошинська районна в місті Києві державна адміністрація",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-123428.668629ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 342,
+    "recent": 342
+  }
+}

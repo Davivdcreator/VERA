@@ -1,0 +1,204 @@
+{
+  "added_to_favorites_number": 0,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "information",
+  "collection_basis": "Закон України «Про доступ до публічної інформації», постанова Кабінету Міністрів України від 21.10.2015 № 835 «Про затвердження Положення про набори даних, які підлягають оприлюдненню у формі відкритих даних»",
+  "creator_user_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+  "id": "a5dd2923-5716-4750-8afa-71411cdb7c0b",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-11T13:24:26.886326",
+  "metadata_modified": "2026-06-01T14:37:18.342925",
+  "name": "reiestr-naboriv-danykh-shcho-perebuvaiut-u-volodinni-rozporiadnyka-informatsii-aparat",
+  "notes": "Набір містить Реєстр наборів даних, що перебувають у володінні Київської міської державної адміністрації. Для кожного набору вказаний ідентифікаційний номер, назва, формати ресурсів, гіперпосилання на сторінку набору й інші метадані.",
+  "num_resources": 1,
+  "num_tags": 7,
+  "number_of_all_downloads": 10,
+  "number_of_views": 206,
+  "organization": {
+    "id": "72d44dfa-b47d-453d-afea-d10d886d4e90",
+    "name": "aparat",
+    "title": "Апарат виконавчого органу Київської міської ради (Київської міської державної адміністрації)",
+    "type": "organization",
+    "description": "Забезпечує правове, організаційне, документальне, інформаційне, кадрове, фінансово-господарське та інше забезпечення діяльності виконавчого органу Київської міської ради (Київської міської державної адміністрації).",
+    "image_url": "2026-05-15-121523.667984ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.371499",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "37853361",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Хрещатик, 36",
+    "email": "data@kyivcity.gov.ua",
+    "phone": "+380442027454",
+    "number_of_linked_packages": 19,
+    "date_of_refresh": "2026-06-01T08:00:07.624472",
+    "number_of_views": 449,
+    "number_of_categories": 10,
+    "number_of_all_downloads": 412,
+    "average_rating": "5.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "72d44dfa-b47d-453d-afea-d10d886d4e90",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "moderation_date": "2026-03-31T14:38:24.892424",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Відділ оприлюднення інформації",
+  "responsible_person_id": "54f86e0e-9736-4280-a453-ac428a2c43a1",
+  "state": "active",
+  "title": "Реєстр наборів даних, що перебувають у володінні розпорядника інформації",
+  "type": "dataset",
+  "update_frequency": "annually",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "72d44dfa-b47d-453d-afea-d10d886d4e90",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-11T13:27:23.759942",
+      "data_period_end": "2026-06-01",
+      "data_period_start": "",
+      "datastore_active": false,
+      "description": "Містить Реєстр наборів даних, що оприлюднюються структурними підрозділами виконавчого органу Київської міської ради (Київської міської державної адміністрації), РДА.",
+      "format": "CSV",
+      "hash": "",
+      "id": "5b2e312a-2eb4-49ac-9a47-4b5ed6ef44ee",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-01T14:37:18.120612",
+      "metadata_modified": "2026-06-01T14:37:18.358971",
+      "mimetype": "text/csv",
+      "mimetype_inner": null,
+      "name": "register",
+      "number_of_all_downloads": 10,
+      "number_of_views": 63,
+      "package_id": "a5dd2923-5716-4750-8afa-71411cdb7c0b",
+      "position": 0,
+      "resource_code": "register_datasets",
+      "resource_type": null,
+      "size": 192537,
+      "source": "",
+      "state": "active",
+      "tracking_summary": {
+        "total": 63,
+        "recent": 63
+      },
+      "ua-select-search-field-administrator-org": "Апарат виконавчого органу Київської міської ради (Київської міської державної адміністрації)",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Реєстр наборів даних (register_datasets)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-11T13:27:24.741169",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-03-11T13:27:45.150250",
+            "status": "approved",
+            "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9"
+          },
+          {
+            "date": "2026-05-11T12:29:07.782949",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          }
+        ],
+        "created_by": "mariia-novokhatska",
+        "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+        "moderation_date": "2026-05-11T12:29:09.115950",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/a5dd2923-5716-4750-8afa-71411cdb7c0b/resource/5b2e312a-2eb4-49ac-9a47-4b5ed6ef44ee/download/register.csv",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": "valid"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "дані",
+      "id": "90d14379-a02a-476f-ad8e-5b716888fdce",
+      "name": "дані",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "датасети",
+      "id": "b6f5e205-2138-4d9c-b3dd-12ebc80146ee",
+      "name": "датасети",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "метадані",
+      "id": "15788d04-2887-4951-8ecb-1ef93cc742cf",
+      "name": "метадані",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "набори",
+      "id": "ef9068e6-2627-4746-b486-8566c0a437a7",
+      "name": "набори",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "паспорт",
+      "id": "c52d6612-085b-45b9-8aaf-e56eb26bfb32",
+      "name": "паспорт",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "реєстр",
+      "id": "b5c7ca6f-98d3-4135-af4e-2a893845640f",
+      "name": "реєстр",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "розпорядник",
+      "id": "553cbd50-d8af-419b-bf29-725025a92cbc",
+      "name": "розпорядник",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Апарат виконавчого органу Київської міської ради (Київської міської державної адміністрації)",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-121523.667984ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 206,
+    "recent": 206
+  }
+}

@@ -1,0 +1,255 @@
+{
+  "added_to_favorites_number": 0,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "protection",
+  "collection_basis": "Закон України «Про запобігання та протидію домашньому насильству», Закон України «Про ратифікацію Конвенції Ради Європи про запобігання насильству стосовно жінок i домашньому насильству та боротьбу із цими явищами», Постанова Кабінету Міністрів України від 22.08.18 № 655 «Про затвердження Типового положення про притулок для осіб, які постраждали від домашнього насильства та/або насильства за ознакою статі»",
+  "creator_user_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+  "id": "889cad0c-5851-4287-8979-a291f6dd2464",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-06-02T13:37:13.906599",
+  "metadata_modified": "2026-06-09T08:31:20.243707",
+  "name": "dani-pro-robotu-systemy-dopomohy-postrazhdalym-vid-domashnoho-ta-henderno-zumovlenoho-nasylst-aparat",
+  "notes": "Набір даних містить відомості про функціонування системи допомоги особам, які зазнали домашнього насильства або насильства за ознакою статі. Інформація відображає роботу Київського міського центру гендерної рівності, запобігання та протидії насильству.  \r\n**Набір складається з двох ресурсів:**  \r\n**supportServicesInteractions** – містить деперсоніфіковані дані цілодобової Служби «Телефон довіри», денних центрів підтримки постраждалих від домашнього та гендерно зумовленого насильства щодо отримання інформаційно-консультативної допомоги з соціально-психологічних та інших питань.  \r\n**safetyPlacementsRecords** – містить деперсоніфіковані дані про тимчасове перебування в кімнатах кризового реагування та притулку для тимчасового безпечного перебування жінок, що постраждали від домашнього насильства та/або насильства за ознакою статі.",
+  "num_resources": 2,
+  "num_tags": 6,
+  "number_of_all_downloads": 0,
+  "number_of_views": 142,
+  "organization": {
+    "id": "72d44dfa-b47d-453d-afea-d10d886d4e90",
+    "name": "aparat",
+    "title": "Апарат виконавчого органу Київської міської ради (Київської міської державної адміністрації)",
+    "type": "organization",
+    "description": "Забезпечує правове, організаційне, документальне, інформаційне, кадрове, фінансово-господарське та інше забезпечення діяльності виконавчого органу Київської міської ради (Київської міської державної адміністрації).",
+    "image_url": "2026-05-15-121523.667984ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.371499",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "37853361",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Хрещатик, 36",
+    "email": "data@kyivcity.gov.ua",
+    "phone": "+380442027454",
+    "number_of_linked_packages": 19,
+    "date_of_refresh": "2026-06-08T08:00:03.355677",
+    "number_of_views": 475,
+    "number_of_categories": 10,
+    "number_of_all_downloads": 440,
+    "average_rating": "5.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "72d44dfa-b47d-453d-afea-d10d886d4e90",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "history": [
+        {
+          "date": "2026-06-09T07:32:44.316768",
+          "status": "pending",
+          "moderator_id": null
+        }
+      ],
+      "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12",
+      "moderation_date": "2026-06-09T08:31:20.243512",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Відділ оприлюднення інформації",
+  "responsible_person_id": "54f86e0e-9736-4280-a453-ac428a2c43a1",
+  "state": "active",
+  "title": "Дані про роботу системи допомоги постраждалим від домашнього та гендерно зумовленого насильства",
+  "type": "dataset",
+  "update_frequency": "quarterly",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "72d44dfa-b47d-453d-afea-d10d886d4e90",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-06-02T13:49:19.933708",
+      "data_owner": "1a993fca-a8d0-420d-bd3f-b151097d64a4",
+      "data_period_end": "2026-04-01",
+      "data_period_start": "2022-01-01",
+      "datastore_active": false,
+      "description": "Ресурс містить дані цілодобової Служби «Телефон довіри», денних центрів підтримки постраждалих від домашнього та гендерно зумовленого насильства щодо отримання інформаційно-консультативної допомоги з соціально-психологічних та інших питань. Ресурс оновлюється щоквартально у форматі JSON. Кожен об'єкт у масиві – це запис за один квартал з підсумковими показниками звернень.  \r\n**Структура JSON-об'єкта:**  \r\n**requestDate** – дата, коли надана інформацію про отримані звернення;  \r\n**requestType** – тип закладу, до якого надійшло звернення;  \r\n**gender** – гендерна приналежність особи, що звертається;  \r\n**requestCount** – кількість звернень за останній квартал;  \r\n**violenceType** – вид зазнаного насильства.",
+      "format": "JSON",
+      "hash": "",
+      "id": "643eeed4-e7b5-4bab-8383-0a325159ba75",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-04T10:42:31.726349",
+      "metadata_modified": "2026-06-04T10:42:31.771709",
+      "mimetype": "application/json",
+      "mimetype_inner": null,
+      "name": "supportServicesInteractions.json",
+      "number_of_all_downloads": 0,
+      "number_of_views": 39,
+      "package_id": "889cad0c-5851-4287-8979-a291f6dd2464",
+      "position": 0,
+      "resource_code": "OTHER",
+      "resource_last_modified": "2026-06-04 13:42",
+      "resource_type": null,
+      "size": 16837,
+      "source": "",
+      "state": "active",
+      "tracking_summary": {
+        "total": 39,
+        "recent": 39
+      },
+      "ua-select-search-field-administrator-org": "Апарат виконавчого органу Київської міської ради (Київської міської державної адміністрації)",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Позасистемний формат (OTHER)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-06-02T13:49:20.783150",
+            "status": "pending",
+            "moderator_id": null
+          }
+        ],
+        "created_by": "mariia-novokhatska",
+        "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12",
+        "moderation_date": "2026-06-09T08:30:56.478158",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/889cad0c-5851-4287-8979-a291f6dd2464/resource/643eeed4-e7b5-4bab-8383-0a325159ba75/download/supportservicesinteractions.json",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": ""
+    },
+    {
+      "administrator_org": "72d44dfa-b47d-453d-afea-d10d886d4e90",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-06-02T13:55:30.371224",
+      "data_owner": "1a993fca-a8d0-420d-bd3f-b151097d64a4",
+      "data_period_end": "2026-04-28",
+      "data_period_start": "2021-12-30",
+      "datastore_active": false,
+      "description": "Ресурс містить деперсоніфіковані дані про тимчасове перебування в кімнатах кризового реагування та притулку для тимчасового безпечного перебування жінок, що постраждали від домашнього насильства та/або насильства за ознакою статі. Ресурс оновлюється щоквартально у форматі JSON. Кожен об'єкт у масиві – це запис перебування окремої особи в кімнатах кризового реагування та притулку для тимчасового безпечного перебування жінок, що постраждали від домашнього насильства та/або насильства за ознакою статі.  \r\n**Структура JSON-об'єкта:**  \r\n**requestDate** – дата надходження запиту або поселення особи до безпечного простору;  \r\n**requestType** – тип закладу безпечного простору;  \r\n**gender** – гендерна приналежність постраждалої особи;  \r\n**departureDate** – дата вибуття особи з безпечного простору;  \r\n**age** – повний вік постраждалої особи;  \r\n**ageGroup** – вікова категорія, до якої відноситься постраждала особа;  \r\n**referralSubject** – суб'єкт направлення особи до безпечного простору;  \r\n**addressPostDistrict** – адміністративний район у місті Києві, де зареєстровано запит або розташовано орган поліції;  \r\n**hasDisability** – наявність в особи інвалідності, фізичних, сенсорних, психічних, інтелектуальних або ментальних порушень;  \r\n**isMilitary** – ознака чи є особа військовослужбовцем;  \r\n**violenceType** – вид зазнаного насильства.",
+      "format": "JSON",
+      "hash": "",
+      "id": "fe36aee6-9f2c-4405-9763-aa629330244e",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-04T10:50:35.731488",
+      "metadata_modified": "2026-06-04T10:50:35.759928",
+      "mimetype": "application/json",
+      "mimetype_inner": null,
+      "name": "safetyPlacementsRecords.json",
+      "number_of_all_downloads": 0,
+      "number_of_views": 34,
+      "package_id": "889cad0c-5851-4287-8979-a291f6dd2464",
+      "position": 1,
+      "resource_code": "OTHER",
+      "resource_last_modified": "2026-06-04 13:50",
+      "resource_type": null,
+      "size": 348836,
+      "source": "",
+      "state": "active",
+      "tracking_summary": {
+        "total": 34,
+        "recent": 34
+      },
+      "ua-select-search-field-administrator-org": "Апарат виконавчого органу Київської міської ради (Київської міської державної адміністрації)",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Позасистемний формат (OTHER)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-06-02T13:55:31.182007",
+            "status": "pending",
+            "moderator_id": null
+          }
+        ],
+        "created_by": "mariia-novokhatska",
+        "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12",
+        "moderation_date": "2026-06-09T08:31:07.657674",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/889cad0c-5851-4287-8979-a291f6dd2464/resource/fe36aee6-9f2c-4405-9763-aa629330244e/download/safetyplacementsrecords.json",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": ""
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "безпека",
+      "id": "a68ddad0-e5aa-4746-b58b-efef1aff1160",
+      "name": "безпека",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "допомога",
+      "id": "4157aa31-0685-4d0a-b817-0f5038ddf811",
+      "name": "допомога",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "запобігання",
+      "id": "9d71e9c1-cb2a-424d-bc40-d9a4689fb1ec",
+      "name": "запобігання",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "захист",
+      "id": "097c094d-59e2-41dc-917c-afb1924fba16",
+      "name": "захист",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "насильство",
+      "id": "74e4e251-e2d3-4b64-912f-bbce6c412107",
+      "name": "насильство",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "протидія",
+      "id": "1a1329f1-b922-4a3d-b516-1e01e4804e5e",
+      "name": "протидія",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Апарат виконавчого органу Київської міської ради (Київської міської державної адміністрації)",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-121523.667984ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 1,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 142,
+    "recent": 142
+  }
+}

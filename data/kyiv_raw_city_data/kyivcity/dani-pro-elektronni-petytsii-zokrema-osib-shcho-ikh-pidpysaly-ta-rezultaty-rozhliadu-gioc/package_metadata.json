@@ -1,0 +1,240 @@
+{
+  "added_to_favorites_number": 2,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "publicparticipation",
+  "collection_basis": "Закон України «Про місцеве самоврядування в Україні», Закон України «Про звернення громадян»",
+  "creator_user_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+  "id": "2c6f7b60-4956-41a5-ba81-1a00aa87f3ec",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-04-09T06:54:48.005785",
+  "metadata_modified": "2026-06-02T12:39:53.771382",
+  "name": "dani-pro-elektronni-petytsii-zokrema-osib-shcho-ikh-pidpysaly-ta-rezultaty-rozhliadu-gioc",
+  "notes": "Набір містить дані про назву, суть, тематику, дату початку збору й кількість підписів, інформацію про автора, осіб, що підписали петицію, стан та результат розгляду петиції.",
+  "num_resources": 2,
+  "num_tags": 4,
+  "number_of_all_downloads": 36,
+  "number_of_views": 650,
+  "organization": {
+    "id": "8e9c3170-c7bb-4173-b5fd-df9b9e14280b",
+    "name": "gioc",
+    "title": "Головний інформаційно-обчислювальний центр (ГІОЦ)",
+    "type": "organization",
+    "description": "КП «ГІОЦ» активно працює над автоматизацією, впровадженням новітніх технологій та підтримкою електронних сервісів для ефективного управління містом та транспортом. Основний вид діяльності є: оброблення даних, розміщення інформації на веб-вузлах і пов’язана з ними діяльність",
+    "image_url": "2026-05-15-112409.391109Frame-10.png",
+    "created": "2026-02-02T14:38:28.446374",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "04013755",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Космічна, 12-А",
+    "email": "secretari.gioc@kyivcity.gov.ua",
+    "phone": "+380443668105",
+    "number_of_linked_packages": 2,
+    "date_of_refresh": "2026-06-02T15:38:44.916558",
+    "number_of_views": 126,
+    "number_of_categories": 1,
+    "number_of_all_downloads": 77,
+    "average_rating": "0.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "8e9c3170-c7bb-4173-b5fd-df9b9e14280b",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "moderation_date": "2026-04-09T07:18:46.553950",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Вартан Азатьян",
+  "responsible_person_id": "d1938eb2-2bec-468f-b7ad-d0508a7f2d8c",
+  "state": "active",
+  "title": "Дані про електронні петиції, зокрема осіб, що їх підписали, та результати розгляду",
+  "type": "dataset",
+  "update_frequency": "monthly",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "8e9c3170-c7bb-4173-b5fd-df9b9e14280b",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-04-09T07:00:06.089608",
+      "data_period_end": "2026-05-29",
+      "data_period_start": "2021-08-05",
+      "datastore_active": false,
+      "description": "Ресурс містить дані про петиції, зокрема інформацію про дати створення та розгляду петиції, текст петиції, загальну кількість підписів (на дату оновлення).",
+      "format": "JSON",
+      "hash": "",
+      "id": "be62b7cf-cbfb-4b2f-8235-e51594fa910f",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-01T05:00:13.313462",
+      "metadata_modified": "2026-06-01T05:00:13.333877",
+      "mimetype": "application/json",
+      "mimetype_inner": null,
+      "name": "petitions.json",
+      "number_of_all_downloads": 7,
+      "number_of_views": 66,
+      "package_id": "2c6f7b60-4956-41a5-ba81-1a00aa87f3ec",
+      "position": 0,
+      "resource_code": "OTHER",
+      "resource_last_modified": "2026-06-01 08:00",
+      "resource_type": null,
+      "size": 8203185,
+      "source": "ІКС «Платформа цифрових мобільних сервісів «Київ Цифровий»»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 66,
+        "recent": 66
+      },
+      "ua-select-search-field-administrator-org": "Головний інформаційно-обчислювальний центр (ГІОЦ)",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Позасистемний формат (OTHER)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-04-09T07:00:08.877453",
+            "status": "pending",
+            "moderator_id": null
+          }
+        ],
+        "created_by": "mariia-novokhatska",
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-04-09T07:00:29.125624",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/2c6f7b60-4956-41a5-ba81-1a00aa87f3ec/resource/be62b7cf-cbfb-4b2f-8235-e51594fa910f/download/petitions.json",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": ""
+    },
+    {
+      "administrator_org": "8e9c3170-c7bb-4173-b5fd-df9b9e14280b",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-04-16T11:10:59.744887",
+      "data_period_end": "2026-05-31",
+      "data_period_start": "2021-08-05",
+      "datastore_active": true,
+      "description": "Ресурс містить дані про осіб, що підписали петицію, зокрема ПІБ підписанта та дату підписання.",
+      "format": "ZIP",
+      "hash": "",
+      "id": "3d33f058-0b23-43c8-8e59-c43db7b01463",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-02T12:39:53.644576",
+      "metadata_modified": "2026-06-02T12:39:53.790267",
+      "mimetype": "application/zip",
+      "mimetype_inner": null,
+      "name": "votings.zip",
+      "number_of_all_downloads": 23,
+      "number_of_views": 109,
+      "package_id": "2c6f7b60-4956-41a5-ba81-1a00aa87f3ec",
+      "position": 1,
+      "resource_code": "OTHER",
+      "resource_type": null,
+      "size": 265031241,
+      "source": "ІКС «Платформа цифрових мобільних сервісів «Київ Цифровий»",
+      "state": "active",
+      "tracking_summary": {
+        "total": 109,
+        "recent": 109
+      },
+      "ua-select-search-field-administrator-org": "Головний інформаційно-обчислювальний центр (ГІОЦ)",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Позасистемний формат (OTHER)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-04-16T11:11:00.709615",
+            "status": "pending",
+            "moderator_id": null
+          },
+          {
+            "date": "2026-04-16T11:11:26.656630",
+            "status": "approved",
+            "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589"
+          },
+          {
+            "date": "2026-05-06T08:09:00.834105",
+            "status": "pending",
+            "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12"
+          }
+        ],
+        "created_by": "olena-pastushenko",
+        "moderator_id": "fe4f01bf-5059-4106-bf22-a2ae0aacdb12",
+        "moderation_date": "2026-05-06T08:09:16.041910",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://data.kyivcity.gov.ua/dataset/2c6f7b60-4956-41a5-ba81-1a00aa87f3ec/resource/3d33f058-0b23-43c8-8e59-c43db7b01463/download/votings.zip",
+      "url_type": "upload",
+      "validation_result": "",
+      "validation_status": "skipped"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "демократія",
+      "id": "8fcb6bb5-a0a5-498d-a427-065d7a2684d2",
+      "name": "демократія",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "е-демократія",
+      "id": "98aeba27-8abf-45d7-86f0-ee4676f957f2",
+      "name": "е-демократія",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "звернення",
+      "id": "461f05b7-b6e4-44c4-a953-c7a350fb7c57",
+      "name": "звернення",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "петиції",
+      "id": "c4ffbb16-5a46-44cf-990d-aa6c5e742d02",
+      "name": "петиції",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Головний інформаційно-обчислювальний центр (ГІОЦ)",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-112409.391109Frame-10.png",
+  "_precomputed_dashboards_count": 1,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 650,
+    "recent": 650
+  }
+}

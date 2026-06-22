@@ -1,0 +1,194 @@
+{
+  "added_to_favorites_number": 1,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "property",
+  "collection_basis": "Закон України «Про місцеве самоврядування в Україні», Закон України «Про оренду державного та комунального майна», постанова Кабінету Міністрів України від 28.04.2021 № 630 «Деякі питання розрахунку орендної плати за державне майно»",
+  "creator_user_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+  "id": "e8dab5c5-2255-4077-9792-9b13e34e8e26",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-16T12:02:46.702167",
+  "metadata_modified": "2026-06-04T07:34:41.996863",
+  "name": "perelik-obiektiv-komunalnoi-vlasnosti-shcho-peredani-v-orendu-chy-inshe-pravo-korystuva-dep-communal",
+  "notes": "Набір даних складається з двох ресурсів:  \r\n**listProzorroSales_Rented** – дані про об’єкти комунальної форми власності, що передані в оренду чи інше право користування та які внесені до електронної торгової системи (ProZorro.Продажі);  \r\n**list** – перелік об’єктів оренди, інформація про які не внесена до електронної торговельної системи.  \r\nДані із системи ІАС «Управління майновим комплексом територіальної громади міста Києва». Модуль «Оренда комунального майна».  \r\nДані оновлюються щомісяця, до 05 числа місяця наступного за звітнім.",
+  "num_resources": 1,
+  "num_tags": 7,
+  "number_of_all_downloads": 9,
+  "number_of_views": 112,
+  "organization": {
+    "id": "c4b5eae1-cda8-4815-a69b-e3a0efa98968",
+    "name": "dep-communal",
+    "title": "Департамент комунальної власності м. Києва",
+    "type": "organization",
+    "description": "Забезпечує управління об’єктами комунальної власності територіальної громади міста Києва, організацію та проведення приватизації майна комунальної власності, здійснення повноважень орендодавця об’єктів комунальної власності, захист майнових прав територіальної громади міста Києва,  здійснення повноважень щодо державної реєстрації речових прав на нерухоме майно та їх обтяжень",
+    "image_url": "2026-05-15-122103.061839ChatGPT-Image-13-.-2026-.-132632.png",
+    "created": "2026-02-02T14:38:28.406199",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "19020407",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Хрещатик, 10",
+    "email": "property@kyivcity.gov.ua",
+    "phone": "+380442026151",
+    "number_of_linked_packages": 14,
+    "date_of_refresh": "2026-06-03T10:56:29.220027",
+    "number_of_views": 90,
+    "number_of_categories": 7,
+    "number_of_all_downloads": 247,
+    "average_rating": "0.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "c4b5eae1-cda8-4815-a69b-e3a0efa98968",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "moderation_date": "2026-04-01T20:33:07.289769",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Олена Олегівна Грінченко",
+  "responsible_person_id": "806528f3-52dd-425d-9f5f-0e7626f88f3c",
+  "state": "active",
+  "title": "Перелік об’єктів комунальної власності, що передані в оренду чи інше право користування (з даними про умови передачі об’єктів в оренду чи умови іншого користування) до закінчення строку, встановленого пунктом 6 розділу «Прикінцеві та перехідні положення» Закону України «Про оренду державного та комунального майна»",
+  "type": "dataset",
+  "update_frequency": "monthly",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "c4b5eae1-cda8-4815-a69b-e3a0efa98968",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-16T13:13:37.683499",
+      "data_period_end": "2026-06-02",
+      "data_period_start": "",
+      "datastore_active": false,
+      "description": "Містить посилання для отримання таблиці, яка містить унікальний код, назву й посилання на сторінку об’єкта в системі ProZorro.Продажі. Кожним записом в таблиці є окремий об’єкт оренди.",
+      "format": "CSV",
+      "hash": "",
+      "id": "dfe09cdb-f520-461f-aebb-4635c491bed9",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-06-04T07:34:41.973534",
+      "metadata_modified": "2026-06-04T07:34:42.007958",
+      "mimetype": null,
+      "mimetype_inner": null,
+      "name": "listProzzoroSales_rented",
+      "number_of_all_downloads": 7,
+      "number_of_views": 28,
+      "package_id": "e8dab5c5-2255-4077-9792-9b13e34e8e26",
+      "position": 0,
+      "resource_code": "OTHER",
+      "resource_type": null,
+      "size": null,
+      "source": "Модуль обліку та інформаційного відображення процесу управління об'єктами нерухомого майна територіальної громади м. Києва",
+      "state": "active",
+      "tracking_summary": {
+        "total": 28,
+        "recent": 28
+      },
+      "ua-select-search-field-administrator-org": "Департамент комунальної власності м. Києва",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Позасистемний формат (OTHER)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-16T13:13:38.370430",
+            "status": "pending",
+            "moderator_id": null
+          }
+        ],
+        "created_by": "mariia-novokhatska",
+        "moderator_id": "3e3f7a0d-151c-43c1-8d85-ef953eabb8b9",
+        "moderation_date": "2026-03-16T13:14:07.734318",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://dkv.kyivcity.gov.ua/DataReports/%D0%9E%D0%BF%D1%80%D0%B8%D0%BB%D1%8E%D0%B4%D0%BD%D0%B5%D0%BD%D0%BD%D1%8F/listProzorroSales_rented.csv",
+      "url_type": "",
+      "validation_result": "",
+      "validation_status": ""
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "будинок",
+      "id": "4b647a80-521c-4486-8c66-69400d979a84",
+      "name": "будинок",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "власність",
+      "id": "77af5220-d78e-4458-bcb9-0427b555cc70",
+      "name": "власність",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "користування",
+      "id": "6892a8f9-0119-403c-9970-6be40e6049cd",
+      "name": "користування",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "майно",
+      "id": "7d091914-4555-4b00-94fb-fc0e25d91ee9",
+      "name": "майно",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "нерухомість",
+      "id": "f2b88cb1-8fb6-4a26-99a8-03cb98c1cdab",
+      "name": "нерухомість",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "оренда",
+      "id": "01c0086e-3f94-480f-b049-bc7c73f5ab43",
+      "name": "оренда",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "приміщення",
+      "id": "bd5bb8fd-c767-4d77-8285-9187908a55bc",
+      "name": "приміщення",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Департамент комунальної власності м. Києва",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-122103.061839ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 112,
+    "recent": 112
+  }
+}

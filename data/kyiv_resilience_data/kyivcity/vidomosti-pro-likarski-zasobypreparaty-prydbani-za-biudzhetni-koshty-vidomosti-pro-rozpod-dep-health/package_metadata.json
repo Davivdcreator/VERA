@@ -1,0 +1,215 @@
+{
+  "added_to_favorites_number": 0,
+  "author": null,
+  "author_email": null,
+  "average_rating": 0.0,
+  "average_rating_count": 0,
+  "category": "health",
+  "collection_basis": "Наказ Міністерства охорони здоров’я України від 26.04.2017 № 459, рішення Київської міської ради від 09.10.2025 № 101/10568 «Про затвердження міської цільової програми «Громадське здоров'я» на 2026 - 2028 роки»",
+  "creator_user_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+  "id": "3e0ad437-e265-48e8-8328-bf93ae556c5a",
+  "isopen": false,
+  "language": "uk",
+  "license_id": null,
+  "license_title": null,
+  "maintainer": null,
+  "maintainer_email": null,
+  "metadata_created": "2026-03-16T10:44:39.212541",
+  "metadata_modified": "2026-05-05T15:15:09.632717",
+  "name": "vidomosti-pro-likarski-zasobypreparaty-prydbani-za-biudzhetni-koshty-vidomosti-pro-rozpod-dep-health",
+  "notes": "Набір містить посилання на отримання даних про залишки лікарських засобів та медичних виробів у комунальних закладах охорони здоров'я.  \r\nДані оприлюднюються з Медичного порталу Києва та надаються у форматі JSON.   \r\n   \r\n**Важливо!** При роботі з набором даних необхідно звертати особливу увагу на поле dateModified (Дата подання залишку). Актуальність інформації про наявність конкретного лікарського засобу безпосередньо залежить від дати останнього оновлення запису відповідним закладом охорони здоров'я.   \r\n\r\nЗаписи, дата оновлення яких є віддаленою від поточної, можуть потребувати додаткового уточнення безпосередньо у розпорядника даних (медичного закладу). Рекомендується використовувати фільтрацію за датою для отримання найбільш актуальних відомостей.",
+  "num_resources": 1,
+  "num_tags": 10,
+  "number_of_all_downloads": 3,
+  "number_of_views": 99,
+  "organization": {
+    "id": "975fe2aa-145d-45ad-966d-af18bb3f1091",
+    "name": "dep-health",
+    "title": "Департамент охорони здоров’я",
+    "type": "organization",
+    "description": "Забезпечує реалізацію державної політики у сфері охорони здоров’я на території міста Києва, управління підприємствами, установами та організаціями у сфері охорони здоров’я, що належать до комунальної власності територіальної громади міста Києва, організації їх матеріально-технічного та методичного забезпечення в межах повноважень, передбачених законодавством. Також забезпечує планування розвитку мережі закладів охорони здоров’я на території міста Києва, організовує в межах повноважень проведення профілактичних і протиепідемічних заходів у місті Києві, а також робіт з ліквідації епідемій та спалахів інфекційних хвороб в установленому порядку, заходів медичного захисту під час ліквідації наслідків надзвичайних ситуацій та ін.",
+    "image_url": "",
+    "created": "2026-02-02T14:38:28.419298",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active",
+    "edrpou": "02012906",
+    "administrative_unit_id": "UA80000000000093317",
+    "address": "вул. Прорізна, 19",
+    "email": "health@kyivcity.gov.ua",
+    "phone": "+380442840875",
+    "number_of_linked_packages": 14,
+    "date_of_refresh": "2026-05-05T18:13:11.189559",
+    "number_of_views": 21,
+    "number_of_categories": 7,
+    "number_of_all_downloads": 163,
+    "average_rating": "0.0",
+    "subscription_should_be_checked": true,
+    "favorites_should_be_checked": true,
+    "in_progress": false,
+    "is_changed": true,
+    "legal_status": "active",
+    "successor_id": null
+  },
+  "owner_org": "975fe2aa-145d-45ad-966d-af18bb3f1091",
+  "plugin_data": {
+    "ua_moderation": {
+      "status": "approved",
+      "moderation_date": "2026-05-05T15:15:10.053294",
+      "rejection_reason": "",
+      "moderator_comment": ""
+    }
+  },
+  "private": false,
+  "responsible_person": "Людмила Жур",
+  "responsible_person_id": "e0066954-7b9e-409b-ad38-89ac02a61c0e",
+  "state": "active",
+  "title": "Відомості про лікарські засоби/препарати, придбані за бюджетні кошти, відомості про розподілення таких ліків між закладами охорони здоров’я та їх залишки в кожному з них",
+  "type": "dataset",
+  "update_frequency": "more_than_daily",
+  "url": null,
+  "version": null,
+  "resources": [
+    {
+      "administrator_org": "975fe2aa-145d-45ad-966d-af18bb3f1091",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2026-03-27T11:48:35.947592",
+      "data_period_end": "",
+      "data_period_start": "",
+      "datastore_active": false,
+      "description": "Ресурс містить посилання для отримання даних про залишки лікарських засобів та медичних виробів у комунальних закладах охорони здоров'я, зокрема: ідентифікатори, назви лікарських засобів, торговельні назви, форму випуску, дозування лікарського засобу, кількість, одиницю виміру, строк придатності, дату подання залишку, назву закладу охорони здоров’я, джерело отримання лікарських засобів, ціна за одиницю. Кожним записом у таблиці є один об’єкт.",
+      "format": "JSON",
+      "hash": "",
+      "id": "defa79cc-ddb1-46dd-8f65-d260dc5dad38",
+      "in_progress": false,
+      "is_api": "false",
+      "is_changed": false,
+      "last_modified": "2026-04-06T11:32:11.800487",
+      "metadata_modified": "2026-04-06T11:32:11.836418",
+      "mimetype": null,
+      "mimetype_inner": null,
+      "name": "remains",
+      "number_of_all_downloads": 1,
+      "number_of_views": 29,
+      "package_id": "3e0ad437-e265-48e8-8328-bf93ae556c5a",
+      "position": 0,
+      "resource_code": "OTHER",
+      "resource_type": null,
+      "size": null,
+      "source": "Медичний портал",
+      "state": "active",
+      "tracking_summary": {
+        "total": 29,
+        "recent": 29
+      },
+      "ua-select-search-field-administrator-org": "Департамент охорони здоров’я",
+      "ua-select-search-field-is-api": "Ні",
+      "ua-select-search-field-resource-code": "Позасистемний формат (OTHER)",
+      "ua_resource_moderation": {
+        "status": "approved",
+        "history": [
+          {
+            "date": "2026-03-27T11:48:36.398654",
+            "status": "pending",
+            "moderator_id": null
+          }
+        ],
+        "created_by": "olena-pastushenko",
+        "moderator_id": "f7f04a14-23de-423a-ba18-dc38d543a589",
+        "moderation_date": "2026-03-27T11:48:51.382966",
+        "rejection_reason": "",
+        "moderator_comment": ""
+      },
+      "url": "https://med.kyivcity.gov.ua/ostatki2.php",
+      "url_type": "",
+      "validation_result": "",
+      "validation_status": ""
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "КНП",
+      "id": "251e24bf-a7a0-4bff-a56d-c68d45830daf",
+      "name": "КНП",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "вироби",
+      "id": "b2c0348d-a647-4f80-9efa-152c87d8580e",
+      "name": "вироби",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "заклади",
+      "id": "0f4c5334-d1de-4d19-b437-5a1426c3d655",
+      "name": "заклади",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "здоров'я",
+      "id": "39493408-2b0f-47cc-8016-6c16a2edcdb6",
+      "name": "здоров'я",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "лікарня",
+      "id": "36f21462-bf48-4430-9937-69073d77ab71",
+      "name": "лікарня",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "лікарні",
+      "id": "20798789-c73f-451f-858c-6741f57e823f",
+      "name": "лікарні",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "ліки",
+      "id": "711ecae1-c732-4c4d-8058-0488f8485ea8",
+      "name": "ліки",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "медикаменти",
+      "id": "4fbedd18-28eb-476f-9f7c-85ba7f113fee",
+      "name": "медикаменти",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "медицина",
+      "id": "ef6862ea-3200-452c-89c5-a03160764828",
+      "name": "медицина",
+      "state": "active",
+      "vocabulary_id": null
+    },
+    {
+      "display_name": "препарати",
+      "id": "3287d006-1249-458a-a0dc-a85d1a03b9cc",
+      "name": "препарати",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "groups": [],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "favorite": false,
+  "subscribed": false,
+  "_precomputed_org_name": "Департамент охорони здоров’я",
+  "_precomputed_org_image": "https://data.kyivcity.gov.ua/uploads/group/2026-05-15-122426.307017ChatGPT-Image-13-.-2026-.-132632.png",
+  "_precomputed_dashboards_count": 0,
+  "_precomputed_has_api": false,
+  "tracking_summary": {
+    "total": 99,
+    "recent": 99
+  }
+}
