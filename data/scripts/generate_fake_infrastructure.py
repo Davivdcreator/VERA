@@ -15,12 +15,12 @@ LON_MIN, LON_MAX = 30.3, 30.7
 
 INFRASTRUCTURE_TYPES = [
     # (type, subtype, count, name_prefix)
-    ("utilities", "power_plant", 6, "VERA Power Plant"),
-    ("utilities", "water_pump_station", 12, "VERA Pump Station"),
-    ("utilities", "water_treatment_plant", 6, "VERA Water Treatment"),
-    ("utilities", "wastewater_plant", 4, "VERA Wastewater"),
-    ("utilities", "heating_plant", 6, "VERA Heating Plant"),
-    ("critical", "industrial_facility", 12, "VERA Industrial"),
+    ("utilities", "power_plant", 6, "Power Plant"),
+    ("utilities", "water_pump_station", 12, "Pump Station"),
+    ("utilities", "water_treatment_plant", 6, "Water Treatment"),
+    ("utilities", "wastewater_plant", 4, "Wastewater"),
+    ("utilities", "heating_plant", 6, "Heating Plant"),
+    ("critical", "industrial_facility", 12, "Industrial"),
 ]
 
 
