@@ -68,7 +68,10 @@ export type OSMBuildingsEvent =
   | "doubleclick"
   | "gesture"
   | "idle"
+  /** Fires after the initial map + first tile set have painted. */
+  | "load"
   | "loadfeature"
+  | "move"
   | "pointerdown"
   | "pointermove"
   | "pointerup"
@@ -120,8 +123,12 @@ export interface OSMBuildingsMap {
 
   highlight(feature: unknown): void;
 
-  /** Returns [south, west, north, east]. */
-  getBounds(): LatLngBounds | number[];
+  /**
+   * View bounds. NOTE: OSMB 4.1.1 actually returns the four view-polygon CORNERS
+   * as `{ longitude, latitude }` points (a trapezoid under 3D tilt), NOT a flat
+   * [south, west, north, east] tuple. Normalise via `boundsToBox()` before use.
+   */
+  getBounds(): LatLngBounds | number[] | Array<{ latitude: number; longitude: number }>;
 
   /** Tear down WebGL context + DOM. Always call on unmount. */
   destroy(): void;

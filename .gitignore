@@ -31,6 +31,10 @@ dist-ssr
 # Test
 coverage
 
+# Python
+__pycache__/
+*.py[cod]
+
 # Claude Code / MCP local config (skills under .claude/skills ARE committed)
 .claude/settings.local.json
 .mcp.json

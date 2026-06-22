@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
 """
-Download public OSM layers for Kyiv and write safe graph starter files.
+Download public OSM layers for Kyiv at full detail.
 
-The public-services output keeps facility names and coarse grid cells. The
-power output is intentionally aggregate-only: no exact plant/substation names,
-coordinates, or plant-to-building dependency links are written.
+Emits the complete public OpenStreetMap record for every public-service
+facility and power asset inside the Kyiv bbox: exact coordinates, names,
+operators, addresses, and the relevant OSM tags. No grid-cell rounding and
+no aggregate-only redaction.
+
+All data originates from OpenStreetMap via the Overpass API and is already
+publicly downloadable. Dependency links (which facility draws from which
+power asset) are NOT part of OSM and are therefore not emitted here — that
+proximity-based inference lives in scripts/build-cards.mjs.
 """
 
 from __future__ import annotations
@@ -38,7 +44,7 @@ PUBLIC_FACILITY_QUERY = f"""
 out tags center qt;
 """
 
-POWER_AGGREGATE_QUERY = f"""
+POWER_QUERY = f"""
 [out:json][timeout:180];
 (
   nwr["power"~"^(plant|substation|generator)$"]({BBOX[0]},{BBOX[1]},{BBOX[2]},{BBOX[3]});
@@ -132,43 +138,37 @@ def write_public_outputs(osm: dict) -> None:
                 "category": category,
                 "subtype": subtype,
                 "name": tags.get("name") or tags.get("name:uk") or tags.get("name:en") or "",
+                "name_uk": tags.get("name:uk") or "",
+                "name_en": tags.get("name:en") or "",
                 "operator": tags.get("operator") or "",
                 "ownership": tags.get("ownership") or "",
                 "addr_street": tags.get("addr:street") or "",
                 "addr_housenumber": tags.get("addr:housenumber") or "",
+                "beds": tags.get("beds") or tags.get("capacity:beds") or "",
+                "lon": f"{lon:.6f}",
+                "lat": f"{lat:.6f}",
                 "grid_id": gid,
-                "power_source_id": "",
-                "power_source_name": "",
-                "power_zone_id": "",
-                "power_connection_type": "",
-                "backup_power": "",
-                "backup_power_capacity_kw": "",
-                "dependency_confidence": "",
-                "dependency_notes": "",
                 "source": "OpenStreetMap Overpass API",
             }
         )
 
-    with (OUT_DIR / "kyiv_public_facilities_redacted.csv").open("w", newline="", encoding="utf-8") as f:
+    with (OUT_DIR / "kyiv_public_facilities.csv").open("w", newline="", encoding="utf-8") as f:
         fieldnames = [
             "facility_id",
             "osm_ref",
             "category",
             "subtype",
             "name",
+            "name_uk",
+            "name_en",
             "operator",
             "ownership",
             "addr_street",
             "addr_housenumber",
+            "beds",
+            "lon",
+            "lat",
             "grid_id",
-            "power_source_id",
-            "power_source_name",
-            "power_zone_id",
-            "power_connection_type",
-            "backup_power",
-            "backup_power_capacity_kw",
-            "dependency_confidence",
-            "dependency_notes",
             "source",
         ]
         writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -191,17 +191,71 @@ def write_public_outputs(osm: dict) -> None:
             )
 
 
-def write_power_aggregate(osm: dict) -> None:
+def write_power_outputs(osm: dict) -> None:
+    rows = []
     by_type = Counter()
     by_source = Counter()
+    seen = set()
 
     for element in osm.get("elements", []):
         tags = element.get("tags") or {}
+        lon, lat = element_lon_lat(element)
+
+        ref = f"{element.get('type')}/{element.get('id')}"
+        if ref in seen:
+            continue
+        seen.add(ref)
+
         power_type = tags.get("power") or "unknown"
         by_type[power_type] += 1
         if tags.get("generator:source"):
             by_source[tags["generator:source"]] += 1
 
+        rows.append(
+            {
+                "asset_id": f"osm_{element.get('type')}_{element.get('id')}",
+                "osm_ref": ref,
+                "power_type": power_type,
+                "name": tags.get("name") or tags.get("name:uk") or tags.get("name:en") or "",
+                "name_uk": tags.get("name:uk") or "",
+                "name_en": tags.get("name:en") or "",
+                "operator": tags.get("operator") or "",
+                "voltage": tags.get("voltage") or "",
+                "output_mw": tags.get("plant:output:electricity") or tags.get("generator:output:electricity") or "",
+                "plant_source": tags.get("plant:source") or tags.get("generator:source") or "",
+                "plant_method": tags.get("plant:method") or tags.get("generator:method") or "",
+                "substation_role": tags.get("substation") or "",
+                "lon": f"{lon:.6f}" if lon is not None else "",
+                "lat": f"{lat:.6f}" if lat is not None else "",
+                "grid_id": grid_id(lon, lat) if lon is not None and lat is not None else "",
+                "source": "OpenStreetMap Overpass API",
+            }
+        )
+
+    with (OUT_DIR / "kyiv_power_infrastructure.csv").open("w", newline="", encoding="utf-8") as f:
+        fieldnames = [
+            "asset_id",
+            "osm_ref",
+            "power_type",
+            "name",
+            "name_uk",
+            "name_en",
+            "operator",
+            "voltage",
+            "output_mw",
+            "plant_source",
+            "plant_method",
+            "substation_role",
+            "lon",
+            "lat",
+            "grid_id",
+            "source",
+        ]
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(sorted(rows, key=lambda row: (row["power_type"], row["name"])))
+
+    # Keep the aggregate rollup too — cheap and handy for summaries.
     with (OUT_DIR / "kyiv_power_infrastructure_aggregate.csv").open("w", newline="", encoding="utf-8") as f:
         fieldnames = ["metric", "value", "count", "source"]
         writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -226,41 +280,12 @@ def write_power_aggregate(osm: dict) -> None:
             )
 
 
-def write_graph_seed() -> None:
-    rows = [
-        {
-            "from_node_type": "power_resilience_zone",
-            "from_id": "kyiv_power_zone_unassigned",
-            "edge_type": "supplies_public_services_aggregate",
-            "to_node_type": "grid_cell",
-            "to_id": "*",
-            "weight": "",
-            "confidence": "placeholder_requires_authorized_internal_data",
-            "notes": "No plant-to-building dependency is inferred from public data.",
-        },
-        {
-            "from_node_type": "grid_cell",
-            "from_id": "*",
-            "edge_type": "contains_public_facility_count",
-            "to_node_type": "facility_category",
-            "to_id": "*",
-            "weight": "facility_count",
-            "confidence": "public_osm",
-            "notes": "Join to kyiv_public_facility_grid_counts.csv.",
-        },
-    ]
-    with (OUT_DIR / "graph_seed_edges.csv").open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
-        writer.writeheader()
-        writer.writerows(rows)
-
-
 def main() -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
     public_osm = overpass(PUBLIC_FACILITY_QUERY)
     time.sleep(5)
-    power_osm = overpass(POWER_AGGREGATE_QUERY)
+    power_osm = overpass(POWER_QUERY)
 
     write_json(
         OUT_DIR / "metadata.json",
@@ -273,16 +298,17 @@ def main() -> None:
                 "https://www.openstreetmap.org",
                 "https://overpass-api.de",
             ],
-            "safety_note": (
-                "Public-service facility outputs are redacted to coarse grid cells. "
-                "Power infrastructure output is aggregate-only and contains no exact "
-                "names, coordinates, or dependency links."
+            "data_note": (
+                "Full-detail public OSM export: exact coordinates, names, operators, "
+                "and addresses for public facilities and power assets. Every field "
+                "originates from OpenStreetMap and is publicly downloadable. "
+                "Facility-to-power dependency links are not part of OSM and are not "
+                "included here; proximity-based inference lives in scripts/build-cards.mjs."
             ),
         },
     )
     write_public_outputs(public_osm)
-    write_power_aggregate(power_osm)
-    write_graph_seed()
+    write_power_outputs(power_osm)
 
 
 if __name__ == "__main__":
