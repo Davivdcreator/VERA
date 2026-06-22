@@ -475,8 +475,20 @@ export function OsmBuildingsMap({
       className={`relative h-full w-full ${className}`}
       style={{ minHeight: 240 }}
     >
+      {/* Opaque dark backdrop BEHIND the WebGL canvas. OSMB's main scene clears
+          transparent (alpha 0), and the loader maps OSMB's red placeholder clear
+          to transparent too — so any un-painted frame (init, HMR reload, tile
+          gaps while panning/zooming) would otherwise show the white page through
+          the canvas as a flash. A dark map-loading tone keeps those frames
+          neutral instead of flashing white. */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{ backgroundColor: "#0b1220" }}
+        aria-hidden="true"
+      />
+
       {/* OSM Buildings owns this element exclusively (it appends its canvas). */}
-      <div ref={containerRef} className="absolute inset-0" />
+      <div ref={containerRef} className="absolute inset-0 z-[1]" />
 
       {/* Damage zone overlays projected over the canvas (pointer-events-none).
           The radius ring is best-effort (approximate under 3D tilt); the centre
@@ -554,16 +566,17 @@ export function OsmBuildingsMap({
         </div>
       )}
 
-      {/* Neutral cover shown until OSMB paints its first tiles. Without it the
-          OSM Buildings WebGL canvas flashes solid RED during (re)initialisation
-          (its un-painted framebuffer), which is the "map flashing red" bug. */}
+      {/* Dark cover shown until OSMB paints its first tiles. Matches the backdrop
+          tone (#0b1220) so initial load reads as a dark "map loading" state —
+          never a white (or red) flash. */}
       <div
         aria-hidden={tilesReady}
-        className={`pointer-events-none absolute inset-0 z-[6] flex items-center justify-center bg-surface-2 transition-opacity duration-500 ${
+        className={`pointer-events-none absolute inset-0 z-[6] flex items-center justify-center transition-opacity duration-500 ${
           tilesReady ? "opacity-0" : "opacity-100"
         }`}
+        style={{ backgroundColor: "#0b1220" }}
       >
-        <span className="text-xs font-medium text-text-muted">Loading map…</span>
+        <span className="text-xs font-medium text-slate-300">Loading map…</span>
       </div>
     </div>
   );
