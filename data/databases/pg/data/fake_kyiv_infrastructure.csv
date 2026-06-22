@@ -1,0 +1,47 @@
+id,name,type,subtype,location,latitude,longitude,capacity,year_built,status,metadata
+84a3dc3f-8640-4089-9ed4-f5707c2569f6,VERA Power Plant 1,utilities,power_plant,,50.5927628,30.5268391,,1977,operational,{}
+94e2d314-e801-4b2f-bbb6-712a549c2c73,VERA Power Plant 2,utilities,power_plant,,50.3081052,30.3720308,,1985,operational,{}
+878fd799-6c65-453f-908a-77a3d872ba1c,VERA Power Plant 3,utilities,power_plant,,50.4419184,30.6702314,,2000,operational,{}
+f703fbd3-7b6b-4202-bc62-27df3427696f,VERA Power Plant 4,utilities,power_plant,,50.3365917,30.6238336,,2013,operational,{}
+17c0fb22-5994-40c3-9cba-9cbd866766c2,VERA Power Plant 5,utilities,power_plant,,50.3925031,30.3545834,,1999,operational,{}
+0458f6ad-6d12-4dd0-bc0c-0591d8b9f35e,VERA Power Plant 6,utilities,power_plant,,50.3237494,30.3309581,,1979,operational,{}
+0f5675dc-1e89-4864-b113-353a04e0f1c3,VERA Pump Station 1,utilities,water_pump_station,,50.3370573,30.3684016,,1992,operational,{}
+d47aa671-4fd4-4f91-9b58-c624ce5d30c3,VERA Pump Station 2,utilities,water_pump_station,,50.5989708,30.6016491,,1986,operational,{}
+ff4ae769-f06f-4cea-ba50-4600027b1140,VERA Pump Station 3,utilities,water_pump_station,,50.3604411,30.5027738,,1978,operational,{}
+4ec926d7-da51-401e-80a2-3971fa53419e,VERA Pump Station 4,utilities,water_pump_station,,50.4468639,30.4389141,,2007,operational,{}
+5f081a16-0404-49d1-808f-249ce99a0aae,VERA Pump Station 5,utilities,water_pump_station,,50.3689435,30.3989101,,1975,operational,{}
+c9751280-f4a9-4bf5-95f7-1895a2844ab4,VERA Pump Station 6,utilities,water_pump_station,,50.4359158,30.5241166,,1988,operational,{}
+c8b90466-06c5-48da-9bc0-e9e4d81c7be1,VERA Pump Station 7,utilities,water_pump_station,,50.3994992,30.6892583,,1997,operational,{}
+b4a51529-75e9-4ad2-b323-1713670dcb50,VERA Pump Station 8,utilities,water_pump_station,,50.4390412,30.6919651,,1996,operational,{}
+4c81d27d-52f0-4fc0-9353-9331128fccbb,VERA Pump Station 9,utilities,water_pump_station,,50.5764253,30.581321,,1987,operational,{}
+912696bc-06f4-40bf-87d9-65106918f1b7,VERA Pump Station 10,utilities,water_pump_station,,50.4627903,30.3862769,,2015,operational,{}
+7ed01824-730f-4f08-949d-5ef34c9f8dce,VERA Pump Station 11,utilities,water_pump_station,,50.4524388,30.4150627,,1995,operational,{}
+aec63819-d6df-49ac-97be-40b18d998b97,VERA Pump Station 12,utilities,water_pump_station,,50.5556523,30.6704142,,1991,operational,{}
+161ae20a-42b4-40f3-a785-97b4071ff844,VERA Water Treatment 1,utilities,water_treatment_plant,,50.4302612,30.6403986,,2007,operational,{}
+d175fdbc-9beb-4789-a96d-f67472f73a14,VERA Water Treatment 2,utilities,water_treatment_plant,,50.3497851,30.5140387,,1999,operational,{}
+fb2bba83-c838-4519-9373-792826219992,VERA Water Treatment 3,utilities,water_treatment_plant,,50.3830847,30.6753713,,2006,operational,{}
+a236dfbd-f262-4e21-8146-fae459b840d0,VERA Water Treatment 4,utilities,water_treatment_plant,,50.4885166,30.5609592,,1981,operational,{}
+4b1098a0-a544-4945-be31-c5537ee7cf92,VERA Water Treatment 5,utilities,water_treatment_plant,,50.3503849,30.4200815,,2002,operational,{}
+2899c22b-58e0-4a26-b2e2-1f05881514f3,VERA Water Treatment 6,utilities,water_treatment_plant,,50.3577971,30.3594698,,1996,operational,{}
+c353c5ce-a975-409c-8d72-9a99079d2c66,VERA Wastewater 1,utilities,wastewater_plant,,50.5624939,30.4604645,,2018,operational,{}
+bb1b2406-587e-47f6-8e85-704bbd04b035,VERA Wastewater 2,utilities,wastewater_plant,,50.4425652,30.3802385,,2004,operational,{}
+8980157a-192e-4009-914f-3988b5768017,VERA Wastewater 3,utilities,wastewater_plant,,50.5784838,30.5714046,,2013,operational,{}
+8f5e8425-2f70-43e0-bdb0-cab4e5d5c9b3,VERA Wastewater 4,utilities,wastewater_plant,,50.5636974,30.3867436,,1987,operational,{}
+1c8d1fb8-9e67-4f5b-b346-64f8c4be3833,VERA Heating Plant 1,utilities,heating_plant,,50.5395772,30.6773468,,1979,operational,{}
+0a4e6e5c-7874-4e49-8106-a73499140ba5,VERA Heating Plant 2,utilities,heating_plant,,50.4934669,30.3500921,,2008,operational,{}
+c7750dee-66de-4a4c-85a9-60b753467898,VERA Heating Plant 3,utilities,heating_plant,,50.4160435,30.5075073,,1971,operational,{}
+11bc1b0d-3f84-4cc7-a16a-f992f6ad5c7d,VERA Heating Plant 4,utilities,heating_plant,,50.3896298,30.5350391,,1985,operational,{}
+5aa9904b-fe14-42b4-8f30-ab251bde4572,VERA Heating Plant 5,utilities,heating_plant,,50.3237561,30.4698964,,1973,operational,{}
+f281e957-5be5-4673-a5ed-d6a2bc954501,VERA Heating Plant 6,utilities,heating_plant,,50.3958829,30.3554959,,1974,operational,{}
+f2c3e286-ef9d-4714-ba97-4005175eb6ac,VERA Industrial 1,critical,industrial_facility,,50.3089232,30.6214657,,1976,operational,{}
+3e075344-6ca9-4834-87e2-5dfd2879d627,VERA Industrial 2,critical,industrial_facility,,50.5442456,30.415791,,1980,operational,{}
+d18480df-2803-45a4-b1c0-a6f69327f165,VERA Industrial 3,critical,industrial_facility,,50.4613807,30.4493946,,1995,operational,{}
+7ad5645d-6576-4b0e-9546-6d942b709d0b,VERA Industrial 4,critical,industrial_facility,,50.3479338,30.4079232,,1971,operational,{}
+6ffeb3ed-7c9e-4165-a3d8-4fc493b989be,VERA Industrial 5,critical,industrial_facility,,50.3657996,30.6948141,,1997,operational,{}
+25c4a2cf-b369-4270-a0e5-cd109ba6dc10,VERA Industrial 6,critical,industrial_facility,,50.5106149,30.3906895,,2006,operational,{}
+79b680f9-8e7c-4fe5-bc68-7138d6d93aae,VERA Industrial 7,critical,industrial_facility,,50.5448425,30.4732355,,2004,operational,{}
+898f2599-1216-4a66-94e7-23747482a655,VERA Industrial 8,critical,industrial_facility,,50.5756139,30.3642155,,1974,operational,{}
+667e8020-2ab1-4ac6-ad3d-af5da3cd47d0,VERA Industrial 9,critical,industrial_facility,,50.5396935,30.5416348,,1989,operational,{}
+45f47461-ca5b-404b-a575-ec75391671ff,VERA Industrial 10,critical,industrial_facility,,50.3745588,30.4263307,,1997,operational,{}
+c489373e-7e11-4efa-85e2-fbab7f526643,VERA Industrial 11,critical,industrial_facility,,50.4484065,30.6150343,,2018,operational,{}
+5ca25107-7f61-44c9-b700-8413bff69198,VERA Industrial 12,critical,industrial_facility,,50.4883172,30.6847769,,2008,operational,{}
