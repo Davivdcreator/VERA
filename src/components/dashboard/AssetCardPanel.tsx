@@ -72,6 +72,15 @@ function typeLabel(t: string): string {
     bridge:          "Bridge",
     heating_plant:   "Heating plant",
     telecom:         "Telecom",
+    museum:          "Museum",
+    post_office:     "Post office",
+    pharmacy:        "Pharmacy",
+    bus_stop:        "Bus stop",
+    supermarket:     "Supermarket",
+    clinic:          "Clinic",
+    police:          "Police",
+    fire_station:    "Fire station",
+    water_fountain:  "Water point",
     other:           "Infrastructure",
   };
   return MAP[t] ?? t;

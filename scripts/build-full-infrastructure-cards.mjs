@@ -21,6 +21,7 @@ const SERVICE_CLASS = {
   pharmacy: 0.62,
   fire_station: 0.86,
   police: 0.82,
+  museum: 0.54,
   school: 0.72,
   kindergarten: 0.68,
   university: 0.68,
@@ -38,6 +39,7 @@ const TYPE_RADIUS_M = {
   pharmacy: 800,
   fire_station: 2200,
   police: 2000,
+  museum: 1200,
   school: 1400,
   kindergarten: 1200,
   university: 1600,
@@ -103,6 +105,15 @@ function statusFromDb(value) {
 function assetTypeFromSubtype(subtype) {
   const s = String(subtype ?? "");
   if (s === "hospital") return "hospital";
+  if (s === "clinic") return "clinic";
+  if (s === "pharmacy") return "pharmacy";
+  if (s === "fire_station") return "fire_station";
+  if (s === "police") return "police";
+  if (s === "museum") return "museum";
+  if (s === "post_office") return "post_office";
+  if (s === "bus_stop") return "bus_stop";
+  if (s === "supermarket") return "supermarket";
+  if (s === "water_fountain") return "water_fountain";
   if (s === "substation") return "substation";
   if (s === "power_plant") return "power_plant";
   if (s === "water_treatment" || s === "water_works") return "water_works";

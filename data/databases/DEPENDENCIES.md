@@ -10,6 +10,7 @@ Dependencies are calculated using proximity: each source asset is linked to its 
 |------|-------------|
 | `powers` | Target provides electrical power to source |
 | `supplies_water` | Target provides water supply to source |
+| `provides_access` | Target provides public access or mobility to source |
 | `depends_on` | Source depends on target for operation |
 
 ---
@@ -65,6 +66,7 @@ All healthcare facilities depend on substations for electrical power.
 | `public` | substation |
 | `social_facility` | substation |
 | `post_office` | substation |
+| `museum` | substation |
 
 ---
 
@@ -84,6 +86,23 @@ All healthcare facilities depend on substations for electrical power.
 | `supermarket` | substation |
 | `convenience_store` | substation |
 | `veterinary` | substation |
+
+---
+
+## Public Museum Demo Cluster
+
+The Kyiv Fortress Museum demo anchor is connected to nearby visitor-facing and emergency-support assets so selecting the museum shows a readable dependency graph.
+
+| Source Subtype | Target | Kind | Why |
+|----------------|--------|------|-----|
+| `museum` | bus_stop | provides_access | Visitor and staff access |
+| `museum` | post_office | depends_on | Visitor logistics and public services nearby |
+| `museum` | pharmacy | depends_on | Visitor health support |
+| `museum` | water_fountain | supplies_water | Public water point |
+| `museum` | supermarket | depends_on | Event and volunteer supplies |
+| `museum` | clinic | depends_on | Nearby clinical backup |
+| `museum` | police | depends_on | Public-safety response |
+| `museum` | fire_station | depends_on | Fire and rescue response |
 
 ---
 
