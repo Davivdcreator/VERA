@@ -9,6 +9,7 @@
  * infrastructure card bundle.
  */
 import { useState, useEffect, useMemo } from "react";
+import { useSearchParams } from "react-router-dom";
 import { MapPanel } from "@/components/dashboard/MapPanel";
 import type { MapMode, MapObjectSearchItem } from "@/components/dashboard/MapPanel";
 import { AssetCardPanel } from "@/components/dashboard/AssetCardPanel";
@@ -340,6 +341,18 @@ export function Dashboard() {
         : null,
     [selectedCard, cards, economicOutageHours],
   );
+  // Deep-link focus: /?lat=&lng=&zoom= flies the map to a point (used by the
+  // Repair Queue "Locate on map" links).
+  const [searchParams] = useSearchParams();
+  useEffect(() => {
+    const lat = parseFloat(searchParams.get("lat") ?? "");
+    const lng = parseFloat(searchParams.get("lng") ?? "");
+    if (Number.isFinite(lat) && Number.isFinite(lng)) {
+      const zoom = parseFloat(searchParams.get("zoom") ?? "");
+      setMapFocus({ lat, lng, zoom: Number.isFinite(zoom) ? zoom : 15 });
+    }
+  }, [searchParams]);
+
   const selectAsset = (id: string) => {
     setSelectedId(id);
     const card = cardMap.get(id);

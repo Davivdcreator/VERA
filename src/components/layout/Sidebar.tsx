@@ -8,13 +8,10 @@
 import { NavLink } from "react-router-dom";
 import type { LucideIcon } from "lucide-react";
 import {
-  Activity,
   AlertTriangle,
   BarChart3,
+  FileText,
   LayoutDashboard,
-  Layers,
-  MapPin,
-  Settings,
   Wrench,
 } from "lucide-react";
 import { cn } from "@/lib/cn";
@@ -34,24 +31,16 @@ interface NavGroup {
 
 const NAV_GROUPS: NavGroup[] = [
   {
-    items: [
-      { id: "overview", label: "Overview", icon: LayoutDashboard, to: "/" },
-      { id: "map", label: "Live Map", icon: MapPin },
-      { id: "telemetry", label: "Telemetry", icon: Activity },
-    ],
+    items: [{ id: "overview", label: "Overview", icon: LayoutDashboard, to: "/" }],
   },
   {
     label: "Operations",
     items: [
       { id: "analyses", label: "Analyses", icon: BarChart3, to: "/analyses" },
+      { id: "reports", label: "Reports", icon: FileText, to: "/reports" },
       { id: "danger", label: "Danger Zones", icon: AlertTriangle, to: "/danger-zones" },
-      { id: "repairs", label: "Repair Queue", icon: Wrench },
-      { id: "assets", label: "Asset Registry", icon: Layers },
+      { id: "repairs", label: "Repair Queue", icon: Wrench, to: "/repairs" },
     ],
-  },
-  {
-    label: "System",
-    items: [{ id: "settings", label: "Settings", icon: Settings }],
   },
 ];
 
