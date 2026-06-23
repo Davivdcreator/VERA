@@ -1,22 +1,22 @@
 // VERA — run-analysis edge function.
 //
-// Flow: receive an asset -> build a rebuild-cost prompt -> call Qwen via
-// OpenRouter with a strict json_schema -> validate (+ one repair retry) ->
-// persist to the `analyses` table with the service role -> return { id, report }.
+// Flow: receive an asset -> build a rebuild-cost prompt (schema embedded) ->
+// call Qwen via OpenRouter in json_object mode -> validate (+ one repair retry)
+// -> persist to the `analyses` table with the service role -> return { id, report }.
 //
 // Secrets required (set with `supabase secrets set`):
 //   OPENROUTER_API_KEY   (required)
-//   OPENROUTER_MODEL     (optional, default qwen/qwen3.6-plus:free)
+//   OPENROUTER_MODEL     (optional, default qwen/qwen3-next-80b-a3b-instruct:free)
 // Auto-injected by Supabase: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY.
 
 import { createClient } from "npm:@supabase/supabase-js@2";
 import { corsHeaders, json } from "./cors.ts";
-import { REBUILD_COST_SCHEMA, type RebuildCostReport } from "./schema.ts";
+import { type RebuildCostReport } from "./schema.ts";
 import { validateRebuildEstimate } from "./validate.ts";
 import { buildMessages, type AssetContext } from "./prompt.ts";
 
 const OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions";
-const DEFAULT_MODEL = "qwen/qwen3.6-plus:free";
+const DEFAULT_MODEL = "qwen/qwen3-next-80b-a3b-instruct:free";
 
 interface RequestBody {
   kind?: "rebuild_cost";
@@ -50,7 +50,16 @@ async function callOpenRouter(
   model: string,
   // deno-lint-ignore no-explicit-any
   messages: any[],
+  jsonMode = true,
+  rateRetry = true,
 ): Promise<string> {
+  // The full JSON Schema is embedded in the system prompt (prompt.ts), so we use
+  // the widely-supported json_object mode rather than strict json_schema (not all
+  // free providers accept it) and fall back to a plain completion if rejected.
+  // deno-lint-ignore no-explicit-any
+  const payload: Record<string, any> = { model, messages, temperature: 0.2 };
+  if (jsonMode) payload.response_format = { type: "json_object" };
+
   const res = await fetch(OPENROUTER_URL, {
     method: "POST",
     headers: {
@@ -59,21 +68,24 @@ async function callOpenRouter(
       "HTTP-Referer": "https://vera.local",
       "X-Title": "VERA Rebuild Cost",
     },
-    body: JSON.stringify({
-      model,
-      messages,
-      temperature: 0.2,
-      response_format: {
-        type: "json_schema",
-        json_schema: { name: "rebuild_cost_estimate", strict: true, schema: REBUILD_COST_SCHEMA },
-      },
-    }),
+    body: JSON.stringify(payload),
   });
 
   const data = await res.json().catch(() => null);
   if (!res.ok) {
-    const detail = data?.error?.message ?? data?.error ?? `OpenRouter HTTP ${res.status}`;
-    throw new Error(typeof detail === "string" ? detail : JSON.stringify(detail));
+    // A free provider that rejects response_format -> drop it and retry (the
+    // schema is already embedded in the prompt).
+    if (jsonMode && (res.status === 400 || res.status === 422)) {
+      return callOpenRouter(apiKey, model, messages, false, rateRetry);
+    }
+    // Free-tier upstream rate limit -> wait the suggested delay once, then retry.
+    if (res.status === 429 && rateRetry) {
+      const wait = Math.min(Number(data?.error?.metadata?.retry_after_seconds) || 5, 25);
+      await new Promise((r) => setTimeout(r, Math.ceil((wait + 1) * 1000)));
+      return callOpenRouter(apiKey, model, messages, jsonMode, false);
+    }
+    const errObj = data?.error ?? data ?? { message: `OpenRouter HTTP ${res.status}` };
+    throw new Error(typeof errObj === "string" ? errObj : JSON.stringify(errObj));
   }
   const content = data?.choices?.[0]?.message?.content;
   if (typeof content !== "string" || !content.trim()) {
