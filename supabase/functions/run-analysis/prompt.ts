@@ -1,8 +1,9 @@
 // Builds the chat messages for the rebuild-cost estimate from a VERA asset.
-// The JSON shape is enforced by response_format (json_schema), so the system
-// prompt focuses on HOW to estimate well, not on formatting.
+// The full JSON Schema is embedded in the system prompt (the call uses
+// json_object mode, not strict json_schema, for free-provider compatibility),
+// so the prompt covers both HOW to estimate and the exact output shape.
 
-import { SCHEMA_VERSION } from "./schema.ts";
+import { REBUILD_COST_SCHEMA, SCHEMA_VERSION } from "./schema.ts";
 
 export interface AssetContext {
   id: string;
@@ -32,7 +33,10 @@ This is for administrative prioritization — not procurement, insurance, or qua
 - Decompose spend into line_items with accurate categories (demolition, hard_cost, utilities, soft_cost, dependency, contingency, resilience, other).
 - Prefer honest ranges over false precision. Confidence is "low" unless measured area and a damage survey are provided.
 - Write a plain-language summary (3-6 sentences) covering the asset, viability, headline expected program cost with range, main blocking dependencies, and confidence.
-- schema_version must be exactly "${SCHEMA_VERSION}". Return ONLY the JSON object — no prose, no Markdown.`;
+- schema_version must be exactly "${SCHEMA_VERSION}". Return ONLY the JSON object — no prose, no Markdown.
+
+The JSON object MUST conform to this JSON Schema:
+${JSON.stringify(REBUILD_COST_SCHEMA)}`;
 
 function depNames(edges?: Array<Record<string, unknown>> | null): string {
   if (!Array.isArray(edges) || edges.length === 0) return "none recorded";
