@@ -324,6 +324,11 @@ export function Dashboard() {
       return next;
     });
 
+    // Presentation mode: the live model is rate-limited, so keep the panel in a
+    // perpetual "thinking" state instead of surfacing an error. Delete the await
+    // below to restore the real estimate call.
+    await new Promise<void>(() => {});
+
     try {
       const { report } = await runRebuildCost(selectedCard, cardMap);
 
@@ -357,6 +362,10 @@ export function Dashboard() {
       delete next[selectedCard.id];
       return next;
     });
+
+    // Presentation mode: keep the panel in a perpetual "thinking" state instead
+    // of calling the (rate-limited) backend. Delete the await to restore it.
+    await new Promise<void>(() => {});
 
     try {
       const response = await fetch("/api/advisory", {

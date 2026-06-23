@@ -3,20 +3,15 @@
  * / surface / text tokens). Follows the shadcn chart approach — a thin, themed
  * wrapper over Recharts — adapted to VERA's design system instead of shadcn's.
  *
+ * We measure the container width ourselves and render a fixed-size <BarChart>
+ * rather than using <ResponsiveContainer>, which renders blank in some flex/grid
+ * + React 18 StrictMode setups (the cause of the empty chart boxes).
+ *
  * Each chart takes a RebuildCostReport and reads it directly, so they render the
  * exact numbers the agent produced.
  */
-import type { ReactElement } from "react";
-import {
-  Bar,
-  BarChart,
-  Cell,
-  ErrorBar,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
+import { useEffect, useRef, useState } from "react";
+import { Bar, BarChart, Cell, Tooltip, XAxis, YAxis } from "recharts";
 import type { RebuildCostReport } from "@/components/dashboard/AssetCardPanel";
 
 const VIZ = [
@@ -38,6 +33,8 @@ const CATEGORY_LABELS: Record<string, string> = {
   resilience: "Resilience",
   other: "Other",
 };
+
+const CHART_HEIGHT = 200;
 
 function fmtCompact(value: number, currency = "USD"): string {
   try {
@@ -65,21 +62,26 @@ interface Row {
   expected: number;
   low: number;
   high: number;
-  /** [expected-low, high-expected] absolute offsets for the Recharts ErrorBar whisker. */
-  err: [number, number];
 }
 
-function ChartFrame({ title, children }: { title: string; children: ReactElement }) {
-  return (
-    <div className="rounded-md border border-border-subtle bg-surface-1 p-3">
-      <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.08em] text-text-muted">{title}</p>
-      <div className="h-[200px] w-full">
-        <ResponsiveContainer width="100%" height="100%">
-          {children}
-        </ResponsiveContainer>
-      </div>
-    </div>
-  );
+const toRow = (label: string, low: number, expected: number, high: number): Row => ({ label, low, expected, high });
+
+/** Track the live width of a block so we can give Recharts an explicit pixel size. */
+function useWidth() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState(0);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const ro = new ResizeObserver((entries) => {
+      const w = entries[0]?.contentRect.width ?? 0;
+      if (w > 0) setWidth(w);
+    });
+    ro.observe(el);
+    setWidth(el.getBoundingClientRect().width);
+    return () => ro.disconnect();
+  }, []);
+  return { ref, width };
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -99,42 +101,49 @@ function TooltipContent({ active, payload, currency }: any) {
   );
 }
 
-function HBarChart({ rows, currency }: { rows: Row[]; currency: string }) {
+/** A titled, self-measuring horizontal bar chart of {expected} per row. */
+function BarFrame({ title, rows, currency }: { title: string; rows: Row[]; currency: string }) {
+  const { ref, width } = useWidth();
+  if (rows.length === 0) return null;
   return (
-    <BarChart data={rows} layout="vertical" margin={{ top: 4, right: 16, bottom: 4, left: 8 }}>
-      <XAxis
-        type="number"
-        tickFormatter={(v) => fmtCompact(Number(v), currency)}
-        tick={{ fill: "var(--color-text-muted)", fontSize: 11 }}
-        stroke="var(--color-border-subtle)"
-      />
-      <YAxis
-        type="category"
-        dataKey="label"
-        width={92}
-        tick={{ fill: "var(--color-text-secondary)", fontSize: 11 }}
-        stroke="var(--color-border-subtle)"
-      />
-      <Tooltip cursor={{ fill: "var(--color-surface-2)" }} content={<TooltipContent currency={currency} />} />
-      <Bar dataKey="expected" radius={[0, 4, 4, 0]} barSize={16}>
-        {rows.map((_, i) => (
-          <Cell key={i} fill={VIZ[i % VIZ.length]} />
-        ))}
-        <ErrorBar dataKey="err" width={4} strokeWidth={1.5} stroke="var(--color-text-muted)" direction="x" />
-      </Bar>
-    </BarChart>
+    <div className="rounded-md border border-border-subtle bg-surface-1 p-3">
+      <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.08em] text-text-muted">{title}</p>
+      <div ref={ref} className="w-full" style={{ height: CHART_HEIGHT }}>
+        {width > 0 && (
+          <BarChart
+            width={width}
+            height={CHART_HEIGHT}
+            data={rows}
+            layout="vertical"
+            margin={{ top: 4, right: 18, bottom: 4, left: 8 }}
+          >
+            <XAxis
+              type="number"
+              tickFormatter={(v) => fmtCompact(Number(v), currency)}
+              tick={{ fill: "var(--color-text-muted)", fontSize: 11 }}
+              stroke="var(--color-border-subtle)"
+            />
+            <YAxis
+              type="category"
+              dataKey="label"
+              width={96}
+              tick={{ fill: "var(--color-text-secondary)", fontSize: 11 }}
+              stroke="var(--color-border-subtle)"
+            />
+            <Tooltip cursor={{ fill: "var(--color-surface-2)" }} content={<TooltipContent currency={currency} />} />
+            <Bar dataKey="expected" radius={[0, 4, 4, 0]} barSize={18} isAnimationActive={false}>
+              {rows.map((_, i) => (
+                <Cell key={i} fill={VIZ[i % VIZ.length]} />
+              ))}
+            </Bar>
+          </BarChart>
+        )}
+      </div>
+    </div>
   );
 }
 
-const toRow = (label: string, low: number, expected: number, high: number): Row => ({
-  label,
-  low,
-  expected,
-  high,
-  err: [Math.max(0, expected - low), Math.max(0, high - expected)],
-});
-
-/** Spend grouped by line-item category (expected, with low–high whiskers). */
+/** Spend grouped by line-item category. */
 export function CostByCategoryChart({ report }: { report: RebuildCostReport }) {
   const currency = report.total_program_cost?.currency || report.target_cost?.currency || "USD";
   const byCat = new Map<string, { low: number; expected: number; high: number }>();
@@ -148,41 +157,29 @@ export function CostByCategoryChart({ report }: { report: RebuildCostReport }) {
   const rows = [...byCat.entries()]
     .map(([cat, v]) => toRow(CATEGORY_LABELS[cat] ?? cat, v.low, v.expected, v.high))
     .sort((a, b) => b.expected - a.expected);
-
-  if (rows.length === 0) return null;
-  return (
-    <ChartFrame title="Cost structure by category">
-      <HBarChart rows={rows} currency={currency} />
-    </ChartFrame>
-  );
+  return <BarFrame title="Cost structure by category" rows={rows} currency={currency} />;
 }
 
-/** Target rebuild cost vs each blocking dependency (expected, with ranges). */
+/** Target rebuild cost vs each blocking dependency. */
 export function TargetVsDependenciesChart({ report }: { report: RebuildCostReport }) {
   const currency = report.target_cost?.currency || "USD";
   const rows: Row[] = [
     toRow(report.target?.name || "Target", report.target_cost.low, report.target_cost.expected, report.target_cost.high),
     ...(report.dependencies ?? []).map((d) => toRow(d.name, d.cost.low, d.cost.expected, d.cost.high)),
   ];
-  return (
-    <ChartFrame title="Target vs blocking dependencies">
-      <HBarChart rows={rows} currency={currency} />
-    </ChartFrame>
-  );
+  return <BarFrame title="Target vs blocking dependencies" rows={rows} currency={currency} />;
 }
 
-/** Low / expected / high for the target and the full program. */
+/** Program cost spread shown as Low / Expected / High bars. */
 export function CostRangeChart({ report }: { report: RebuildCostReport }) {
   const currency = report.total_program_cost?.currency || "USD";
+  const tp = report.total_program_cost;
   const rows: Row[] = [
-    toRow("Target", report.target_cost.low, report.target_cost.expected, report.target_cost.high),
-    toRow("Program", report.total_program_cost.low, report.total_program_cost.expected, report.total_program_cost.high),
+    toRow("Low", tp.low, tp.low, tp.low),
+    toRow("Expected", tp.expected, tp.expected, tp.expected),
+    toRow("High", tp.high, tp.high, tp.high),
   ];
-  return (
-    <ChartFrame title="Cost range (low · expected · high)">
-      <HBarChart rows={rows} currency={currency} />
-    </ChartFrame>
-  );
+  return <BarFrame title="Program cost range (low · expected · high)" rows={rows} currency={currency} />;
 }
 
 /** All three charts stacked — used in the Analyses detail and the cost modal. */
