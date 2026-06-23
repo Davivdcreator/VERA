@@ -194,3 +194,23 @@ export function loadOsmBuildings(): Promise<OSMBuildingsConstructor> {
 export function __resetOsmBuildingsLoader(): void {
   cached = null;
 }
+
+/**
+ * Full reset: clears the cached promise AND the OSMB global.
+ * Call this on component unmount if the map is being destroyed and you
+ * plan to create a new OSMB instance on the same page.
+ * Without this, OSMB's internal global WebGL state can persist and cause
+ * context loss / flickering on the next map instance after client-side
+ * navigation between pages that both use OSMB.
+ */
+export function __resetOsmBuildings(): void {
+  cached = null;
+  // @ts-expect-error — deliberately null out the global to force re-init
+  window.OSMBuildings = undefined;
+  // Also remove the injected script so it can be re-added fresh
+  const script = document.getElementById(JS_ID);
+  if (script) script.remove();
+  // Remove the CSS too
+  const css = document.getElementById(CSS_ID);
+  if (css) css.remove();
+}
