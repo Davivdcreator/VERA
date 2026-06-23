@@ -76,6 +76,13 @@ interface ProjectedZone extends DamageZone {
   radiusPx: number;
 }
 
+interface MarkerHitTarget {
+  id: string;
+  x: number;
+  y: number;
+  radius: number;
+}
+
 interface ProjectedGraphNode extends MapGraphNode {
   x: number;
   y: number;
@@ -117,6 +124,8 @@ export interface OsmBuildingsMapProps {
 
 const CLAMP_THROTTLE_MS = 80;
 const CAMERA_FOCUS_ANIMATION_MS = 850;
+const CANVAS_MARKER_THRESHOLD = 1000;
+const LARGE_MARKER_DRAW_THROTTLE_MS = 0;
 
 function easeOutCubic(t: number): number {
   return 1 - Math.pow(1 - t, 3);
@@ -182,6 +191,9 @@ export function OsmBuildingsMap({
   // path) so they track the map every frame and never lag behind it — see the
   // rAF loop in the init effect.
   const markerEls = useRef<Map<string, HTMLDivElement>>(new Map());
+  const markerCanvasRef = useRef<HTMLCanvasElement | null>(null);
+  const markerHitTargetsRef = useRef<MarkerHitTarget[]>([]);
+  const lastLargeMarkerDrawRef = useRef(0);
   const [projectedZones, setProjectedZones] = useState<ProjectedZone[]>([]);
   const [projectedGraph, setProjectedGraph] = useState<ProjectedGraphOverlay | null>(null);
   // Hides the WebGL canvas behind a neutral cover until OSMB fires its first
@@ -229,6 +241,7 @@ export function OsmBuildingsMap({
     let onChange: (() => void) | null = null;
     let onLoad: (() => void) | null = null;
     let positionMarkers: (() => void) | null = null;
+    let drawCanvasMarkers: ((force?: boolean) => void) | null = null;
     let projectZones: (() => void) | null = null;
     let projectGraph: (() => void) | null = null;
     let rafId = 0;
@@ -341,7 +354,62 @@ export function OsmBuildingsMap({
         };
         map.on("change", onChange);
 
-        // ── Marker positioning (direct DOM writes — no React state) ───────
+        // ── Marker positioning (direct DOM writes for small sets; canvas for
+        // full-database marker sets) ───────────────────────────────────────
+        drawCanvasMarkers = (force = false) => {
+          if (!map) return;
+          const canvas = markerCanvasRef.current;
+          if (!canvas) return;
+          const ms = markersRef.current;
+          const ctx = canvas.getContext("2d");
+          if (!ctx) return;
+
+          let size: { width: number; height: number };
+          try {
+            size = map.getSize();
+          } catch {
+            return;
+          }
+
+          const now = performance.now();
+          if (!force && now - lastLargeMarkerDrawRef.current < LARGE_MARKER_DRAW_THROTTLE_MS) {
+            return;
+          }
+          lastLargeMarkerDrawRef.current = now;
+
+          const dpr = Math.max(1, window.devicePixelRatio || 1);
+          const width = Math.max(1, Math.floor(size.width));
+          const height = Math.max(1, Math.floor(size.height));
+          const canvasWidth = Math.floor(width * dpr);
+          const canvasHeight = Math.floor(height * dpr);
+          if (canvas.width !== canvasWidth || canvas.height !== canvasHeight) {
+            canvas.width = canvasWidth;
+            canvas.height = canvasHeight;
+            canvas.style.width = `${width}px`;
+            canvas.style.height = `${height}px`;
+          }
+
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+          ctx.clearRect(0, 0, width, height);
+          markerHitTargetsRef.current = [];
+          if (!ms || ms.length === 0) return;
+
+          for (const m of ms) {
+            const point = projectMapPoint(map, m.lat, m.lng);
+            if (!point || !projectedPointVisible(point, size, 20)) continue;
+
+            const radius = 3.2;
+            ctx.beginPath();
+            ctx.arc(point.x, point.y, radius, 0, Math.PI * 2);
+            ctx.fillStyle = m.color;
+            ctx.fill();
+            ctx.lineWidth = 1.25;
+            ctx.strokeStyle = "rgba(255,255,255,0.86)";
+            ctx.stroke();
+            markerHitTargetsRef.current.push({ id: m.id, x: point.x, y: point.y, radius: 8 });
+          }
+        };
+
         // Each pin's position is written straight to its node's `transform`, so
         // pins never lag a frame behind the map (the old React-state path made
         // them "swim"). transform writes don't trigger layout, so this is cheap.
@@ -349,6 +417,19 @@ export function OsmBuildingsMap({
           if (!map) return;
           const ms = markersRef.current;
           if (!ms || ms.length === 0) return;
+
+          if (ms.length > CANVAS_MARKER_THRESHOLD) {
+            drawCanvasMarkers?.();
+            return;
+          }
+
+          const canvas = markerCanvasRef.current;
+          if (canvas) {
+            const ctx = canvas.getContext("2d");
+            ctx?.clearRect(0, 0, canvas.width, canvas.height);
+          }
+          markerHitTargetsRef.current = [];
+
           let size: { width: number; height: number };
           try {
             size = map.getSize();
@@ -494,6 +575,7 @@ export function OsmBuildingsMap({
 
   // Re-project when the marker set changes (no map rebuild).
   useEffect(() => {
+    lastLargeMarkerDrawRef.current = 0;
     projectRef.current?.();
   }, [markers]);
 
@@ -608,8 +690,30 @@ export function OsmBuildingsMap({
     }
   }, [showBuildings]);
 
+  const useCanvasMarkers = Boolean(markers && markers.length > CANVAS_MARKER_THRESHOLD);
+
+  const handleMapClickCapture = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (!useCanvasMarkers) return;
+    if (!onMarkerClick) return;
+
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    let best: { id: string; distance: number } | null = null;
+
+    for (const hit of markerHitTargetsRef.current) {
+      const distance = Math.hypot(hit.x - x, hit.y - y);
+      if (distance <= hit.radius && (!best || distance < best.distance)) {
+        best = { id: hit.id, distance };
+      }
+    }
+
+    if (best) onMarkerClick(best.id);
+  };
+
   return (
     <div
+      onClickCapture={handleMapClickCapture}
       className={`relative h-full w-full ${className}`}
       style={{ minHeight: 240 }}
     >
@@ -762,10 +866,19 @@ export function OsmBuildingsMap({
         </div>
       )}
 
+      {/* High-volume marker mode: one canvas for the full infrastructure DB. */}
+      {useCanvasMarkers && (
+        <canvas
+          ref={markerCanvasRef}
+          className="pointer-events-none absolute inset-0 z-[5]"
+          aria-label="Infrastructure asset markers"
+        />
+      )}
+
       {/* Clickable, state-colored asset pins. Each node is positioned by the rAF
           loop via `transform` (left/top fixed at 0,0) so it tracks the map with
           no React-state lag. Hidden until first positioned. */}
-      {markers && markers.length > 0 && (
+      {!useCanvasMarkers && markers && markers.length > 0 && (
         <div className="pointer-events-none absolute inset-0 z-[5] overflow-hidden">
           {markers.map((m) => (
             <div
