@@ -1,31 +1,23 @@
 /**
  * Dashboard — VERA command center. DESIGN_SYSTEM.md §5.
  *
- * Layout (main content, column 2 of the shell):
- *   1. Map (centerpiece)   — ONE unified Google3DMap, full width
- *   2. Support row         — Repair Priorities table | Live Alerts feed
+ * Layout:
+ *   Full-screen map surface with floating controls and selected-asset details.
  *
  * All asset data flows from loadAssetCards() — nothing hardcoded here.
  * Supabase is used when configured; otherwise falls back to cards.json.
  */
 import { useState, useEffect, useMemo } from "react";
-import { Panel } from "@/components/ui/Panel";
-import { IconButton } from "@/components/ui/IconButton";
-import { MoreHorizontal } from "lucide-react";
 import { MapPanel } from "@/components/dashboard/MapPanel";
-import type { MapMode } from "@/components/dashboard/MapPanel";
-import { RepairPrioritiesTable } from "@/components/dashboard/RepairPrioritiesTable";
-import { LiveAlertsFeed } from "@/components/dashboard/LiveAlertsFeed";
+import type { MapMode, MapObjectSearchItem } from "@/components/dashboard/MapPanel";
 import { AssetCardPanel } from "@/components/dashboard/AssetCardPanel";
-import type { RebuildCostReport } from "@/components/dashboard/AssetCardPanel";
-import { DamageDetectionsPanel } from "@/components/dashboard/DamageDetectionsPanel";
+import type { AdvisoryReport, RebuildCostReport } from "@/components/dashboard/AssetCardPanel";
 import { STATE_COLOR, loadAssetCards, cardsToMarkers, loadDamageEvents } from "@/lib/data/loadCards";
 import type { AssetCard } from "@/lib/data/types";
 import type { DamageEvent, DamageZone } from "@/lib/data/damage";
 import type { MapGraphOverlay } from "@/lib/osmb/OsmBuildingsMap";
 import { REGION } from "@/config/region";
 import type { MapLegendProps } from "@/components/ui/MapLegend";
-import type { RepairPriority, AlertEvent } from "@/data/dashboardData";
 
 /* ─── legend (stable ref) ───────────────────────────────────────────────── */
 
@@ -40,65 +32,49 @@ const STATE_LEGEND: MapLegendProps = {
 };
 
 const RELATIONSHIP_GRAPH_DEPTH = 2;
+const REBUILD_COST_STORAGE_KEY = "vera.rebuildCostReports.v1";
+const ADVISORY_STORAGE_KEY = "vera.advisoryReports.v1";
 
-interface AdvisorySummary {
-  bestNextAction: string;
-  findingsCount: number;
-  recommendationsCount: number;
-  topFinding?: string;
-  topRecommendation?: string;
-}
-
-interface AdvisoryApiResponse {
-  findings?: Array<{ title?: string }>;
-  recommendations?: Array<{ action?: string }>;
-  decision_support?: {
-    best_next_action?: string;
-  };
-}
-
-/* ─── derive table rows + alert events from cards ────────────────────────── */
-
-/** Map an AssetCard to a RepairPriority table row. */
-function cardToRepairRow(card: AssetCard): RepairPriority {
-  const priority = Math.round(card.criticality * 100);
-  const confidence = Math.round(card.state_confidence * 100);
-  return {
-    id:       card.id,
-    asset:    card.name,
-    district: card.zones[0] ?? "Kyiv",
-    state:    card.status,
-    priority,
-    confidence,
-    eta:      card.status === "operational" ? "Scheduled" : card.status === "unknown" ? "—" : `${Math.round((1 - card.criticality) * 20 + 2)}h`,
-  };
-}
-
-/** Flatten evidence from non-operational cards into AlertEvent rows. */
-function cardsToAlerts(cards: AssetCard[]): AlertEvent[] {
-  const nonOp = cards.filter((c) => c.status !== "operational");
-  const events: AlertEvent[] = [];
-
-  for (const card of nonOp) {
-    card.evidence.forEach((ev, i) => {
-      events.push({
-        id:      `${card.id}-${ev.source}-${i}`,
-        time:    ev.ts
-          ? new Date(ev.ts).toLocaleTimeString("uk-UA", { hour: "2-digit", minute: "2-digit", second: "2-digit" })
-          : "--:--:--",
-        asset:   card.name,
-        message: ev.detail,
-        state:   card.status,
-        live:    card.status === "offline",
-      });
-    });
+function loadStoredCostReports(): Record<string, RebuildCostReport> {
+  try {
+    const raw = window.localStorage.getItem(REBUILD_COST_STORAGE_KEY);
+    if (!raw) return {};
+    const parsed = JSON.parse(raw);
+    return parsed && typeof parsed === "object" && !Array.isArray(parsed)
+      ? parsed as Record<string, RebuildCostReport>
+      : {};
+  } catch {
+    return {};
   }
+}
 
-  // Sort: offline first, then degraded, then unknown; within each by asset name.
-  const ORDER = { offline: 0, degraded: 1, unknown: 2, operational: 3 };
-  return events
-    .sort((a, b) => ORDER[a.state] - ORDER[b.state])
-    .slice(0, 20);
+function storeCostReports(reports: Record<string, RebuildCostReport>) {
+  try {
+    window.localStorage.setItem(REBUILD_COST_STORAGE_KEY, JSON.stringify(reports));
+  } catch (error) {
+    console.warn("[VERA] Failed to persist rebuild cost reports:", error);
+  }
+}
+
+function loadStoredAdvisories(): Record<string, AdvisoryReport> {
+  try {
+    const raw = window.localStorage.getItem(ADVISORY_STORAGE_KEY);
+    if (!raw) return {};
+    const parsed = JSON.parse(raw);
+    return parsed && typeof parsed === "object" && !Array.isArray(parsed)
+      ? parsed as Record<string, AdvisoryReport>
+      : {};
+  } catch {
+    return {};
+  }
+}
+
+function storeAdvisories(advisories: Record<string, AdvisoryReport>) {
+  try {
+    window.localStorage.setItem(ADVISORY_STORAGE_KEY, JSON.stringify(advisories));
+  } catch (error) {
+    console.warn("[VERA] Failed to persist advisory reports:", error);
+  }
 }
 
 function buildRelationshipGraph(
@@ -244,16 +220,16 @@ export function Dashboard() {
   const [loading, setLoading]           = useState(true);
   const [selectedId, setSelectedId]     = useState<string | null>(null);
   const [damageEvents, setDamageEvents] = useState<DamageEvent[]>([]);
-  const [damageLoading, setDamageLoading] = useState(true);
   const [mapFocus, setMapFocus]         = useState<{ lat: number; lng: number; zoom?: number } | null>(null);
   const [focusedDamageId, setFocusedDamageId] = useState<string | null>(null);
-  const [costReports, setCostReports] = useState<Record<string, RebuildCostReport>>({});
+  const [costReports, setCostReports] = useState<Record<string, RebuildCostReport>>(() => loadStoredCostReports());
   const [costErrors, setCostErrors] = useState<Record<string, string>>({});
   const [costLoadingId, setCostLoadingId] = useState<string | null>(null);
   const [costDialogId, setCostDialogId] = useState<string | null>(null);
-  const [advisories, setAdvisories] = useState<Record<string, AdvisorySummary>>({});
+  const [advisories, setAdvisories] = useState<Record<string, AdvisoryReport>>(() => loadStoredAdvisories());
   const [advisoryErrors, setAdvisoryErrors] = useState<Record<string, string>>({});
   const [advisoryLoadingId, setAdvisoryLoadingId] = useState<string | null>(null);
+  const [advisoryDialogId, setAdvisoryDialogId] = useState<string | null>(null);
 
   // Load cards once on mount.
   useEffect(() => {
@@ -276,23 +252,34 @@ export function Dashboard() {
   // Load damage events once on mount.
   useEffect(() => {
     let cancelled = false;
-    setDamageLoading(true);
     loadDamageEvents()
       .then((data) => {
         if (!cancelled) {
           setDamageEvents(data);
-          setDamageLoading(false);
         }
       })
       .catch((err) => {
         console.error("[VERA] loadDamageEvents failed:", err);
-        if (!cancelled) setDamageLoading(false);
       });
     return () => { cancelled = true; };
   }, []);
 
   // Stable marker array derived from cards.
   const markers = useMemo(() => cardsToMarkers(cards), [cards]);
+
+  // Searchable object list for the map overlay.
+  const mapSearchItems = useMemo<MapObjectSearchItem[]>(
+    () =>
+      cards.map((card) => ({
+        id: card.id,
+        name: card.name,
+        subtitle: card.name_native || card.zones[0] || "Kyiv",
+        type: card.type,
+        status: card.status,
+        source: card.source,
+      })),
+    [cards],
+  );
 
   // Derive damage zones from events (projection-only fields).
   const damageZones = useMemo<DamageZone[]>(
@@ -319,22 +306,6 @@ export function Dashboard() {
     [selectedId, cardMap],
   );
 
-  // Repair priority rows: sort by criticality desc, take top 8.
-  const repairRows = useMemo<RepairPriority[]>(
-    () =>
-      [...cards]
-        .sort((a, b) => b.criticality - a.criticality)
-        .slice(0, 8)
-        .map(cardToRepairRow),
-    [cards],
-  );
-
-  // Alert events derived from non-operational cards' evidence.
-  const alertEvents = useMemo<AlertEvent[]>(
-    () => cardsToAlerts(cards),
-    [cards],
-  );
-
   // Selected card (resolved from id).
   const selectedCard = selectedId != null ? cardMap.get(selectedId) ?? null : null;
   const selectAsset = (id: string) => {
@@ -348,6 +319,11 @@ export function Dashboard() {
 
   const calculateSelectedCost = async () => {
     if (!selectedCard) return;
+
+    if (costReports[selectedCard.id]) {
+      setCostDialogId(selectedCard.id);
+      return;
+    }
 
     setCostLoadingId(selectedCard.id);
     setCostErrors((current) => {
@@ -378,7 +354,11 @@ export function Dashboard() {
         throw new Error("Cost calculation returned no estimate.");
       }
 
-      setCostReports((current) => ({ ...current, [selectedCard.id]: data }));
+      setCostReports((current) => {
+        const next = { ...current, [selectedCard.id]: data };
+        storeCostReports(next);
+        return next;
+      });
       setCostDialogId(selectedCard.id);
     } catch (error) {
       setCostErrors((current) => ({
@@ -392,6 +372,11 @@ export function Dashboard() {
 
   const runSelectedAdvisory = async () => {
     if (!selectedCard) return;
+
+    if (advisories[selectedCard.id]) {
+      setAdvisoryDialogId(selectedCard.id);
+      return;
+    }
 
     setAdvisoryLoadingId(selectedCard.id);
     setAdvisoryErrors((current) => {
@@ -412,27 +397,25 @@ export function Dashboard() {
           agent: "auto",
         }),
       });
-      const data = await response.json() as AdvisoryApiResponse & { error?: string; detail?: string };
+      const data = await response.json() as AdvisoryReport & { error?: string; detail?: string };
 
       if (!response.ok) {
         throw new Error(data.detail || data.error || "Advisory failed.");
       }
 
-      const bestNextAction = data.decision_support?.best_next_action;
-      if (!bestNextAction) {
+      if (!data.decision_support?.best_next_action) {
         throw new Error("Advisory returned no next action.");
       }
 
-      setAdvisories((current) => ({
-        ...current,
-        [selectedCard.id]: {
-          bestNextAction,
-          findingsCount: data.findings?.length ?? 0,
-          recommendationsCount: data.recommendations?.length ?? 0,
-          topFinding: data.findings?.[0]?.title,
-          topRecommendation: data.recommendations?.[0]?.action,
-        },
-      }));
+      setAdvisories((current) => {
+        const next = {
+          ...current,
+          [selectedCard.id]: data,
+        };
+        storeAdvisories(next);
+        return next;
+      });
+      setAdvisoryDialogId(selectedCard.id);
     } catch (error) {
       setAdvisoryErrors((current) => ({
         ...current,
@@ -444,114 +427,59 @@ export function Dashboard() {
   };
 
   return (
-    <div className="mx-auto flex w-full max-w-[1800px] flex-col gap-4 p-4 sm:p-4 lg:gap-6 lg:p-6">
-      {/* 1 — Map (centerpiece) */}
-      <section
-        aria-label="Infrastructure map"
-        className="relative h-[calc(100vh-2rem)] min-h-[560px] lg:h-[calc(100vh-3rem)] lg:min-h-[720px]"
-      >
-        {loading && (
-          <div className="pointer-events-none absolute inset-0 z-30 flex items-center justify-center">
-            <span className="rounded-md border border-border-subtle bg-surface-overlay px-4 py-2 text-sm font-medium text-text-muted backdrop-blur-md">
-              Loading assets…
-            </span>
-          </div>
-        )}
-        <MapPanel
-          title={mapMode === "3d" ? `${REGION.name} · 3D Structural` : `${REGION.name} · 2D Tactical`}
-          mode={mapMode}
-          onModeChange={setMapMode}
-          legend={STATE_LEGEND}
-          markers={markers}
-          onMarkerClick={selectAsset}
-          showBuildings={showBuildings}
-          onToggleBuildings={() => setShowBuildings((v) => !v)}
-          zones={damageZones}
-          graph={selectedGraph}
-          showDamage={showDamage}
-          onToggleDamage={() => setShowDamage((v) => !v)}
-          focus={mapFocus}
-          highlightZoneId={focusedDamageId}
-          active
+    <section aria-label="Infrastructure map" className="fixed inset-0 z-40 overflow-hidden bg-surface-0">
+      {loading && (
+        <div className="pointer-events-none absolute inset-0 z-30 flex items-center justify-center">
+          <span className="rounded-md border border-border-subtle bg-surface-overlay px-4 py-2 text-sm font-medium text-text-muted backdrop-blur-md">
+            Loading assets…
+          </span>
+        </div>
+      )}
+      <MapPanel
+        title={mapMode === "3d" ? `${REGION.name} · 3D Structural` : `${REGION.name} · 2D Tactical`}
+        mode={mapMode}
+        onModeChange={setMapMode}
+        legend={STATE_LEGEND}
+        markers={markers}
+        onMarkerClick={selectAsset}
+        showBuildings={showBuildings}
+        onToggleBuildings={() => setShowBuildings((v) => !v)}
+        zones={damageZones}
+        graph={selectedGraph}
+        showDamage={showDamage}
+        onToggleDamage={() => setShowDamage((v) => !v)}
+        focus={mapFocus}
+        searchItems={mapSearchItems}
+        onSearchSelect={selectAsset}
+        highlightZoneId={focusedDamageId}
+        active
+        className="rounded-none border-0 shadow-none"
+      />
+
+      {/* Asset card panel — overlays the right side of the full-screen map. */}
+      {selectedCard && (
+        <AssetCardPanel
+          card={selectedCard}
+          cardMap={cardMap}
+          onSelectAsset={selectAsset}
+          costReport={costReports[selectedCard.id] ?? null}
+          costLoading={costLoadingId === selectedCard.id}
+          costError={costErrors[selectedCard.id] ?? null}
+          onCalculateCost={calculateSelectedCost}
+          costDialogOpen={costDialogId === selectedCard.id}
+          onOpenCostDetails={() => setCostDialogId(selectedCard.id)}
+          onCloseCostDetails={() => setCostDialogId(null)}
+          advisoryReport={advisories[selectedCard.id] ?? null}
+          advisoryLoading={advisoryLoadingId === selectedCard.id}
+          advisoryError={advisoryErrors[selectedCard.id] ?? null}
+          onRunAdvisory={runSelectedAdvisory}
+          advisoryDialogOpen={advisoryDialogId === selectedCard.id}
+          onOpenAdvisoryDetails={() => setAdvisoryDialogId(selectedCard.id)}
+          onCloseAdvisoryDetails={() => setAdvisoryDialogId(null)}
+          onClose={() => setSelectedId(null)}
         />
-
-        {/* Asset card panel — overlays the right side of the map section */}
-        {selectedCard && (
-          <AssetCardPanel
-            card={selectedCard}
-            cardMap={cardMap}
-            costReport={costReports[selectedCard.id] ?? null}
-            costLoading={costLoadingId === selectedCard.id}
-            costError={costErrors[selectedCard.id] ?? null}
-            onCalculateCost={calculateSelectedCost}
-            costDialogOpen={costDialogId === selectedCard.id}
-            onOpenCostDetails={() => setCostDialogId(selectedCard.id)}
-            onCloseCostDetails={() => setCostDialogId(null)}
-            advisory={advisories[selectedCard.id] ?? null}
-            advisoryLoading={advisoryLoadingId === selectedCard.id}
-            advisoryError={advisoryErrors[selectedCard.id] ?? null}
-            onRunAdvisory={runSelectedAdvisory}
-            onClose={() => setSelectedId(null)}
-          />
-        )}
-      </section>
-
-      {/* 2 — Support row */}
-      <section
-        aria-label="Operations detail"
-        className="grid grid-cols-1 gap-4 lg:grid-cols-[1.4fr_1fr_1fr] lg:gap-6"
-      >
-        <Panel
-          title="Repair Priorities"
-          eyebrow="Triage queue"
-          actions={
-            <IconButton size="md" aria-label="Repair priorities options">
-              <MoreHorizontal size={18} aria-hidden="true" />
-            </IconButton>
-          }
-          flushBody
-          className="min-h-[280px]"
-        >
-          {repairRows.length > 0
-            ? <RepairPrioritiesTable rows={repairRows} />
-            : (
-              <p className="px-4 py-6 text-sm text-text-muted">
-                {loading ? "Loading…" : "No data available."}
-              </p>
-            )}
-        </Panel>
-
-        <Panel
-          title="Live Alerts"
-          eyebrow="Evidence feed"
-          actions={
-            <IconButton size="md" aria-label="Live alerts options">
-              <MoreHorizontal size={18} aria-hidden="true" />
-            </IconButton>
-          }
-          className="min-h-[280px]"
-          bodyClassName="max-h-[420px] overflow-y-auto"
-        >
-          {alertEvents.length > 0
-            ? <LiveAlertsFeed events={alertEvents} />
-            : (
-              <p className="text-sm text-text-muted">
-                {loading ? "Loading…" : "No active alerts."}
-              </p>
-            )}
-        </Panel>
-
-        <DamageDetectionsPanel
-          events={damageEvents}
-          loading={damageLoading}
-          onEventClick={(ev) => {
-            setShowDamage(true);
-            setFocusedDamageId(ev.id);
-            setMapFocus({ lat: ev.lat, lng: ev.lng, zoom: 14 });
-          }}
-        />
-      </section>
-    </div>
+      )}
+    </section>
   );
 }
 
