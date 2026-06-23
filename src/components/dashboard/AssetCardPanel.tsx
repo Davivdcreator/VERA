@@ -39,6 +39,7 @@ function kindLabel(kind: string): string {
     supplies_water:  "Supplies water",
     provides_access: "Provides access",
     feeds_heat:      "Feeds heat",
+    depends_on:      "Depends on",
     other:           "Connected to",
   };
   return MAP[kind] ?? kind;

@@ -3,6 +3,7 @@
  * Build VERA AssetCard-compatible rows from the full Kyiv infrastructure CSV.
  *
  * Input:  data/databases/pg/data/kyiv_infrastructure.csv
+ *         data/databases/lite/deps_sqlite.sql
  * Output: src/data/generated/full-infrastructure-cards.json
  */
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
@@ -11,6 +12,7 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const INPUT = join(ROOT, "data/databases/pg/data/kyiv_infrastructure.csv");
+const DEPS_INPUT = join(ROOT, "data/databases/lite/deps_sqlite.sql");
 const OUTPUT = join(ROOT, "src/data/generated/full-infrastructure-cards.json");
 
 const SERVICE_CLASS = {
@@ -141,6 +143,37 @@ function safeJson(value) {
   }
 }
 
+function depKind(value) {
+  const raw = String(value ?? "").trim();
+  if (
+    raw === "powers" ||
+    raw === "supplies_water" ||
+    raw === "provides_access" ||
+    raw === "feeds_heat" ||
+    raw === "depends_on"
+  ) {
+    return raw;
+  }
+  return "other";
+}
+
+function loadDependencies() {
+  const sql = readFileSync(DEPS_INPUT, "utf8");
+  const deps = [];
+  const pattern =
+    /INSERT INTO infrastructure_dependencies \(id, source_id, target_id, kind, weight, reason\) VALUES \('[^']+', '([^']+)', '([^']+)', '([^']+)', ([\d.]+), '[^']*'\);/g;
+  let match;
+  while ((match = pattern.exec(sql)) !== null) {
+    deps.push({
+      sourceId: match[1],
+      targetId: match[2],
+      kind: depKind(match[3]),
+      weight: Number(match[4]) || 0.5,
+    });
+  }
+  return deps;
+}
+
 const text = readFileSync(INPUT, "utf8");
 const rows = parseCsv(text);
 const header = rows.shift();
@@ -204,6 +237,37 @@ const cards = rows.flatMap((row) => {
   }];
 });
 
+const cardById = new Map(cards.map((card) => [card.id, card]));
+const dependencies = loadDependencies();
+
+for (const dep of dependencies) {
+  const dependent = cardById.get(dep.sourceId);
+  const provider = cardById.get(dep.targetId);
+  if (!dependent || !provider || dependent.id === provider.id) continue;
+
+  dependent.upstream.push({
+    assetId: provider.id,
+    kind: dep.kind,
+    weight: dep.weight,
+  });
+
+  provider.downstream.push({
+    assetId: dependent.id,
+    kind: dep.kind,
+    weight: dep.weight,
+  });
+}
+
+for (const card of cards) {
+  const fanout = card.downstream.length + card.upstream.length;
+  card.criticality_breakdown.dependency_fanout = +(Math.min(1, fanout / 20) * 0.2).toFixed(4);
+  card.criticality_breakdown.total = +Math.min(
+    1,
+    card.criticality + card.criticality_breakdown.dependency_fanout,
+  ).toFixed(4);
+  card.criticality = card.criticality_breakdown.total;
+}
+
 mkdirSync(dirname(OUTPUT), { recursive: true });
 writeFileSync(OUTPUT, `${JSON.stringify(cards, null, 2)}\n`, "utf8");
-console.log(`[build-full-infrastructure-cards] Wrote ${cards.length} cards -> ${OUTPUT}`);
+console.log(`[build-full-infrastructure-cards] Wrote ${cards.length} cards and ${dependencies.length} dependencies -> ${OUTPUT}`);

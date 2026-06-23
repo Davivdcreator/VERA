@@ -11,7 +11,7 @@
  * the pin layer, the card panel, and the map legend all read from one source.
  */
 import { supabase, isSupabaseConfigured } from "@/lib/supabase";
-import type { AssetCard, InfraStatus } from "@/lib/data/types";
+import type { AssetCard, DepEdge, DepKind, InfraStatus } from "@/lib/data/types";
 import type { MapMarker } from "@/lib/osmb/OsmBuildingsMap";
 import type { DamageEvent } from "@/lib/data/damage";
 
@@ -33,6 +33,13 @@ interface InfrastructureRow {
   real?: boolean | null;
 }
 
+interface InfrastructureDependencyRow {
+  source_id: string;
+  target_id: string;
+  kind: string;
+  weight: number | null;
+}
+
 /** Infrastructure-state → marker / UI color (hex). Single source of truth. */
 export const STATE_COLOR: Record<InfraStatus, string> = {
   operational: "#1F9D58",
@@ -47,6 +54,20 @@ function statusFromDb(value: string | null | undefined): InfraStatus {
   if (raw === "degraded" || raw === "maintenance") return "degraded";
   if (raw === "unknown") return "unknown";
   return "operational";
+}
+
+function depKind(value: string | null | undefined): DepKind {
+  const raw = String(value ?? "").trim();
+  if (
+    raw === "powers" ||
+    raw === "supplies_water" ||
+    raw === "provides_access" ||
+    raw === "feeds_heat" ||
+    raw === "depends_on"
+  ) {
+    return raw;
+  }
+  return "other";
 }
 
 function assetTypeFromSubtype(subtype: string): AssetCard["type"] {
@@ -168,6 +189,38 @@ function rowToAssetCard(row: InfrastructureRow): AssetCard {
   };
 }
 
+function addUniqueEdge(edges: DepEdge[], edge: DepEdge) {
+  if (!edges.some((e) => e.assetId === edge.assetId && e.kind === edge.kind)) {
+    edges.push(edge);
+  }
+}
+
+function attachDependencies(cards: AssetCard[], dependencies: InfrastructureDependencyRow[]) {
+  const cardById = new Map(cards.map((card) => [card.id, card]));
+
+  for (const dependency of dependencies) {
+    const dependent = cardById.get(dependency.source_id);
+    const provider = cardById.get(dependency.target_id);
+    if (!dependent || !provider || dependent.id === provider.id) continue;
+
+    const edge = {
+      kind: depKind(dependency.kind),
+      weight: dependency.weight ?? 0.5,
+    };
+
+    addUniqueEdge(dependent.upstream, {
+      assetId: provider.id,
+      ...edge,
+    });
+    addUniqueEdge(provider.downstream, {
+      assetId: dependent.id,
+      ...edge,
+    });
+  }
+
+  return cards;
+}
+
 async function loadCuratedAssetCards(): Promise<AssetCard[]> {
   const mod = await import("@/data/generated/cards.json");
   return (mod.default ?? mod) as unknown as AssetCard[];
@@ -198,7 +251,24 @@ async function loadInfrastructureFromSupabase(): Promise<AssetCard[] | null> {
     if (page.length < PAGE_SIZE) break;
   }
 
-  return rows.map(rowToAssetCard);
+  const dependencies: InfrastructureDependencyRow[] = [];
+  for (let from = 0; ; from += PAGE_SIZE) {
+    const { data, error } = await supabase
+      .from("infrastructure_dependencies")
+      .select("source_id,target_id,kind,weight")
+      .range(from, from + PAGE_SIZE - 1);
+
+    if (error) {
+      console.error("[VERA] Supabase infrastructure_dependencies fetch error:", error.message);
+      break;
+    }
+
+    const page = (data ?? []) as InfrastructureDependencyRow[];
+    dependencies.push(...page);
+    if (page.length < PAGE_SIZE) break;
+  }
+
+  return attachDependencies(rows.map(rowToAssetCard), dependencies);
 }
 
 /**

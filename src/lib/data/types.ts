@@ -20,7 +20,13 @@ export type AssetType =
 
 export type InfraStatus = "operational" | "degraded" | "offline" | "unknown";
 
-export type DepKind = "powers" | "supplies_water" | "provides_access" | "feeds_heat" | "other";
+export type DepKind =
+  | "powers"
+  | "supplies_water"
+  | "provides_access"
+  | "feeds_heat"
+  | "depends_on"
+  | "other";
 
 /** A directed dependency edge in the work-tree (references another asset's id). */
 export interface DepEdge {
