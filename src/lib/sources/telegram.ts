@@ -66,6 +66,13 @@ export interface SearchMessagesParams {
 
 const BASE_URL = 'https://tg-search.valkyrie.org.ua';
 
+function getServerEnv(name: string): string | undefined {
+  const processRef = (globalThis as {
+    process?: { env?: Record<string, string | undefined> };
+  }).process;
+  return processRef?.env?.[name];
+}
+
 /**
  * Search Telegram messages for reports mentioning a specific asset or area name.
  *
@@ -76,7 +83,7 @@ const BASE_URL = 'https://tg-search.valkyrie.org.ua';
 export async function searchMessages(
   params: SearchMessagesParams,
 ): Promise<TelegramMessage[]> {
-  const key = process.env['TELEGRAM_API_KEY'];
+  const key = getServerEnv('TELEGRAM_API_KEY');
 
   if (!key) {
     console.warn('[telegram] TELEGRAM_API_KEY not set — returning sample messages.');
@@ -118,7 +125,7 @@ export async function searchChannels(query: {
   title?: string;
   about?: string;
 }): Promise<TelegramChannel[]> {
-  const key = process.env['TELEGRAM_API_KEY'];
+  const key = getServerEnv('TELEGRAM_API_KEY');
   if (!key) {
     console.warn('[telegram] TELEGRAM_API_KEY not set — searchChannels returns [].');
     return [];

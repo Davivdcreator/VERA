@@ -56,6 +56,13 @@ export const FIRMS_SOURCE = 'VIIRS_NOAA20_NRT';
 /** Base URL for FIRMS area CSV endpoint */
 const FIRMS_BASE = 'https://firms.modaps.eosdis.nasa.gov/api/area/csv';
 
+function getServerEnv(name: string): string | undefined {
+  const processRef = (globalThis as {
+    process?: { env?: Record<string, string | undefined> };
+  }).process;
+  return processRef?.env?.[name];
+}
+
 /**
  * Fetch FIRMS thermal detections for the Kyiv region.
  *
@@ -68,7 +75,7 @@ export async function fetchFirmsDetections(
   dayRange = 1,
   date?: string,
 ): Promise<FirmsDetection[]> {
-  const key = process.env['FIRMS_MAP_KEY'];
+  const key = getServerEnv('FIRMS_MAP_KEY');
 
   if (!key) {
     console.warn('[firms] FIRMS_MAP_KEY not set — returning sample detections.');
