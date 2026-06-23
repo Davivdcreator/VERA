@@ -165,6 +165,20 @@
   }
 }
 
+/* Relationship graph edges — moving dashes imply dependency direction. */
+@keyframes vera-graph-flow {
+  from {
+    stroke-dashoffset: 18;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.vera-graph-flow-line {
+  animation: vera-graph-flow 1.4s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-pulse-live {
     animation: none;

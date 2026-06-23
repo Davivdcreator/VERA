@@ -116,6 +116,11 @@ export interface OsmBuildingsMapProps {
 }
 
 const CLAMP_THROTTLE_MS = 80;
+const CAMERA_FOCUS_ANIMATION_MS = 850;
+
+function easeOutCubic(t: number): number {
+  return 1 - Math.pow(1 - t, 3);
+}
 
 function projectMapPoint(
   map: OSMBuildingsMap,
@@ -146,6 +151,15 @@ function projectedPointVisible(
 
 function pointDistancePx(a: { x: number; y: number }, b: { x: number; y: number }): number {
   return Math.hypot(a.x - b.x, a.y - b.y);
+}
+
+function speedUpMapRender(map: OSMBuildingsMap): void {
+  const internals = map as unknown as { view?: { speedUp?: () => void } };
+  try {
+    internals.view?.speedUp?.();
+  } catch {
+    /* private render hint only; ignore if OSMB changes internals */
+  }
 }
 
 export function OsmBuildingsMap({
@@ -179,6 +193,7 @@ export function OsmBuildingsMap({
   // (which would recreate the WebGL context + a fresh Google tile session).
   const mapRef = useRef<OSMBuildingsMap | null>(null);
   const projectRef = useRef<(() => void) | null>(null);
+  const cameraAnimationRef = useRef<number | null>(null);
   const markersRef = useRef<MapMarker[] | undefined>(markers);
   markersRef.current = markers;
   const zonesRef = useRef<DamageZone[] | undefined>(zones);
@@ -259,6 +274,7 @@ export function OsmBuildingsMap({
           // idle map, nothing else would have re-triggered it (zones never drew).
           positionMarkers?.();
           projectZones?.();
+          projectGraph?.();
         };
         map.on("load", onLoad);
         // Fallback if "load" is missed (cached tiles, etc.): reveal AND project.
@@ -266,6 +282,7 @@ export function OsmBuildingsMap({
           setTilesReady(true);
           positionMarkers?.();
           projectZones?.();
+          projectGraph?.();
         }, 2500);
 
         // Ground: Google satellite (CORS-enabled) → falls back to CARTO if no key.
@@ -353,11 +370,14 @@ export function OsmBuildingsMap({
         projectRef.current = positionMarkers;
 
         // Re-position pins every frame so they stay locked to the map during
-        // pan/zoom/rotate (OSMB's `change` event can fire less often than it
-        // renders, which is what let pins lag). Runs until unmount.
+        // pan/zoom/rotate. Graph and zone overlays use the same loop so they
+        // are projected after OSMB's render frame, not from `change` events that
+        // can fire before the canvas has caught up to a programmatic camera move.
         const markerTick = () => {
           if (cancelled) return;
           positionMarkers?.();
+          if (zonesRef.current?.length) projectZones?.();
+          if (graphRef.current?.nodes.length) projectGraph?.();
           markerRaf = requestAnimationFrame(markerTick);
         };
         markerRaf = requestAnimationFrame(markerTick);
@@ -400,8 +420,6 @@ export function OsmBuildingsMap({
           setProjectedZones(next);
         };
         projectZonesRef.current = projectZones;
-        map.on("change", projectZones);
-        map.on("resize", projectZones);
 
         // ── Relationship graph projection ────────────────────────────────
         projectGraph = () => {
@@ -438,8 +456,6 @@ export function OsmBuildingsMap({
           setProjectedGraph({ nodes, edges, depth: g.depth });
         };
         projectGraphRef.current = projectGraph;
-        map.on("change", projectGraph);
-        map.on("resize", projectGraph);
 
         rafId = requestAnimationFrame(() => {
           positionMarkers?.();
@@ -466,14 +482,6 @@ export function OsmBuildingsMap({
       if (map) {
         if (onChange) map.off("change", onChange);
         if (onLoad) map.off("load", onLoad);
-        if (projectZones) {
-          map.off("change", projectZones);
-          map.off("resize", projectZones);
-        }
-        if (projectGraph) {
-          map.off("change", projectGraph);
-          map.off("resize", projectGraph);
-        }
         map.destroy();
         map = null;
       }
@@ -507,16 +515,55 @@ export function OsmBuildingsMap({
       { latitude: focus.lat, longitude: focus.lng },
       focus.zoom ?? 14,
     );
-    try {
-      map.setPosition(result.position);
-      map.setZoom(result.zoom);
-    } catch {
-      /* ignore transient setter failure */
+
+    if (cameraAnimationRef.current != null) {
+      cancelAnimationFrame(cameraAnimationRef.current);
+      cameraAnimationRef.current = null;
     }
-    // Re-project overlays immediately rather than waiting for the change event.
-    projectZonesRef.current?.();
-    projectRef.current?.();
-    projectGraphRef.current?.();
+
+    let startPosition: LatLng;
+    let startZoom: number;
+    try {
+      startPosition = map.getPosition();
+      startZoom = map.getZoom();
+    } catch {
+      return;
+    }
+
+    const startTime = performance.now();
+    speedUpMapRender(map);
+    const animate = (now: number) => {
+      const elapsed = now - startTime;
+      const t = easeOutCubic(Math.min(elapsed / CAMERA_FOCUS_ANIMATION_MS, 1));
+      const latitude =
+        startPosition.latitude + (result.position.latitude - startPosition.latitude) * t;
+      const longitude =
+        startPosition.longitude + (result.position.longitude - startPosition.longitude) * t;
+      const zoomValue = startZoom + (result.zoom - startZoom) * t;
+
+      try {
+        speedUpMapRender(map);
+        map.setPosition({ latitude, longitude });
+        map.setZoom(zoomValue);
+      } catch {
+        cameraAnimationRef.current = null;
+        return;
+      }
+
+      if (t < 1) {
+        cameraAnimationRef.current = requestAnimationFrame(animate);
+      } else {
+        cameraAnimationRef.current = null;
+      }
+    };
+
+    cameraAnimationRef.current = requestAnimationFrame(animate);
+    return () => {
+      if (cameraAnimationRef.current != null) {
+        cancelAnimationFrame(cameraAnimationRef.current);
+        cameraAnimationRef.current = null;
+      }
+    };
   }, [focus]);
 
   // Switch 2D/3D by changing tilt IN PLACE — no map rebuild, so no red re-init
@@ -669,6 +716,11 @@ export function OsmBuildingsMap({
                   strokeOpacity={opacity}
                   strokeWidth={e.kind === "powers" ? 2.4 : 1.8}
                   strokeLinecap="round"
+                  strokeDasharray={e.kind === "powers" ? "10 8" : "7 8"}
+                  className="vera-graph-flow-line"
+                  style={{
+                    animationDuration: e.kind === "powers" ? "1.15s" : "1.55s",
+                  }}
                   markerEnd="url(#vera-graph-arrow)"
                 />
               );
