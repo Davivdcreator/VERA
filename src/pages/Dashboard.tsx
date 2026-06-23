@@ -185,6 +185,17 @@ function formatCardAdvisoryContext(card: AssetCard, cardMap: Map<string, AssetCa
 
 /* ─── component ─────────────────────────────────────────────────────────── */
 
+/**
+ * Granular category key for the type filter. The top-level `type` is mostly
+ * "other", so we filter on the OSM `subtype` (pharmacy, school, bus_stop,
+ * clinic…) when present, falling back to the top-level type.
+ */
+function subtypeOf(card: AssetCard): string {
+  const sub = card.metrics?.subtype;
+  const value = typeof sub === "string" ? sub.trim() : "";
+  return value || card.type || "other";
+}
+
 export function Dashboard() {
   const [mapMode, setMapMode]           = useState<MapMode>("3d");
   const [showBuildings, setShowBuildings] = useState(true);
@@ -241,8 +252,37 @@ export function Dashboard() {
     return () => { cancelled = true; };
   }, []);
 
-  // Stable marker array derived from cards.
-  const markers = useMemo(() => cardsToMarkers(cards), [cards]);
+  // ── Asset-type filter ────────────────────────────────────────────────────
+  // Which asset types are hidden from the map (empty set = everything shown).
+  const [hiddenTypes, setHiddenTypes] = useState<Set<string>>(() => new Set());
+
+  // Categories present in the loaded data, with counts, for the header filter.
+  const assetTypes = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const card of cards) {
+      const key = subtypeOf(card);
+      counts.set(key, (counts.get(key) ?? 0) + 1);
+    }
+    return Array.from(counts, ([type, count]) => ({ type, count })).sort(
+      (a, b) => b.count - a.count,
+    );
+  }, [cards]);
+
+  const toggleAssetType = (type: string) =>
+    setHiddenTypes((prev) => {
+      const next = new Set(prev);
+      if (next.has(type)) next.delete(type);
+      else next.add(type);
+      return next;
+    });
+  const showAllAssetTypes = () => setHiddenTypes(new Set());
+  const hideAllAssetTypes = () => setHiddenTypes(new Set(assetTypes.map((t) => t.type)));
+
+  // Stable marker array derived from cards, filtered by the category filter.
+  const markers = useMemo(
+    () => cardsToMarkers(cards.filter((card) => !hiddenTypes.has(subtypeOf(card)))),
+    [cards, hiddenTypes],
+  );
 
   // Searchable object list for the map overlay.
   const mapSearchItems = useMemo<MapObjectSearchItem[]>(
@@ -430,6 +470,11 @@ export function Dashboard() {
         graph={selectedGraph}
         showDamage={showDamage}
         onToggleDamage={() => setShowDamage((v) => !v)}
+        assetTypes={assetTypes}
+        hiddenTypes={hiddenTypes}
+        onToggleType={toggleAssetType}
+        onShowAllTypes={showAllAssetTypes}
+        onHideAllTypes={hideAllAssetTypes}
         focus={mapFocus}
         searchItems={mapSearchItems}
         onSearchSelect={selectAsset}
