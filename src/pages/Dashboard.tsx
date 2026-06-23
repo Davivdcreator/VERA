@@ -13,6 +13,7 @@ import type { MapMode, MapObjectSearchItem } from "@/components/dashboard/MapPan
 import { AssetCardPanel } from "@/components/dashboard/AssetCardPanel";
 import type { AdvisoryReport, RebuildCostReport } from "@/components/dashboard/AssetCardPanel";
 import { STATE_COLOR, loadAssetCards, cardsToMarkers, loadDamageEvents } from "@/lib/data/loadCards";
+import { runRebuildCost } from "@/lib/data/analyses";
 import type { AssetCard } from "@/lib/data/types";
 import type { DamageEvent, DamageZone } from "@/lib/data/damage";
 import type { MapGraphOverlay } from "@/lib/osmb/OsmBuildingsMap";
@@ -136,37 +137,6 @@ function buildRelationshipGraph(
     edges: Array.from(edges.values()),
     depth: maxDepth,
   };
-}
-
-function formatCardCostContext(card: AssetCard, cardMap: Map<string, AssetCard>): string {
-  const upstream = card.upstream.map((edge) => {
-    const dependency = cardMap.get(edge.assetId);
-    return `${dependency?.name ?? edge.assetId} (${edge.kind}, weight ${Math.round(edge.weight * 100)}%)`;
-  });
-  const downstream = card.downstream.map((edge) => {
-    const dependent = cardMap.get(edge.assetId);
-    return `${dependent?.name ?? edge.assetId} (${edge.kind}, weight ${Math.round(edge.weight * 100)}%)`;
-  });
-
-  return [
-    `Estimate the rebuild cost for this infrastructure asset.`,
-    `Asset: ${card.name}`,
-    card.name_native ? `Native name: ${card.name_native}` : null,
-    `Type: ${card.type}`,
-    `Status: ${card.status}`,
-    `Location: ${card.lat}, ${card.lng}`,
-    card.zones.length > 0 ? `Zones: ${card.zones.join(", ")}` : null,
-    `Criticality: ${Math.round(card.criticality * 100)} / 100`,
-    `State confidence: ${Math.round(card.state_confidence * 100)}%`,
-    `Population at risk: ${card.population_affected.toLocaleString("en-US")}`,
-    card.radius_m != null ? `Impact radius: ${card.radius_m} m` : null,
-    `Metrics: ${JSON.stringify(card.metrics)}`,
-    upstream.length > 0 ? `Blocking/upstream dependencies to evaluate first: ${upstream.join("; ")}` : null,
-    downstream.length > 0 ? `Downstream assets affected by this rebuild: ${downstream.join("; ")}` : null,
-    card.evidence.length > 0
-      ? `Damage evidence: ${card.evidence.map((ev) => `${ev.source}: ${ev.detail}`).join(" | ")}`
-      : null,
-  ].filter(Boolean).join("\n");
 }
 
 function formatCardAdvisoryContext(card: AssetCard, cardMap: Map<string, AssetCard>): string {
@@ -333,29 +303,10 @@ export function Dashboard() {
     });
 
     try {
-      const response = await fetch("/api/rebuild-cost", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          prompt: formatCardCostContext(selectedCard, cardMap),
-          target: selectedCard.name,
-          currency: "USD",
-          basisDate: new Date().toISOString().slice(0, 10),
-          agent: "auto",
-        }),
-      });
-      const data = await response.json() as RebuildCostReport & { error?: string; detail?: string };
-
-      if (!response.ok) {
-        throw new Error(data.detail || data.error || "Cost calculation failed.");
-      }
-
-      if (!data.total_program_cost && !data.target_cost) {
-        throw new Error("Cost calculation returned no estimate.");
-      }
+      const { report } = await runRebuildCost(selectedCard, cardMap);
 
       setCostReports((current) => {
-        const next = { ...current, [selectedCard.id]: data };
+        const next = { ...current, [selectedCard.id]: report };
         storeCostReports(next);
         return next;
       });
