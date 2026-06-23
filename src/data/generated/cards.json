@@ -8,13 +8,13 @@
     "type": "hospital",
     "lat": 50.549219,
     "lng": 30.344429,
-    "criticality": 0.349,
+    "criticality": 0.67,
     "criticality_breakdown": {
-      "population_component": 0.029,
+      "population_component": 0.35,
       "service_class": 0.3,
       "dependency_fanout": 0.02,
       "capacity_component": 0,
-      "total": 0.349
+      "total": 0.67
     },
     "metrics": {
       "beds": "unknown",
@@ -38,16 +38,16 @@
       "website": "https://puschavodica.com.ua/"
     },
     "status": "operational",
-    "state_confidence": 0.939,
+    "state_confidence": 0.757,
     "evidence": [
       {
         "source": "sample",
         "detail": "No damage signals detected for Medical Rehabilitation Center",
-        "ts": "2026-06-22T15:42:28.351Z"
+        "ts": "2026-06-23T09:08:12.424Z"
       }
     ],
     "radius_m": 2000,
-    "population_affected": 41469,
+    "population_affected": 552197,
     "zones": [
       "Obolon"
     ],
@@ -60,7 +60,7 @@
       }
     ],
     "source": "osm",
-    "harvested_at": "2026-06-22T15:42:28.352Z"
+    "harvested_at": "2026-06-23T09:08:12.425Z"
   },
   {
     "id": "aff1b80b-1aa6-4ccb-a479-42500d768d56",
@@ -104,18 +104,17 @@
       "wall:material": "concrete",
       "wall:type": "plate"
     },
-    "status": "degraded",
-    "state_confidence": 0.65,
+    "status": "operational",
+    "state_confidence": 0.88,
     "evidence": [
       {
         "source": "sample",
-        "detail": "Reduced capacity signal near Centralna District Power Plant",
-        "ref": "FIRMS-VIIRS-sample",
-        "ts": "2026-06-22T15:42:28.352Z"
+        "detail": "No damage signals detected for Centralna District Power Plant",
+        "ts": "2026-06-23T09:08:12.425Z"
       }
     ],
     "radius_m": 8000,
-    "population_affected": 663504,
+    "population_affected": 1616689,
     "zones": [
       "Sviatoshyn"
     ],
@@ -133,7 +132,7 @@
     ],
     "upstream": [],
     "source": "osm",
-    "harvested_at": "2026-06-22T15:42:28.352Z"
+    "harvested_at": "2026-06-23T09:08:12.425Z"
   },
   {
     "id": "d9879b14-50ed-4bf0-bd0e-f41e6214e679",
@@ -144,13 +143,13 @@
     "type": "substation",
     "lat": 50.440716,
     "lng": 30.6098,
-    "criticality": 0.5633,
+    "criticality": 0.652,
     "criticality_breakdown": {
-      "population_component": 0.2613,
+      "population_component": 0.35,
       "service_class": 0.24,
       "dependency_fanout": 0.06,
       "capacity_component": 0.002,
-      "total": 0.5633
+      "total": 0.652
     },
     "metrics": {
       "voltage_kv": 10,
@@ -173,16 +172,16 @@
       "voltage": "10000;400"
     },
     "status": "operational",
-    "state_confidence": 0.789,
+    "state_confidence": 0.917,
     "evidence": [
       {
         "source": "sample",
         "detail": "No damage signals detected for ТП-3413",
-        "ts": "2026-06-22T15:42:28.352Z"
+        "ts": "2026-06-23T09:08:12.425Z"
       }
     ],
     "radius_m": 6000,
-    "population_affected": 373221,
+    "population_affected": 802272,
     "zones": [
       "Kyiv"
     ],
@@ -205,7 +204,7 @@
       }
     ],
     "source": "osm",
-    "harvested_at": "2026-06-22T15:42:28.352Z"
+    "harvested_at": "2026-06-23T09:08:12.425Z"
   },
   {
     "id": "530dd218-cc85-404b-9d28-c13ee1712a3f",
@@ -216,13 +215,13 @@
     "type": "water_works",
     "lat": 50.477214,
     "lng": 30.339344,
-    "criticality": 0.6213,
+    "criticality": 0.71,
     "criticality_breakdown": {
-      "population_component": 0.2613,
+      "population_component": 0.35,
       "service_class": 0.3,
       "dependency_fanout": 0.06,
       "capacity_component": 0,
-      "total": 0.6213
+      "total": 0.71
     },
     "metrics": {
       "capacity_m3_day": "unknown",
@@ -245,11 +244,11 @@
         "source": "sample",
         "detail": "Reduced capacity signal near Водопровідна насосна станція «Біличанська»",
         "ref": "FIRMS-VIIRS-sample",
-        "ts": "2026-06-22T15:42:28.352Z"
+        "ts": "2026-06-23T09:08:12.425Z"
       }
     ],
     "radius_m": 6000,
-    "population_affected": 373221,
+    "population_affected": 3632462,
     "zones": [
       "Sviatoshyn"
     ],
@@ -272,7 +271,7 @@
     ],
     "upstream": [],
     "source": "osm",
-    "harvested_at": "2026-06-22T15:42:28.352Z"
+    "harvested_at": "2026-06-23T09:08:12.425Z"
   },
   {
     "id": "4e80dcd0-9d16-4a4a-aa6d-dbe7b0c1888f",
@@ -283,13 +282,13 @@
     "type": "wastewater",
     "lat": 50.463238,
     "lng": 30.323582,
-    "criticality": 0.3911,
+    "criticality": 0.625,
     "criticality_breakdown": {
-      "population_component": 0.1161,
+      "population_component": 0.35,
       "service_class": 0.255,
       "dependency_fanout": 0.02,
       "capacity_component": 0,
-      "total": 0.3911
+      "total": 0.625
     },
     "metrics": {
       "capacity_m3_day": "unknown",
@@ -303,16 +302,16 @@
       "name:uk": "Очисні споруди дощових вод \"Біличі\""
     },
     "status": "operational",
-    "state_confidence": 0.856,
+    "state_confidence": 0.773,
     "evidence": [
       {
         "source": "sample",
         "detail": "No damage signals detected for Очисні споруди дощових вод \"Біличі\"",
-        "ts": "2026-06-22T15:42:28.352Z"
+        "ts": "2026-06-23T09:08:12.425Z"
       }
     ],
     "radius_m": 4000,
-    "population_affected": 165876,
+    "population_affected": 3632462,
     "zones": [
       "Sviatoshyn"
     ],
@@ -325,7 +324,7 @@
       }
     ],
     "source": "osm",
-    "harvested_at": "2026-06-22T15:42:28.352Z"
+    "harvested_at": "2026-06-23T09:08:12.425Z"
   },
   {
     "id": "59277c6a-bfd5-4a06-a343-480da1d25542",
@@ -336,13 +335,13 @@
     "type": "bridge",
     "lat": 50.483703,
     "lng": 30.547485,
-    "criticality": 0.2663,
+    "criticality": 0.6,
     "criticality_breakdown": {
-      "population_component": 0.0163,
+      "population_component": 0.35,
       "service_class": 0.21,
       "dependency_fanout": 0.04,
       "capacity_component": 0,
-      "total": 0.2663
+      "total": 0.6
     },
     "metrics": {
       "lanes": "unknown",
@@ -377,16 +376,16 @@
       "wikipedia": "uk:Петрівський міст"
     },
     "status": "operational",
-    "state_confidence": 0.839,
+    "state_confidence": 0.885,
     "evidence": [
       {
         "source": "sample",
         "detail": "No damage signals detected for Rybalskyi Railway Bridge",
-        "ts": "2026-06-22T15:42:28.352Z"
+        "ts": "2026-06-23T09:08:12.425Z"
       }
     ],
     "radius_m": 1500,
-    "population_affected": 23326,
+    "population_affected": 722569,
     "zones": [
       "Shevchenko"
     ],
@@ -404,7 +403,7 @@
     ],
     "upstream": [],
     "source": "osm",
-    "harvested_at": "2026-06-22T15:42:28.352Z"
+    "harvested_at": "2026-06-23T09:08:12.425Z"
   },
   {
     "id": "b1ebcfe9-a4d6-46bb-948b-9474e1de7feb",
@@ -452,17 +451,17 @@
         "source": "sample",
         "detail": "Thermal anomaly detected near Kyiv CHP-5 Power Plant — FRP elevated",
         "ref": "FIRMS-VIIRS-sample",
-        "ts": "2026-06-22T15:42:28.352Z"
+        "ts": "2026-06-23T09:08:12.425Z"
       },
       {
         "source": "sample",
         "detail": "Telegram channel reports facility not responding",
         "ref": "tg-sample",
-        "ts": "2026-06-22T15:42:28.352Z"
+        "ts": "2026-06-23T09:08:12.425Z"
       }
     ],
     "radius_m": 12000,
-    "population_affected": 1492885,
+    "population_affected": 933828,
     "zones": [
       "Darnytsia"
     ],
@@ -491,7 +490,7 @@
       }
     ],
     "source": "osm",
-    "harvested_at": "2026-06-22T15:42:28.352Z"
+    "harvested_at": "2026-06-23T09:08:12.425Z"
   },
   {
     "id": "73e94449-a255-44d5-923b-87763605f793",
@@ -502,13 +501,13 @@
     "type": "power_plant",
     "lat": 50.531233,
     "lng": 30.666985,
-    "criticality": 0.7871,
+    "criticality": 0.6855,
     "criticality_breakdown": {
-      "population_component": 0.35,
+      "population_component": 0.2483,
       "service_class": 0.27,
       "dependency_fanout": 0.06,
       "capacity_component": 0.1071,
-      "total": 0.7871
+      "total": 0.6855
     },
     "metrics": {
       "capacity_mw": 500,
@@ -528,24 +527,17 @@
       "wikidata": "Q12110203",
       "wikipedia": "uk:Київська ТЕЦ-6"
     },
-    "status": "offline",
-    "state_confidence": 0.82,
+    "status": "operational",
+    "state_confidence": 0.792,
     "evidence": [
       {
         "source": "sample",
-        "detail": "Thermal anomaly detected near Kyiv CHP-6 Power Plant — FRP elevated",
-        "ref": "FIRMS-VIIRS-sample",
-        "ts": "2026-06-22T15:42:28.352Z"
-      },
-      {
-        "source": "sample",
-        "detail": "Telegram channel reports facility not responding",
-        "ref": "tg-sample",
-        "ts": "2026-06-22T15:42:28.352Z"
+        "detail": "No damage signals detected for Kyiv CHP-6 Power Plant",
+        "ts": "2026-06-23T09:08:12.425Z"
       }
     ],
     "radius_m": 12000,
-    "population_affected": 1492885,
+    "population_affected": 354762,
     "zones": [
       "Dnipro"
     ],
@@ -568,7 +560,7 @@
     ],
     "upstream": [],
     "source": "osm",
-    "harvested_at": "2026-06-22T15:42:28.352Z"
+    "harvested_at": "2026-06-23T09:08:12.425Z"
   },
   {
     "id": "d861a609-9bdc-4267-bc7c-3e1cdbc4520e",
@@ -579,13 +571,13 @@
     "type": "power_plant",
     "lat": 50.447978,
     "lng": 30.64408,
-    "criticality": 0.4764,
+    "criticality": 0.6943,
     "criticality_breakdown": {
-      "population_component": 0.1321,
+      "population_component": 0.35,
       "service_class": 0.27,
       "dependency_fanout": 0.04,
       "capacity_component": 0.0343,
-      "total": 0.4764
+      "total": 0.6943
     },
     "metrics": {
       "capacity_mw": 160,
@@ -609,16 +601,16 @@
       "wikipedia": "uk:Дарницька ТЕЦ"
     },
     "status": "operational",
-    "state_confidence": 0.832,
+    "state_confidence": 0.891,
     "evidence": [
       {
         "source": "sample",
         "detail": "No damage signals detected for Kyiv-4 (Darnytska) Power Plant",
-        "ts": "2026-06-22T15:42:28.352Z"
+        "ts": "2026-06-23T09:08:12.425Z"
       }
     ],
     "radius_m": 4267,
-    "population_affected": 188760,
+    "population_affected": 727184,
     "zones": [
       "Kyiv"
     ],
@@ -636,7 +628,7 @@
     ],
     "upstream": [],
     "source": "osm",
-    "harvested_at": "2026-06-22T15:42:28.352Z"
+    "harvested_at": "2026-06-23T09:08:12.425Z"
   },
   {
     "id": "ae89e3f7-0ab4-4127-bff7-929a06ed29e7",
@@ -647,13 +639,13 @@
     "type": "substation",
     "lat": 50.502044,
     "lng": 30.601913,
-    "criticality": 0.5614,
+    "criticality": 0.6492,
     "criticality_breakdown": {
-      "population_component": 0.2613,
+      "population_component": 0.3491,
       "service_class": 0.24,
       "dependency_fanout": 0.06,
       "capacity_component": 0.0001,
-      "total": 0.5614
+      "total": 0.6492
     },
     "metrics": {
       "voltage_kv": 0.6,
@@ -676,16 +668,16 @@
       "voltage": "600"
     },
     "status": "operational",
-    "state_confidence": 0.803,
+    "state_confidence": 0.821,
     "evidence": [
       {
         "source": "sample",
         "detail": "No damage signals detected for Тягова пiдстанцiя",
-        "ts": "2026-06-22T15:42:28.352Z"
+        "ts": "2026-06-23T09:08:12.425Z"
       }
     ],
     "radius_m": 6000,
-    "population_affected": 373221,
+    "population_affected": 498723,
     "zones": [
       "Dnipro"
     ],
@@ -708,7 +700,7 @@
       }
     ],
     "source": "osm",
-    "harvested_at": "2026-06-22T15:42:28.352Z"
+    "harvested_at": "2026-06-23T09:08:12.425Z"
   },
   {
     "id": "ce409563-71de-4648-88d6-e9e39438070e",
@@ -719,13 +711,13 @@
     "type": "substation",
     "lat": 50.437982,
     "lng": 30.523286,
-    "criticality": 0.6433,
+    "criticality": 0.732,
     "criticality_breakdown": {
-      "population_component": 0.2613,
+      "population_component": 0.35,
       "service_class": 0.24,
       "dependency_fanout": 0.12,
       "capacity_component": 0.022,
-      "total": 0.6433
+      "total": 0.732
     },
     "metrics": {
       "voltage_kv": 110,
@@ -747,18 +739,24 @@
       "substation": "distribution",
       "voltage": "110000;10000"
     },
-    "status": "degraded",
-    "state_confidence": 0.65,
+    "status": "offline",
+    "state_confidence": 0.82,
     "evidence": [
       {
         "source": "sample",
-        "detail": "Reduced capacity signal near Центр",
+        "detail": "Thermal anomaly detected near Центр — FRP elevated",
         "ref": "FIRMS-VIIRS-sample",
-        "ts": "2026-06-22T15:42:28.352Z"
+        "ts": "2026-06-23T09:08:12.425Z"
+      },
+      {
+        "source": "sample",
+        "detail": "Telegram channel reports facility not responding",
+        "ref": "tg-sample",
+        "ts": "2026-06-23T09:08:12.425Z"
       }
     ],
     "radius_m": 6000,
-    "population_affected": 373221,
+    "population_affected": 729001,
     "zones": [
       "Kyiv"
     ],
@@ -797,7 +795,7 @@
       }
     ],
     "source": "osm",
-    "harvested_at": "2026-06-22T15:42:28.352Z"
+    "harvested_at": "2026-06-23T09:08:12.425Z"
   },
   {
     "id": "0b5ace3f-c375-4966-9dad-7c7cb12326fa",
@@ -808,13 +806,13 @@
     "type": "substation",
     "lat": 50.425103,
     "lng": 30.426669,
-    "criticality": 0.5433,
+    "criticality": 0.632,
     "criticality_breakdown": {
-      "population_component": 0.2613,
+      "population_component": 0.35,
       "service_class": 0.24,
       "dependency_fanout": 0.04,
       "capacity_component": 0.002,
-      "total": 0.5433
+      "total": 0.632
     },
     "metrics": {
       "voltage_kv": 10,
@@ -840,16 +838,16 @@
       "voltage": "10000;600"
     },
     "status": "operational",
-    "state_confidence": 0.759,
+    "state_confidence": 0.914,
     "evidence": [
       {
         "source": "sample",
         "detail": "No damage signals detected for Відрадненська тягова підстанція",
-        "ts": "2026-06-22T15:42:28.352Z"
+        "ts": "2026-06-23T09:08:12.425Z"
       }
     ],
     "radius_m": 6000,
-    "population_affected": 373221,
+    "population_affected": 1602466,
     "zones": [
       "Holosiiv"
     ],
@@ -867,7 +865,7 @@
       }
     ],
     "source": "osm",
-    "harvested_at": "2026-06-22T15:42:28.352Z"
+    "harvested_at": "2026-06-23T09:08:12.425Z"
   },
   {
     "id": "d6270d89-5997-41c1-92ce-ddeab6f8a900",
@@ -878,13 +876,13 @@
     "type": "hospital",
     "lat": 50.419561,
     "lng": 30.497744,
-    "criticality": 0.389,
+    "criticality": 0.71,
     "criticality_breakdown": {
-      "population_component": 0.029,
+      "population_component": 0.35,
       "service_class": 0.3,
       "dependency_fanout": 0.06,
       "capacity_component": 0,
-      "total": 0.389
+      "total": 0.71
     },
     "metrics": {
       "beds": "unknown",
@@ -910,17 +908,18 @@
       "wikidata": "Q4315004",
       "wikipedia": "uk:Національний інститут серцево-судинної хірургії імені Миколи Амосова НАМН України"
     },
-    "status": "operational",
-    "state_confidence": 0.858,
+    "status": "degraded",
+    "state_confidence": 0.65,
     "evidence": [
       {
         "source": "sample",
-        "detail": "No damage signals detected for National Institute of Cardiovascular Surgery",
-        "ts": "2026-06-22T15:42:28.352Z"
+        "detail": "Reduced capacity signal near National Institute of Cardiovascular Surgery",
+        "ref": "FIRMS-VIIRS-sample",
+        "ts": "2026-06-23T09:08:12.425Z"
       }
     ],
     "radius_m": 2000,
-    "population_affected": 41469,
+    "population_affected": 1824967,
     "zones": [
       "Holosiiv"
     ],
@@ -943,7 +942,7 @@
       }
     ],
     "source": "osm",
-    "harvested_at": "2026-06-22T15:42:28.352Z"
+    "harvested_at": "2026-06-23T09:08:12.425Z"
   },
   {
     "id": "228dc285-c3e2-4015-a5bf-44800ff4c5a1",
@@ -954,13 +953,13 @@
     "type": "hospital",
     "lat": 50.520444,
     "lng": 30.446942,
-    "criticality": 0.389,
+    "criticality": 0.71,
     "criticality_breakdown": {
-      "population_component": 0.029,
+      "population_component": 0.35,
       "service_class": 0.3,
       "dependency_fanout": 0.06,
       "capacity_component": 0,
-      "total": 0.389
+      "total": 0.71
     },
     "metrics": {
       "beds": "unknown",
@@ -985,16 +984,16 @@
       "website": "http://iem.net.ua/"
     },
     "status": "operational",
-    "state_confidence": 0.793,
+    "state_confidence": 0.84,
     "evidence": [
       {
         "source": "sample",
         "detail": "No damage signals detected for V.P. Komisarenko Endocrinology and Metabolism Institute",
-        "ts": "2026-06-22T15:42:28.352Z"
+        "ts": "2026-06-23T09:08:12.425Z"
       }
     ],
     "radius_m": 2000,
-    "population_affected": 41469,
+    "population_affected": 507097,
     "zones": [
       "Obolon"
     ],
@@ -1017,7 +1016,7 @@
       }
     ],
     "source": "osm",
-    "harvested_at": "2026-06-22T15:42:28.352Z"
+    "harvested_at": "2026-06-23T09:08:12.425Z"
   },
   {
     "id": "e58d4061-c5ae-4c4a-a32f-6f88ca2044af",
@@ -1028,13 +1027,13 @@
     "type": "hospital",
     "lat": 50.439876,
     "lng": 30.480272,
-    "criticality": 0.409,
+    "criticality": 0.73,
     "criticality_breakdown": {
-      "population_component": 0.029,
+      "population_component": 0.35,
       "service_class": 0.3,
       "dependency_fanout": 0.08,
       "capacity_component": 0,
-      "total": 0.409
+      "total": 0.73
     },
     "metrics": {
       "beds": "unknown",
@@ -1061,17 +1060,18 @@
       "type": "multipolygon",
       "website": "https://uz.gov.ua/about/general_information/entertainments/f_coz/kklzt2/"
     },
-    "status": "operational",
-    "state_confidence": 0.782,
+    "status": "degraded",
+    "state_confidence": 0.65,
     "evidence": [
       {
         "source": "sample",
-        "detail": "No damage signals detected for Kyiv Clinical Hospital of Railroad Transport 2",
-        "ts": "2026-06-22T15:42:28.352Z"
+        "detail": "Reduced capacity signal near Kyiv Clinical Hospital of Railroad Transport 2",
+        "ref": "FIRMS-VIIRS-sample",
+        "ts": "2026-06-23T09:08:12.425Z"
       }
     ],
     "radius_m": 2000,
-    "population_affected": 41469,
+    "population_affected": 748201,
     "zones": [
       "Holosiiv"
     ],
@@ -1099,7 +1099,7 @@
       }
     ],
     "source": "osm",
-    "harvested_at": "2026-06-22T15:42:28.352Z"
+    "harvested_at": "2026-06-23T09:08:12.425Z"
   },
   {
     "id": "3ab381ab-e499-44c2-8fc3-43a0d5e83636",
@@ -1110,13 +1110,13 @@
     "type": "bridge",
     "lat": 50.457179,
     "lng": 30.523094,
-    "criticality": 0.3263,
+    "criticality": 0.66,
     "criticality_breakdown": {
-      "population_component": 0.0163,
+      "population_component": 0.35,
       "service_class": 0.21,
       "dependency_fanout": 0.1,
       "capacity_component": 0,
-      "total": 0.3263
+      "total": 0.66
     },
     "metrics": {
       "lanes": "unknown",
@@ -1141,16 +1141,16 @@
       "voltage": "600"
     },
     "status": "operational",
-    "state_confidence": 0.901,
+    "state_confidence": 0.871,
     "evidence": [
       {
         "source": "sample",
         "detail": "No damage signals detected for Kyiv Funicular",
-        "ts": "2026-06-22T15:42:28.352Z"
+        "ts": "2026-06-23T09:08:12.425Z"
       }
     ],
     "radius_m": 1500,
-    "population_affected": 23326,
+    "population_affected": 1742349,
     "zones": [
       "Kyiv"
     ],
@@ -1183,7 +1183,7 @@
     ],
     "upstream": [],
     "source": "osm",
-    "harvested_at": "2026-06-22T15:42:28.352Z"
+    "harvested_at": "2026-06-23T09:08:12.425Z"
   },
   {
     "id": "00e51f00-a815-4571-8459-b2cac8ada6e5",
@@ -1194,13 +1194,13 @@
     "type": "bridge",
     "lat": 50.452296,
     "lng": 30.534348,
-    "criticality": 0.3263,
+    "criticality": 0.3956,
     "criticality_breakdown": {
-      "population_component": 0.0163,
+      "population_component": 0.0856,
       "service_class": 0.21,
       "dependency_fanout": 0.1,
       "capacity_component": 0,
-      "total": 0.3263
+      "total": 0.3956
     },
     "metrics": {
       "lanes": "unknown",
@@ -1226,16 +1226,16 @@
       "wikipedia": "uk:Парковий міст"
     },
     "status": "operational",
-    "state_confidence": 0.88,
+    "state_confidence": 0.909,
     "evidence": [
       {
         "source": "sample",
         "detail": "No damage signals detected for Park Bridge",
-        "ts": "2026-06-22T15:42:28.352Z"
+        "ts": "2026-06-23T09:08:12.425Z"
       }
     ],
     "radius_m": 1500,
-    "population_affected": 23326,
+    "population_affected": 122228,
     "zones": [
       "Kyiv"
     ],
@@ -1268,7 +1268,7 @@
     ],
     "upstream": [],
     "source": "osm",
-    "harvested_at": "2026-06-22T15:42:28.352Z"
+    "harvested_at": "2026-06-23T09:08:12.425Z"
   },
   {
     "id": "8aaaf343-e8f5-4af7-b3ec-00f4f7f71dd9",
@@ -1279,13 +1279,13 @@
     "type": "pumping_station",
     "lat": 50.486079,
     "lng": 30.498887,
-    "criticality": 0.4711,
+    "criticality": 0.705,
     "criticality_breakdown": {
-      "population_component": 0.1161,
+      "population_component": 0.35,
       "service_class": 0.255,
       "dependency_fanout": 0.1,
       "capacity_component": 0,
-      "total": 0.4711
+      "total": 0.705
     },
     "metrics": {
       "substance": "wastewater",
@@ -1302,16 +1302,16 @@
       "pumping_station": "wastewater"
     },
     "status": "operational",
-    "state_confidence": 0.804,
+    "state_confidence": 0.926,
     "evidence": [
       {
         "source": "sample",
         "detail": "No damage signals detected for КНС «Оболонська»",
-        "ts": "2026-06-22T15:42:28.352Z"
+        "ts": "2026-06-23T09:08:12.425Z"
       }
     ],
     "radius_m": 4000,
-    "population_affected": 165876,
+    "population_affected": 1743624,
     "zones": [
       "Shevchenko"
     ],
@@ -1345,7 +1345,7 @@
       }
     ],
     "source": "osm",
-    "harvested_at": "2026-06-22T15:42:28.352Z"
+    "harvested_at": "2026-06-23T09:08:12.425Z"
   },
   {
     "id": "49e22ed9-8683-46a4-a198-f8a359a3101b",
@@ -1356,13 +1356,13 @@
     "type": "pumping_station",
     "lat": 50.473806,
     "lng": 30.474483,
-    "criticality": 0.4511,
+    "criticality": 0.685,
     "criticality_breakdown": {
-      "population_component": 0.1161,
+      "population_component": 0.35,
       "service_class": 0.255,
       "dependency_fanout": 0.08,
       "capacity_component": 0,
-      "total": 0.4511
+      "total": 0.685
     },
     "metrics": {
       "substance": "water",
@@ -1378,16 +1378,16 @@
       "substance": "water"
     },
     "status": "operational",
-    "state_confidence": 0.946,
+    "state_confidence": 0.94,
     "evidence": [
       {
         "source": "sample",
         "detail": "No damage signals detected for Smorodyncka Water Pumping Station",
-        "ts": "2026-06-22T15:42:28.352Z"
+        "ts": "2026-06-23T09:08:12.425Z"
       }
     ],
     "radius_m": 4000,
-    "population_affected": 165876,
+    "population_affected": 1888839,
     "zones": [
       "Shevchenko"
     ],
@@ -1416,7 +1416,7 @@
       }
     ],
     "source": "osm",
-    "harvested_at": "2026-06-22T15:42:28.352Z"
+    "harvested_at": "2026-06-23T09:08:12.425Z"
   },
   {
     "id": "e95164e4-d2d6-4741-9e1b-1e6df90fe692",
@@ -1427,13 +1427,13 @@
     "type": "bridge",
     "lat": 50.39734,
     "lng": 30.572299,
-    "criticality": 0.3213,
+    "criticality": 0.655,
     "criticality_breakdown": {
-      "population_component": 0.0163,
+      "population_component": 0.35,
       "service_class": 0.21,
       "dependency_fanout": 0.02,
       "capacity_component": 0.075,
-      "total": 0.3213
+      "total": 0.655
     },
     "metrics": {
       "lanes": 3,
@@ -1467,16 +1467,16 @@
       "surface": "asphalt"
     },
     "status": "operational",
-    "state_confidence": 0.938,
+    "state_confidence": 0.947,
     "evidence": [
       {
         "source": "sample",
         "detail": "No damage signals detected for Pivdennyi Bridge",
-        "ts": "2026-06-22T15:42:28.352Z"
+        "ts": "2026-06-23T09:08:12.425Z"
       }
     ],
     "radius_m": 1500,
-    "population_affected": 23326,
+    "population_affected": 1045317,
     "zones": [
       "Darnytsia"
     ],
@@ -1489,6 +1489,6 @@
     ],
     "upstream": [],
     "source": "osm",
-    "harvested_at": "2026-06-22T15:42:28.352Z"
+    "harvested_at": "2026-06-23T09:08:12.425Z"
   }
 ]

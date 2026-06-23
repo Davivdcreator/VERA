@@ -31,6 +31,7 @@ interface InfrastructureRow {
   status: string | null;
   metadata: Record<string, unknown> | null;
   real?: boolean | null;
+  population_affected?: number | null;
 }
 
 interface InfrastructureDependencyRow {
@@ -185,7 +186,9 @@ function rowToAssetCard(row: InfrastructureRow): AssetCard {
   const metadata = row.metadata ?? {};
   const radius = radiusForSubtype(row.subtype);
   const radiusKm = radius / 1000;
-  const populationAffected = Math.round(3300 * Math.PI * radiusKm * radiusKm);
+  const populationAffected = row.population_affected != null
+    ? row.population_affected
+    : Math.round(3300 * Math.PI * radiusKm * radiusKm);
   const service = serviceClass(row.type, row.subtype);
   const statusBoost = status === "offline" ? 0.3 : status === "degraded" ? 0.16 : status === "unknown" ? 0.06 : 0;
   const tagBoost = Math.min(0.14, Object.keys(metadata).length / 120);
@@ -301,7 +304,7 @@ async function loadInfrastructureFromSupabase(): Promise<AssetCard[] | null> {
   for (let from = 0; ; from += PAGE_SIZE) {
     const { data, error } = await supabase
       .from("infrastructure")
-      .select("id,name,type,subtype,location,latitude,longitude,capacity,year_built,status,metadata")
+      .select("id,name,type,subtype,location,latitude,longitude,capacity,year_built,status,metadata,population_affected")
       .range(from, from + PAGE_SIZE - 1);
 
     if (error) {

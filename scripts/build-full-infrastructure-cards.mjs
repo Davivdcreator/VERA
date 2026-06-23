@@ -190,6 +190,10 @@ const rows = parseCsv(text);
 const header = rows.shift();
 const index = Object.fromEntries(header.map((name, i) => [name, i]));
 
+// ── WorldPop population lookup ────────────────────────────────────────────────
+const POP_JSON = join(ROOT, "data/generated/worldpop-population-full.json");
+const popLookup = JSON.parse(readFileSync(POP_JSON, "utf8"));
+
 const cards = rows.flatMap((row) => {
   const lat = Number(row[index.latitude]);
   const lng = Number(row[index.longitude]);
@@ -204,7 +208,9 @@ const cards = rows.flatMap((row) => {
   const criticality = criticalityFor(dbType, subtype, metadata, status);
   const radius = TYPE_RADIUS_M[subtype] ?? 900;
   const radiusKm = radius / 1000;
-  const populationAffected = Math.round(3300 * Math.PI * radiusKm * radiusKm);
+  const popEntry = popLookup[row[index.id]];
+  const populationAffected = popEntry?.population_affected
+    ?? Math.round(3300 * Math.PI * radiusKm * radiusKm);
 
   return [{
     id,

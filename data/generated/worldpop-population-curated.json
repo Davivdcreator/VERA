@@ -1,0 +1,82 @@
+{
+  "2eaf166a-6626-4982-b411-48db631b6bb0": {
+    "population_affected": 552197,
+    "radius_m": 2000
+  },
+  "aff1b80b-1aa6-4ccb-a479-42500d768d56": {
+    "population_affected": 1616689,
+    "radius_m": 8000
+  },
+  "d9879b14-50ed-4bf0-bd0e-f41e6214e679": {
+    "population_affected": 802272,
+    "radius_m": 6000
+  },
+  "530dd218-cc85-404b-9d28-c13ee1712a3f": {
+    "population_affected": 3632462,
+    "radius_m": 6000
+  },
+  "4e80dcd0-9d16-4a4a-aa6d-dbe7b0c1888f": {
+    "population_affected": 3632462,
+    "radius_m": 4000
+  },
+  "59277c6a-bfd5-4a06-a343-480da1d25542": {
+    "population_affected": 722569,
+    "radius_m": 1500
+  },
+  "b1ebcfe9-a4d6-46bb-948b-9474e1de7feb": {
+    "population_affected": 933828,
+    "radius_m": 12000
+  },
+  "73e94449-a255-44d5-923b-87763605f793": {
+    "population_affected": 354762,
+    "radius_m": 12000
+  },
+  "d861a609-9bdc-4267-bc7c-3e1cdbc4520e": {
+    "population_affected": 727184,
+    "radius_m": 4267
+  },
+  "ae89e3f7-0ab4-4127-bff7-929a06ed29e7": {
+    "population_affected": 498723,
+    "radius_m": 6000
+  },
+  "ce409563-71de-4648-88d6-e9e39438070e": {
+    "population_affected": 729001,
+    "radius_m": 6000
+  },
+  "0b5ace3f-c375-4966-9dad-7c7cb12326fa": {
+    "population_affected": 1602466,
+    "radius_m": 6000
+  },
+  "d6270d89-5997-41c1-92ce-ddeab6f8a900": {
+    "population_affected": 1824967,
+    "radius_m": 2000
+  },
+  "228dc285-c3e2-4015-a5bf-44800ff4c5a1": {
+    "population_affected": 507097,
+    "radius_m": 2000
+  },
+  "e58d4061-c5ae-4c4a-a32f-6f88ca2044af": {
+    "population_affected": 748201,
+    "radius_m": 2000
+  },
+  "3ab381ab-e499-44c2-8fc3-43a0d5e83636": {
+    "population_affected": 1742349,
+    "radius_m": 1500
+  },
+  "00e51f00-a815-4571-8459-b2cac8ada6e5": {
+    "population_affected": 122228,
+    "radius_m": 1500
+  },
+  "8aaaf343-e8f5-4af7-b3ec-00f4f7f71dd9": {
+    "population_affected": 1743624,
+    "radius_m": 4000
+  },
+  "49e22ed9-8683-46a4-a198-f8a359a3101b": {
+    "population_affected": 1888839,
+    "radius_m": 4000
+  },
+  "e95164e4-d2d6-4741-9e1b-1e6df90fe692": {
+    "population_affected": 1045317,
+    "radius_m": 1500
+  }
+}

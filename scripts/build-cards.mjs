@@ -8,8 +8,8 @@
  * Rules:
  *  - IDs are stable: generated once from osm_type+osm_id, not random each run.
  *  - Everything derived from OSM tags + transparent formulae — no per-asset tuning.
- *  - Kyiv population density: 3,300 /km² (2021 census ~2.96M over ~839 km² ≈ 3528;
- *    we use a conservative 3300 to stay inside the metropolitan polygon).
+ *  - Population affected: sum of WorldPop 100m cell populations within impact radius.
+ *    Fallback: uniform 3,300 /km² for any asset not yet in worldpop-population-curated.json.
  *  - No new npm deps — pure Node 22 stdlib.
  *
  * Usage:  node scripts/build-cards.mjs
@@ -27,9 +27,6 @@ const CARDS  = join(ROOT, 'src/data/generated/cards.json');
 const SEED   = join(ROOT, 'supabase/seed.sql');
 
 // ── constants ───────────────────────────────────────────────────────────────
-/** Kyiv population density — 3300 persons/km² (2021 census-derived conservative estimate) */
-const KYIV_DENSITY_PER_KM2 = 3300;
-
 /** Dnipro river approximate longitude (assets east of this are on the left/east bank) */
 const DNIPRO_LNG = 30.55;
 
@@ -113,6 +110,10 @@ function parseVoltageKV(tag) {
 const rawAssets = JSON.parse(readFileSync(ASSETS, 'utf8'));
 const assets = rawAssets.map(a => ({ ...a, id: stableId(a.osm_type, a.osm_id) }));
 
+// ── step 1b: load WorldPop-derived population lookup ───────────────────────────
+const POP_JSON = join(ROOT, 'data/generated/worldpop-population-curated.json');
+const popLookup = JSON.parse(readFileSync(POP_JSON, 'utf8'));
+
 // index by id for dependency lookups
 const byId = Object.fromEntries(assets.map(a => [a.id, a]));
 
@@ -189,7 +190,7 @@ function computeMetrics(asset) {
 // ── step 3: compute impact zone ───────────────────────────────────────────────
 /**
  * radiusM: base radius scaled by capacity/voltage where available.
- * populationAffected: KYIV_DENSITY × circle area in km².
+ * populationAffected: sum of WorldPop 100m cell populations within radius.
  * zones: district names extracted from address tags if present.
  */
 function computeImpact(asset, metrics) {
@@ -206,8 +207,8 @@ function computeImpact(asset, metrics) {
   }
 
   const radiusKm = radius / 1000;
-  const areakm2 = Math.PI * radiusKm * radiusKm;
-  const populationAffected = Math.round(KYIV_DENSITY_PER_KM2 * areakm2);
+  const populationAffected = popLookup[asset.id]?.population_affected
+    ?? Math.round(3300 * Math.PI * radiusKm * radiusKm);
 
   // zones — pull from OSM address/location tags
   const t = asset.tags || {};
