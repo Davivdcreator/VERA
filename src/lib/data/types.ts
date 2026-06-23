@@ -37,7 +37,7 @@ export interface DepEdge {
 
 /** One piece of damage evidence behind a state (FIRMS detection / Telegram report). */
 export interface Evidence {
-  source: "firms" | "telegram" | "sample";
+  source: "firms" | "telegram" | "fused" | "sample";
   detail: string;
   ref?: string;
   ts?: string;

@@ -11,7 +11,7 @@
  * the pin layer, the card panel, and the map legend all read from one source.
  */
 import { supabase, isSupabaseConfigured } from "@/lib/supabase";
-import type { AssetCard, DepEdge, DepKind, InfraStatus } from "@/lib/data/types";
+import type { AssetCard, DepEdge, DepKind, Evidence, InfraStatus } from "@/lib/data/types";
 import type { MapMarker } from "@/lib/osmb/OsmBuildingsMap";
 import type { DamageEvent } from "@/lib/data/damage";
 
@@ -38,6 +38,15 @@ interface InfrastructureDependencyRow {
   target_id: string;
   kind: string;
   weight: number | null;
+}
+
+interface InfrastructureAssetStateRow {
+  asset_id: string;
+  status: string | null;
+  confidence: number | null;
+  score: number | null;
+  evidence: unknown;
+  updated_at: string | null;
 }
 
 /** Infrastructure-state → marker / UI color (hex). Single source of truth. */
@@ -68,6 +77,30 @@ function depKind(value: string | null | undefined): DepKind {
     return raw;
   }
   return "other";
+}
+
+function evidenceSource(value: unknown): Evidence["source"] {
+  const raw = String(value ?? "").trim();
+  if (raw === "firms" || raw === "telegram" || raw === "fused" || raw === "sample") {
+    return raw;
+  }
+  return "sample";
+}
+
+function normalizeEvidence(value: unknown): Evidence[] {
+  if (!Array.isArray(value)) return [];
+  return value.flatMap((item) => {
+    if (!item || typeof item !== "object") return [];
+    const record = item as Record<string, unknown>;
+    const detail = typeof record.detail === "string" ? record.detail : null;
+    if (!detail) return [];
+    return [{
+      source: evidenceSource(record.source),
+      detail,
+      ref: typeof record.ref === "string" ? record.ref : undefined,
+      ts: typeof record.ts === "string" ? record.ts : undefined,
+    }];
+  });
 }
 
 function assetTypeFromSubtype(subtype: string): AssetCard["type"] {
@@ -221,6 +254,25 @@ function attachDependencies(cards: AssetCard[], dependencies: InfrastructureDepe
   return cards;
 }
 
+function attachAssetState(cards: AssetCard[], states: InfrastructureAssetStateRow[]) {
+  const stateById = new Map(states.map((state) => [state.asset_id, state]));
+
+  return cards.map((card) => {
+    const state = stateById.get(card.id);
+    if (!state) return card;
+
+    const evidence = normalizeEvidence(state.evidence);
+    const status = statusFromDb(state.status);
+
+    return {
+      ...card,
+      status,
+      state_confidence: state.confidence ?? card.state_confidence,
+      evidence: evidence.length > 0 ? evidence : card.evidence,
+    };
+  });
+}
+
 async function loadCuratedAssetCards(): Promise<AssetCard[]> {
   const mod = await import("@/data/generated/cards.json");
   return (mod.default ?? mod) as unknown as AssetCard[];
@@ -238,7 +290,7 @@ async function loadInfrastructureFromSupabase(): Promise<AssetCard[] | null> {
   for (let from = 0; ; from += PAGE_SIZE) {
     const { data, error } = await supabase
       .from("infrastructure")
-      .select("id,name,type,subtype,location,latitude,longitude,capacity,year_built,status,metadata,real")
+      .select("id,name,type,subtype,location,latitude,longitude,capacity,year_built,status,metadata")
       .range(from, from + PAGE_SIZE - 1);
 
     if (error) {
@@ -268,7 +320,24 @@ async function loadInfrastructureFromSupabase(): Promise<AssetCard[] | null> {
     if (page.length < PAGE_SIZE) break;
   }
 
-  return attachDependencies(rows.map(rowToAssetCard), dependencies);
+  const states: InfrastructureAssetStateRow[] = [];
+  for (let from = 0; ; from += PAGE_SIZE) {
+    const { data, error } = await supabase
+      .from("infrastructure_asset_state")
+      .select("asset_id,status,confidence,score,evidence,updated_at")
+      .range(from, from + PAGE_SIZE - 1);
+
+    if (error) {
+      console.error("[VERA] Supabase infrastructure_asset_state fetch error:", error.message);
+      break;
+    }
+
+    const page = (data ?? []) as InfrastructureAssetStateRow[];
+    states.push(...page);
+    if (page.length < PAGE_SIZE) break;
+  }
+
+  return attachAssetState(attachDependencies(rows.map(rowToAssetCard), dependencies), states);
 }
 
 /**

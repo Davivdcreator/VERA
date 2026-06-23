@@ -15,7 +15,7 @@ export type DamageSource = "firms" | "telegram" | "fused" | "sample";
 
 /** An infrastructure asset that lies within the damage zone. */
 export interface AffectedAsset {
-  /** References `assets.id`. */
+  /** References `infrastructure.id`. */
   assetId: string;
   name: string;
   type: string;
@@ -27,7 +27,7 @@ export interface AffectedAsset {
 
 /** A single piece of evidence backing a damage event. */
 export interface DamageEvidence {
-  source: "firms" | "telegram";
+  source: DamageSource;
   /** Human-readable detail: FIRMS frp/brightness, Telegram excerpt, etc. */
   detail: string;
   /** Optional deep-link to the Telegram message or FIRMS record. */

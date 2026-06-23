@@ -3,11 +3,12 @@
  * Node 22, native fetch, @supabase/supabase-js (already a dep).
  *
  * Pipeline:
- *   1. Load assets from src/data/generated/cards.json
+ *   1. Load full infrastructure assets from Supabase or generated fallback
  *   2. Fetch FIRMS clusters + Telegram reports
  *   3. Fuse → damage zones
  *   4. Match assets (haversine ≤ radius_m)
- *   5. Persist to Supabase (unless --dry-run or no service-role key)
+ *   5. Persist damage_events + infrastructure_asset_state to Supabase
+ *      (unless --dry-run or no service-role key)
  *
  * Env:
  *   SUPABASE_URL            – Supabase project URL
@@ -34,7 +35,24 @@ import { fetchTelegramReports } from './sources/telegram.mjs';
 const DRY_RUN = process.argv.includes('--dry-run');
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const CARDS_PATH = join(__dirname, '../src/data/generated/cards.json');
+const FULL_CARDS_PATH = join(__dirname, '../src/data/generated/full-infrastructure-cards.json');
+
+const SERVICE_CLASS = {
+  hospital: 1,
+  clinic: 0.78,
+  pharmacy: 0.62,
+  fire_station: 0.86,
+  police: 0.82,
+  school: 0.72,
+  kindergarten: 0.68,
+  university: 0.68,
+  substation: 0.86,
+  railway: 0.72,
+  bus_stop: 0.42,
+  post_office: 0.48,
+  supermarket: 0.66,
+  water_fountain: 0.45,
+};
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Haversine (metres)
@@ -62,8 +80,8 @@ function clamp(v, lo, hi) {
 /**
  * @returns {Array<{id:string,name:string,type:string,lat:number,lng:number,criticality:number}>}
  */
-function loadAssets() {
-  const raw = JSON.parse(readFileSync(CARDS_PATH, 'utf8'));
+function loadGeneratedAssets() {
+  const raw = JSON.parse(readFileSync(FULL_CARDS_PATH, 'utf8'));
   return raw.map((a) => ({
     id: a.id,
     name: a.name,
@@ -72,6 +90,74 @@ function loadAssets() {
     lng: a.lng,
     criticality: a.criticality ?? 0,
   }));
+}
+
+function assetTypeFromSubtype(subtype) {
+  if (subtype === 'hospital') return 'hospital';
+  if (subtype === 'substation') return 'substation';
+  if (subtype === 'power_plant') return 'power_plant';
+  if (subtype === 'water_treatment' || subtype === 'water_works') return 'water_works';
+  if (subtype === 'wastewater' || subtype === 'wastewater_plant') return 'wastewater';
+  if (subtype === 'water_pump_station' || subtype === 'pumping_station') return 'pumping_station';
+  if (subtype === 'bridge') return 'bridge';
+  if (subtype === 'heating_plant') return 'heating_plant';
+  if (subtype === 'telecom_hub') return 'telecom';
+  return 'other';
+}
+
+function criticalityFromInfrastructure(row) {
+  const service = SERVICE_CLASS[row.subtype] ?? (row.type === 'critical' ? 0.58 : row.type === 'utilities' ? 0.72 : 0.42);
+  return Math.min(1, +(0.18 + service * 0.5).toFixed(4));
+}
+
+async function loadSupabaseAssets(supabase) {
+  const assets = [];
+  const pageSize = 1000;
+
+  for (let from = 0; ; from += pageSize) {
+    const { data, error } = await supabase
+      .from('infrastructure')
+      .select('id,name,type,subtype,latitude,longitude')
+      .range(from, from + pageSize - 1);
+
+    if (error) {
+      console.warn('[detect] infrastructure fetch error:', error.message);
+      return null;
+    }
+
+    const page = data ?? [];
+    assets.push(...page.map((row) => ({
+      id: row.id,
+      name: row.name,
+      type: assetTypeFromSubtype(row.subtype),
+      lat: row.latitude,
+      lng: row.longitude,
+      criticality: criticalityFromInfrastructure(row),
+    })));
+
+    if (page.length < pageSize) break;
+  }
+
+  return assets;
+}
+
+function createSupabaseClientFromEnv() {
+  const url = process.env.SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+  if (!url || !key) return null;
+  return createClient(url, key, {
+    auth: { persistSession: false },
+  });
+}
+
+async function loadAssets(supabase) {
+  if (supabase) {
+    const assets = await loadSupabaseAssets(supabase);
+    if (assets?.length) return assets;
+  }
+
+  return loadGeneratedAssets();
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -354,18 +440,11 @@ function estimateState(severity, currentState) {
   return maxState(currentState ?? 'operational', targetState);
 }
 
-async function persist(zones, assets) {
-  const url = process.env.SUPABASE_URL;
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
-
-  if (!url || !key) {
+async function persist(zones, supabase) {
+  if (!supabase) {
     console.log('[detect] No SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY — skipping DB write.');
     return;
   }
-
-  const supabase = createClient(url, key, {
-    auth: { persistSession: false },
-  });
 
   // ── a. Clear prior auto events ────────────────────────────────────────────
   const { error: delErr } = await supabase
@@ -412,14 +491,15 @@ async function persist(zones, assets) {
   console.log(`[detect] Inserted ${rows.length} damage_event(s).`);
 
   // ── d. Raise asset_state for affected assets ───────────────────────────────
-  // Build a map: assetId → { severity, evidence }
-  /** @type {Map<string,{severity:number,evidenceItems:Array}>} */
+  // Build a map: assetId → { severity, confidence, evidence }
+  /** @type {Map<string,{severity:number,confidence:number,evidenceItems:Array}>} */
   const assetUpdates = new Map();
 
   for (const z of toInsert) {
     for (const aff of z.affected) {
-      const existing = assetUpdates.get(aff.assetId) ?? { severity: 0, evidenceItems: [] };
+      const existing = assetUpdates.get(aff.assetId) ?? { severity: 0, confidence: 0, evidenceItems: [] };
       existing.severity = Math.max(existing.severity, z.severity);
+      existing.confidence = Math.max(existing.confidence, z.confidence);
       existing.evidenceItems.push({
         source: z.source,
         detail: `Damage zone "${z.title}" — estDamage ${(aff.estDamage * 100).toFixed(0)}%, dist ${aff.distanceM} m`,
@@ -429,24 +509,20 @@ async function persist(zones, assets) {
     }
   }
 
-  const assetMap = new Map(assets.map((a) => [a.id, a]));
-
   for (const [assetId, update] of assetUpdates.entries()) {
-    // Fetch current asset_state to apply "max" logic
+    // Fetch current dynamic state to apply "max" logic and preserve evidence.
     const { data: rows, error: fetchErr } = await supabase
-      .from('assets')          // table name per the VERA schema
+      .from('infrastructure_asset_state')
       .select('status, evidence')
-      .eq('id', assetId)
+      .eq('asset_id', assetId)
       .limit(1);
 
     if (fetchErr) {
-      // Table may not exist yet (pre-migration). Warn and skip.
-      console.warn(`[detect] asset fetch error for ${assetId}:`, fetchErr.message);
+      console.warn(`[detect] infrastructure_asset_state fetch error for ${assetId}:`, fetchErr.message);
       continue;
     }
 
-    if (!rows || rows.length === 0) continue;
-    const current = rows[0];
+    const current = rows?.[0] ?? { status: 'operational', evidence: [] };
 
     const newState = estimateState(update.severity, current.status ?? 'operational');
     const newEvidence = [
@@ -455,12 +531,18 @@ async function persist(zones, assets) {
     ];
 
     const { error: updErr } = await supabase
-      .from('assets')
-      .update({ status: newState, evidence: newEvidence })
-      .eq('id', assetId);
+      .from('infrastructure_asset_state')
+      .upsert({
+        asset_id: assetId,
+        status: newState,
+        confidence: update.confidence,
+        score: update.severity,
+        evidence: newEvidence,
+        updated_at: new Date().toISOString(),
+      }, { onConflict: 'asset_id' });
 
     if (updErr) {
-      console.warn(`[detect] asset update error for ${assetId}:`, updErr.message);
+      console.warn(`[detect] infrastructure_asset_state upsert error for ${assetId}:`, updErr.message);
     }
   }
 
@@ -472,8 +554,10 @@ async function persist(zones, assets) {
 // ─────────────────────────────────────────────────────────────────────────────
 
 async function main() {
+  const supabase = createSupabaseClientFromEnv();
+
   // ── 1. Load assets ─────────────────────────────────────────────────────────
-  const assets = loadAssets();
+  const assets = await loadAssets(supabase);
   console.log(`[detect] Loaded ${assets.length} assets.`);
 
   // ── 2. Determine sample mode ───────────────────────────────────────────────
@@ -537,7 +621,7 @@ async function main() {
     return;
   }
 
-  await persist(zones, assets);
+  await persist(zones, supabase);
 }
 
 main().catch((err) => {

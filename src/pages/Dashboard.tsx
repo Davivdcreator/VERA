@@ -2,16 +2,14 @@
  * Dashboard — VERA command center. DESIGN_SYSTEM.md §5.
  *
  * Layout (main content, column 2 of the shell):
- *   1. KPI stat row        — 4 cards derived from live asset data
- *   2. Map (centerpiece)   — ONE unified Google3DMap, full width
- *   3. Support row         — Repair Priorities table | Live Alerts feed
+ *   1. Map (centerpiece)   — ONE unified Google3DMap, full width
+ *   2. Support row         — Repair Priorities table | Live Alerts feed
  *
  * All asset data flows from loadAssetCards() — nothing hardcoded here.
  * Supabase is used when configured; otherwise falls back to cards.json.
  */
 import { useState, useEffect, useMemo } from "react";
 import { Panel } from "@/components/ui/Panel";
-import { KpiCard } from "@/components/ui/KpiCard";
 import { IconButton } from "@/components/ui/IconButton";
 import { MoreHorizontal } from "lucide-react";
 import { MapPanel } from "@/components/dashboard/MapPanel";
@@ -19,6 +17,7 @@ import type { MapMode } from "@/components/dashboard/MapPanel";
 import { RepairPrioritiesTable } from "@/components/dashboard/RepairPrioritiesTable";
 import { LiveAlertsFeed } from "@/components/dashboard/LiveAlertsFeed";
 import { AssetCardPanel } from "@/components/dashboard/AssetCardPanel";
+import type { RebuildCostReport } from "@/components/dashboard/AssetCardPanel";
 import { DamageDetectionsPanel } from "@/components/dashboard/DamageDetectionsPanel";
 import { STATE_COLOR, loadAssetCards, cardsToMarkers, loadDamageEvents } from "@/lib/data/loadCards";
 import type { AssetCard } from "@/lib/data/types";
@@ -41,6 +40,22 @@ const STATE_LEGEND: MapLegendProps = {
 };
 
 const RELATIONSHIP_GRAPH_DEPTH = 2;
+
+interface AdvisorySummary {
+  bestNextAction: string;
+  findingsCount: number;
+  recommendationsCount: number;
+  topFinding?: string;
+  topRecommendation?: string;
+}
+
+interface AdvisoryApiResponse {
+  findings?: Array<{ title?: string }>;
+  recommendations?: Array<{ action?: string }>;
+  decision_support?: {
+    best_next_action?: string;
+  };
+}
 
 /* ─── derive table rows + alert events from cards ────────────────────────── */
 
@@ -147,6 +162,78 @@ function buildRelationshipGraph(
   };
 }
 
+function formatCardCostContext(card: AssetCard, cardMap: Map<string, AssetCard>): string {
+  const upstream = card.upstream.map((edge) => {
+    const dependency = cardMap.get(edge.assetId);
+    return `${dependency?.name ?? edge.assetId} (${edge.kind}, weight ${Math.round(edge.weight * 100)}%)`;
+  });
+  const downstream = card.downstream.map((edge) => {
+    const dependent = cardMap.get(edge.assetId);
+    return `${dependent?.name ?? edge.assetId} (${edge.kind}, weight ${Math.round(edge.weight * 100)}%)`;
+  });
+
+  return [
+    `Estimate the rebuild cost for this infrastructure asset.`,
+    `Asset: ${card.name}`,
+    card.name_native ? `Native name: ${card.name_native}` : null,
+    `Type: ${card.type}`,
+    `Status: ${card.status}`,
+    `Location: ${card.lat}, ${card.lng}`,
+    card.zones.length > 0 ? `Zones: ${card.zones.join(", ")}` : null,
+    `Criticality: ${Math.round(card.criticality * 100)} / 100`,
+    `State confidence: ${Math.round(card.state_confidence * 100)}%`,
+    `Population at risk: ${card.population_affected.toLocaleString("en-US")}`,
+    card.radius_m != null ? `Impact radius: ${card.radius_m} m` : null,
+    `Metrics: ${JSON.stringify(card.metrics)}`,
+    upstream.length > 0 ? `Blocking/upstream dependencies to evaluate first: ${upstream.join("; ")}` : null,
+    downstream.length > 0 ? `Downstream assets affected by this rebuild: ${downstream.join("; ")}` : null,
+    card.evidence.length > 0
+      ? `Damage evidence: ${card.evidence.map((ev) => `${ev.source}: ${ev.detail}`).join(" | ")}`
+      : null,
+  ].filter(Boolean).join("\n");
+}
+
+function formatCardAdvisoryContext(card: AssetCard, cardMap: Map<string, AssetCard>): string {
+  const graph = buildRelationshipGraph(card.id, cardMap);
+  const nodeLines = graph?.nodes.map((node) => {
+    const asset = cardMap.get(node.id);
+    return [
+      `${node.id}: ${asset?.name ?? node.label}`,
+      asset ? `type=${asset.type}` : null,
+      asset ? `status=${asset.status}` : null,
+      asset ? `criticality=${Math.round(asset.criticality * 100)}` : null,
+      asset ? `population_at_risk=${asset.population_affected}` : null,
+      asset?.zones.length ? `zones=${asset.zones.join(", ")}` : null,
+    ].filter(Boolean).join(" | ");
+  }) ?? [];
+  const edgeLines = graph?.edges.map((edge) => {
+    const source = cardMap.get(edge.sourceId);
+    const target = cardMap.get(edge.targetId);
+    return `${source?.name ?? edge.sourceId} -> ${target?.name ?? edge.targetId} | kind=${edge.kind} | weight=${Math.round(edge.weight * 100)}%`;
+  }) ?? [];
+
+  return [
+    `Analyze this dependency graph and advise on the best operational next action.`,
+    `Selected asset: ${card.name} (${card.id})`,
+    card.name_native ? `Native name: ${card.name_native}` : null,
+    `Selected asset type: ${card.type}`,
+    `Selected asset status: ${card.status}`,
+    `Selected asset location: ${card.lat}, ${card.lng}`,
+    `Selected asset criticality: ${Math.round(card.criticality * 100)} / 100`,
+    `State confidence: ${Math.round(card.state_confidence * 100)}%`,
+    `Population at risk: ${card.population_affected.toLocaleString("en-US")}`,
+    card.evidence.length > 0
+      ? `Selected asset evidence: ${card.evidence.map((ev) => `${ev.source}: ${ev.detail}`).join(" | ")}`
+      : null,
+    ``,
+    `Graph nodes:`,
+    nodeLines.length > 0 ? nodeLines.join("\n") : `No related graph nodes available beyond selected asset.`,
+    ``,
+    `Graph edges:`,
+    edgeLines.length > 0 ? edgeLines.join("\n") : `No dependency edges available for selected asset.`,
+  ].filter((line) => line !== null).join("\n");
+}
+
 /* ─── component ─────────────────────────────────────────────────────────── */
 
 export function Dashboard() {
@@ -160,6 +247,13 @@ export function Dashboard() {
   const [damageLoading, setDamageLoading] = useState(true);
   const [mapFocus, setMapFocus]         = useState<{ lat: number; lng: number; zoom?: number } | null>(null);
   const [focusedDamageId, setFocusedDamageId] = useState<string | null>(null);
+  const [costReports, setCostReports] = useState<Record<string, RebuildCostReport>>({});
+  const [costErrors, setCostErrors] = useState<Record<string, string>>({});
+  const [costLoadingId, setCostLoadingId] = useState<string | null>(null);
+  const [costDialogId, setCostDialogId] = useState<string | null>(null);
+  const [advisories, setAdvisories] = useState<Record<string, AdvisorySummary>>({});
+  const [advisoryErrors, setAdvisoryErrors] = useState<Record<string, string>>({});
+  const [advisoryLoadingId, setAdvisoryLoadingId] = useState<string | null>(null);
 
   // Load cards once on mount.
   useEffect(() => {
@@ -225,20 +319,6 @@ export function Dashboard() {
     [selectedId, cardMap],
   );
 
-  // KPI derivations.
-  const kpi = useMemo(() => {
-    const total       = cards.length;
-    const offline     = cards.filter((c) => c.status === "offline").length;
-    const degraded    = cards.filter((c) => c.status === "degraded").length;
-    const operational = cards.filter((c) => c.status === "operational").length;
-    const pctOp       = total > 0 ? Math.round((operational / total) * 100) : 0;
-    const popAtRisk   = cards
-      .filter((c) => c.status !== "operational")
-      .reduce((acc, c) => acc + c.population_affected, 0);
-
-    return { total, offline, degraded, pctOp, popAtRisk };
-  }, [cards]);
-
   // Repair priority rows: sort by criticality desc, take top 8.
   const repairRows = useMemo<RepairPriority[]>(
     () =>
@@ -266,54 +346,109 @@ export function Dashboard() {
     }
   };
 
-  return (
-    <div className="flex flex-col gap-4 p-4 sm:p-4 lg:gap-6 lg:p-6">
-      {/* 1 — KPI stat row */}
-      <section
-        aria-label="Key metrics"
-        className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4 lg:gap-6"
-      >
-        <KpiCard
-          label="Assets Monitored"
-          value={loading ? "—" : String(kpi.total)}
-          delta={{ value: "live Kyiv data", tone: "neutral", direction: "flat" }}
-        />
-        <KpiCard
-          label="Critical / Offline"
-          value={loading ? "—" : String(kpi.offline)}
-          statusRail={kpi.offline > 0 ? "offline" : "operational"}
-          delta={{
-            value: `+${kpi.degraded} degraded`,
-            tone: kpi.offline > 0 ? "bad" : "neutral",
-          }}
-        />
-        <KpiCard
-          label="% Operational"
-          value={loading ? "—" : `${kpi.pctOp}%`}
-          delta={{
-            value: `${kpi.total - kpi.offline - kpi.degraded} fully nominal`,
-            tone: kpi.pctOp >= 80 ? "good" : kpi.pctOp >= 50 ? "neutral" : "bad",
-            direction: kpi.pctOp >= 80 ? "up" : "down",
-          }}
-        />
-        <KpiCard
-          label="Population at Risk"
-          value={loading ? "—" : kpi.popAtRisk > 1_000_000
-            ? `${(kpi.popAtRisk / 1_000_000).toFixed(1)}M`
-            : kpi.popAtRisk > 1_000
-              ? `${Math.round(kpi.popAtRisk / 1_000)}K`
-              : String(kpi.popAtRisk)}
-          delta={{
-            value: "non-operational assets",
-            tone: kpi.popAtRisk > 500_000 ? "bad" : "neutral",
-          }}
-        />
-      </section>
+  const calculateSelectedCost = async () => {
+    if (!selectedCard) return;
 
-      {/* 2 — Map (centerpiece) */}
+    setCostLoadingId(selectedCard.id);
+    setCostErrors((current) => {
+      const next = { ...current };
+      delete next[selectedCard.id];
+      return next;
+    });
+
+    try {
+      const response = await fetch("/api/rebuild-cost", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          prompt: formatCardCostContext(selectedCard, cardMap),
+          target: selectedCard.name,
+          currency: "USD",
+          basisDate: new Date().toISOString().slice(0, 10),
+          agent: "auto",
+        }),
+      });
+      const data = await response.json() as RebuildCostReport & { error?: string; detail?: string };
+
+      if (!response.ok) {
+        throw new Error(data.detail || data.error || "Cost calculation failed.");
+      }
+
+      if (!data.total_program_cost && !data.target_cost) {
+        throw new Error("Cost calculation returned no estimate.");
+      }
+
+      setCostReports((current) => ({ ...current, [selectedCard.id]: data }));
+      setCostDialogId(selectedCard.id);
+    } catch (error) {
+      setCostErrors((current) => ({
+        ...current,
+        [selectedCard.id]: error instanceof Error ? error.message : "Cost calculation failed.",
+      }));
+    } finally {
+      setCostLoadingId((current) => (current === selectedCard.id ? null : current));
+    }
+  };
+
+  const runSelectedAdvisory = async () => {
+    if (!selectedCard) return;
+
+    setAdvisoryLoadingId(selectedCard.id);
+    setAdvisoryErrors((current) => {
+      const next = { ...current };
+      delete next[selectedCard.id];
+      return next;
+    });
+
+    try {
+      const response = await fetch("/api/advisory", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          prompt: formatCardAdvisoryContext(selectedCard, cardMap),
+          objective: `Advise the next operational action for ${selectedCard.name}.`,
+          databaseRoot: "data",
+          catalogs: ["src/data/generated/cards.json"],
+          agent: "auto",
+        }),
+      });
+      const data = await response.json() as AdvisoryApiResponse & { error?: string; detail?: string };
+
+      if (!response.ok) {
+        throw new Error(data.detail || data.error || "Advisory failed.");
+      }
+
+      const bestNextAction = data.decision_support?.best_next_action;
+      if (!bestNextAction) {
+        throw new Error("Advisory returned no next action.");
+      }
+
+      setAdvisories((current) => ({
+        ...current,
+        [selectedCard.id]: {
+          bestNextAction,
+          findingsCount: data.findings?.length ?? 0,
+          recommendationsCount: data.recommendations?.length ?? 0,
+          topFinding: data.findings?.[0]?.title,
+          topRecommendation: data.recommendations?.[0]?.action,
+        },
+      }));
+    } catch (error) {
+      setAdvisoryErrors((current) => ({
+        ...current,
+        [selectedCard.id]: error instanceof Error ? error.message : "Advisory failed.",
+      }));
+    } finally {
+      setAdvisoryLoadingId((current) => (current === selectedCard.id ? null : current));
+    }
+  };
+
+  return (
+    <div className="mx-auto flex w-full max-w-[1800px] flex-col gap-4 p-4 sm:p-4 lg:gap-6 lg:p-6">
+      {/* 1 — Map (centerpiece) */}
       <section
         aria-label="Infrastructure map"
-        className="relative h-[440px] sm:h-[520px] lg:h-[600px]"
+        className="relative h-[calc(100vh-2rem)] min-h-[560px] lg:h-[calc(100vh-3rem)] lg:min-h-[720px]"
       >
         {loading && (
           <div className="pointer-events-none absolute inset-0 z-30 flex items-center justify-center">
@@ -345,12 +480,23 @@ export function Dashboard() {
           <AssetCardPanel
             card={selectedCard}
             cardMap={cardMap}
+            costReport={costReports[selectedCard.id] ?? null}
+            costLoading={costLoadingId === selectedCard.id}
+            costError={costErrors[selectedCard.id] ?? null}
+            onCalculateCost={calculateSelectedCost}
+            costDialogOpen={costDialogId === selectedCard.id}
+            onOpenCostDetails={() => setCostDialogId(selectedCard.id)}
+            onCloseCostDetails={() => setCostDialogId(null)}
+            advisory={advisories[selectedCard.id] ?? null}
+            advisoryLoading={advisoryLoadingId === selectedCard.id}
+            advisoryError={advisoryErrors[selectedCard.id] ?? null}
+            onRunAdvisory={runSelectedAdvisory}
             onClose={() => setSelectedId(null)}
           />
         )}
       </section>
 
-      {/* 3 — Support row */}
+      {/* 2 — Support row */}
       <section
         aria-label="Operations detail"
         className="grid grid-cols-1 gap-4 lg:grid-cols-[1.4fr_1fr_1fr] lg:gap-6"
