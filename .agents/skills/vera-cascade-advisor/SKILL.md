@@ -36,7 +36,13 @@ A good advisory reads like an experienced operator thinking out loud, e.g.:
    - when it happened and the current state (operational / degraded / offline)
    - confidence in the event itself and its source (FIRMS thermal, Telegram report, operator input, manual)
 
-2. **Pull the dependency context, then critique it:**
+2. **Look up the local SQLite evidence, then pull the dependency context:**
+   - prefer querying `data/databases/lite/infra.db` when it is available; it is the compact local source for infrastructure assets and dependency edges
+   - use read-only SQLite queries against `infrastructure` and `infrastructure_dependencies` to corroborate asset id, label, type/subtype, status, location, nearby or matching assets, and upstream/downstream dependency edges
+   - for a known asset id, inspect both outgoing and incoming edges (`source_id = asset_id` and `target_id = asset_id`) and join to `infrastructure` so the advisory uses human-readable labels
+   - if only a name/location/type is known, first search candidate rows in `infrastructure`, then query dependencies for the best match
+   - record SQLite lookups in `data_sources` with `kind: "local_dataset"`, `path_or_url: "data/databases/lite/infra.db"`, and a concise description of the query purpose
+   - if SQLite is missing or insufficient, say so in `caveats` and continue with graph/context evidence
    - read the dependency work-tree / impact zone for the hit asset (see the `digital-twin-card` and `damage-state-fusion` skills for where state and dependencies come from)
    - list the downstream assets the graph names
    - then add downstream assets the graph *misses* but physical logic implies, and mark which edges are `graph` vs `inferred`

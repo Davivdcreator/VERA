@@ -87,9 +87,15 @@ dependency graph and produce operational advice.
 
 Rules:
 - Treat the graph as the primary task context.
-- You may inspect the local database/data paths listed in the prompt before
-  answering. Use them to corroborate asset names, types, locations, statuses,
-  dependency edges, evidence, or metrics.
+- You are encouraged to inspect the local database/data paths listed in the
+  prompt before answering. Prefer read-only SQLite lookups when a local
+  `data/databases/lite/infra.db` database is available; use its
+  `infrastructure` and `infrastructure_dependencies` tables to corroborate
+  asset names, ids, types, locations, statuses, dependency edges, evidence, or
+  metrics.
+- When querying SQLite for a known asset, check both incoming and outgoing
+  dependency edges and join to infrastructure rows so conclusions use
+  human-readable labels.
 - Record every meaningful database/file/API lookup in database_queries.
 - Do not claim a lookup was performed unless you actually inspected that source.
 - Separate evidence from assumptions.
