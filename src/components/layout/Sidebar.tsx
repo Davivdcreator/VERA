@@ -10,6 +10,7 @@ import type { LucideIcon } from "lucide-react";
 import {
   Activity,
   AlertTriangle,
+  BarChart3,
   LayoutDashboard,
   Layers,
   MapPin,
@@ -42,6 +43,7 @@ const NAV_GROUPS: NavGroup[] = [
   {
     label: "Operations",
     items: [
+      { id: "analyses", label: "Analyses", icon: BarChart3, to: "/analyses" },
       { id: "danger", label: "Danger Zones", icon: AlertTriangle, to: "/danger-zones" },
       { id: "repairs", label: "Repair Queue", icon: Wrench },
       { id: "assets", label: "Asset Registry", icon: Layers },

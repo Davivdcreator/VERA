@@ -1,107 +1,62 @@
 ---
 name: vera-rebuild-cost-estimator
-description: Estimate planning-level demolition and rebuild costs for damaged residential or civic buildings in VERA, using available local context, explicit assumptions, uncertainty bands, and a simple app-ready JSON output.
+description: Estimate planning-level rebuild cost for a damaged VERA infrastructure asset, including the prerequisite dependencies that must be rebuilt first, with explicit assumptions, uncertainty ranges, and a single app-ready JSON object.
 ---
 
 # VERA Rebuild Cost Estimator
 
-Use this skill when estimating the cost to repair, demolish, replace, or rebuild a damaged building for VERA. The output is for administrative planning and prioritization, not procurement, insurance settlement, or final quantity surveying.
+Use this skill to estimate the cost to repair, demolish, replace, or rebuild a damaged asset for VERA. The output is for administrative planning and prioritization — not procurement, insurance settlement, or final quantity surveying.
 
 ## Core Rule
 
-Return a single JSON object matching `references/rebuild_cost_estimate.schema.json` unless the user explicitly asks for prose. Keep it simple enough for a basic app screen: header fields, context, assumptions, cost rows, totals, confidence, caveats, and next steps.
+Return a **single JSON object** that conforms exactly to `references/rebuild_cost_estimate.schema.json` (`schema_version: "vera.rebuild_cost_estimate.v2"`). Return JSON only — no Markdown, no prose outside the JSON. Use exact numbers (not strings) for every cost field. Use `null` only where the schema allows it; never omit a required key.
+
+This is a **dependency-aware** estimate: the asset is part of a network, so the cost to make it viable again may require rebuilding upstream dependencies first.
 
 ## Workflow
 
-1. Identify the estimate type:
-   - `repair`: partial works where the structure remains.
-   - `demolish_and_rebuild`: damaged beyond economical repair or policy favors replacement.
-   - `new_build`: replacement capacity without a known existing asset.
-   - `unknown`: insufficient scope clarity.
+1. **Identify the target** from the provided asset context: name, type, location, and a short scope summary of what rebuilding entails.
 
-2. Collect or infer minimum inputs:
-   - location or grid cell
-   - building use, default `residential`
-   - gross floor area in square meters
-   - floors, footprint, unit count, or occupancy if available
-   - damage state and whether demolition is required
-   - planning currency and price basis date
-   - local constraints: dense center, access difficulty, heritage constraints, utilities, site security
+2. **Assess viability.** Decide whether the target can be rebuilt and made operational *now*, or whether upstream dependencies must be restored first. List blocking dependencies and an ordered `critical_path` (dependencies first, target last).
 
-3. Enrich from VERA/local data when available:
-   - population and density context
-   - nearby civic facilities and service pressure
-   - transit access and road/access constraints
-   - air-alert or hazard exposure history
-   - administrative boundary or grid id
-   - source freshness and confidence
+3. **Cost the dependencies.** For each *blocking* dependency (set `rebuild_first: true`), estimate its rebuild cost as a range with currency and confidence. Do not list nice-to-have work as a blocking dependency — only what is genuinely required first.
 
-4. If building specifics are missing, make conservative assumptions and mark them:
-   - Central urban residential replacement: 3,000-8,000 m2 GFA unless user gives size.
-   - Demolition/debris/site prep: 8-18% of new-build hard cost for severe destruction in constrained urban sites.
-   - Soft costs: 10-18% of hard cost.
-   - External works, utilities, access, resilience upgrades: 6-15% of hard cost.
-   - Contingency/escalation: 12-25% at concept stage.
-   - Planning-level confidence should usually be `low` unless a measured GFA and damage survey are available.
+4. **Cost the target** (`target_cost`) as a `{low, expected, high}` range with currency, confidence, and a `basis_date`.
 
-5. Build line items:
-   - demolition_debris_and_site_safety
-   - new_build_hard_cost
-   - utilities_and_external_works
-   - design_permits_supervision
-   - resilience_and_accessibility_upgrades
-   - contingency_and_escalation
-   - optional: temporary_housing_or_relocation, heritage_or_complex_site_premium
+5. **Build `line_items`** that decompose the spend. Each item has a `category` (one of: `demolition`, `hard_cost`, `utilities`, `soft_cost`, `dependency`, `contingency`, `resilience`, `other`), an `applies_to` (the target or a dependency name), and `{low, expected, high}`. These power the app's cost-structure chart, so keep categories accurate.
 
-6. Compute totals:
-   - `low`, `expected`, `high`
-   - `per_square_meter.low/expected/high`
-   - include `currency`, `price_basis_date`, and `vat_included` if known
+6. **Compute `total_program_cost`** = target cost + all blocking dependency costs. Set `includes_dependencies` accordingly. Ensure `low <= expected <= high` for every range.
 
-7. Flag missing blockers:
-   - measured GFA/footprint
-   - damage grade and structural assessment
-   - demolition waste quantity
-   - ownership/cadastre
-   - heritage status
-   - utility reconnection needs
-   - procurement/VAT/local index assumptions
+7. **Write the `summary`** (3–6 sentences, plain language): what the target is, whether it's viable now, the headline expected program cost with range, the main blocking dependencies, and the confidence level. This is shown verbatim in the app.
 
-## Cost Method
+8. **Fill `assumptions`, `risks`, `missing_inputs`, `recommended_next_steps`** as arrays of short strings. Flag the blockers that would most improve the estimate (measured GFA/footprint, damage grade, demolition quantities, ownership, utility reconnection, local price index).
 
-For a concept estimate:
+## Estimating Method
+
+For a concept-level estimate:
 
 ```text
-hard_cost = gross_floor_area_m2 * base_rebuild_cost_per_m2
+hard_cost          = gross_floor_area_m2 * base_rebuild_cost_per_m2
 line_item.expected = quantity * unit_cost.expected
-line_item.low/high = expected adjusted by uncertainty range
-total = sum(line_items)
-confidence = function(input completeness, source reliability, variance width)
+line_item.low/high = expected widened by an uncertainty band
+target_cost        = sum(target line_items)
+total_program_cost = target_cost + sum(blocking dependency costs)
+confidence         = f(input completeness, source reliability, range width)
 ```
 
-Prefer ranges over false precision. Round planning totals to sensible increments:
+Prefer ranges over false precision. When building specifics are missing, assume conservatively and record it in `assumptions`:
 
-- under 1M: nearest 10,000
-- 1M-20M: nearest 100,000
-- above 20M: nearest 500,000 or 1,000,000
+- Central urban residential replacement: 3,000–8,000 m² GFA unless a size is given.
+- Demolition/debris/site prep: 8–18% of new-build hard cost for severe destruction on constrained urban sites.
+- Soft costs (design/permits/supervision): 10–18% of hard cost.
+- Utilities/external works/access/resilience: 6–15% of hard cost.
+- Contingency/escalation: 12–25% at concept stage.
+- Confidence is usually `low` unless measured GFA and a damage survey are available.
+
+Round planning totals sensibly: under 1M → nearest 10,000; 1M–20M → nearest 100,000; above 20M → nearest 500,000 or 1,000,000.
 
 ## Output Contract
 
-Use the schema in `references/rebuild_cost_estimate.schema.json`. Required top-level keys:
+Top-level keys (all required): `schema_version`, `summary`, `target`, `viability`, `dependencies`, `target_cost`, `total_program_cost`, `line_items`, `assumptions`, `risks`, `missing_inputs`, `recommended_next_steps`.
 
-- `schema_version`
-- `estimate_id`
-- `estimate_kind`
-- `summary`
-- `location_context`
-- `building_assumptions`
-- `damage_assessment`
-- `cost_model`
-- `line_items`
-- `totals`
-- `confidence`
-- `data_sources`
-- `caveats`
-- `recommended_next_steps`
-
-Use `null` for unknown scalar values. Do not omit important unknowns.
+See `references/rebuild_cost_estimate.schema.json` for the exact shape. The schema is strict-output safe and is passed to the model as `response_format: { type: "json_schema" }`.

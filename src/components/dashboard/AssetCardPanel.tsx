@@ -143,6 +143,8 @@ export interface RebuildCostRange {
 
 export interface RebuildCostReport {
   schema_version: string;
+  /** Plain-language summary shown verbatim in the card and the Analyses page. */
+  summary?: string;
   target: {
     name: string;
     description: string;
