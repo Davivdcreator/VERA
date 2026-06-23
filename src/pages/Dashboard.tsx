@@ -259,13 +259,37 @@ export function Dashboard() {
 
   // Categories present in the loaded data, with counts, for the header filter.
   const assetTypes = useMemo(() => {
+    // Order the Types filter by public-safety / importance — most critical first
+    // (healthcare & emergency services, then water, power, heating, then the rest).
+    const PRIORITY: Record<string, number> = {
+      hospital: 1,
+      fire_station: 2,
+      police: 3,
+      clinic: 4,
+      pharmacy: 5,
+      water_works: 6,
+      pumping_station: 7,
+      water_fountain: 8,
+      power_plant: 9,
+      substation: 10,
+      heating_plant: 11,
+      wastewater: 12,
+      telecom: 13,
+      bridge: 14,
+      bus_stop: 15,
+      post_office: 16,
+      supermarket: 17,
+      museum: 18,
+      other: 99,
+    };
+    const rank = (t: string) => PRIORITY[t] ?? 50;
     const counts = new Map<string, number>();
     for (const card of cards) {
       const key = subtypeOf(card);
       counts.set(key, (counts.get(key) ?? 0) + 1);
     }
     return Array.from(counts, ([type, count]) => ({ type, count })).sort(
-      (a, b) => b.count - a.count,
+      (a, b) => rank(a.type) - rank(b.type) || b.count - a.count,
     );
   }, [cards]);
 
