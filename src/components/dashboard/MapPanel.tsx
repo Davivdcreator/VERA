@@ -19,7 +19,7 @@
  */
 import { Box, Building2, Compass, Map as MapIcon, Maximize2, MoreHorizontal, Minus, Plus, TriangleAlert } from "lucide-react";
 import { OsmBuildingsMap } from "@/lib/osmb/OsmBuildingsMap";
-import type { MapMarker } from "@/lib/osmb/OsmBuildingsMap";
+import type { MapGraphOverlay, MapMarker } from "@/lib/osmb/OsmBuildingsMap";
 import type { DamageZone } from "@/lib/data/damage";
 import { cn } from "@/lib/cn";
 import { IconButton } from "@/components/ui/IconButton";
@@ -45,6 +45,8 @@ export interface MapPanelProps {
   onToggleBuildings?: () => void;
   /** Damage zones to render as translucent red circles on the map. */
   zones?: DamageZone[];
+  /** Selected asset relationship graph to render over the map. */
+  graph?: MapGraphOverlay | null;
   /** Whether the damage zone layer is visible. */
   showDamage?: boolean;
   /** Toggle the damage zone overlay. */
@@ -72,6 +74,7 @@ export function MapPanel({
   showBuildings = true,
   onToggleBuildings,
   zones,
+  graph,
   showDamage = true,
   onToggleDamage,
   focus,
@@ -98,6 +101,7 @@ export function MapPanel({
           onMarkerClick={onMarkerClick}
           showBuildings={showBuildings}
           zones={showDamage ? zones : undefined}
+          graph={graph}
           focus={focus}
           highlightZoneId={highlightZoneId}
         />

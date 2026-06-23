@@ -103,8 +103,8 @@ export interface OSMBuildingsMap {
   /** 2D raster base layer. URL template uses {z}/{x}/{y}. Renders below buildings. */
   addMapTiles(urlTemplate: string, options?: OSMBuildingsLayerOptions): unknown;
 
-  /** Single GeoJSON file of buildings/features. */
-  addGeoJSON(url: string, options?: OSMBuildingsLayerOptions): unknown;
+  /** Single GeoJSON file or in-memory FeatureCollection of polygonal features. */
+  addGeoJSON(urlOrData: string | object, options?: OSMBuildingsLayerOptions): unknown;
 
   /** Continuous tiled 3D building coverage. URL template uses {s}/{z}/{x}/{y}. */
   addGeoJSONTiles(url: string, options?: OSMBuildingsLayerOptions): unknown;
@@ -124,9 +124,19 @@ export interface OSMBuildingsMap {
   highlight(feature: unknown): void;
 
   /**
+   * Projects a WGS84 coordinate into canvas pixels using OSMB's current camera
+   * matrix. Present in the 4.1.1 bundle even though the public docs barely
+   * surface it. `altitude` is meters above the map plane.
+   */
+  project(latitude: number, longitude: number, altitude?: number): { x: number; y: number; z: number };
+
+  /** Converts canvas pixels back to a ground-plane WGS84 coordinate. */
+  unproject(x: number, y: number): LatLng | undefined;
+
+  /**
    * View bounds. NOTE: OSMB 4.1.1 actually returns the four view-polygon CORNERS
    * as `{ longitude, latitude }` points (a trapezoid under 3D tilt), NOT a flat
-   * [south, west, north, east] tuple. Normalise via `boundsToBox()` before use.
+   * [south, west, north, east] tuple.
    */
   getBounds(): LatLngBounds | number[] | Array<{ latitude: number; longitude: number }>;
 

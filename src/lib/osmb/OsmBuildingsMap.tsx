@@ -7,10 +7,10 @@
  *   - mode="2d": tilt 0, satellite only (flat).
  *   - mode="3d": tilt ~45, satellite + extruded OSM buildings.
  *
- * Markers: OSMB has no marker/projection API, so we project each lat/lng to a
- * pixel from getBounds() + getSize() and draw a clickable HTML pin over the
- * canvas, re-projecting on every `change`. Exact top-down (2D); a close
- * approximation under 3D tilt.
+ * Markers: projected through OSMB's own camera matrix (`map.project`) and drawn
+ * as HTML/SVG overlays over the canvas, re-projecting on every frame while the
+ * map moves. They are not depth-tested WebGL geometry, but they stay anchored
+ * to the same 3D camera as the building layer.
  *
  * StrictMode-safe; the container MUST have an explicit height.
  */
@@ -45,11 +45,52 @@ export interface MapMarker {
   label?: string;
 }
 
+export interface MapGraphNode {
+  id: string;
+  lat: number;
+  lng: number;
+  label?: string;
+  color: string;
+  depth: number;
+  role: "selected" | "related";
+}
+
+export interface MapGraphEdge {
+  id: string;
+  sourceId: string;
+  targetId: string;
+  kind: string;
+  weight: number;
+}
+
+export interface MapGraphOverlay {
+  nodes: MapGraphNode[];
+  edges: MapGraphEdge[];
+  depth: number;
+}
+
 interface ProjectedZone extends DamageZone {
   x: number;
   y: number;
   /** Damage circle radius in CSS pixels. */
   radiusPx: number;
+}
+
+interface ProjectedGraphNode extends MapGraphNode {
+  x: number;
+  y: number;
+  visible: boolean;
+}
+
+interface ProjectedGraphEdge extends MapGraphEdge {
+  source: ProjectedGraphNode;
+  target: ProjectedGraphNode;
+}
+
+interface ProjectedGraphOverlay {
+  nodes: ProjectedGraphNode[];
+  edges: ProjectedGraphEdge[];
+  depth: number;
 }
 
 export interface OsmBuildingsMapProps {
@@ -65,6 +106,8 @@ export interface OsmBuildingsMapProps {
   showBuildings?: boolean;
   /** Damage zones to draw as translucent red circles over the map. */
   zones?: DamageZone[];
+  /** Relationship graph to draw over the map for a selected asset. */
+  graph?: MapGraphOverlay | null;
   /** Imperative fly-to: when this object changes, recentre/zoom the camera here. */
   focus?: { lat: number; lng: number; zoom?: number } | null;
   /** Id of the damage zone to emphasize (e.g. the one a user just clicked). */
@@ -74,43 +117,35 @@ export interface OsmBuildingsMapProps {
 
 const CLAMP_THROTTLE_MS = 80;
 
-/** Axis-aligned geographic box derived from the map's view bounds. */
-type BBox = { south: number; west: number; north: number; east: number };
+function projectMapPoint(
+  map: OSMBuildingsMap,
+  lat: number,
+  lng: number,
+  altitude = 0,
+): { x: number; y: number; z: number } | null {
+  const point = map.project(lat, lng, altitude);
+  return Number.isFinite(point.x) && Number.isFinite(point.y) && Number.isFinite(point.z)
+    ? point
+    : null;
+}
 
-/**
- * Normalise OSM Buildings' getBounds() into an axis-aligned {south,west,north,east}.
- *
- * OSMB 4.1.1 returns the *view polygon* as four corner points
- * (`{ longitude, latitude }[]`), NOT the flat `[south, west, north, east]` tuple
- * the older docs (and our .d.ts) describe. Treating the corners as numbers makes
- * every `Number.isFinite` check fail, so marker/zone projection silently bailed
- * and nothing drew. We accept BOTH shapes and, for the polygon, take its bounding
- * box — exact top-down (2D), a close approximation under 3D tilt. Returns null if
- * the bounds aren't readable yet (camera not ready).
- */
-function boundsToBox(raw: unknown): BBox | null {
-  if (!Array.isArray(raw) || raw.length < 4) return null;
-  // Flat numeric tuple form: [south, west, north, east].
-  if (typeof raw[0] === "number") {
-    const [south, west, north, east] = raw as number[];
-    return [south, west, north, east].every(Number.isFinite)
-      ? { south, west, north, east }
-      : null;
-  }
-  // Corner-point form: { longitude, latitude }[].
-  const lats: number[] = [];
-  const lngs: number[] = [];
-  for (const p of raw as Array<{ latitude?: number; longitude?: number }>) {
-    if (!p || !Number.isFinite(p.latitude) || !Number.isFinite(p.longitude)) return null;
-    lats.push(p.latitude as number);
-    lngs.push(p.longitude as number);
-  }
-  return {
-    south: Math.min(...lats),
-    north: Math.max(...lats),
-    west: Math.min(...lngs),
-    east: Math.max(...lngs),
-  };
+function projectedPointVisible(
+  point: { x: number; y: number; z: number },
+  size: { width: number; height: number },
+  margin = 80,
+): boolean {
+  return (
+    point.x >= -margin &&
+    point.x <= size.width + margin &&
+    point.y >= -margin &&
+    point.y <= size.height + margin &&
+    point.z >= -0.25 &&
+    point.z <= 1.25
+  );
+}
+
+function pointDistancePx(a: { x: number; y: number }, b: { x: number; y: number }): number {
+  return Math.hypot(a.x - b.x, a.y - b.y);
 }
 
 export function OsmBuildingsMap({
@@ -123,6 +158,7 @@ export function OsmBuildingsMap({
   onMarkerClick,
   showBuildings = true,
   zones,
+  graph,
   focus,
   highlightZoneId,
   className = "",
@@ -133,6 +169,7 @@ export function OsmBuildingsMap({
   // rAF loop in the init effect.
   const markerEls = useRef<Map<string, HTMLDivElement>>(new Map());
   const [projectedZones, setProjectedZones] = useState<ProjectedZone[]>([]);
+  const [projectedGraph, setProjectedGraph] = useState<ProjectedGraphOverlay | null>(null);
   // Hides the WebGL canvas behind a neutral cover until OSMB fires its first
   // "load" (tiles painted). OSM Buildings' un-painted canvas reads as a solid
   // RED wash during every (re)init; the cover is what stops the "flashing red".
@@ -147,6 +184,9 @@ export function OsmBuildingsMap({
   const zonesRef = useRef<DamageZone[] | undefined>(zones);
   zonesRef.current = zones;
   const projectZonesRef = useRef<(() => void) | null>(null);
+  const graphRef = useRef<MapGraphOverlay | null | undefined>(graph);
+  graphRef.current = graph;
+  const projectGraphRef = useRef<(() => void) | null>(null);
   // Handle for the OSM buildings layer, so we can add/remove it on toggle.
   const buildingsLayerRef = useRef<unknown>(null);
   const showBuildingsRef = useRef(showBuildings);
@@ -175,6 +215,7 @@ export function OsmBuildingsMap({
     let onLoad: (() => void) | null = null;
     let positionMarkers: (() => void) | null = null;
     let projectZones: (() => void) | null = null;
+    let projectGraph: (() => void) | null = null;
     let rafId = 0;
     let markerRaf = 0;
     let revealTimer: ReturnType<typeof setTimeout> | null = null;
@@ -212,7 +253,7 @@ export function OsmBuildingsMap({
             revealTimer = null;
           }
           setTilesReady(true);
-          // First paint done → getBounds()/getSize() are valid now. Re-project
+          // First paint done → the camera projection is valid now. Re-project
           // overlays in case marker/zone data arrived BEFORE the map was ready:
           // at that point the projection bailed on non-finite bounds and, on an
           // idle map, nothing else would have re-triggered it (zones never drew).
@@ -291,29 +332,21 @@ export function OsmBuildingsMap({
           if (!map) return;
           const ms = markersRef.current;
           if (!ms || ms.length === 0) return;
-          let box: BBox | null;
           let size: { width: number; height: number };
           try {
-            box = boundsToBox(map.getBounds());
             size = map.getSize();
           } catch {
             return;
           }
-          if (!box || !size || box.east === box.west || box.north === box.south) {
-            return;
-          }
-          const { south, west, north, east } = box;
-          const { width: w, height: h } = size;
           for (const m of ms) {
             const el = markerEls.current.get(m.id);
             if (!el) continue;
-            const x = ((m.lng - west) / (east - west)) * w;
-            const y = ((north - m.lat) / (north - south)) * h;
-            if (x < -40 || x > w + 40 || y < -40 || y > h + 40) {
+            const point = projectMapPoint(map, m.lat, m.lng);
+            if (!point || !projectedPointVisible(point, size, 40)) {
               el.style.visibility = "hidden";
             } else {
               el.style.visibility = "visible";
-              el.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+              el.style.transform = `translate(${point.x}px, ${point.y}px) translate(-50%, -50%)`;
             }
           }
         };
@@ -337,38 +370,32 @@ export function OsmBuildingsMap({
             setProjectedZones([]);
             return;
           }
-          let box: BBox | null;
           let size: { width: number; height: number };
           try {
-            box = boundsToBox(map.getBounds());
             size = map.getSize();
           } catch {
             return;
           }
-          if (!box || !size || box.east === box.west || box.north === box.south) {
-            return;
-          }
-          const { south, west, north, east } = box;
-          const { width: w, height: h } = size;
-          // metres-per-pixel derived from the lat span of the projected bbox.
-          // 1 degree latitude ≈ 111_320 m (close enough for approximate circles).
-          const metersPerPx = ((north - south) * 111_320) / h;
           const next: ProjectedZone[] = [];
           for (const z of zs) {
-            const x = ((z.lng - west) / (east - west)) * w;
-            const y = ((north - z.lat) / (north - south)) * h;
-            // Guard a degenerate bbox (tiny span → metersPerPx≈0 → a runaway
-            // ring). Hard-cap the pixel radius so one zone can't blanket the
-            // panel. (The solid-red full-screen wash was the OSMB canvas itself
-            // before tiles paint — handled by the load cover, not here.)
-            const rawRadiusPx =
-              Number.isFinite(metersPerPx) && metersPerPx > 0.001
-                ? z.radius_m / metersPerPx
-                : 0;
+            const center = projectMapPoint(map, z.lat, z.lng);
+            if (!center || !projectedPointVisible(center, size, 120)) continue;
+
+            // Project one north/south and one east/west radius sample through
+            // the camera matrix. A true ground circle becomes an ellipse under
+            // tilt; this keeps the displayed ring scale close without trying to
+            // draw full 3D geometry.
+            const latOffset = z.radius_m / 111_320;
+            const metersPerLng = 111_320 * Math.cos((z.lat * Math.PI) / 180);
+            const lngOffset = metersPerLng > 1 ? z.radius_m / metersPerLng : 0;
+            const north = projectMapPoint(map, z.lat + latOffset, z.lng);
+            const east = projectMapPoint(map, z.lat, z.lng + lngOffset);
+            const rawRadiusPx = Math.max(
+              north ? pointDistancePx(center, north) : 0,
+              east ? pointDistancePx(center, east) : 0,
+            );
             const radiusPx = Math.min(rawRadiusPx, 200);
-            // Cull by centre position only (fixed margin) — never by the radius.
-            if (x < -120 || x > w + 120 || y < -120 || y > h + 120) continue;
-            next.push({ ...z, x, y, radiusPx });
+            next.push({ ...z, x: center.x, y: center.y, radiusPx });
           }
           setProjectedZones(next);
         };
@@ -376,7 +403,49 @@ export function OsmBuildingsMap({
         map.on("change", projectZones);
         map.on("resize", projectZones);
 
-        rafId = requestAnimationFrame(() => { positionMarkers?.(); projectZones?.(); });
+        // ── Relationship graph projection ────────────────────────────────
+        projectGraph = () => {
+          if (!map) return;
+          const liveMap = map;
+          const g = graphRef.current;
+          if (!g || g.nodes.length === 0) {
+            setProjectedGraph(null);
+            return;
+          }
+          let size: { width: number; height: number };
+          try {
+            size = map.getSize();
+          } catch {
+            return;
+          }
+          const nodes = g.nodes.flatMap((n) => {
+            const point = projectMapPoint(liveMap, n.lat, n.lng);
+            if (!point) return [];
+            return {
+              ...n,
+              x: point.x,
+              y: point.y,
+              visible: projectedPointVisible(point, size, 80),
+            };
+          });
+          const nodeMap = new Map(nodes.map((n) => [n.id, n]));
+          const edges = g.edges.flatMap((e) => {
+            const source = nodeMap.get(e.sourceId);
+            const target = nodeMap.get(e.targetId);
+            if (!source || !target || !source.visible || !target.visible) return [];
+            return [{ ...e, source, target }];
+          });
+          setProjectedGraph({ nodes, edges, depth: g.depth });
+        };
+        projectGraphRef.current = projectGraph;
+        map.on("change", projectGraph);
+        map.on("resize", projectGraph);
+
+        rafId = requestAnimationFrame(() => {
+          positionMarkers?.();
+          projectZones?.();
+          projectGraph?.();
+        });
       })
       .catch((err) => {
         // eslint-disable-next-line no-console
@@ -391,6 +460,7 @@ export function OsmBuildingsMap({
       if (revealTimer) clearTimeout(revealTimer);
       projectRef.current = null;
       projectZonesRef.current = null;
+      projectGraphRef.current = null;
       mapRef.current = null;
       buildingsLayerRef.current = null;
       if (map) {
@@ -399,6 +469,10 @@ export function OsmBuildingsMap({
         if (projectZones) {
           map.off("change", projectZones);
           map.off("resize", projectZones);
+        }
+        if (projectGraph) {
+          map.off("change", projectGraph);
+          map.off("resize", projectGraph);
         }
         map.destroy();
         map = null;
@@ -420,6 +494,11 @@ export function OsmBuildingsMap({
     projectZonesRef.current?.();
   }, [zones]);
 
+  // Re-project graph overlays when the selected graph changes (no map rebuild).
+  useEffect(() => {
+    projectGraphRef.current?.();
+  }, [graph]);
+
   // Imperative fly-to: recentre/zoom the camera when `focus` changes (clamped).
   useEffect(() => {
     const map = mapRef.current;
@@ -437,6 +516,7 @@ export function OsmBuildingsMap({
     // Re-project overlays immediately rather than waiting for the change event.
     projectZonesRef.current?.();
     projectRef.current?.();
+    projectGraphRef.current?.();
   }, [focus]);
 
   // Switch 2D/3D by changing tilt IN PLACE — no map rebuild, so no red re-init
@@ -544,6 +624,86 @@ export function OsmBuildingsMap({
                     animation: `vera-damage-pulse ${hot ? "1.1s" : "2.2s"} ease-out infinite`,
                   }}
                 />
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {/* Relationship graph overlay. Lines sit below pins; halos identify the
+          selected asset and its depth-N neighbors without stealing clicks. */}
+      {projectedGraph && (
+        <div className="pointer-events-none absolute inset-0 z-[4] overflow-hidden">
+          <svg className="absolute inset-0 h-full w-full" aria-hidden="true">
+            <defs>
+              <marker
+                id="vera-graph-arrow"
+                markerWidth="7"
+                markerHeight="7"
+                refX="6"
+                refY="3.5"
+                orient="auto"
+                markerUnits="strokeWidth"
+              >
+                <path d="M0,0 L7,3.5 L0,7 Z" fill="rgba(210,59,64,0.9)" />
+              </marker>
+            </defs>
+            {projectedGraph.edges.map((e) => {
+              const opacity = Math.max(0.35, Math.min(0.9, e.weight));
+              const stroke =
+                e.kind === "powers"
+                  ? "rgba(210,59,64,0.92)"
+                  : e.kind === "supplies_water"
+                    ? "rgba(239,68,68,0.82)"
+                    : e.kind === "provides_access"
+                      ? "rgba(185,28,28,0.78)"
+                      : "rgba(248,113,113,0.78)";
+              return (
+                <line
+                  key={e.id}
+                  x1={e.source.x}
+                  y1={e.source.y}
+                  x2={e.target.x}
+                  y2={e.target.y}
+                  stroke={stroke}
+                  strokeOpacity={opacity}
+                  strokeWidth={e.kind === "powers" ? 2.4 : 1.8}
+                  strokeLinecap="round"
+                  markerEnd="url(#vera-graph-arrow)"
+                />
+              );
+            })}
+          </svg>
+
+          {projectedGraph.nodes.filter((n) => n.visible).map((n) => {
+            const selected = n.role === "selected";
+            const size = selected ? 34 : Math.max(18, 28 - n.depth * 4);
+            return (
+              <div
+                key={n.id}
+                className="absolute -translate-x-1/2 -translate-y-1/2 rounded-full"
+                style={{
+                  left: `${n.x}px`,
+                  top: `${n.y}px`,
+                  width: `${size}px`,
+                  height: `${size}px`,
+                  border: `${selected ? 3 : 2}px solid rgba(255,255,255,0.9)`,
+                  backgroundColor: selected ? "rgba(255,255,255,0.12)" : "rgba(255,255,255,0.06)",
+                  boxShadow: `0 0 0 ${selected ? 7 : 4}px ${n.color}33, 0 2px 10px rgba(15,23,42,0.45)`,
+                }}
+              >
+                {selected && (
+                  <>
+                    <span
+                      className="absolute inset-0 rounded-full border-2 border-status-offline"
+                      style={{ animation: "vera-graph-selected-pulse 1.6s ease-out infinite" }}
+                    />
+                    <span
+                      className="absolute inset-0 rounded-full border-2 border-status-offline"
+                      style={{ animation: "vera-graph-selected-pulse 1.6s ease-out 0.55s infinite" }}
+                    />
+                  </>
+                )}
               </div>
             );
           })}

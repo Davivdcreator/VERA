@@ -20,9 +20,10 @@ import { RepairPrioritiesTable } from "@/components/dashboard/RepairPrioritiesTa
 import { LiveAlertsFeed } from "@/components/dashboard/LiveAlertsFeed";
 import { AssetCardPanel } from "@/components/dashboard/AssetCardPanel";
 import { DamageDetectionsPanel } from "@/components/dashboard/DamageDetectionsPanel";
-import { loadAssetCards, cardsToMarkers, loadDamageEvents } from "@/lib/data/loadCards";
+import { STATE_COLOR, loadAssetCards, cardsToMarkers, loadDamageEvents } from "@/lib/data/loadCards";
 import type { AssetCard } from "@/lib/data/types";
 import type { DamageEvent, DamageZone } from "@/lib/data/damage";
+import type { MapGraphOverlay } from "@/lib/osmb/OsmBuildingsMap";
 import { REGION } from "@/config/region";
 import type { MapLegendProps } from "@/components/ui/MapLegend";
 import type { RepairPriority, AlertEvent } from "@/data/dashboardData";
@@ -38,6 +39,8 @@ const STATE_LEGEND: MapLegendProps = {
     { swatchClass: "bg-status-unknown",     label: "No data" },
   ],
 };
+
+const RELATIONSHIP_GRAPH_DEPTH = 2;
 
 /* ─── derive table rows + alert events from cards ────────────────────────── */
 
@@ -81,6 +84,67 @@ function cardsToAlerts(cards: AssetCard[]): AlertEvent[] {
   return events
     .sort((a, b) => ORDER[a.state] - ORDER[b.state])
     .slice(0, 20);
+}
+
+function buildRelationshipGraph(
+  selectedId: string | null,
+  cardMap: Map<string, AssetCard>,
+  maxDepth = RELATIONSHIP_GRAPH_DEPTH,
+): MapGraphOverlay | null {
+  if (!selectedId || !cardMap.has(selectedId)) return null;
+
+  const depths = new Map<string, number>([[selectedId, 0]]);
+  const queue: Array<{ id: string; depth: number }> = [{ id: selectedId, depth: 0 }];
+  const edges = new Map<string, MapGraphOverlay["edges"][number]>();
+
+  for (let cursor = 0; cursor < queue.length; cursor += 1) {
+    const { id, depth } = queue[cursor];
+    if (depth >= maxDepth) continue;
+
+    const card = cardMap.get(id);
+    if (!card) continue;
+
+    const visit = (nextId: string, sourceId: string, targetId: string, kind: string, weight: number) => {
+      if (!cardMap.has(nextId)) return;
+      const edgeId = `${sourceId}->${targetId}:${kind}`;
+      if (!edges.has(edgeId)) {
+        edges.set(edgeId, { id: edgeId, sourceId, targetId, kind, weight });
+      }
+      const nextDepth = depth + 1;
+      const existingDepth = depths.get(nextId);
+      if (existingDepth == null || nextDepth < existingDepth) {
+        depths.set(nextId, nextDepth);
+        queue.push({ id: nextId, depth: nextDepth });
+      }
+    };
+
+    for (const edge of card.downstream) {
+      visit(edge.assetId, id, edge.assetId, edge.kind, edge.weight);
+    }
+    for (const edge of card.upstream) {
+      visit(edge.assetId, edge.assetId, id, edge.kind, edge.weight);
+    }
+  }
+
+  const nodes = Array.from(depths.entries()).flatMap(([id, depth]) => {
+    const card = cardMap.get(id);
+    if (!card) return [];
+    return [{
+      id,
+      lat: card.lat,
+      lng: card.lng,
+      label: card.name,
+      color: STATE_COLOR[card.status],
+      depth,
+      role: depth === 0 ? "selected" as const : "related" as const,
+    }];
+  });
+
+  return {
+    nodes,
+    edges: Array.from(edges.values()),
+    depth: maxDepth,
+  };
 }
 
 /* ─── component ─────────────────────────────────────────────────────────── */
@@ -156,6 +220,11 @@ export function Dashboard() {
     [cards],
   );
 
+  const selectedGraph = useMemo(
+    () => buildRelationshipGraph(selectedId, cardMap),
+    [selectedId, cardMap],
+  );
+
   // KPI derivations.
   const kpi = useMemo(() => {
     const total       = cards.length;
@@ -188,6 +257,14 @@ export function Dashboard() {
 
   // Selected card (resolved from id).
   const selectedCard = selectedId != null ? cardMap.get(selectedId) ?? null : null;
+  const selectAsset = (id: string) => {
+    setSelectedId(id);
+    const card = cardMap.get(id);
+    if (card) {
+      setFocusedDamageId(null);
+      setMapFocus({ lat: card.lat, lng: card.lng, zoom: 14.5 });
+    }
+  };
 
   return (
     <div className="flex flex-col gap-4 p-4 sm:p-4 lg:gap-6 lg:p-6">
@@ -251,10 +328,11 @@ export function Dashboard() {
           onModeChange={setMapMode}
           legend={STATE_LEGEND}
           markers={markers}
-          onMarkerClick={setSelectedId}
+          onMarkerClick={selectAsset}
           showBuildings={showBuildings}
           onToggleBuildings={() => setShowBuildings((v) => !v)}
           zones={damageZones}
+          graph={selectedGraph}
           showDamage={showDamage}
           onToggleDamage={() => setShowDamage((v) => !v)}
           focus={mapFocus}
