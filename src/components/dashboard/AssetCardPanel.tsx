@@ -26,6 +26,7 @@ import {
   ShieldAlert,
   CheckCircle2,
   ListChecks,
+  Loader2,
   Target,
   Zap,
 } from "lucide-react";
@@ -722,6 +723,26 @@ function EconomicLossCard({
   );
 }
 
+/**
+ * Perpetual "thinking" indicator for analysis actions. The bar eases toward ~93%
+ * and holds — it intentionally never completes (the live model is rate-limited;
+ * for demos the panel just needs to read as actively working).
+ */
+function ThinkingBar({ label, detail }: { label: string; detail: string }) {
+  return (
+    <div className="mt-3 rounded-md border border-border-subtle bg-surface-1 p-3" role="status" aria-live="polite">
+      <div className="flex items-center gap-2">
+        <Loader2 size={15} className="animate-spin text-accent" aria-hidden="true" />
+        <span className="text-[12px] font-semibold text-text-primary">{label}</span>
+      </div>
+      <div className="mt-2 h-1.5 w-full overflow-hidden rounded-pill bg-surface-3">
+        <div className="vera-thinking-bar h-full rounded-pill bg-accent" />
+      </div>
+      <p className="mt-1.5 text-[11px] text-text-muted">{detail}</p>
+    </div>
+  );
+}
+
 export interface AssetCardPanelProps {
   card: AssetCard;
   /** All cards by id — used to resolve dependency names. */
@@ -829,11 +850,18 @@ export function AssetCardPanel({
               size="md"
               className="w-full"
               onClick={onCalculateCost}
-              disabled={costLoading}
+              disabled={costLoading || advisoryLoading}
             >
               <Calculator size={16} aria-hidden="true" />
               {costLoading ? "Calculating..." : "Calculate cost"}
             </Button>
+
+            {costLoading && (
+              <ThinkingBar
+                label="Estimating rebuild cost…"
+                detail="Analyzing dependencies, scope and cost structure…"
+              />
+            )}
 
             {costEstimate && (
               <dl className="mt-3 grid grid-cols-3 gap-2 text-center">
@@ -884,11 +912,18 @@ export function AssetCardPanel({
               size="md"
               className="w-full"
               onClick={onRunAdvisory}
-              disabled={advisoryLoading}
+              disabled={costLoading || advisoryLoading}
             >
               <Route size={16} aria-hidden="true" />
               {advisoryLoading ? "Analyzing..." : "Run advisory"}
             </Button>
+
+            {advisoryLoading && (
+              <ThinkingBar
+                label="Running advisory…"
+                detail="Tracing dependency paths and weighing response options…"
+              />
+            )}
 
             {advisory && (
               <div className="mt-3 rounded-md border border-border-subtle bg-surface-1 px-3 py-2">

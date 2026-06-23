@@ -49,6 +49,21 @@ function fmtMoney(value: number | null | undefined, currency: string | null): st
   }
 }
 
+// Compact form for KPI tiles so large totals (e.g. $979.5M) never overflow.
+function fmtMoneyCompact(value: number | null | undefined, currency: string | null): string {
+  if (value == null) return "—";
+  try {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: currency || "USD",
+      notation: "compact",
+      maximumFractionDigits: 1,
+    }).format(value);
+  } catch {
+    return new Intl.NumberFormat("en-US", { notation: "compact", maximumFractionDigits: 1 }).format(value);
+  }
+}
+
 function fmtDate(iso: string): string {
   return new Date(iso).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" });
 }
@@ -192,7 +207,7 @@ export function Analyses() {
     return {
       total: rows.length,
       assets: new Set(rows.map((r) => r.asset_id)).size,
-      sumExpected: fmtMoney(sumExpected, currency),
+      sumExpected: fmtMoneyCompact(sumExpected, currency),
       last: rows[0] ? fmtDate(rows[0].created_at) : "—",
     };
   }, [rows]);
