@@ -52,7 +52,9 @@ export const ECONOMIC_SCENARIO: EconomicScenario = {
 export const ECONOMIC_LOSS_ENABLED =
   import.meta.env.VITE_ENABLE_ECONOMIC_LOSS !== "false";
 
-export const TYPE_MULTIPLIER: Record<AssetType, number> = {
+// Partial maps + fallbacks (see lossModel.ts): unspecified asset types use the
+// neutral defaults, so adding new AssetType values never breaks the build.
+export const TYPE_MULTIPLIER: Partial<Record<AssetType, number>> = {
   power_plant: 1.4,
   substation: 1.3,
   bridge: 1.25,
@@ -61,13 +63,22 @@ export const TYPE_MULTIPLIER: Record<AssetType, number> = {
   wastewater: 1.15,
   pumping_station: 1.15,
   hospital: 1.1,
+  clinic: 1.1,
+  police: 1.1,
+  fire_station: 1.1,
   heating_plant: 1.1,
+  pharmacy: 1.05,
+  supermarket: 1.05,
   other: 1.0,
 };
 
-export const BACKUP_FACTOR: Record<AssetType, number> = {
+export const BACKUP_FACTOR: Partial<Record<AssetType, number>> = {
   hospital: 0.35,
+  clinic: 0.3,
+  police: 0.3,
+  fire_station: 0.3,
   telecom: 0.25,
+  pharmacy: 0.25,
   water_works: 0.2,
   wastewater: 0.2,
   pumping_station: 0.2,
@@ -78,16 +89,21 @@ export const BACKUP_FACTOR: Record<AssetType, number> = {
   other: 0.1,
 };
 
-export const EMERGENCY_COST_PER_PERSON_DAY: Record<AssetType, number> = {
+export const EMERGENCY_COST_PER_PERSON_DAY: Partial<Record<AssetType, number>> = {
   hospital: 8,
+  clinic: 6,
   water_works: 6,
   wastewater: 6,
   pumping_station: 6,
   heating_plant: 5,
   power_plant: 4,
   substation: 4,
+  police: 4,
+  fire_station: 4,
   bridge: 3,
+  pharmacy: 3,
   telecom: 2,
+  supermarket: 2,
   other: 1,
 };
 

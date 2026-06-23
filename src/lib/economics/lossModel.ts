@@ -32,6 +32,11 @@ export interface EconomicLossReport {
   assumptions: string[];
 }
 
+// Neutral fallbacks for asset types not explicitly listed in the config maps.
+const DEFAULT_TYPE_MULTIPLIER = 1.0;
+const DEFAULT_BACKUP_FACTOR = 0.1;
+const DEFAULT_EMERGENCY_COST = 1;
+
 function clamp(value: number, min: number, max: number) {
   return Math.max(min, Math.min(max, value));
 }
@@ -58,9 +63,9 @@ function assetLoss(
     hourlyValuePerPerson *
     outageHours *
     severity *
-    TYPE_MULTIPLIER[asset.type] *
+    (TYPE_MULTIPLIER[asset.type] ?? DEFAULT_TYPE_MULTIPLIER) *
     criticalityPremium(asset) *
-    (1 - BACKUP_FACTOR[asset.type])
+    (1 - (BACKUP_FACTOR[asset.type] ?? DEFAULT_BACKUP_FACTOR))
   );
 }
 
@@ -68,7 +73,7 @@ function emergencyLoss(asset: AssetCard, severity: number, outageHours: number) 
   return (
     (outageHours / 24) *
     asset.population_affected *
-    EMERGENCY_COST_PER_PERSON_DAY[asset.type] *
+    (EMERGENCY_COST_PER_PERSON_DAY[asset.type] ?? DEFAULT_EMERGENCY_COST) *
     severity
   );
 }
