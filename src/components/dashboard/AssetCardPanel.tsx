@@ -12,6 +12,7 @@
  * All data comes from props — no network calls here.
  */
 import type { AssetCard } from "@/lib/data/types";
+import type { EconomicLossReport } from "@/lib/economics/lossModel";
 import { STATE_COLOR } from "@/lib/data/loadCards";
 import { StatusBadge } from "@/components/ui/StatusBadge";
 import { cn } from "@/lib/cn";
@@ -72,6 +73,15 @@ function typeLabel(t: string): string {
     bridge:          "Bridge",
     heating_plant:   "Heating plant",
     telecom:         "Telecom",
+    museum:          "Museum",
+    post_office:     "Post office",
+    pharmacy:        "Pharmacy",
+    bus_stop:        "Bus stop",
+    supermarket:     "Supermarket",
+    clinic:          "Clinic",
+    police:          "Police",
+    fire_station:    "Fire station",
+    water_fountain:  "Water point",
     other:           "Infrastructure",
   };
   return MAP[t] ?? t;
@@ -611,12 +621,119 @@ function AdvisoryDetailsModal({
 
 /* ─── main component ───────────────────────────────────────────────────────── */
 
+/**
+ * Economic outage loss — compact, scenario-based estimate of the economic
+ * activity + emergency cost lost while the asset is unavailable. Distinct from
+ * rebuild cost (capital reconstruction). Reuses CostStat / fmtMoney.
+ */
+function EconomicLossCard({
+  report,
+  outageHours,
+  onOutageHoursChange,
+}: {
+  report: EconomicLossReport | null | undefined;
+  outageHours: number | undefined;
+  onOutageHoursChange: ((hours: number) => void) | undefined;
+}) {
+  if (!report) return null;
+
+  return (
+    <section className="rounded-md border border-border-subtle bg-surface-1 p-4">
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <div>
+          <p className="text-[11px] font-bold uppercase tracking-[0.08em] text-text-muted">
+            Economic outage loss
+          </p>
+          <p className="mt-1 text-xs text-text-muted">
+            Scenario estimate, not observed loss
+          </p>
+        </div>
+
+        <select
+          className="rounded-md border border-border-subtle bg-surface-2 px-2 py-1 text-xs text-text-primary"
+          value={outageHours ?? report.outage_hours}
+          onChange={(event) => onOutageHoursChange?.(Number(event.target.value))}
+          aria-label="Economic outage duration"
+        >
+          <option value={6}>6h</option>
+          <option value={12}>12h</option>
+          <option value={24}>24h</option>
+          <option value={48}>48h</option>
+          <option value={72}>72h</option>
+        </select>
+      </div>
+
+      <div className="grid grid-cols-1 gap-2">
+        <CostStat
+          label="Expected"
+          value={fmtMoney(report.total_expected, report.currency)}
+          tone="accent"
+        />
+        <CostStat
+          label="Low to high"
+          value={`${fmtMoney(report.low, report.currency)} - ${fmtMoney(report.high, report.currency)}`}
+        />
+      </div>
+
+      <div className="mt-3 grid grid-cols-3 gap-2">
+        <CostStat label="Direct" value={fmtMoney(report.direct_loss, report.currency)} />
+        <CostStat label="Cascade" value={fmtMoney(report.cascading_loss, report.currency)} />
+        <CostStat label="Emergency" value={fmtMoney(report.emergency_loss, report.currency)} />
+      </div>
+
+      <div className="mt-3 grid grid-cols-2 gap-2">
+        <CostStat label="Severity" value={`${Math.round(report.severity * 100)}%`} />
+        <CostStat label="Confidence" value={`${Math.round(report.confidence * 100)}%`} />
+      </div>
+
+      {report.affected_downstream_assets.length > 0 && (
+        <div className="mt-3">
+          <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.08em] text-text-muted">
+            Main downstream effects
+          </p>
+          <ul className="space-y-1.5">
+            {report.affected_downstream_assets.slice(0, 3).map((asset) => (
+              <li key={asset.id} className="text-[12px] text-text-secondary">
+                <span className="font-medium text-text-primary">{asset.name}</span>
+                {": "}
+                {fmtMoney(asset.expected_loss, report.currency)}{" "}
+                <span className="text-text-muted">
+                  ({Math.round(asset.propagated_severity * 100)}% propagated)
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      <details className="mt-3 rounded-md border border-border-subtle bg-surface-2 p-3">
+        <summary className="cursor-pointer text-[12px] font-semibold text-text-secondary">
+          Assumptions
+        </summary>
+        <ul className="mt-2 space-y-1.5">
+          {report.assumptions.map((item, index) => (
+            <li key={`${item}-${index}`} className="text-[12px] text-text-muted">
+              {item}
+            </li>
+          ))}
+        </ul>
+      </details>
+    </section>
+  );
+}
+
 export interface AssetCardPanelProps {
   card: AssetCard;
   /** All cards by id — used to resolve dependency names. */
   cardMap: Map<string, AssetCard>;
   /** Selects a related card and flies the map to it. */
   onSelectAsset?: (id: string) => void;
+  /** Scenario-based economic outage loss for this asset (null = disabled/none). */
+  economicLossReport?: EconomicLossReport | null;
+  /** Current scenario outage duration (hours) for the loss estimate. */
+  economicOutageHours?: number;
+  /** Change the scenario outage duration. */
+  onEconomicOutageHoursChange?: (hours: number) => void;
   costReport?: RebuildCostReport | null;
   costLoading?: boolean;
   costError?: string | null;
@@ -638,6 +755,9 @@ export function AssetCardPanel({
   card,
   cardMap,
   onSelectAsset,
+  economicLossReport,
+  economicOutageHours,
+  onEconomicOutageHoursChange,
   costReport,
   costLoading = false,
   costError,
@@ -832,6 +952,15 @@ export function AssetCardPanel({
             </div>
           )}
         </dl>
+
+        {/* Economic outage loss (scenario estimate) */}
+        {economicLossReport && (
+          <EconomicLossCard
+            report={economicLossReport}
+            outageHours={economicOutageHours}
+            onOutageHoursChange={onEconomicOutageHoursChange}
+          />
+        )}
 
         {/* Dependencies */}
         {(card.downstream.length > 0 || card.upstream.length > 0) && (

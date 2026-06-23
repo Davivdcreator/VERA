@@ -133,6 +133,7 @@ BEGIN
     created := created + calculate_dependencies_proximity('public', 'substation', 'powers');
     created := created + calculate_dependencies_proximity('social_facility', 'substation', 'powers');
     created := created + calculate_dependencies_proximity('post_office', 'substation', 'powers');
+    created := created + calculate_dependencies_proximity('museum', 'substation', 'powers');
 
     -- Transportation depends on power
     created := created + calculate_dependencies_proximity('bus_stop', 'substation', 'powers');
@@ -166,6 +167,16 @@ BEGIN
     -- Industrial facilities depend on power and water
     created := created + calculate_dependencies_proximity('industrial_facility', 'power_plant', 'powers');
     created := created + calculate_dependencies_proximity('industrial_facility', 'water_pump_station', 'supplies_water');
+
+    -- Public museum demo clusters: connect visitor access, logistics, utilities, and response services.
+    created := created + calculate_dependencies_proximity('museum', 'bus_stop', 'provides_access');
+    created := created + calculate_dependencies_proximity('museum', 'post_office', 'depends_on');
+    created := created + calculate_dependencies_proximity('museum', 'pharmacy', 'depends_on');
+    created := created + calculate_dependencies_proximity('museum', 'water_fountain', 'supplies_water');
+    created := created + calculate_dependencies_proximity('museum', 'supermarket', 'depends_on');
+    created := created + calculate_dependencies_proximity('museum', 'clinic', 'depends_on');
+    created := created + calculate_dependencies_proximity('museum', 'police', 'depends_on');
+    created := created + calculate_dependencies_proximity('museum', 'fire_station', 'depends_on');
 
     RETURN created;
 END;

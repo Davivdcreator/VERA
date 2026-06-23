@@ -105,6 +105,15 @@ function normalizeEvidence(value: unknown): Evidence[] {
 
 function assetTypeFromSubtype(subtype: string): AssetCard["type"] {
   if (subtype === "hospital") return "hospital";
+  if (subtype === "clinic") return "clinic";
+  if (subtype === "pharmacy") return "pharmacy";
+  if (subtype === "fire_station") return "fire_station";
+  if (subtype === "police") return "police";
+  if (subtype === "museum") return "museum";
+  if (subtype === "post_office") return "post_office";
+  if (subtype === "bus_stop") return "bus_stop";
+  if (subtype === "supermarket") return "supermarket";
+  if (subtype === "water_fountain") return "water_fountain";
   if (subtype === "substation") return "substation";
   if (subtype === "power_plant") return "power_plant";
   if (subtype === "water_treatment" || subtype === "water_works") return "water_works";
@@ -136,6 +145,7 @@ function serviceClass(dbType: string, subtype: string): number {
     pharmacy: 0.62,
     fire_station: 0.86,
     police: 0.82,
+    museum: 0.54,
     school: 0.72,
     kindergarten: 0.68,
     university: 0.68,
@@ -156,6 +166,7 @@ function radiusForSubtype(subtype: string): number {
     pharmacy: 800,
     fire_station: 2200,
     police: 2000,
+    museum: 1200,
     school: 1400,
     kindergarten: 1200,
     university: 1600,

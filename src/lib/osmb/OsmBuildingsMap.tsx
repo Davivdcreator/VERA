@@ -15,7 +15,7 @@
  * StrictMode-safe; the container MUST have an explicit height.
  */
 import { useEffect, useRef, useState } from "react";
-import { loadOsmBuildings } from "./loader";
+import { loadOsmBuildings, __resetOsmBuildings } from "./loader";
 import type { LatLng, OSMBuildingsMap } from "./osmbuildings";
 import type { DamageZone } from "@/lib/data/damage";
 import {
@@ -580,6 +580,11 @@ export function OsmBuildingsMap({
           gl?.getExtension("WEBGL_lose_context")?.loseContext();
         }
       }
+      // Reset OSMB global state after cleanup so the next OSMB instance on a
+      // different page (e.g. Dashboard ↔ DangerZones) starts completely fresh.
+      // Without this, OSMB's internal global WebGL state can persist and cause
+      // context-loss flickering when navigating between map pages client-side.
+      __resetOsmBuildings();
     };
     // Mount ONCE. Camera props (mode/center/zoom/tilt/rotation) are read via
     // refs and applied imperatively in the effects below, so toggling 2D/3D
