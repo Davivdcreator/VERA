@@ -75,6 +75,8 @@ export interface MapPanelProps {
   active?: boolean;
   /** Bring focus to this panel (sets it active). */
   onActivate?: () => void;
+  /** Drop the card chrome (rounded corners, border, shadow) for full-bleed use. */
+  bare?: boolean;
   className?: string;
 }
 
@@ -98,6 +100,7 @@ export function MapPanel({
   feed = "live",
   active = false,
   onActivate,
+  bare = false,
   className = "",
 }: MapPanelProps) {
   const [searchQuery, setSearchQuery] = useState("");
@@ -141,8 +144,13 @@ export function MapPanel({
     <section
       onPointerDown={onActivate}
       className={cn(
-        "relative flex h-full min-h-0 min-w-0 flex-col overflow-hidden rounded-xl bg-surface-1 shadow-[var(--shadow-md)]",
-        active ? "border border-border-accent" : "border border-border-subtle",
+        "relative flex h-full min-h-0 min-w-0 flex-col overflow-hidden bg-surface-1",
+        bare
+          ? null
+          : cn(
+              "rounded-xl shadow-[var(--shadow-md)]",
+              active ? "border border-border-accent" : "border border-border-subtle",
+            ),
         className,
       )}
     >

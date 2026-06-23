@@ -58,6 +58,19 @@ const BASE =
 const ACTIVE = "bg-accent-soft text-text-primary";
 const INACTIVE = "text-text-secondary hover:bg-surface-2 hover:text-text-primary";
 
+// Label flyout — appears to the right of the icon on hover/focus. Replaces the
+// native `title` tooltip so it's styled, instant, and keyboard-accessible.
+function HoverLabel({ label }: { label: string }) {
+  return (
+    <span
+      role="tooltip"
+      className="pointer-events-none absolute left-full top-1/2 z-50 ml-2 -translate-y-1/2 whitespace-nowrap rounded-md border border-border-subtle bg-surface-2 px-2 py-1 text-xs font-medium text-text-primary opacity-0 shadow-md transition-opacity duration-150 ease-standard group-hover:opacity-100 group-focus-visible:opacity-100"
+    >
+      {label}
+    </span>
+  );
+}
+
 function NavRow({ item }: { item: NavItem }) {
   const Icon = item.icon;
 
@@ -65,9 +78,9 @@ function NavRow({ item }: { item: NavItem }) {
     return (
       <NavLink
         to={item.to}
-        title={item.label}
+        aria-label={item.label}
         end={item.to === "/"}
-        className={({ isActive }) => cn(BASE, isActive ? ACTIVE : INACTIVE)}
+        className={({ isActive }) => cn("group", BASE, isActive ? ACTIVE : INACTIVE)}
       >
         {({ isActive }) => (
           <>
@@ -78,7 +91,7 @@ function NavRow({ item }: { item: NavItem }) {
               />
             )}
             <Icon size={18} className={cn("shrink-0", isActive && "text-accent")} aria-hidden="true" />
-            <span className="sr-only">{item.label}</span>
+            <HoverLabel label={item.label} />
           </>
         )}
       </NavLink>
@@ -86,9 +99,9 @@ function NavRow({ item }: { item: NavItem }) {
   }
 
   return (
-    <button type="button" title={item.label} className={cn(BASE, INACTIVE)}>
+    <button type="button" aria-label={item.label} className={cn("group", BASE, INACTIVE)}>
       <Icon size={18} className="shrink-0" aria-hidden="true" />
-      <span className="sr-only">{item.label}</span>
+      <HoverLabel label={item.label} />
     </button>
   );
 }
@@ -103,17 +116,25 @@ export function Sidebar({ className = "" }: SidebarProps) {
       aria-label="Primary"
       className={cn("flex h-full flex-col border-r border-border-subtle bg-surface-1", className)}
     >
-      {/* Brand block. */}
+      {/* Brand block — VERA "V" mark (public/logo/vera fav.svg). */}
       <div className="flex h-14 shrink-0 items-center justify-center">
         <span
-          className="grid h-7 w-7 shrink-0 place-items-center rounded-md bg-brand text-sm font-extrabold text-white"
-          aria-hidden="true"
+          className="grid h-7 w-7 shrink-0 place-items-center rounded-md bg-brand text-white"
+          aria-label="VERA"
         >
-          V
+          <svg
+            viewBox="0 0 142.61 139.05"
+            className="h-4 w-4"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path d="M0,139.05l.46-3.04L59.98.67c4.14-.37,22.12-1.82,24.09,1.2,17.89,45.62,40.62,89.63,58.5,135.16.25,1.1-.7,2.03-1.07,2.03h-23L71.5,28.15l-48,110.9H0Z" />
+            <circle cx="71.8" cy="91.65" r="9.62" />
+          </svg>
         </span>
       </div>
 
-      <div className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto px-3 pb-4 pt-1">
+      <div className="flex min-h-0 flex-1 flex-col gap-1 px-3 pb-4 pt-1">
         {NAV_GROUPS.map((group, gi) => (
           <div key={group.label ?? `group-${gi}`} className="flex flex-col gap-0.5">
             {group.label && (

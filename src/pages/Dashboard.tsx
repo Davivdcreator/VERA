@@ -427,7 +427,7 @@ export function Dashboard() {
   };
 
   return (
-    <section aria-label="Infrastructure map" className="fixed inset-0 z-40 overflow-hidden bg-surface-0">
+    <section aria-label="Infrastructure map" className="relative h-full overflow-hidden bg-surface-0">
       {loading && (
         <div className="pointer-events-none absolute inset-0 z-30 flex items-center justify-center">
           <span className="rounded-md border border-border-subtle bg-surface-overlay px-4 py-2 text-sm font-medium text-text-muted backdrop-blur-md">
@@ -453,7 +453,7 @@ export function Dashboard() {
         onSearchSelect={selectAsset}
         highlightZoneId={focusedDamageId}
         active
-        className="rounded-none border-0 shadow-none"
+        bare
       />
 
       {/* Asset card panel — overlays the right side of the full-screen map. */}

@@ -563,8 +563,22 @@ export function OsmBuildingsMap({
       if (map) {
         if (onChange) map.off("change", onChange);
         if (onLoad) map.off("load", onLoad);
+        // Grab OSMB's canvas BEFORE destroy so we can force-release its WebGL
+        // context. OSMB.destroy() detaches the canvas but does NOT free the GL
+        // context — so navigating between subpages (each mounts a fresh map)
+        // leaks contexts. The browser then force-loses the old ones while they
+        // are still referenced, throwing "bindFramebuffer: object does not
+        // belong to this context" and flickering the live map. loseContext()
+        // reclaims it immediately, so at most one context exists at a time.
+        const canvas = containerRef.current?.querySelector("canvas") ?? null;
         map.destroy();
         map = null;
+        if (canvas) {
+          const gl =
+            (canvas.getContext("webgl") as WebGLRenderingContext | null) ??
+            (canvas.getContext("webgl2") as WebGL2RenderingContext | null);
+          gl?.getExtension("WEBGL_lose_context")?.loseContext();
+        }
       }
     };
     // Mount ONCE. Camera props (mode/center/zoom/tilt/rotation) are read via
