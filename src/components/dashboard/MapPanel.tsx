@@ -18,7 +18,7 @@
  * out of the existing component, which is out of scope for this task.
  */
 import { useMemo, useState } from "react";
-import { Box, Building2, Compass, Map as MapIcon, MapPin, Maximize2, MoreHorizontal, Minus, Plus, Search, TriangleAlert, X } from "lucide-react";
+import { Box, Building2, Compass, ListFilter, Map as MapIcon, MapPin, Maximize2, MoreHorizontal, Minus, Plus, Search, TriangleAlert, X } from "lucide-react";
 import { OsmBuildingsMap } from "@/lib/osmb/OsmBuildingsMap";
 import type { MapGraphOverlay, MapMarker } from "@/lib/osmb/OsmBuildingsMap";
 import type { DamageZone } from "@/lib/data/damage";
@@ -30,6 +30,152 @@ import type { MapLegendProps } from "@/components/ui/MapLegend";
 import { SegmentedControl } from "@/components/ui/SegmentedControl";
 
 export type MapMode = "2d" | "3d";
+
+/** An asset type present in the data, with its count, for the type filter. */
+export interface AssetTypeOption {
+  type: string;
+  count: number;
+}
+
+/** Human-readable label for an asset type key. */
+function assetTypeLabel(type: string): string {
+  const MAP: Record<string, string> = {
+    hospital: "Hospital",
+    power_plant: "Power plant",
+    substation: "Substation",
+    water_works: "Water works",
+    wastewater: "Wastewater",
+    pumping_station: "Pumping station",
+    bridge: "Bridge",
+    heating_plant: "Heating plant",
+    telecom: "Telecom",
+    museum: "Museum",
+    post_office: "Post office",
+    pharmacy: "Pharmacy",
+    bus_stop: "Bus stop",
+    supermarket: "Supermarket",
+    clinic: "Clinic",
+    police: "Police",
+    fire_station: "Fire station",
+    water_fountain: "Water point",
+    other: "Other",
+  };
+  if (MAP[type]) return MAP[type];
+  const s = type.replace(/_/g, " ");
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
+/**
+ * Header dropdown to filter which asset types are shown on the map. Selection
+ * is owned by the parent (Dashboard); this only renders the control. Removing
+ * the `<TypeFilter>` render + its props drops the feature with no side effects.
+ */
+function TypeFilter({
+  types,
+  hiddenTypes,
+  onToggle,
+  onShowAll,
+  onHideAll,
+}: {
+  types: AssetTypeOption[];
+  hiddenTypes: Set<string>;
+  onToggle: (type: string) => void;
+  onShowAll: () => void;
+  onHideAll: () => void;
+}) {
+  const [open, setOpen] = useState(false);
+  if (types.length === 0) return null;
+
+  const shownCount = types.reduce((n, t) => (hiddenTypes.has(t.type) ? n : n + 1), 0);
+  const allShown = shownCount === types.length;
+
+  return (
+    <div className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+        aria-haspopup="true"
+        aria-label="Filter asset types"
+        title="Filter asset types"
+        className={cn(
+          "inline-flex h-8 items-center gap-1.5 rounded-md px-2.5 text-[12px] font-semibold ring-1 transition-colors",
+          allShown
+            ? "bg-surface-2 text-text-muted ring-border-default hover:text-text-secondary"
+            : "bg-accent-soft text-accent ring-border-accent",
+        )}
+      >
+        <ListFilter size={14} aria-hidden="true" />
+        Types
+        {!allShown && (
+          <span className="rounded-sm bg-accent px-1 text-[10px] font-bold leading-4 text-white">
+            {shownCount}/{types.length}
+          </span>
+        )}
+      </button>
+
+      {open && (
+        <>
+          {/* Click-away backdrop. */}
+          <button
+            type="button"
+            tabIndex={-1}
+            aria-hidden="true"
+            onClick={() => setOpen(false)}
+            className="fixed inset-0 z-20 cursor-default"
+          />
+          <div className="absolute right-0 top-full z-30 mt-1.5 w-64 overflow-hidden rounded-md border border-border-default bg-surface-overlay shadow-[var(--shadow-overlay)] backdrop-blur-md">
+            <div className="flex items-center justify-between gap-2 border-b border-border-subtle px-3 py-2">
+              <span className="text-[11px] font-bold uppercase tracking-[0.08em] text-text-muted">
+                Asset types
+              </span>
+              <div className="flex items-center gap-1.5">
+                <button
+                  type="button"
+                  onClick={onShowAll}
+                  className="text-[11px] font-semibold text-accent hover:underline"
+                >
+                  All
+                </button>
+                <span className="text-text-muted">·</span>
+                <button
+                  type="button"
+                  onClick={onHideAll}
+                  className="text-[11px] font-semibold text-text-muted hover:text-text-secondary hover:underline"
+                >
+                  None
+                </button>
+              </div>
+            </div>
+            <ul className="max-h-[16rem] overflow-y-auto py-1">
+              {types.map((t) => {
+                const shown = !hiddenTypes.has(t.type);
+                return (
+                  <li key={t.type}>
+                    <label className="flex cursor-pointer items-center gap-2.5 px-3 py-1.5 text-[13px] hover:bg-surface-2">
+                      <input
+                        type="checkbox"
+                        checked={shown}
+                        onChange={() => onToggle(t.type)}
+                        className="h-3.5 w-3.5 accent-accent"
+                      />
+                      <span className="min-w-0 flex-1 truncate text-text-primary">
+                        {assetTypeLabel(t.type)}
+                      </span>
+                      <span className="tabular font-mono text-[11px] text-text-muted">
+                        {t.count.toLocaleString("en-US")}
+                      </span>
+                    </label>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
 
 export interface MapObjectSearchItem {
   id: string;
@@ -61,6 +207,16 @@ export interface MapPanelProps {
   showDamage?: boolean;
   /** Toggle the damage zone overlay. */
   onToggleDamage?: () => void;
+  /** Asset types present in the data (with counts) for the header type filter. */
+  assetTypes?: AssetTypeOption[];
+  /** Types currently hidden from the map (empty = all shown). */
+  hiddenTypes?: Set<string>;
+  /** Toggle a single asset type's visibility. */
+  onToggleType?: (type: string) => void;
+  /** Show all asset types. */
+  onShowAllTypes?: () => void;
+  /** Hide all asset types. */
+  onHideAllTypes?: () => void;
   /** Imperative fly-to target for the map camera. */
   focus?: { lat: number; lng: number; zoom?: number } | null;
   /** Searchable map objects. */
@@ -91,6 +247,11 @@ export function MapPanel({
   graph,
   showDamage = true,
   onToggleDamage,
+  assetTypes,
+  hiddenTypes,
+  onToggleType,
+  onShowAllTypes,
+  onHideAllTypes,
   focus,
   searchItems = [],
   onSearchSelect,
@@ -211,6 +372,15 @@ export function MapPanel({
               <TriangleAlert size={14} aria-hidden="true" />
               Damage
             </button>
+          )}
+          {onToggleType && assetTypes && assetTypes.length > 0 && (
+            <TypeFilter
+              types={assetTypes}
+              hiddenTypes={hiddenTypes ?? new Set<string>()}
+              onToggle={onToggleType}
+              onShowAll={onShowAllTypes ?? (() => {})}
+              onHideAll={onHideAllTypes ?? (() => {})}
+            />
           )}
           <IconButton size="sm" aria-label={`${title} options`}>
             <MoreHorizontal size={16} aria-hidden="true" />
