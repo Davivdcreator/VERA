@@ -5,7 +5,8 @@
  *   Full-screen map surface with floating controls and selected-asset details.
  *
  * All asset data flows from loadAssetCards() — nothing hardcoded here.
- * Supabase is used when configured; otherwise falls back to cards.json.
+ * Supabase is used when configured; otherwise falls back to the generated full
+ * infrastructure card bundle.
  */
 import { useState, useEffect, useMemo } from "react";
 import { MapPanel } from "@/components/dashboard/MapPanel";
@@ -414,7 +415,7 @@ export function Dashboard() {
           prompt: formatCardAdvisoryContext(selectedCard, cardMap),
           objective: `Advise the next operational action for ${selectedCard.name}.`,
           databaseRoot: "data",
-          catalogs: ["src/data/generated/cards.json"],
+          catalogs: ["src/data/generated/full-infrastructure-cards.json"],
           agent: "auto",
         }),
       });

@@ -16,6 +16,15 @@ export type AssetType =
   | "bridge"
   | "heating_plant"
   | "telecom"
+  | "museum"
+  | "post_office"
+  | "pharmacy"
+  | "bus_stop"
+  | "supermarket"
+  | "clinic"
+  | "police"
+  | "fire_station"
+  | "water_fountain"
   | "other";
 
 export type InfraStatus = "operational" | "degraded" | "offline" | "unknown";
