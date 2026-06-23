@@ -205,7 +205,7 @@ export function __resetOsmBuildingsLoader(): void {
  */
 export function __resetOsmBuildings(): void {
   cached = null;
-  // @ts-expect-error — deliberately null out the global to force re-init
+  // Deliberately null out the global to force re-init on the next mount.
   window.OSMBuildings = undefined;
   // Also remove the injected script so it can be re-added fresh
   const script = document.getElementById(JS_ID);
