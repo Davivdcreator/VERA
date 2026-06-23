@@ -18,6 +18,8 @@ import type { AssetCard } from "@/lib/data/types";
 import type { DamageEvent, DamageZone } from "@/lib/data/damage";
 import type { MapGraphOverlay } from "@/lib/osmb/OsmBuildingsMap";
 import { REGION } from "@/config/region";
+import { ECONOMIC_LOSS_ENABLED, ECONOMIC_SCENARIO } from "@/config/economics";
+import { computeEconomicLoss } from "@/lib/economics/lossModel";
 import type { MapLegendProps } from "@/components/ui/MapLegend";
 
 /* ─── legend (stable ref) ───────────────────────────────────────────────── */
@@ -231,6 +233,10 @@ export function Dashboard() {
   const [advisoryErrors, setAdvisoryErrors] = useState<Record<string, string>>({});
   const [advisoryLoadingId, setAdvisoryLoadingId] = useState<string | null>(null);
   const [advisoryDialogId, setAdvisoryDialogId] = useState<string | null>(null);
+  // Economic-outage-loss MVP: scenario outage duration for the loss estimate.
+  const [economicOutageHours, setEconomicOutageHours] = useState(
+    ECONOMIC_SCENARIO.defaultOutageHours,
+  );
 
   // Load cards once on mount.
   useEffect(() => {
@@ -309,6 +315,21 @@ export function Dashboard() {
 
   // Selected card (resolved from id).
   const selectedCard = selectedId != null ? cardMap.get(selectedId) ?? null : null;
+
+  // Scenario-based economic outage loss for the selected asset — deterministic,
+  // local (no API/LLM). Null when disabled via flag or nothing is selected.
+  const economicLossReport = useMemo(
+    () =>
+      ECONOMIC_LOSS_ENABLED && selectedCard
+        ? computeEconomicLoss({
+            selectedAssetId: selectedCard.id,
+            cards,
+            outageHours: economicOutageHours,
+            scenario: ECONOMIC_SCENARIO,
+          })
+        : null,
+    [selectedCard, cards, economicOutageHours],
+  );
   const selectAsset = (id: string) => {
     setSelectedId(id);
     const card = cardMap.get(id);
@@ -463,6 +484,9 @@ export function Dashboard() {
           card={selectedCard}
           cardMap={cardMap}
           onSelectAsset={selectAsset}
+          economicLossReport={economicLossReport}
+          economicOutageHours={economicOutageHours}
+          onEconomicOutageHoursChange={setEconomicOutageHours}
           costReport={costReports[selectedCard.id] ?? null}
           costLoading={costLoadingId === selectedCard.id}
           costError={costErrors[selectedCard.id] ?? null}
